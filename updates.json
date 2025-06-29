@@ -1,0 +1,32 @@
+{
+  "global": {
+    "news": [],
+    "technology": [],
+    "finance": [],
+    "travel": [],
+    "world": [],
+    "weather": [],
+    "blogs": []
+  },
+  "north_america": {
+    "news": [],
+    "technology": [],
+    "finance": [],
+    "travel": [],
+    "world": [],
+    "weather": [],
+    "blogs": []
+  },
+  "europe": { /* ... and so on for all regions ... */ },
+  "asia": { /* ... */ },
+  "africa": { /* ... */ },
+  "oceania": { /* ... */ },
+  "south_america": { /* ... */ },
+  "middle_east": { /* ... */ },
+  "southeast_asia": { /* ... */ },
+  "north_africa": { /* ... */ },
+  "sub_saharan_africa": { /* ... */ },
+  "east_asia": { /* ... */ },
+  "south_asia": { /* ... */ },
+  "australia_nz": { /* ... */ }
+}
