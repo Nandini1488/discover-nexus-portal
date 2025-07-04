@@ -2,58 +2,97 @@ import json
 import os
 import random
 import time
+import requests # Added for making HTTP requests to external APIs
 
-# IMPORTANT: This is a placeholder for actual Gemini API calls.
-# In a real scenario, you would use a library like `google-generativeai`
-# to interact with the Gemini API to generate your content based on prompts.
-# For this example, we're simulating the content generation.
+# --- Configuration ---
+# You'll need to sign up for a NewsAPI.org key: https://newsapi.org/
+# The free developer tier allows up to 100 requests per day.
+# Store this key as a GitHub Secret named NEWS_API_KEY
+NEWS_API_BASE_URL = "https://newsapi.org/v2/everything" # Or /v2/top-headlines for simpler fetching
+NEWS_API_KEY = os.getenv('NEWS_API_KEY') # Fetched from GitHub Secrets
 
 # Define the regions and categories that match your index.html
-REGIONS = {
-    "global": "the entire world",
-    "north_america": "North America",
-    "europe": "Europe",
-    "asia": "Asia",
-    "africa": "Africa",
-    "oceania": "Oceania",
-    "south_america": "South America",
-    "middle_east": "the Middle East",
-    "southeast_asia": "Southeast Asia",
-    "north_africa": "North Africa",
-    "sub_saharan_africa": "Sub-Saharan Africa",
-    "east_asia": "East Asia",
-    "south_asia": "South Asia",
-    "australia_nz": "Australia and New Zealand"
+# Mapping regions to NewsAPI country codes (simplified, NewsAPI mostly by country)
+# For broader regions like 'Europe', you might fetch from multiple countries.
+# This mapping is crucial for making targeted API calls.
+REGION_TO_COUNTRY_CODE = {
+    "global": None, # NewsAPI doesn't have a 'global' filter, you'd fetch broadly or by multiple countries
+    "north_america": "us", # Focusing on US for simplicity
+    "europe": "gb", # Focusing on UK for Europe example
+    "asia": "in", # Focusing on India for Asia example
+    "africa": "ng", # Focusing on Nigeria for Africa example
+    "oceania": "au", # Focusing on Australia for Oceania example
+    "south_america": "br", # Focusing on Brazil for South America example
+    "middle_east": "ae", # Focusing on UAE for Middle East example
+    "southeast_asia": "sg", # Focusing on Singapore for Southeast Asia example
+    "north_africa": "eg", # Focusing on Egypt for North Africa example
+    "sub_saharan_africa": "za", # Focusing on South Africa for Sub-Saharan Africa example
+    "east_asia": "jp", # Focusing on Japan for East Asia example
+    "south_asia": "pk", # Focusing on Pakistan for South Asia example
+    "australia_nz": "nz" # Focusing on New Zealand for Australia & NZ example
 }
 
-CATEGORIES = [
-    "news",
-    "technology",
-    "finance",
-    "travel",
-    "world",
-    "weather",
-    "blogs"
-]
+CATEGORIES = {
+    "news": ["general", "breaking news"],
+    "technology": ["technology", "AI", "cybersecurity", "gadgets"],
+    "finance": ["business", "finance", "markets", "economy"],
+    "travel": ["travel", "tourism", "adventure"],
+    "world": ["politics", "international relations", "global affairs"],
+    "weather": ["weather", "climate change", "natural disasters"], # NewsAPI isn't ideal for weather forecasts, more for weather-related *news*
+    "blogs": ["opinion", "analysis", "lifestyle"]
+}
 
-# Function to simulate Gemini API call and generate content
-def generate_gemini_content(region, category, count=15):
+# --- Functions ---
+
+def fetch_content_from_newsapi(query, country_code=None, count=10):
     """
-    Simulates calling the Gemini API to generate content.
-    In a real application, this function would prompt Gemini
-    and parse its response into the desired format.
+    Fetches real news articles from NewsAPI.org.
     """
-    print(f"Simulating content generation for {category} in {region}...")
+    if not NEWS_API_KEY:
+        print("NEWS_API_KEY is not set. Cannot fetch real news.")
+        return []
+
+    params = {
+        'q': query,
+        'language': 'en',
+        'pageSize': count, # Number of articles to fetch
+        'apiKey': NEWS_API_KEY
+    }
+    if country_code:
+        params['country'] = country_code
+
+    try:
+        response = requests.get(NEWS_API_BASE_URL, params=params, timeout=10)
+        response.raise_for_status() # Raise an HTTPError for bad responses (4xx or 5xx)
+        data = response.json()
+        
+        articles = []
+        for article in data.get('articles', []):
+            if article.get('title') and article.get('description') and article.get('url'):
+                articles.append({
+                    "title": article['title'],
+                    "content": article['description'],
+                    "link": article['url'],
+                    "imageUrl": article.get('urlToImage', 'https://placehold.co/600x400/CCCCCC/333333?text=Image+Unavailable')
+                })
+        return articles
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching from NewsAPI for query '{query}', country '{country_code}': {e}")
+        return []
+
+def generate_simulated_content(region_name, category_name, count=15):
+    """
+    Generates simulated content as a fallback or for categories not covered by NewsAPI.
+    """
     articles = []
     for i in range(count):
-        # Generate a random hex color for the placeholder image
         hex_color_bg = ''.join([random.choice('0123456789ABCDEF') for _ in range(6)])
         hex_color_text = ''.join([random.choice('0123456789ABCDEF') for _ in range(6)])
 
-        title = f"{category.replace('_', ' ').title()} Update {i + 1} for {REGIONS[region]}"
-        content = f"This is a simulated summary of {category.replace('_', ' ')} related to {REGIONS[region]}, article number {i + 1}. It highlights key developments and insights."
-        link = f"https://example.com/{region}/{category}/{i + 1}"
-        image_url = f"https://placehold.co/600x400/{hex_color_bg}/{hex_color_text}?text={category.title()}+{i+1}"
+        title = f"{category_name.replace('_', ' ').title()} Update {i + 1} for {region_name}"
+        content = f"This is a simulated summary of {category_name.replace('_', ' ')} related to {region_name}, article number {i + 1}. It highlights key developments and insights."
+        link = f"https://example.com/{region_name.lower().replace(' ', '-')}/{category_name.lower().replace(' ', '-')}/{i + 1}"
+        image_url = f"https://placehold.co/600x400/{hex_color_bg}/{hex_color_text}?text={category_name.title()}+{i+1}"
 
         articles.append({
             "title": title,
@@ -64,29 +103,32 @@ def generate_gemini_content(region, category, count=15):
     return articles
 
 def main():
-    # Attempt to get the Gemini API key from environment variables (GitHub Secrets)
-    # gemini_api_key = os.getenv('GEMINI_API_KEY')
-    # if not gemini_api_key:
-    #     print("Error: GEMINI_API_KEY environment variable not set.")
-    #     # In a real GitHub Action, you might exit here or raise an error
-    #     # For this simulation, we'll continue with mock data.
-    #     pass
-
     all_content = {}
-    for region_key, region_name in REGIONS.items():
+    
+    for region_key, region_name_full in REGIONS.items():
         all_content[region_key] = {}
-        for category in CATEGORIES:
-            print(f"Generating content for Region: {region_name}, Category: {category}")
-            # Call the simulated Gemini function
-            content_list = generate_gemini_content(region_key, category, count=random.randint(10, 25)) # Generate varying amounts
-            all_content[region_key][category] = content_list
-            time.sleep(0.5) # Simulate some work/API delay
+        country_code = REGION_TO_COUNTRY_CODE.get(region_key)
 
-    # Define the path to the updates.json file relative to the script
-    # The script will be run from the root of the repository by the GitHub Action
+        for category_key, keywords in CATEGORIES.items():
+            print(f"Processing Region: {region_name_full}, Category: {category_key}")
+            
+            # Prioritize fetching from NewsAPI if key is available and country code is mapped
+            if NEWS_API_KEY and country_code:
+                # Use the first keyword from the list as the main query for NewsAPI
+                query = keywords[0] if keywords else category_key
+                articles = fetch_content_from_newsapi(query, country_code, count=20) # Fetch up to 20 articles
+                if not articles: # Fallback to simulated if API call fails or returns no articles
+                    print(f"NewsAPI returned no articles or failed for {region_key}/{category_key}. Falling back to simulated content.")
+                    articles = generate_simulated_content(region_name_full, category_key, count=20)
+            else:
+                # Fallback to simulated content if API key is missing or region not mapped to a country for NewsAPI
+                print(f"Skipping NewsAPI for {region_key}/{category_key}. Generating simulated content.")
+                articles = generate_simulated_content(region_name_full, category_key, count=20)
+            
+            all_content[region_key][category_key] = articles
+            time.sleep(1) # Be mindful of API rate limits, especially for free tiers
+
     output_file_path = 'updates.json'
-
-    # Write the generated content to updates.json
     try:
         with open(output_file_path, 'w', encoding='utf-8') as f:
             json.dump(all_content, f, indent=2, ensure_ascii=False)
