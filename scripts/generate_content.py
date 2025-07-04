@@ -15,22 +15,26 @@ NEWS_API_KEY = os.getenv('NEWS_API_KEY') # Fetched from GitHub Secrets
 # Mapping regions to NewsAPI country codes (simplified, NewsAPI mostly by country)
 # For broader regions like 'Europe', you might fetch from multiple countries.
 # This mapping is crucial for making targeted API calls.
+# Note: NewsAPI 'country' parameter only accepts specific 2-letter ISO codes.
+# For regions like "global" or broad continents, NewsAPI's 'country' filter
+# is not applicable, so we'll treat them as a global search without a country filter.
 REGIONS = {
-    "global": "the entire world",
-    "north_america": "us", # Focusing on US for simplicity
-    "europe": "gb", # Focusing on UK for Europe example
-    "asia": "in", # Focusing on India for Asia example
-    "africa": "ng", # Focusing on Nigeria for Africa example
-    "oceania": "au", # Focusing on Australia for Oceania example
-    "south_america": "br", # Focusing on Brazil for South America example
-    "middle_east": "ae", # Focusing on UAE for Middle East example
-    "southeast_asia": "sg", # Focusing on Singapore for Southeast Asia example
-    "north_africa": "eg", # Focusing on Egypt for North Africa example
-    "sub_saharan_africa": "za", # Focusing on South Africa for Sub-Saharan Africa example
-    "east_asia": "jp", # Focusing on Japan for East Asia example
-    "south_asia": "pk", # Focusing on Pakistan for South Asia example
-    "australia_nz": "nz" # Focusing on New Zealand for Australia & NZ example
+    "global": {"name": "the entire world", "country_code": None}, # No specific country code for global
+    "north_america": {"name": "North America", "country_code": "us"}, # Focusing on US for simplicity
+    "europe": {"name": "Europe", "country_code": "gb"}, # Focusing on UK for Europe example
+    "asia": {"name": "Asia", "country_code": "in"}, # Focusing on India for Asia example
+    "africa": {"name": "Africa", "country_code": "ng"}, # Focusing on Nigeria for Africa example
+    "oceania": {"name": "Oceania", "country_code": "au"}, # Focusing on Australia for Oceania example
+    "south_america": {"name": "South America", "country_code": "br"}, # Focusing on Brazil for South America example
+    "middle_east": {"name": "Middle East", "country_code": "ae"}, # Focusing on UAE for Middle East example
+    "southeast_asia": {"name": "Southeast Asia", "country_code": "sg"}, # Focusing on Singapore for Southeast Asia example
+    "north_africa": {"name": "North Africa", "country_code": "eg"}, # Focusing on Egypt for North Africa example
+    "sub_saharan_africa": {"name": "Sub-Saharan Africa", "country_code": "za"}, # Focusing on South Africa for Sub-Saharan Africa example
+    "east_asia": {"name": "East Asia", "country_code": "jp"}, # Focusing on Japan for East Asia example
+    "south_asia": {"name": "South Asia", "country_code": "pk"}, # Focusing on Pakistan for South Asia example
+    "australia_nz": {"name": "Australia & NZ", "country_code": "nz"} # Focusing on New Zealand for Australia & NZ example
 }
+
 
 CATEGORIES = {
     "news": ["general", "breaking news"],
@@ -58,7 +62,7 @@ def fetch_content_from_newsapi(query, country_code=None, count=10):
         'pageSize': count, # Number of articles to fetch
         'apiKey': NEWS_API_KEY
     }
-    if country_code:
+    if country_code: # Only add country param if a specific code is provided
         params['country'] = country_code
 
     try:
@@ -77,7 +81,7 @@ def fetch_content_from_newsapi(query, country_code=None, count=10):
                 })
         return articles
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching from NewsAPI for query '{query}', country '{country_code}': {e}")
+        print(f"Error fetching from NewsAPI for query '{query}', country '{country_code if country_code else 'N/A'}': {e}")
         return []
 
 def generate_simulated_content(region_name, category_name, count=15):
@@ -105,15 +109,19 @@ def generate_simulated_content(region_name, category_name, count=15):
 def main():
     all_content = {}
     
-    for region_key, region_name_full in REGIONS.items():
+    for region_key, region_data in REGIONS.items():
+        region_name_full = region_data["name"]
+        country_code = region_data["country_code"] # Get country code from the region data
+        
         all_content[region_key] = {}
-        country_code = REGION_TO_COUNTRY_CODE.get(region_key)
 
         for category_key, keywords in CATEGORIES.items():
             print(f"Processing Region: {region_name_full}, Category: {category_key}")
             
-            # Prioritize fetching from NewsAPI if key is available and country code is mapped
-            if NEWS_API_KEY and country_code:
+            # Prioritize fetching from NewsAPI if key is available and a country code is applicable
+            # Note: NewsAPI 'country' parameter only works for specific 2-letter codes.
+            # For 'global' or general categories, country_code will be None.
+            if NEWS_API_KEY and country_code: 
                 # Use the first keyword from the list as the main query for NewsAPI
                 query = keywords[0] if keywords else category_key
                 articles = fetch_content_from_newsapi(query, country_code, count=20) # Fetch up to 20 articles
@@ -121,8 +129,8 @@ def main():
                     print(f"NewsAPI returned no articles or failed for {region_key}/{category_key}. Falling back to simulated content.")
                     articles = generate_simulated_content(region_name_full, category_key, count=20)
             else:
-                # Fallback to simulated content if API key is missing or region not mapped to a country for NewsAPI
-                print(f"Skipping NewsAPI for {region_key}/{category_key}. Generating simulated content.")
+                # Fallback to simulated content if API key is missing or no specific country code
+                print(f"Skipping NewsAPI for {region_key}/{category_key} (no API key or country code). Generating simulated content.")
                 articles = generate_simulated_content(region_name_full, category_key, count=20)
             
             all_content[region_key][category_key] = articles
