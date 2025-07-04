@@ -49,7 +49,7 @@ CATEGORIES = {
 
 # --- Functions ---
 
-def fetch_content_from_newsapi(query, country_code=None, count=10):
+def fetch_content_from_newsapi(query, country_code=None, count=10): # Reduced default count to 10
     """
     Fetches real news articles from NewsAPI.org.
     """
@@ -60,7 +60,7 @@ def fetch_content_from_newsapi(query, country_code=None, count=10):
     params = {
         'q': query,
         'language': 'en',
-        'pageSize': count,
+        'pageSize': count, # Number of articles to fetch per request
         'apiKey': NEWS_API_KEY
     }
     if country_code:
@@ -124,16 +124,18 @@ def main():
             # For 'global' or general categories, country_code will be None.
             if NEWS_API_KEY and country_code: 
                 query = keywords[0] if keywords else category_key
-                articles = fetch_content_from_newsapi(query, country_code, count=20)
+                articles = fetch_content_from_newsapi(query, country_code, count=10) # Requesting fewer articles
                 if not articles:
                     print(f"NewsAPI returned no articles or failed for {region_key}/{category_key}. Falling back to simulated content.")
-                    articles = generate_simulated_content(region_name_full, category_key, count=20)
+                    articles = generate_simulated_content(region_name_full, category_key, count=15) # Generate slightly more simulated if API fails
             else:
-                print(f"Skipping NewsAPI for {region_key}/{category_key} (no API key or country code for NewsAPI). Generating simulated content.")
-                articles = generate_simulated_content(region_name_full, category_key, count=20)
+                # For 'global' region, country_code is None, so it will always generate simulated content.
+                # This is expected behavior for regions not directly supported by NewsAPI's country filter.
+                print(f"Skipping NewsAPI for {region_key}/{category_key} (no specific country code for NewsAPI or API key not loaded). Generating simulated content.")
+                articles = generate_simulated_content(region_name_full, category_key, count=15)
             
             all_content[region_key][category_key] = articles
-            time.sleep(1)
+            time.sleep(5) # Increased sleep time to 5 seconds (from 1 second)
 
     output_file_path = 'updates.json'
     try:
