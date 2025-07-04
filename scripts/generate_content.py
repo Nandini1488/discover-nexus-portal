@@ -15,8 +15,8 @@ NEWS_API_KEY = os.getenv('NEWS_API_KEY') # Fetched from GitHub Secrets
 # Mapping regions to NewsAPI country codes (simplified, NewsAPI mostly by country)
 # For broader regions like 'Europe', you might fetch from multiple countries.
 # This mapping is crucial for making targeted API calls.
-REGION_TO_COUNTRY_CODE = {
-    "global": None, # NewsAPI doesn't have a 'global' filter, you'd fetch broadly or by multiple countries
+REGIONS = {
+    "global": "the entire world",
     "north_america": "us", # Focusing on US for simplicity
     "europe": "gb", # Focusing on UK for Europe example
     "asia": "in", # Focusing on India for Asia example
