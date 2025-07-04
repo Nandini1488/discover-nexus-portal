@@ -6,6 +6,10 @@ on:
       - main # Trigger on pushes to the main branch
   workflow_dispatch: # Allows manual triggering from GitHub Actions tab
 
+# Add permissions for the GITHUB_TOKEN to write to the repository
+permissions:
+  contents: write # This grants write access to the repository contents
+
 jobs:
   generate_and_deploy:
     runs-on: ubuntu-latest
