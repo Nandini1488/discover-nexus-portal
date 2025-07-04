@@ -1,140 +1,1615 @@
-import json
-import os
-import random
-import time
-import requests # Added for making HTTP requests to external APIs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Nexus - Your Personalized Content Hub</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        html.dark {
+            /* Tailwind's dark mode class */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Very light background */
+            color: #1a202c;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+        }
+        /* Dark mode styles */
+        body.dark {
+            background-color: #1a202c; /* Dark background */
+            color: #e2e8f0; /* Light text */
+        }
 
-# --- Configuration ---
-# You'll need to sign up for a NewsAPI.org key: https://newsapi.org/
-# The free developer tier allows up to 100 requests per day.
-# Store this key as a GitHub Secret named NEWS_API_KEY
-NEWS_API_BASE_URL = "https://newsapi.org/v2/everything" # Or /v2/top-headlines for simpler fetching
-NEWS_API_KEY = os.getenv('NEWS_API_KEY') # Fetched from GitHub Secrets
+        .container {
+            width: 100%;
+            max-width: 1200px; /* Wider for more content */
+            margin: 2.5rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* Large rounded corners */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); /* Prominent shadow */
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .container.dark {
+            background-color: #2d3748; /* Darker background */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
 
-# Define the regions and categories that match your index.html
-# Mapping regions to NewsAPI country codes (simplified, NewsAPI mostly by country)
-# For broader regions like 'Europe', you might fetch from multiple countries.
-# This mapping is crucial for making targeted API calls.
-REGION_TO_COUNTRY_CODE = {
-    "global": None, # NewsAPI doesn't have a 'global' filter, you'd fetch broadly or by multiple countries
-    "north_america": "us", # Focusing on US for simplicity
-    "europe": "gb", # Focusing on UK for Europe example
-    "asia": "in", # Focusing on India for Asia example
-    "africa": "ng", # Focusing on Nigeria for Africa example
-    "oceania": "au", # Focusing on Australia for Oceania example
-    "south_america": "br", # Focusing on Brazil for South America example
-    "middle_east": "ae", # Focusing on UAE for Middle East example
-    "southeast_asia": "sg", # Focusing on Singapore for Southeast Asia example
-    "north_africa": "eg", # Focusing on Egypt for North Africa example
-    "sub_saharan_africa": "za", # Focusing on South Africa for Sub-Saharan Africa example
-    "east_asia": "jp", # Focusing on Japan for East Asia example
-    "south_asia": "pk", # Focusing on Pakistan for South Asia example
-    "australia_nz": "nz" # Focusing on New Zealand for Australia & NZ example
-}
+        .header {
+            text-align: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            transition: border-color 0.3s ease;
+        }
+        .header.dark {
+            border-bottom-color: #4a5568;
+        }
+        .header h1 {
+            font-size: 3.8rem; /* Very large heading */
+            font-weight: 800; /* Extra bold */
+            margin-bottom: 0.8rem;
+            background: linear-gradient(90deg, #6366f1, #3b82f6); /* Purple-blue gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.05em; /* Tighter spacing */
+        }
+        .header p {
+            font-size: 1.25rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0.5rem auto;
+        }
+        .header.dark p {
+            color: #a0aec0; /* Lighter text for dark mode */
+        }
 
-CATEGORIES = {
-    "news": ["general", "breaking news"],
-    "technology": ["technology", "AI", "cybersecurity", "gadgets"],
-    "finance": ["business", "finance", "markets", "economy"],
-    "travel": ["travel", "tourism", "adventure"],
-    "world": ["politics", "international relations", "global affairs"],
-    "weather": ["weather", "climate change", "natural disasters"], # NewsAPI isn't ideal for weather forecasts, more for weather-related *news*
-    "blogs": ["opinion", "analysis", "lifestyle"]
-}
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .region-select-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .region-select {
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.75rem; /* Rounded select */
+            border: 2px solid #cbd5e1;
+            background-color: #f8fafc;
+            font-weight: 500;
+            color: #475569;
+            appearance: none; /* Remove default arrow */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+            padding-right: 2.5rem; /* Space for custom arrow */
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .region-select.dark {
+            background-color: #4a5568;
+            color: #e2e8f0;
+            border-color: #64748b;
+        }
+        .region-select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+        .region-select-wrapper::after {
+            content: '▼'; /* Custom dropdown arrow */
+            font-size: 0.75rem;
+            color: #64748b;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .region-select-wrapper.dark::after {
+            color: #cbd5e1;
+        }
 
-# --- Functions ---
+        /* Theme Toggle */
+        .theme-toggle-button {
+            background-color: #f0f4f8;
+            color: #475569;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.75rem;
+            border: 2px solid #cbd5e1;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .theme-toggle-button:hover {
+            background-color: #e2e8f0;
+        }
+        .theme-toggle-button.dark {
+            background-color: #4a5568;
+            color: #e2e8f0;
+            border-color: #64748b;
+        }
+        .theme-toggle-button.dark:hover {
+            background-color: #64748b;
+        }
 
-def fetch_content_from_newsapi(query, country_code=None, count=10):
-    """
-    Fetches real news articles from NewsAPI.org.
-    """
-    if not NEWS_API_KEY:
-        print("NEWS_API_KEY is not set. Cannot fetch real news.")
-        return []
 
-    params = {
-        'q': query,
-        'language': 'en',
-        'pageSize': count, # Number of articles to fetch
-        'apiKey': NEWS_API_KEY
-    }
-    if country_code:
-        params['country'] = country_code
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+            background-color: #f0f4f8; /* Light background for tabs */
+            border-radius: 1rem;
+            padding: 0.5rem;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .nav-tabs.dark {
+            background-color: #2d3748;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .nav-tab-item {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: #64748b;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+            position: relative;
+            flex-grow: 1; /* Distribute tabs evenly */
+            text-align: center;
+            white-space: nowrap; /* Prevent wrapping */
+        }
+        .nav-tab-item.dark {
+            color: #a0aec0;
+        }
+        .nav-tab-item:hover {
+            color: #3b82f6;
+            background-color: #e0e7ff; /* Light blue hover */
+        }
+        .nav-tab-item.dark:hover {
+            background-color: #3f4a5a; /* Darker hover for dark mode */
+            color: #a0aec0;
+        }
+        .nav-tab-item.active {
+            background-color: #3b82f6; /* Active tab background */
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px); /* Slight lift */
+        }
+        .nav-tab-item.active.dark {
+            background-color: #3b82f6; /* Keep blue for active */
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.5);
+        }
+        .nav-tab-item.active:hover {
+             color: white; /* Keep white on hover for active tab */
+             background-color: #3b82f6; /* Maintain active color */
+        }
 
-    try:
-        response = requests.get(NEWS_API_BASE_URL, params=params, timeout=10)
-        response.raise_for_status() # Raise an HTTPError for bad responses (4xx or 5xx)
-        data = response.json()
-        
-        articles = []
-        for article in data.get('articles', []):
-            if article.get('title') and article.get('description') and article.get('url'):
-                articles.append({
-                    "title": article['title'],
-                    "content": article['description'],
-                    "link": article['url'],
-                    "imageUrl": article.get('urlToImage', 'https://placehold.co/600x400/CCCCCC/333333?text=Image+Unavailable')
-                })
-        return articles
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching from NewsAPI for query '{query}', country '{country_code}': {e}")
-        return []
+        .content-section {
+            padding-top: 0.5rem;
+        }
+        .content-area {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.5s ease-out; /* Fade in animation */
+        }
+        .content-area.active {
+            display: block;
+        }
+        .section-header {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .section-header.dark {
+            color: #e2e8f0;
+            border-bottom-color: #4a5568;
+        }
+        .update-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 1.5rem; /* Space between cards */
+        }
+        .update-item {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease, border-color 0.3s ease;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden; /* Ensure content doesn't break rounded corners */
+        }
+        .update-item.dark {
+            background-color: #4a5568;
+            border-color: #64748b;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .update-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .update-item.dark:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        .update-item h3 {
+            font-size: 1.4rem; /* Larger title */
+            font-weight: 600;
+            color: #1e3a8a; /* Darker blue for titles */
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            transition: color 0.3s ease;
+        }
+        .update-item.dark h3 {
+            color: #90cdf4; /* Lighter blue for dark mode titles */
+        }
+        .update-item p {
+            font-size: 0.98rem;
+            color: #475569;
+            margin-bottom: 1rem;
+            flex-grow: 1; /* Allows paragraph to take up available space */
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; /* Limit content to 4 lines */
+            -webkit-box-orient: vertical;
+            transition: color 0.3s ease;
+        }
+        .update-item.dark p {
+            color: #cbd5e1;
+        }
+        .update-item a {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background-color: #3b82f6; /* Bright blue button */
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+            text-align: center;
+            align-self: flex-start; /* Align link to start of flex item */
+        }
+        .update-item a:hover {
+            background-color: #2563eb;
+            transform: translateY(-1px);
+        }
+        .update-item img {
+            width: 100%;
+            height: 180px; /* Fixed height for consistency */
+            object-fit: cover; /* Cover the area, cropping if necessary */
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: transform 0.2s ease;
+        }
+        .update-item img:hover {
+            transform: scale(1.02); /* Slight zoom on hover */
+        }
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .footer.dark {
+            color: #a0aec0;
+            border-top-color: #4a5568;
+        }
+        /* Message box styling (remains similar, just ensures it looks good in both themes) */
+        .message-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            transform: translateY(-20px);
+        }
+        .message-box.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .message-box.error {
+            background-color: #ef4444;
+        }
+        .message-box.info {
+            background-color: #3b82f6;
+        }
 
-def generate_simulated_content(region_name, category_name, count=15):
-    """
-    Generates simulated content as a fallback or for categories not covered by NewsAPI.
-    """
-    articles = []
-    for i in range(count):
-        hex_color_bg = ''.join([random.choice('0123456789ABCDEF') for _ in range(6)])
-        hex_color_text = ''.join([random.choice('0123456789ABCDEF') for _ in range(6)])
+        /* Ad Placeholder Styling */
+        .ad-banner {
+            background-color: #f0f4f8;
+            border: 1px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin: 1rem auto;
+            max-width: 728px; /* Standard leaderboard ad size width */
+            height: 90px; /* Standard leaderboard ad size height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Important for ads */
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+        .ad-banner.dark {
+            background-color: #4a5568;
+            border-color: #a0aec0;
+            color: #e2e8f0;
+        }
+        .ad-banner-placeholder {
+            font-weight: 600;
+        }
 
-        title = f"{category_name.replace('_', ' ').title()} Update {i + 1} for {region_name}"
-        content = f"This is a simulated summary of {category_name.replace('_', ' ')} related to {region_name}, article number {i + 1}. It highlights key developments and insights."
-        link = f"https://example.com/{region_name.lower().replace(' ', '-')}/{category_name.lower().replace(' ', '-')}/{i + 1}"
-        image_url = f"https://placehold.co/600x400/{hex_color_bg}/{hex_color_text}?text={category_name.title()}+{i+1}"
+        /* Loading Spinner */
+        .loading-spinner {
+            display: none; /* Hidden by default */
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #3b82f6; /* Blue */
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto; /* Center it */
+        }
+        .loading-spinner.show {
+            display: block;
+        }
+        .loading-spinner.dark {
+            border-top: 4px solid #90cdf4; /* Lighter blue for dark mode */
+        }
 
-        articles.append({
-            "title": title,
-            "content": content,
-            "link": link,
-            "imageUrl": image_url
-        })
-    return articles
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-def main():
-    all_content = {}
-    
-    for region_key, region_name_full in REGIONS.items():
-        all_content[region_key] = {}
-        country_code = REGION_TO_COUNTRY_CODE.get(region_key)
+        /* No More Content message */
+        .no-more-content {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 1rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            display: none; /* Hidden by default */
+        }
+        .no-more-content.show {
+            display: block;
+        }
+        .no-more-content.dark {
+            color: #a0aec0;
+        }
 
-        for category_key, keywords in CATEGORIES.items():
-            print(f"Processing Region: {region_name_full}, Category: {category_key}")
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem auto;
+                padding: 1rem;
+                border-radius: 1rem;
+            }
+            .header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+            .header p {
+                font-size: 1rem;
+            }
+            .nav-tab-item {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.85rem;
+                border-radius: 0.5rem;
+            }
+            .nav-tabs {
+                padding: 0.3rem;
+                border-radius: 0.8rem;
+            }
+            .section-header {
+                font-size: 1.8rem;
+            }
+            .update-grid {
+                grid-template-columns: 1fr; /* Single column on small screens */
+            }
+            .region-select {
+                width: 100%; /* Full width on small screens */
+            }
+            .controls {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .ad-banner {
+                width: 100%;
+                max-width: 320px; /* Mobile leaderboard ad size */
+                height: 50px;
+                margin: 0.5rem auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainContainer">
+        <header class="header" id="mainHeader">
+            <h1>Discover Nexus</h1>
+            <p>Your centralized hub for personalized news, insights, and global updates powered by AI.</p>
+            <div class="controls">
+                <div class="region-select-wrapper">
+                    <select id="regionSelect" class="region-select">
+                        <option value="global">Global</option>
+                        <option value="north_america">North America</option>
+                        <option value="europe">Europe</option>
+                        <option value="asia">Asia</option>
+                        <option value="africa">Africa</option>
+                        <option value="oceania">Oceania</option>
+                        <option value="south_america">South America</option>
+                        <option value="middle_east">Middle East</option>
+                        <option value="southeast_asia">Southeast Asia</option>
+                        <option value="north_africa">North Africa</option>
+                        <option value="sub_saharan_africa">Sub-Saharan Africa</option>
+                        <option value="east_asia">East Asia</option>
+                        <option value="south_asia">South Asia</option>
+                        <option value="australia_nz">Australia & NZ</option>
+                        <!-- Add more regions as needed, ensuring your GitHub Action generates content for them -->
+                    </select>
+                </div>
+                <button id="themeToggleButton" class="theme-toggle-button">Toggle Dark Mode</button>
+            </div>
+            <!-- Ad Space in Header -->
+            <div class="ad-banner" id="headerAd">
+                <span class="ad-banner-placeholder">Advertisement: Header Banner (728x90)</span>
+            </div>
+        </header>
+
+        <nav class="nav-tabs" id="navTabs">
+            <div class="nav-tab-item active" data-category="news">News</div>
+            <div class="nav-tab-item" data-category="technology">Technology</div>
+            <div class="nav-tab-item" data-category="finance">Finance</div>
+            <div class="nav-tab-item" data-category="travel">Travel</div>
+            <div class="nav-tab-item" data-category="world">World</div>
+            <div class="nav-tab-item" data-category="weather">Weather</div>
+            <div class="nav-tab-item" data-category="blogs">Blogs</div>
+        </nav>
+
+        <section class="content-section">
+            <!-- News Section -->
+            <div id="newsContent" class="content-area active" data-category-content="news">
+                <h2 class="section-header" id="newsHeader">
+                    Global News & Current Events
+                    <span id="newsLastUpdated" class="text-base font-normal text-gray-500"></span>
+                </h2>
+                <div id="newsUpdates" class="update-grid">
+                    <!-- News updates will be loaded here -->
+                </div>
+                 <div class="loading-spinner" id="newsSpinner"></div>
+                 <div class="no-more-content" id="newsNoMore">No more news updates.</div>
+            </div>
+
+            <!-- Technology Section -->
+            <div id="technologyContent" class="content-area" data-category-content="technology">
+                <h2 class="section-header" id="technologyHeader">
+                    Tech Innovations & Gadgets
+                    <span id="technologyLastUpdated" class="text-base font-normal text-gray-500"></span>
+                </h2>
+                <div id="technologyUpdates" class="update-grid">
+                    <!-- Technology updates will be loaded here -->
+                </div>
+                <div class="loading-spinner" id="technologySpinner"></div>
+                <div class="no-more-content" id="technologyNoMore">No more technology updates.</div>
+            </div>
+
+            <!-- Finance Section -->
+            <div id="financeContent" class="content-area" data-category-content="finance">
+                <h2 class="section-header" id="financeHeader">
+                    Market & Financial Insights
+                    <span id="financeLastUpdated" class="text-base font-normal text-gray-500"></span>
+                </h2>
+                <div id="financeUpdates" class="update-grid">
+                    <!-- Finance updates will be loaded here -->
+                </div>
+                <div class="loading-spinner" id="financeSpinner"></div>
+                <div class="no-more-content" id="financeNoMore">No more finance updates.</div>
+            </div>
+
+            <!-- Travel Section -->
+            <div id="travelContent" class="content-area" data-category-content="travel">
+                <h2 class="section-header" id="travelHeader">
+                    Destination Guides & Travel Tips
+                    <span id="travelLastUpdated" class="text-base font-normal text-gray-500"></span>
+                </h2>
+                <div id="travelUpdates" class="update-grid">
+                    <!-- Travel updates will be loaded here -->
+                </div>
+                <div class="loading-spinner" id="travelSpinner"></div>
+                <div class="no-more-content" id="travelNoMore">No more travel updates.</div>
+            </div>
+
+            <!-- World Section -->
+            <div id="worldContent" class="content-area" data-category-content="world">
+                <h2 class="section-header" id="worldHeader">
+                    International Affairs & Geopolitics
+                    <span id="worldLastUpdated" class="text-base font-normal text-gray-500"></span>
+                </h2>
+                <div id="worldUpdates" class="update-grid">
+                    <!-- World updates will be loaded here -->
+                </div>
+                <div class="loading-spinner" id="worldSpinner"></div>
+                <div class="no-more-content" id="worldNoMore">No more world updates.</div>
+            </div>
+
+            <!-- Weather Section -->
+            <div id="weatherContent" class="content-area" data-category-content="weather">
+                <h2 class="section-header" id="weatherHeader">
+                    Global Weather Forecasts
+                    <span id="weatherLastUpdated" class="text-base font-normal text-gray-500"></span>
+                </h2>
+                <div id="weatherUpdates" class="update-grid">
+                    <!-- Weather updates will be loaded here -->
+                </div>
+                <div class="loading-spinner" id="weatherSpinner"></div>
+                <div class="no-more-content" id="weatherNoMore">No more weather updates.</div>
+            </div>
+
+            <!-- Blogs Section -->
+            <div id="blogsContent" class="content-area" data-category-content="blogs">
+                <h2 class="section-header" id="blogsHeader">
+                    Featured Blogs & Articles
+                    <span id="blogsLastUpdated" class="text-base font-normal text-gray-500"></span>
+                </h2>
+                <div id="blogsUpdates" class="update-grid">
+                    <!-- Blogs updates will be loaded here -->
+                </div>
+                <div class="loading-spinner" id="blogsSpinner"></div>
+                <div class="no-more-content" id="blogsNoMore">No more blog updates.</div>
+            </div>
+
+            <!-- Optional Ad Space in Footer/Before Footer -->
+            <div class="ad-banner" id="footerAd">
+                <span class="ad-banner-placeholder">Advertisement: Footer Banner (728x90)</span>
+            </div>
+
+        </section>
+
+        <footer class="footer" id="mainFooter">
+            <p>&copy; 2025 Discover Nexus. Powered by Gemini AI.</p>
+        </footer>
+    </div>
+
+    <!-- Message box for notifications -->
+    <div id="messageBox" class="message-box"></div>
+
+    <script>
+        // Function to show a message in the custom message box
+        function showMessage(message, type = 'success') {
+            const msgBox = document.getElementById('messageBox');
+            msgBox.textContent = message;
+            // Remove previous type classes and add the new one
+            msgBox.classList.remove('success', 'error', 'info');
+            msgBox.classList.add(type);
+            msgBox.classList.add('show');
+            setTimeout(() => {
+                msgBox.classList.remove('show');
+            }, 3000); // Hide after 3 seconds
+        }
+
+        // Global variables
+        let allContentData = {};
+        let activeCategory = 'news'; // Default active category
+        let activeRegion = 'global'; // Default active region
+        const ITEMS_PER_LOAD = 6; // Number of items to load initially and on scroll
+        let loadedItemCounts = {}; // Keeps track of how many items are loaded per region/category
+        let isLoadingMore = false; // Flag to prevent multiple load calls
+
+        // Function to render content for a specific category and region
+        // `append` flag: true to add new items, false to clear and re-render from start
+        function renderContent(region, category, append = false) {
+            const updatesContainer = document.getElementById(`${category}Updates`);
+            const lastUpdatedSpan = document.getElementById(`${category}LastUpdated`);
+            const loadingSpinner = document.getElementById(`${category}Spinner`);
+            const noMoreContentMessage = document.getElementById(`${category}NoMore`);
+
+            // Initialize loadedItemCounts if not present
+            if (!loadedItemCounts[region]) {
+                loadedItemCounts[region] = {};
+            }
+            if (!loadedItemCounts[region][category] || !append) {
+                loadedItemCounts[region][category] = 0; // Start from 0 if not appending or first load
+            }
+
+            const data = allContentData[region] && allContentData[region][category] ? allContentData[region][category] : [];
+            const startIndex = append ? loadedItemCounts[region][category] : 0;
+            const endIndex = startIndex + ITEMS_PER_LOAD;
+            const itemsToRender = data.slice(startIndex, endIndex);
+
+            if (!append) { // Clear only if not appending
+                updatesContainer.innerHTML = '';
+                noMoreContentMessage.classList.remove('show'); // Hide "No more content" message
+            }
+
+            if (data.length === 0) {
+                updatesContainer.innerHTML = `<p class="text-center text-gray-500 py-8">No updates available for ${category} in ${region.replace('_', ' ')}.</p>`;
+                noMoreContentMessage.classList.add('show');
+            } else if (itemsToRender.length === 0 && data.length > 0) {
+                // All content loaded
+                noMoreContentMessage.classList.add('show');
+            } else {
+                itemsToRender.forEach(item => {
+                    const updateItem = document.createElement('div');
+                    updateItem.className = 'update-item';
+
+                    let imageHtml = '';
+                    if (item.imageUrl && item.imageUrl.trim() !== '') {
+                        imageHtml = `<img src="${item.imageUrl}" alt="${item.title}" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Unavailable';" />`;
+                    }
+
+                    updateItem.innerHTML = `
+                        ${imageHtml}
+                        <h3>${item.title}</h3>
+                        <p>${item.content}</p>
+                        <a href="${item.link}" target="_blank" rel="noopener noreferrer">Read More</a>
+                    `;
+                    updatesContainer.appendChild(updateItem);
+                });
+
+                loadedItemCounts[region][category] += itemsToRender.length; // Update count of loaded items
+
+                // If fewer items were rendered than ITEMS_PER_LOAD, it means we've reached the end
+                if (itemsToRender.length < ITEMS_PER_LOAD && data.length > 0) {
+                    noMoreContentMessage.classList.add('show');
+                } else if (loadedItemCounts[region][category] >= data.length && data.length > 0) {
+                    // All items have been loaded if current count is >= total available
+                    noMoreContentMessage.classList.add('show');
+                }
+            }
+
+            if (!append) { // Update last updated time only on initial render, not on scroll
+                lastUpdatedSpan.textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+            }
+
+            loadingSpinner.classList.remove('show');
+            isLoadingMore = false;
+            applyTheme(document.documentElement.classList.contains('dark')); // Re-apply dark mode to new elements
+        }
+
+        // Function to fetch all content data (runs only once or on full refresh)
+        async function fetchAllUpdates() {
+            showMessage('Fetching latest updates...', 'info');
+            // IMPORTANT: When you deploy this portal to GitHub Pages, you MUST
+            // replace the simulated fetch below with an actual fetch
+            // from your live updates.json file generated by GitHub Actions.
+            // Example:
+            // const GITHUB_PAGES_DATA_URL = 'https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME/main/updates.json';
+            // try {
+            //     const response = await fetch(GITHUB_PAGES_DATA_URL);
+            //     // ... rest of your fetch logic ...
+            // } catch (error) {
+            //     // ... error handling ...
+            // }
+
+            // --- SIMULATED DATA FETCH FOR CANVAS ENVIRONMENT ---
+            // This block provides mock data so the app runs in the Canvas environment.
+            // REMOVE THIS ENTIRE PROMISE BLOCK when deploying to GitHub Pages
+            // and uncomment the actual fetch above.
+            try {
+                const response = await new Promise(resolve => setTimeout(() => {
+                    resolve({
+                        ok: true,
+                        json: () => Promise.resolve({
+                            "global": {
+                                "news": Array.from({ length: 20 }, (_, i) => ({
+                                    "title": `Global News Headline ${i + 1}`,
+                                    "content": `A summary of global news event number ${i + 1}. This content aims to be engaging and concise.`,
+                                    "link": `https://example.com/global/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E0E7FF/3B82F6?text=Global+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 18 }, (_, i) => ({
+                                    "title": `Tech Innovation ${i + 1} Unveiled Globally`,
+                                    "content": `Breaking news on technological advancements and their worldwide impact.`,
+                                    "link": `https://example.com/global/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/C7D2FE/4F46E5?text=Global+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 22 }, (_, i) => ({
+                                    "title": `Market Update ${i + 1}: Global Economy`,
+                                    "content": `Insights into the world's financial markets and economic trends.`,
+                                    "link": `https://example.com/global/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E9D5FF/7C3AED?text=Global+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 15 }, (_, i) => ({
+                                    "title": `Explore World Destinations ${i + 1}`,
+                                    "content": `Your guide to the most captivating travel experiences around the globe.`,
+                                    "link": `https://example.com/global/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FFEDD5/D97706?text=Global+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 25 }, (_, i) => ({
+                                    "title": `World Affairs Brief ${i + 1}`,
+                                    "content": `Key geopolitical developments and international relations summaries.`,
+                                    "link": `https://example.com/global/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DBEAFE/2563EB?text=Global+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 10 }, (_, i) => ({
+                                    "title": `Global Weather Outlook ${i + 1}`,
+                                    "content": `Comprehensive weather forecasts and climate highlights from across the planet.`,
+                                    "link": `https://example.com/global/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEE2E2/EF4444?text=Global+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 17 }, (_, i) => ({
+                                    "title": `Featured Blog Post ${i + 1}: Global Perspective`,
+                                    "content": `Engaging articles and thought leadership on diverse topics.`,
+                                    "link": `https://example.com/global/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/D1FAE5/065F46?text=Global+Blog+${i+1}`
+                                }))
+                            },
+                            "north_america": {
+                                "news": Array.from({ length: 18 }, (_, i) => ({
+                                    "title": `North America News Digest ${i + 1}`,
+                                    "content": `Latest political, social, and economic headlines from the region.`,
+                                    "link": `https://example.com/na/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/CFFAD7/22C55E?text=NA+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 16 }, (_, i) => ({
+                                    "title": `Tech Scene Update: NA ${i + 1}`,
+                                    "content": `Innovations and startup news from Silicon Valley to Toronto.`,
+                                    "link": `https://example.com/na/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/D9F99D/4D7C0F?text=NA+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 20 }, (_, i) => ({
+                                    "title": `NA Market Report ${i + 1}`,
+                                    "content": `Analysis of US, Canadian, and Mexican financial markets.`,
+                                    "link": `https://example.com/na/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FFF8DC/FBAB18?text=NA+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 14 }, (_, i) => ({
+                                    "title": `Travel North America ${i + 1}`,
+                                    "content": `Discover national parks, vibrant cities, and hidden gems across the continent.`,
+                                    "link": `https://example.com/na/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E5E7EB/6B7280?text=NA+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 19 }, (_, i) => ({
+                                    "title": `NA Perspective on World Affairs ${i + 1}`,
+                                    "content": `How global events are viewed and impact North America.`,
+                                    "link": `https://example.com/na/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/D7EEFF/1C5C8C?text=NA+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 9 }, (_, i) => ({
+                                    "title": `Weather in North America ${i + 1}`,
+                                    "content": `Current forecasts and climate phenomena affecting the region.`,
+                                    "link": `https://example.com/na/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEF2F2/DC2626?text=NA+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 15 }, (_, i) => ({
+                                    "title": `NA Blog Insights ${i + 1}`,
+                                    "content": `Curated articles on local culture, lifestyle, and trends.`,
+                                    "link": `https://example.com/na/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/EDE9FE/7C3AED?text=NA+Blog+${i+1}`
+                                }))
+                            },
+                             "europe": {
+                                "news": Array.from({ length: 20 }, (_, i) => ({
+                                    "title": `European News Roundup ${i + 1}`,
+                                    "content": `Political, social, and economic highlights from across the continent.`,
+                                    "link": `https://example.com/europe/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/EFF6FF/2563EB?text=Europe+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 17 }, (_, i) => ({
+                                    "title": `European Tech Innovations ${i + 1}`,
+                                    "content": `Updates on startups, research, and digital policies in Europe.`,
+                                    "link": `https://example.com/europe/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/D1FAE5/065F46?text=Europe+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 23 }, (_, i) => ({
+                                    "title": `Eurozone Market Analysis ${i + 1}`,
+                                    "content": `Deep dive into European stock markets, inflation, and ECB policies.`,
+                                    "link": `https://example.com/europe/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FFEDD5/D97706?text=Europe+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 16 }, (_, i) => ({
+                                    "title": `European Travel Guide ${i + 1}`,
+                                    "content": `Discover charming cities, historical sites, and breathtaking landscapes.`,
+                                    "link": `https://example.com/europe/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEF9F0/D4A017?text=Europe+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 24 }, (_, i) => ({
+                                    "title": `Europe's Role in Global Affairs ${i + 1}`,
+                                    "content": `Examining Europe's diplomatic efforts and international contributions.`,
+                                    "link": `https://example.com/europe/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/EBF8FF/60A5FA?text=Europe+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 11 }, (_, i) => ({
+                                    "title": `European Weather Patterns ${i + 1}`,
+                                    "content": `Seasonal forecasts and climate impacts across various European regions.`,
+                                    "link": `https://example.com/europe/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEE2E2/DC2626?text=Europe+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 18 }, (_, i) => ({
+                                    "title": `European Lifestyle Blog ${i + 1}`,
+                                    "content": `Articles on culture, food, and daily life from different European countries.`,
+                                    "link": `https://example.com/europe/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DCFCE7/10B981?text=Europe+Blog+${i+1}`
+                                }))
+                            },
+                             "asia": {
+                                "news": Array.from({ length: 25 }, (_, i) => ({
+                                    "title": `Asia Daily News ${i + 1}`,
+                                    "content": `Comprehensive coverage of political, social, and economic events in Asia.`,
+                                    "link": `https://example.com/asia/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/D1FAE5/065F46?text=Asia+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 22 }, (_, i) => ({
+                                    "title": `Asian Tech Breakthroughs ${i + 1}`,
+                                    "content": `From semiconductors to AI, the latest tech innovations from Asia.`,
+                                    "link": `https://example.com/asia/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/D9F99D/4D7C0F?text=Asia+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 27 }, (_, i) => ({
+                                    "title": `Asian Market Pulse ${i + 1}`,
+                                    "content": `Analysis of stock markets, trade, and investment trends across Asia.`,
+                                    "link": `https://example.com/asia/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEF9F0/D4A017?text=Asia+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 20 }, (_, i) => ({
+                                    "title": `Discover Asia Travel ${i + 1}`,
+                                    "content": `Exotic destinations, ancient cultures, and modern marvels of Asia.`,
+                                    "link": `https://example.com/asia/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/F0F9FF/0284C7?text=Asia+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 28 }, (_, i) => ({
+                                    "title": `Asia's Global Impact ${i + 1}`,
+                                    "content": `Asia's increasing influence on world affairs and international cooperation.`,
+                                    "link": `https://example.com/asia/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/C7D2FE/4F46E5?text=Asia+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 12 }, (_, i) => ({
+                                    "title": `Asian Weather Report ${i + 1}`,
+                                    "content": `Monsoon season updates, typhoon alerts, and climate analysis for Asia.`,
+                                    "link": `https://example.com/asia/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E9D5FF/7C3AED?text=Asia+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 20 }, (_, i) => ({
+                                    "title": `Asian Perspective Blog ${i + 1}`,
+                                    "content": `Insights into culture, food, and emerging trends from across Asia.`,
+                                    "link": `https://example.com/asia/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FFEDD5/D97706?text=Asia+Blog+${i+1}`
+                                }))
+                            },
+                             "africa": {
+                                "news": Array.from({ length: 18 }, (_, i) => ({
+                                    "title": `Africa News Update ${i + 1}`,
+                                    "content": `Political developments, social issues, and economic news from the African continent.`,
+                                    "link": `https://example.com/africa/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DBEAFE/2563EB?text=Africa+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 15 }, (_, i) => ({
+                                    "title": `African Tech Innovations ${i + 1}`,
+                                    "content": `Mobile tech, fintech, and renewable energy advancements across Africa.`,
+                                    "link": `https://example.com/africa/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEF2F2/DC2626?text=Africa+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 19 }, (_, i) => ({
+                                    "title": `African Market Insights ${i + 1}`,
+                                    "content": `Investment opportunities and economic growth drivers in Africa.`,
+                                    "link": `https://example.com/africa/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/D1FAE5/065F46?text=Africa+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 12 }, (_, i) => ({
+                                    "title": `African Safari & Adventure ${i + 1}`,
+                                    "content": `Explore wildlife, natural wonders, and vibrant cultures of Africa.`,
+                                    "link": `https://example.com/africa/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/F0F9FF/0284C7?text=Africa+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 20 }, (_, i) => ({
+                                    "title": `Africa in Global Affairs ${i + 1}`,
+                                    "content": `Africa's growing role in international diplomacy and development.`,
+                                    "link": `https://example.com/africa/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/C7D2FE/4F46E5?text=Africa+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 8 }, (_, i) => ({
+                                    "title": `African Weather Forecast ${i + 1}`,
+                                    "content": `Drought conditions, rainfall patterns, and climate change impacts in Africa.`,
+                                    "link": `https://example.com/africa/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E9D5FF/7C3AED?text=Africa+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 14 }, (_, i) => ({
+                                    "title": `African Voices Blog ${i + 1}`,
+                                    "content": `Perspectives on culture, lifestyle, and emerging trends from Africa.`,
+                                    "link": `https://example.com/africa/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FFEDD5/D97706?text=Africa+Blog+${i+1}`
+                                }))
+                            },
+                             "oceania": {
+                                "news": Array.from({ length: 16 }, (_, i) => ({
+                                    "title": `Oceania News Highlights ${i + 1}`,
+                                    "content": `Latest from Australia, New Zealand, and the Pacific Island nations.`,
+                                    "link": `https://example.com/oceania/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DBEAFE/2563EB?text=Oceania+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 14 }, (_, i) => ({
+                                    "title": `Oceania Tech Innovations ${i + 1}`,
+                                    "content": `Sustainable tech and marine innovation from down under.`,
+                                    "link": `https://example.com/oceania/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEF2F2/DC2626?text=Oceania+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 17 }, (_, i) => ({
+                                    "title": `Oceania Market Watch ${i + 1}`,
+                                    "content": `Economic performance and investment climate in Australia, NZ, and Pacific.`,
+                                    "link": `https://example.com/oceania/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/D1FAE5/065F46?text=Oceania+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 10 }, (_, i) => ({
+                                    "title": `Discover Oceania Travel ${i + 1}`,
+                                    "content": `From pristine beaches to unique wildlife, explore Oceania's wonders.`,
+                                    "link": `https://example.com/oceania/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/F0F9FF/0284C7?text=Oceania+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 18 }, (_, i) => ({
+                                    "title": `Oceania in Global Dialogue ${i + 1}`,
+                                    "content": `The role of Oceania nations in addressing global challenges.`,
+                                    "link": `https://example.com/oceania/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/C7D2FE/4F46E5?text=Oceania+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 7 }, (_, i) => ({
+                                    "title": `Oceania Weather Update ${i + 1}`,
+                                    "content": `Cyclone season alerts and climate patterns in the Pacific.`,
+                                    "link": `https://example.com/oceania/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E9D5FF/7C3AED?text=Oceania+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 13 }, (_, i) => ({
+                                    "title": `Oceania Perspective Blog ${i + 1}`,
+                                    "content": `Stories and insights into the unique cultures and lifestyles of Oceania.`,
+                                    "link": `https://example.com/oceania/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FFEDD5/D97706?text=Oceania+Blog+${i+1}`
+                                }))
+                            },
+                            "south_america": {
+                                "news": Array.from({ length: 19 }, (_, i) => ({
+                                    "title": `South America News Summary ${i + 1}`,
+                                    "content": `Latest political, social, and economic developments across the continent.`,
+                                    "link": `https://example.com/sa/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E0E7FF/3B82F6?text=SA+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 16 }, (_, i) => ({
+                                    "title": `Innovation in SA ${i + 1}`,
+                                    "content": `Startup growth and technological adoption in South American nations.`,
+                                    "link": `https://example.com/sa/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/C7D2FE/4F46E5?text=SA+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 21 }, (_, i) => ({
+                                    "title": `SA Market Trends ${i + 1}`,
+                                    "content": `Analysis of financial markets, inflation, and investment in South America.`,
+                                    "link": `https://example.com/sa/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E9D5FF/7C3AED?text=SA+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 14 }, (_, i) => ({
+                                    "title": `Discover South America ${i + 1}`,
+                                    "content": `From the Amazon to Patagonia, your guide to adventure.`,
+                                    "link": `https://example.com/sa/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FFEDD5/D97706?text=SA+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 20 }, (_, i) => ({
+                                    "title": `South America's Global Stance ${i + 1}`,
+                                    "content": `The continent's role in international relations and environmental efforts.`,
+                                    "link": `https://example.com/sa/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DBEAFE/2563EB?text=SA+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 9 }, (_, i) => ({
+                                    "title": `Weather in South America ${i + 1}`,
+                                    "content": `El Niño effects, Amazon climate, and regional forecasts.`,
+                                    "link": `https://example.com/sa/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEE2E2/EF4444?text=SA+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 16 }, (_, i) => ({
+                                    "title": `SA Culture & Lifestyle Blog ${i + 1}`,
+                                    "content": `Articles on local customs, music, food, and daily life.`,
+                                    "link": `https://example.com/sa/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/D1FAE5/065F46?text=SA+Blog+${i+1}`
+                                }))
+                            },
+                            "middle_east": {
+                                "news": Array.from({ length: 17 }, (_, i) => ({
+                                    "title": `Middle East Briefing ${i + 1}`,
+                                    "content": `Key political, economic, and social news from the region.`,
+                                    "link": `https://example.com/me/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/F0F9FF/0284C7?text=ME+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 15 }, (_, i) => ({
+                                    "title": `ME Tech Advancements ${i + 1}`,
+                                    "content": `Smart cities, AI, and cybersecurity developments in the Middle East.`,
+                                    "link": `https://example.com/me/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/C7D2FE/4F46E5?text=ME+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 18 }, (_, i) => ({
+                                    "title": `ME Financial Outlook ${i + 1}`,
+                                    "content": `Oil markets, diversification, and real estate trends in the Middle East.`,
+                                    "link": `https://example.com/me/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E9D5FF/7C3AED?text=ME+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 11 }, (_, i) => ({
+                                    "title": `Travel to the Middle East ${i + 1}`,
+                                    "content": `Discover ancient wonders and modern luxury destinations.`,
+                                    "link": `https://example.com/me/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FFEDD5/D97706?text=ME+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 19 }, (_, i) => ({
+                                    "title": `ME's Role on World Stage ${i + 1}`,
+                                    "content": `Regional diplomacy and geopolitical influence of the Middle East.`,
+                                    "link": `https://example.com/me/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DBEAFE/2563EB?text=ME+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 8 }, (_, i) => ({
+                                    "title": `Middle East Weather Report ${i + 1}`,
+                                    "content": `Extreme heat, dust storms, and seasonal climate patterns.`,
+                                    "link": `https://example.com/me/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEE2E2/EF4444?text=ME+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 14 }, (_, i) => ({
+                                    "title": `ME Culture & Insights Blog ${i + 1}`,
+                                    "content": `Articles on history, cuisine, and contemporary life in the Middle East.`,
+                                    "link": `https://example.com/me/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/D1FAE5/065F46?text=ME+Blog+${i+1}`
+                                }))
+                            },
+                            "southeast_asia": {
+                                "news": Array.from({ length: 22 }, (_, i) => ({
+                                    "title": `Southeast Asia News Digest ${i + 1}`,
+                                    "content": `Political dynamics, economic growth, and social developments in SEA.`,
+                                    "link": `https://example.com/sea/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/F0F9FF/0284C7?text=SEA+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 19 }, (_, i) => ({
+                                    "title": `SEA Tech Boom ${i + 1}`,
+                                    "content": `Digital payments, e-commerce, and startup ecosystems flourishing in SEA.`,
+                                    "link": `https://example.com/sea/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/C7D2FE/4F46E5?text=SEA+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 24 }, (_, i) => ({
+                                    "title": `SEA Financial Outlook ${i + 1}`,
+                                    "content": `FDI trends, stock market performance, and economic resilience in Southeast Asia.`,
+                                    "link": `https://example.com/sea/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E9D5FF/7C3AED?text=SEA+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 17 }, (_, i) => ({
+                                    "title": `Explore Southeast Asia ${i + 1}`,
+                                    "content": `Island paradises, ancient temples, and vibrant cities for your next adventure.`,
+                                    "link": `https://example.com/sea/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FFEDD5/D97706?text=SEA+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 25 }, (_, i) => ({
+                                    "title": `SEA Regional Cooperation ${i + 1}`,
+                                    "content": `ASEAN initiatives and regional stability efforts in Southeast Asia.`,
+                                    "link": `https://example.com/sea/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DBEAFE/2563EB?text=SEA+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 10 }, (_, i) => ({
+                                    "title": `SEA Weather Forecast ${i + 1}`,
+                                    "content": `Monsoon seasons, typhoon alerts, and climate impacts in Southeast Asia.`,
+                                    "link": `https://example.com/sea/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEE2E2/EF4444?text=SEA+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 19 }, (_, i) => ({
+                                    "title": `SEA Lifestyle Blog ${i + 1}`,
+                                    "content": `Articles on local food, digital nomad life, and cultural experiences in SEA.`,
+                                    "link": `https://example.com/sea/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/D1FAE5/065F46?text=SEA+Blog+${i+1}`
+                                }))
+                            },
+                             "north_africa": {
+                                "news": Array.from({ length: 15 }, (_, i) => ({
+                                    "title": `North Africa News Flash ${i + 1}`,
+                                    "content": `Key events and developments from Maghreb and surrounding regions.`,
+                                    "link": `https://example.com/naf/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E0F2F7/00BFFF?text=NAfrica+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 12 }, (_, i) => ({
+                                    "title": `NA Tech Innovations ${i + 1}`,
+                                    "content": `Digital transformation and startup growth in North Africa.`,
+                                    "link": `https://example.com/naf/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/BFDBFE/1D4ED8?text=NAfrica+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 16 }, (_, i) => ({
+                                    "title": `NA Financial Overview ${i + 1}`,
+                                    "content": `Economic trends, investment climate, and development in North Africa.`,
+                                    "link": `https://example.com/naf/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/C7D2FE/4F46E5?text=NAfrica+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 10 }, (_, i) => ({
+                                    "title": `Discover North Africa ${i + 1}`,
+                                    "content": `From ancient cities to desert landscapes, explore unique attractions.`,
+                                    "link": `https://example.com/naf/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DDD6FE/6D28D9?text=NAfrica+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 17 }, (_, i) => ({
+                                    "title": `NA Global Relations ${i + 1}`,
+                                    "content": `North Africa's evolving role in international affairs and regional stability.`,
+                                    "link": `https://example.com/naf/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E9D5FF/7C3AED?text=NAfrica+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 7 }, (_, i) => ({
+                                    "title": `North Africa Weather ${i + 1}`,
+                                    "content": `Desert climate, coastal forecasts, and extreme weather events.`,
+                                    "link": `https://example.com/naf/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FAD7DA/DC2626?text=NAfrica+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 12 }, (_, i) => ({
+                                    "title": `NA Culture Blog ${i + 1}`,
+                                    "content": `Insights into the rich history, traditions, and contemporary life of North Africa.`,
+                                    "link": `https://example.com/naf/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FFEDD5/D97706?text=NAfrica+Blog+${i+1}`
+                                }))
+                            },
+                             "sub_saharan_africa": {
+                                "news": Array.from({ length: 20 }, (_, i) => ({
+                                    "title": `Sub-Saharan Africa News ${i + 1}`,
+                                    "content": `Political, social, and economic headlines from across Sub-Saharan Africa.`,
+                                    "link": `https://example.com/ssa/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DCFCE7/10B981?text=SSA+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 18 }, (_, i) => ({
+                                    "title": `SSA Tech Trends ${i + 1}`,
+                                    "content": `Mobile innovation, startup ecosystems, and digital inclusion in Sub-Saharan Africa.`,
+                                    "link": `https://example.com/ssa/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DBEAFE/2563EB?text=SSA+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 22 }, (_, i) => ({
+                                    "title": `SSA Financial Update ${i + 1}`,
+                                    "content": `Investment climate, economic growth, and financial sector development.`,
+                                    "link": `https://example.com/ssa/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/CFFAFE/06B6D4?text=SSA+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 15 }, (_, i) => ({
+                                    "title": `Explore Sub-Saharan Africa ${i + 1}`,
+                                    "content": `Safari adventures, vibrant cities, and diverse landscapes.`,
+                                    "link": `https://example.com/ssa/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEF2F2/DC2626?text=SSA+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 23 }, (_, i) => ({
+                                    "title": `SSA's Global Engagement ${i + 1}`,
+                                    "content": `The region's participation in international diplomacy and development.`,
+                                    "link": `https://example.com/ssa/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E0F2F7/00BFFF?text=SSA+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 9 }, (_, i) => ({
+                                    "title": `Sub-Saharan Weather ${i + 1}`,
+                                    "content": `Rainfall patterns, drought conditions, and climate change impacts.`,
+                                    "link": `https://example.com/ssa/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/BFDBFE/1D4ED8?text=SSA+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 17 }, (_, i) => ({
+                                    "title": `SSA Voices & Stories ${i + 1}`,
+                                    "content": `Articles on culture, entrepreneurship, and social issues.`,
+                                    "link": `https://example.com/ssa/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/C7D2FE/4F46E5?text=SSA+Blog+${i+1}`
+                                }))
+                            },
+                             "east_asia": {
+                                "news": Array.from({ length: 25 }, (_, i) => ({
+                                    "title": `East Asia News Digest ${i + 1}`,
+                                    "content": `Headlines from China, Japan, South Korea, and Mongolia.`,
+                                    "link": `https://example.com/ea/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DDD6FE/6D28D9?text=EA+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 22 }, (_, i) => ({
+                                    "title": `EA Tech Innovations ${i + 1}`,
+                                    "content": `Leading-edge technology and digital transformation in East Asia.`,
+                                    "link": `https://example.com/ea/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E9D5FF/7C3AED?text=EA+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 27 }, (_, i) => ({
+                                    "title": `EA Market Analysis ${i + 1}`,
+                                    "content": `Stock market trends, trade relations, and economic policies in East Asia.`,
+                                    "link": `https://example.com/ea/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FAD7DA/DC2626?text=EA+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 18 }, (_, i) => ({
+                                    "title": `Explore East Asia ${i + 1}`,
+                                    "content": `From ancient traditions to futuristic cities, a guide to East Asian travel.`,
+                                    "link": `https://example.com/ea/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FFEDD5/D97706?text=EA+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 28 }, (_, i) => ({
+                                    "title": `East Asia's Global Influence ${i + 1}`,
+                                    "content": `The region's impact on international politics, economy, and culture.`,
+                                    "link": `https://example.com/ea/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DCFCE7/10B981?text=EA+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 10 }, (_, i) => ({
+                                    "title": `EA Weather Outlook ${i + 1}`,
+                                    "content": `Monsoon patterns, seasonal changes, and climate events in East Asia.`,
+                                    "link": `https://example.com/ea/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DBEAFE/2563EB?text=EA+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 20 }, (_, i) => ({
+                                    "title": `East Asia Cultural Blog ${i + 1}`,
+                                    "content": `Insights into diverse cultures, cuisines, and lifestyles of East Asia.`,
+                                    "link": `https://example.com/ea/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/CFFAFE/06B6D4?text=EA+Blog+${i+1}`
+                                }))
+                            },
+                             "south_asia": {
+                                "news": Array.from({ length: 20 }, (_, i) => ({
+                                    "title": `South Asia News Update ${i + 1}`,
+                                    "content": `Political, social, and economic developments in India, Pakistan, Bangladesh, and more.`,
+                                    "link": `https://example.com/sa/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEF2F2/DC2626?text=SAsia+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 17 }, (_, i) => ({
+                                    "title": `SA Tech Landscape ${i + 1}`,
+                                    "content": `Growth of IT services, startups, and digital infrastructure in South Asia.`,
+                                    "link": `https://example.com/sa/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E0F2F7/00BFFF?text=SAsia+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 23 }, (_, i) => ({
+                                    "title": `SA Market Watch ${i + 1}`,
+                                    "content": `Financial market trends, investment, and economic policies in South Asia.`,
+                                    "link": `https://example.com/sa/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/BFDBFE/1D4ED8?text=SAsia+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 16 }, (_, i) => ({
+                                    "title": `Discover South Asia ${i + 1}`,
+                                    "content": `Ancient history, diverse cultures, and stunning landscapes of the Indian subcontinent.`,
+                                    "link": `https://example.com/sa/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/C7D2FE/4F46E5?text=SAsia+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 24 }, (_, i) => ({
+                                    "title": `South Asia's Global Role ${i + 1}`,
+                                    "content": `The region's contribution to international diplomacy and development.`,
+                                    "link": `https://example.com/sa/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DDD6FE/6D28D9?text=SAsia+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 11 }, (_, i) => ({
+                                    "title": `SA Weather & Monsoon ${i + 1}`,
+                                    "content": `Monsoon forecasts, extreme weather events, and climate impacts in South Asia.`,
+                                    "link": `https://example.com/sa/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E9D5FF/7C3AED?text=SAsia+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 18 }, (_, i) => ({
+                                    "title": `South Asian Culture Blog ${i + 1}`,
+                                    "content": `Articles on food, traditions, festivals, and modern life in South Asia.`,
+                                    "link": `https://example.com/sa/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FAD7DA/DC2626?text=SAsia+Blog+${i+1}`
+                                }))
+                            },
+                             "australia_nz": {
+                                "news": Array.from({ length: 16 }, (_, i) => ({
+                                    "title": `Australia & NZ News ${i + 1}`,
+                                    "content": `Latest headlines from Australia and New Zealand.`,
+                                    "link": `https://example.com/anz/news/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FFEDD5/D97706?text=Aus+NZ+News+${i+1}`
+                                })),
+                                "technology": Array.from({ length: 14 }, (_, i) => ({
+                                    "title": `ANZ Tech & Innovation ${i + 1}`,
+                                    "content": `New startups, renewable energy, and scientific breakthroughs.`,
+                                    "link": `https://example.com/anz/tech/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DCFCE7/10B981?text=Aus+NZ+Tech+${i+1}`
+                                })),
+                                "finance": Array.from({ length: 17 }, (_, i) => ({
+                                    "title": `ANZ Market Outlook ${i + 1}`,
+                                    "content": `Economic reports, housing market trends, and investment opportunities.`,
+                                    "link": `https://example.com/anz/finance/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/DBEAFE/2563EB?text=Aus+NZ+Finance+${i+1}`
+                                })),
+                                "travel": Array.from({ length: 10 }, (_, i) => ({
+                                    "title": `Explore Australia & NZ ${i + 1}`,
+                                    "content": `From pristine beaches to unique wildlife, discover the stunning landscapes.`,
+                                    "link": `https://example.com/anz/travel/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/CFFAFE/06B6D4?text=Aus+NZ+Travel+${i+1}`
+                                })),
+                                "world": Array.from({ length: 18 }, (_, i) => ({
+                                    "title": `ANZ in Global Affairs ${i + 1}`,
+                                    "content": `Australia and New Zealand's contribution to international relations.`,
+                                    "link": `https://example.com/anz/world/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/FEF2F2/DC2626?text=Aus+NZ+World+${i+1}`
+                                })),
+                                "weather": Array.from({ length: 7 }, (_, i) => ({
+                                    "title": `ANZ Weather Report ${i + 1}`,
+                                    "content": `Bushfire season, rainfall, and climate patterns.`,
+                                    "link": `https://example.com/anz/weather/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/E0F2F7/00BFFF?text=Aus+NZ+Weather+${i+1}`
+                                })),
+                                "blogs": Array.from({ length: 13 }, (_, i) => ({
+                                    "title": `ANZ Lifestyle Blog ${i + 1}`,
+                                    "content": `Articles on local culture, unique experiences, and daily life.`,
+                                    "link": `https://example.com/anz/blogs/${i + 1}`,
+                                    "imageUrl": `https://placehold.co/600x400/BFDBFE/1D4ED8?text=Aus+NZ+Blog+${i+1}`
+                                }))
+                            }
+                        })
+                    });
+                }, 1000)); // Simulate network delay of 1 second
+                // --- END SIMULATED DATA FETCH ---
+
+
+                if (response.ok) {
+                    allContentData = await response.json(); // Store all data globally
+                    // Reset loaded item counts for all categories/regions when new data is fetched
+                    loadedItemCounts = {};
+                    
+                    // Render initial batch for the currently active category and region
+                    renderContent(activeRegion, activeCategory, false);
+                    showMessage('All updates loaded successfully!', 'success');
+                } else {
+                    console.error('Failed to fetch updates from source:', response.statusText);
+                    showMessage('Failed to load updates. Please ensure updates.json is accessible and valid.', 'error');
+                    // Render empty state if fetch fails
+                    renderContent(activeRegion, activeCategory, false); // Still try to render with empty data
+                }
+            } catch (error) {
+                console.error('An error occurred while fetching updates:', error);
+                showMessage('An error occurred while fetching updates. Check your network or the updates.json URL.', 'error');
+                // Render empty state if an error occurs
+                renderContent(activeRegion, activeCategory, false); // Still try to render with empty data
+            }
+        }
+
+        // Function to load more content when scrolling
+        function loadMoreContent() {
+            if (isLoadingMore) return; // Prevent multiple loads
             
-            # Prioritize fetching from NewsAPI if key is available and country code is mapped
-            if NEWS_API_KEY and country_code:
-                # Use the first keyword from the list as the main query for NewsAPI
-                query = keywords[0] if keywords else category_key
-                articles = fetch_content_from_newsapi(query, country_code, count=20) # Fetch up to 20 articles
-                if not articles: # Fallback to simulated if API call fails or returns no articles
-                    print(f"NewsAPI returned no articles or failed for {region_key}/{category_key}. Falling back to simulated content.")
-                    articles = generate_simulated_content(region_name_full, category_key, count=20)
-            else:
-                # Fallback to simulated content if API key is missing or region not mapped to a country for NewsAPI
-                print(f"Skipping NewsAPI for {region_key}/{category_key}. Generating simulated content.")
-                articles = generate_simulated_content(region_name_full, category_key, count=20)
-            
-            all_content[region_key][category_key] = articles
-            time.sleep(1) # Be mindful of API rate limits, especially for free tiers
+            const currentData = allContentData[activeRegion] && allContentData[activeRegion][activeCategory] ? allContentData[activeRegion][activeCategory] : [];
+            const currentLoadedCount = loadedItemCounts[activeRegion] && loadedItemCounts[activeRegion][activeCategory] ? loadedItemCounts[activeRegion][activeCategory] : 0;
 
-    output_file_path = 'updates.json'
-    try:
-        with open(output_file_path, 'w', encoding='utf-8') as f:
-            json.dump(all_content, f, indent=2, ensure_ascii=False)
-        print(f"Successfully generated and saved content to {output_file_path}")
-    except IOError as e:
-        print(f"Error writing to file {output_file_path}: {e}")
+            if (currentLoadedCount >= currentData.length) {
+                // All content already loaded for this category/region
+                return;
+            }
 
-if __name__ == "__main__":
-    main()
+            isLoadingMore = true;
+            const loadingSpinner = document.getElementById(`${activeCategory}Spinner`);
+            loadingSpinner.classList.add('show');
+            if (document.documentElement.classList.contains('dark')) {
+                loadingSpinner.classList.add('dark');
+            }
+
+            setTimeout(() => { // Simulate async loading (replace with actual data processing if needed)
+                renderContent(activeRegion, activeCategory, true); // Append new items
+            }, 500); // Small delay to show spinner
+        }
+
+        // Scroll event handler for infinite scrolling
+        function handleScroll() {
+            // Get the active content area (the one currently visible)
+            const activeContentArea = document.getElementById(`${activeCategory}Content`);
+            if (!activeContentArea) return; // Should not happen if a category is active
+
+            // Check if the user has scrolled to the bottom of the active content area
+            const scrollThreshold = 200; // Load more when 200px from bottom of active content area
+            const containerBottom = activeContentArea.getBoundingClientRect().bottom;
+            const windowHeight = window.innerHeight;
+
+            if (containerBottom <= windowHeight + scrollThreshold) {
+                loadMoreContent();
+            }
+        }
+
+        // Function to switch active content tab
+        function switchCategory(category) {
+            // Remove active class from all tabs and content areas
+            document.querySelectorAll('.nav-tab-item').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.content-area').forEach(area => area.classList.remove('active'));
+
+            // Add active class to the selected tab and content area
+            document.querySelector(`.nav-tab-item[data-category="${category}"]`).classList.add('active');
+            document.getElementById(`${category}Content`).classList.add('active');
+            activeCategory = category;
+
+            // Re-render content for the newly active category and current region (initial batch)
+            renderContent(activeRegion, activeCategory, false); // Important: re-render from start
+        }
+
+        // Function to apply/remove dark theme classes
+        function applyTheme(isDarkMode) {
+            const htmlElement = document.documentElement;
+            const bodyElement = document.body;
+            const mainContainer = document.getElementById('mainContainer');
+            const mainHeader = document.getElementById('mainHeader');
+            const regionSelect = document.getElementById('regionSelect');
+            const navTabs = document.getElementById('navTabs');
+            const themeToggleButton = document.getElementById('themeToggleButton');
+            const footer = document.getElementById('mainFooter');
+            const adBanners = document.querySelectorAll('.ad-banner');
+            const contentHeaders = document.querySelectorAll('.section-header');
+            const updateItems = document.querySelectorAll('.update-item'); // Select all current update items
+            const loadingSpinners = document.querySelectorAll('.loading-spinner');
+            const noMoreContentMessages = document.querySelectorAll('.no-more-content');
+
+
+            if (isDarkMode) {
+                htmlElement.classList.add('dark');
+                bodyElement.classList.add('dark');
+                mainContainer.classList.add('dark');
+                mainHeader.classList.add('dark');
+                regionSelect.classList.add('dark');
+                navTabs.classList.add('dark');
+                themeToggleButton.classList.add('dark');
+                themeToggleButton.textContent = 'Toggle Light Mode';
+                footer.classList.add('dark');
+                adBanners.forEach(ad => ad.classList.add('dark'));
+                contentHeaders.forEach(header => header.classList.add('dark'));
+                // Apply dark mode to *existing* items
+                document.querySelectorAll('.update-item').forEach(item => item.classList.add('dark'));
+                loadingSpinners.forEach(spinner => spinner.classList.add('dark'));
+                noMoreContentMessages.forEach(msg => msg.classList.add('dark'));
+            } else {
+                htmlElement.classList.remove('dark');
+                bodyElement.classList.remove('dark');
+                mainContainer.classList.remove('dark');
+                mainHeader.classList.remove('dark');
+                regionSelect.classList.remove('dark');
+                navTabs.classList.remove('dark');
+                themeToggleButton.classList.remove('dark');
+                themeToggleButton.textContent = 'Toggle Dark Mode';
+                footer.classList.remove('dark');
+                adBanners.forEach(ad => ad.classList.remove('dark'));
+                contentHeaders.forEach(header => header.classList.remove('dark'));
+                // Remove dark mode from *existing* items
+                document.querySelectorAll('.update-item').forEach(item => item.classList.remove('dark'));
+                loadingSpinners.forEach(spinner => spinner.classList.remove('dark'));
+                noMoreContentMessages.forEach(msg => msg.classList.remove('dark'));
+            }
+            // Ensure region select wrapper's after pseudo-element also updates color
+            document.querySelector('.region-select-wrapper').classList.toggle('dark', isDarkMode);
+        }
+
+        // Function to get user's geolocation and set default region
+        function autoSelectRegionBasedOnGeolocation() {
+            if (navigator.geolocation) {
+                showMessage('Attempting to detect your location for personalized content...', 'info');
+                navigator.geolocation.getCurrentPosition(
+                    async (position) => {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        console.log(`Detected location: Lat ${lat}, Lon ${lon}`);
+
+                        // In a real scenario, you'd use a reverse geocoding API to get a country/region
+                        // based on lat/lon, and then map that to your predefined regions.
+                        // For this example, we'll use a very simple (and limited) mapping.
+                        let detectedRegion = 'global'; // Default fallback
+
+                        // Simple geographic mapping (highly simplified for demonstration)
+                        // This needs to be expanded and refined based on your actual data and needs
+                        if (lat > 25 && lat < 50 && lon > -125 && lon < -65) { // Roughly continental US
+                            detectedRegion = 'north_america';
+                        } else if (lat > 35 && lat < 70 && lon > -10 && lon < 40) { // Roughly Europe
+                            detectedRegion = 'europe';
+                        } else if (lat > -45 && lat < 0 && lon > -80 && lon < -30) { // Roughly South America
+                            detectedRegion = 'south_america';
+                        } else if (lat > -35 && lat < 40 && lon > 0 && lon < 50) { // Roughly Africa
+                            detectedRegion = 'africa';
+                        } else if (lat > -45 && lat < 10 && lon > 110 && lon < 180) { // Roughly Oceania
+                            detectedRegion = 'oceania';
+                        } else if (lat > 5 && lat < 50 && lon > 40 && lon < 150) { // Roughly Asia
+                            detectedRegion = 'asia';
+                        }
+                        // Add more refined logic for other regions as needed
+
+                        if (document.getElementById('regionSelect').querySelector(`option[value="${detectedRegion}"]`)) {
+                            document.getElementById('regionSelect').value = detectedRegion;
+                            activeRegion = detectedRegion;
+                            showMessage(`Region set to: ${detectedRegion.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}`, 'success');
+                        } else {
+                            showMessage('Could not map your location to a specific region. Defaulting to Global.', 'info');
+                            document.getElementById('regionSelect').value = 'global';
+                            activeRegion = 'global';
+                        }
+                        // After setting the region, fetch and render content
+                        fetchAllUpdates();
+
+                    },
+                    (error) => {
+                        console.warn(`Geolocation error (${error.code}): ${error.message}`);
+                        if (error.code === error.PERMISSION_DENIED) {
+                            showMessage('Geolocation denied. Defaulting to Global content. You can manually select a region.', 'info');
+                        } else if (error.code === error.POSITION_UNAVAILABLE) {
+                            showMessage('Location information unavailable. Defaulting to Global content.', 'info');
+                        } else if (error.code === error.TIMEOUT) {
+                            showMessage('Location request timed out. Defaulting to Global content.', 'info');
+                        }
+                        // Always fallback to global and fetch updates if geolocation fails
+                        document.getElementById('regionSelect').value = 'global';
+                        activeRegion = 'global';
+                        fetchAllUpdates();
+                    },
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 5000,
+                        maximumAge: 0
+                    }
+                );
+            } else {
+                showMessage('Geolocation is not supported by your browser. Defaulting to Global content.', 'info');
+                // Always fallback to global and fetch updates if geolocation is not supported
+                document.getElementById('regionSelect').value = 'global';
+                activeRegion = 'global';
+                fetchAllUpdates();
+            }
+        }
+
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            const regionSelect = document.getElementById('regionSelect');
+            const navTabs = document.querySelector('.nav-tabs');
+            const themeToggleButton = document.getElementById('themeToggleButton');
+
+            // Load theme preference from local storage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                applyTheme(true);
+            } else {
+                applyTheme(false); // Default to light if no preference or 'light'
+            }
+
+            // Event listener for theme toggle button
+            themeToggleButton.addEventListener('click', () => {
+                const isDarkMode = document.documentElement.classList.contains('dark');
+                applyTheme(!isDarkMode);
+                localStorage.setItem('theme', !isDarkMode ? 'dark' : 'light'); // Save preference
+            });
+
+            // Event listener for region selection change
+            regionSelect.addEventListener('change', (event) => {
+                activeRegion = event.target.value;
+                // Fetch all updates (which will then render the initial batch for the new region/category)
+                // This will use the pre-generated updates.json
+                fetchAllUpdates();
+            });
+
+            // Event listener for navigation tabs
+            navTabs.addEventListener('click', (event) => {
+                if (event.target.classList.contains('nav-tab-item')) {
+                    const category = event.target.dataset.category;
+                    switchCategory(category);
+                }
+            });
+
+            // Initial load of content - Try to autodetect location, otherwise fallback to global
+            autoSelectRegionBasedOnGeolocation();
+
+            // Set interval to refresh all updates (re-fetches JSON and resets scroll position)
+            const refreshInterval = 15 * 60 * 1000; // Every 15 minutes
+            setInterval(fetchAllUpdates, refreshInterval);
+
+            // Add scroll listener for infinite scrolling
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+</body>
+</html>
