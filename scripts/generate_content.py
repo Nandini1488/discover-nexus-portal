@@ -2,7 +2,7 @@ import json
 import os
 import random
 import time
-import requests # Added for making HTTP requests to external APIs
+import requests
 
 # --- Configuration ---
 # You'll need to sign up for a NewsAPI.org key: https://newsapi.org/
@@ -11,13 +11,15 @@ import requests # Added for making HTTP requests to external APIs
 NEWS_API_BASE_URL = "https://newsapi.org/v2/everything" # Or /v2/top-headlines for simpler fetching
 NEWS_API_KEY = os.getenv('NEWS_API_KEY') # Fetched from GitHub Secrets
 
+# --- Debugging Print ---
+if NEWS_API_KEY:
+    print("NEWS_API_KEY successfully loaded from environment.")
+else:
+    print("WARNING: NEWS_API_KEY is NOT loaded from environment. Please check GitHub Secrets.")
+# --- End Debugging Print ---
+
 # Define the regions and categories that match your index.html
 # Mapping regions to NewsAPI country codes (simplified, NewsAPI mostly by country)
-# For broader regions like 'Europe', you might fetch from multiple countries.
-# This mapping is crucial for making targeted API calls.
-# Note: NewsAPI 'country' parameter only accepts specific 2-letter ISO codes.
-# For regions like "global" or broad continents, NewsAPI's 'country' filter
-# is not applicable, so we'll treat them as a global search without a country filter.
 REGIONS = {
     "global": {"name": "the entire world", "country_code": None}, # No specific country code for global
     "north_america": {"name": "North America", "country_code": "us"}, # Focusing on US for simplicity
@@ -35,14 +37,13 @@ REGIONS = {
     "australia_nz": {"name": "Australia & NZ", "country_code": "nz"} # Focusing on New Zealand for Australia & NZ example
 }
 
-
 CATEGORIES = {
     "news": ["general", "breaking news"],
     "technology": ["technology", "AI", "cybersecurity", "gadgets"],
     "finance": ["business", "finance", "markets", "economy"],
     "travel": ["travel", "tourism", "adventure"],
     "world": ["politics", "international relations", "global affairs"],
-    "weather": ["weather", "climate change", "natural disasters"], # NewsAPI isn't ideal for weather forecasts, more for weather-related *news*
+    "weather": ["weather", "climate change", "natural disasters"],
     "blogs": ["opinion", "analysis", "lifestyle"]
 }
 
@@ -59,15 +60,15 @@ def fetch_content_from_newsapi(query, country_code=None, count=10):
     params = {
         'q': query,
         'language': 'en',
-        'pageSize': count, # Number of articles to fetch
+        'pageSize': count,
         'apiKey': NEWS_API_KEY
     }
-    if country_code: # Only add country param if a specific code is provided
+    if country_code:
         params['country'] = country_code
 
     try:
         response = requests.get(NEWS_API_BASE_URL, params=params, timeout=10)
-        response.raise_for_status() # Raise an HTTPError for bad responses (4xx or 5xx)
+        response.raise_for_status()
         data = response.json()
         
         articles = []
@@ -111,30 +112,28 @@ def main():
     
     for region_key, region_data in REGIONS.items():
         region_name_full = region_data["name"]
-        country_code = region_data["country_code"] # Get country code from the region data
+        country_code = region_data["country_code"]
         
         all_content[region_key] = {}
 
         for category_key, keywords in CATEGORIES.items():
             print(f"Processing Region: {region_name_full}, Category: {category_key}")
             
-            # Prioritize fetching from NewsAPI if key is available and a country code is applicable
+            # Conditionally fetch from NewsAPI based on API key presence and country code applicability
             # Note: NewsAPI 'country' parameter only works for specific 2-letter codes.
             # For 'global' or general categories, country_code will be None.
             if NEWS_API_KEY and country_code: 
-                # Use the first keyword from the list as the main query for NewsAPI
                 query = keywords[0] if keywords else category_key
-                articles = fetch_content_from_newsapi(query, country_code, count=20) # Fetch up to 20 articles
-                if not articles: # Fallback to simulated if API call fails or returns no articles
+                articles = fetch_content_from_newsapi(query, country_code, count=20)
+                if not articles:
                     print(f"NewsAPI returned no articles or failed for {region_key}/{category_key}. Falling back to simulated content.")
                     articles = generate_simulated_content(region_name_full, category_key, count=20)
             else:
-                # Fallback to simulated content if API key is missing or no specific country code
-                print(f"Skipping NewsAPI for {region_key}/{category_key} (no API key or country code). Generating simulated content.")
+                print(f"Skipping NewsAPI for {region_key}/{category_key} (no API key or country code for NewsAPI). Generating simulated content.")
                 articles = generate_simulated_content(region_name_full, category_key, count=20)
             
             all_content[region_key][category_key] = articles
-            time.sleep(1) # Be mindful of API rate limits, especially for free tiers
+            time.sleep(1)
 
     output_file_path = 'updates.json'
     try:
