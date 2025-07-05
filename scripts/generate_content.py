@@ -18,7 +18,7 @@ import asyncio # Import asyncio for running async functions
 GEMINI_API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
 # Ensure the API key is loaded from the environment variable (GitHub Secret)
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY') 
-# Key here for data fetch
+
 # --- Debugging Print ---
 if GEMINI_API_KEY:
     # Strip any potential whitespace from the API key
@@ -170,7 +170,8 @@ async def main(): # Make main function async
             print(f"Processing Region: {region_name_full}, Category: {category_key} with Gemini...")
             
             # 1. Get base simulated articles (replace with real news source in production)
-            base_articles = generate_simulated_content_base(region_name_full, category_key, count=10) # Reduced count for faster demo/lower token usage
+            # REDUCED count to 3 articles per category to reduce Gemini API calls
+            base_articles = generate_simulated_content_base(region_name_full, category_key, count=3) 
 
             processed_articles = []
             for i, article in enumerate(base_articles):
@@ -187,10 +188,12 @@ async def main(): # Make main function async
                     "link": article['link'],
                     "imageUrl": suggested_image_url # Gemini's suggested image URL
                 })
-                time.sleep(1) # Small delay between Gemini calls to be courteous
+                # INCREASED delay between individual Gemini calls
+                time.sleep(3) 
 
             all_content[region_key][category_key] = processed_articles
-            time.sleep(5) # Larger delay between categories/regions
+            # INCREASED delay between categories/regions
+            time.sleep(10) 
 
     output_file_path = 'updates.json'
     try:
