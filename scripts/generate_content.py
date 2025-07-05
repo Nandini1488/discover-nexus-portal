@@ -49,7 +49,7 @@ CATEGORIES = {
 
 # --- Functions ---
 
-def fetch_content_from_newsapi(query=None, category=None, country_code=None, count=30):
+def fetch_content_from_newsapi(query=None, category=None, country_code=None, count=10):
     """
     Fetches real news articles from NewsAPI.org using the /v2/top-headlines endpoint.
     """
@@ -140,7 +140,7 @@ def main():
                 # unless a general 'q' parameter is used, which is not ideal for 'top-headlines' by category.
                 # So, for global or regions without a specific country_code, we'll generate simulated content.
                 if country_code:
-                    articles = fetch_content_from_newsapi(category=newsapi_category, country_code=country_code, count=10)
+                    articles = fetch_content_from_newsapi(category=newsapi_category, country_code=country_code, count=35) # Changed count to 35
                 else:
                     # For 'global' or other regions without a country_code, fall back to simulated.
                     # NewsAPI's /top-headlines endpoint requires a country or source.
