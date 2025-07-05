@@ -8,7 +8,7 @@ import requests
 # You'll need to sign up for a NewsAPI.org key: https://newsapi.org/
 # The free developer tier allows up to 100 requests per day.
 # Store this key as a GitHub Secret named NEWS_API_KEY
-NEWS_API_BASE_URL = "https://newsapi.org/v2/everything" # Or /v2/top-headlines for simpler fetching
+NEWS_API_BASE_URL = "https://newsapi.org/v2/top-headlines" # Changed to top-headlines
 NEWS_API_KEY = os.getenv('NEWS_API_KEY') # Fetched from GitHub Secrets
 
 # --- Debugging Print ---
@@ -21,7 +21,7 @@ else:
 # Define the regions and categories that match your index.html
 # Mapping regions to NewsAPI country codes (simplified, NewsAPI mostly by country)
 REGIONS = {
-    "global": {"name": "the entire world", "country_code": None}, # No specific country code for global
+    "global": {"name": "the entire world", "country_code": None}, # No specific country code for global top-headlines
     "north_america": {"name": "North America", "country_code": "us"}, # Focusing on US for simplicity
     "europe": {"name": "Europe", "country_code": "gb"}, # Focusing on UK for Europe example
     "asia": {"name": "Asia", "country_code": "in"}, # Focusing on India for Asia example
@@ -38,34 +38,45 @@ REGIONS = {
 }
 
 CATEGORIES = {
-    "news": ["general", "breaking news"],
-    "technology": ["technology", "AI", "cybersecurity", "gadgets"],
-    "finance": ["business", "finance", "markets", "economy"],
-    "travel": ["travel", "tourism", "adventure"],
-    "world": ["politics", "international relations", "global affairs"],
-    "weather": ["weather", "climate change", "natural disasters"],
-    "blogs": ["opinion", "analysis", "lifestyle"]
+    "news": ["general"], # NewsAPI top-headlines uses 'category' parameter, not 'q' for general news
+    "technology": ["technology"],
+    "finance": ["business"],
+    "travel": ["travel"], # NewsAPI doesn't have a direct 'travel' category, will use general or simulated
+    "world": ["politics"],
+    "weather": ["science"], # NewsAPI doesn't have a direct 'weather' category, using 'science' as closest
+    "blogs": ["general"] # NewsAPI doesn't have a direct 'blogs' category, using 'general' as closest
 }
 
 # --- Functions ---
 
-def fetch_content_from_newsapi(query, country_code=None, count=10):
+def fetch_content_from_newsapi(query=None, category=None, country_code=None, count=10):
     """
-    Fetches real news articles from NewsAPI.org.
+    Fetches real news articles from NewsAPI.org using the /v2/top-headlines endpoint.
     """
     if not NEWS_API_KEY:
         print("NEWS_API_KEY is not set. Cannot fetch real news.")
         return []
 
     params = {
-        'q': query,
         'language': 'en',
         'pageSize': count, # Number of articles to fetch per request
         'apiKey': NEWS_API_KEY
     }
-    # REMOVED: The 'country' parameter is often not used with the /v2/everything endpoint
-    # if country_code:
-    #     params['country'] = country_code
+
+    if country_code:
+        params['country'] = country_code
+    else:
+        # For global, we cannot use 'country' parameter with top-headlines.
+        # NewsAPI requires either 'country' or 'sources' for top-headlines.
+        # If no country, we'll try a general query or fallback to simulated.
+        # For now, if no country, it will likely return an error unless a 'q' is used.
+        # We will handle this by falling back to simulated content if the API fails.
+        pass 
+
+    if category:
+        params['category'] = category
+    elif query: # 'q' parameter is for keywords, not categories
+        params['q'] = query
 
     try:
         response = requests.get(NEWS_API_BASE_URL, params=params, timeout=10)
@@ -83,7 +94,7 @@ def fetch_content_from_newsapi(query, country_code=None, count=10):
                 })
         return articles
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching from NewsAPI for query '{query}': {e}") # Updated print message
+        print(f"Error fetching from NewsAPI for category '{category}'/query '{query}', country '{country_code if country_code else 'N/A'}': {e}")
         return []
 
 def generate_simulated_content(region_name, category_name, count=15):
@@ -113,7 +124,7 @@ def main():
     
     for region_key, region_data in REGIONS.items():
         region_name_full = region_data["name"]
-        country_code = region_data["country_code"] # Keep country_code for potential future use with /top-headlines
+        country_code = region_data["country_code"]
         
         all_content[region_key] = {}
 
@@ -121,11 +132,21 @@ def main():
             print(f"Processing Region: {region_name_full}, Category: {category_key}")
             
             # Fetch from NewsAPI if API key is present.
-            # The 'country_code' is now only relevant if we switch to /top-headlines.
             if NEWS_API_KEY: 
-                query = keywords[0] if keywords else category_key
-                # We are intentionally NOT passing country_code to /everything endpoint to avoid 400 errors.
-                articles = fetch_content_from_newsapi(query, count=10) # Removed country_code from call
+                newsapi_category = keywords[0] # Use the first keyword as the NewsAPI category
+                
+                # NewsAPI /top-headlines requires 'country' or 'sources' parameter.
+                # If country_code is None (e.g., for 'global' region), NewsAPI will likely return an error
+                # unless a general 'q' parameter is used, which is not ideal for 'top-headlines' by category.
+                # So, for global or regions without a specific country_code, we'll generate simulated content.
+                if country_code:
+                    articles = fetch_content_from_newsapi(category=newsapi_category, country_code=country_code, count=10)
+                else:
+                    # For 'global' or other regions without a country_code, fall back to simulated.
+                    # NewsAPI's /top-headlines endpoint requires a country or source.
+                    print(f"NewsAPI /top-headlines requires a country for {region_key}/{category_key}. Generating simulated content.")
+                    articles = [] # Ensure articles is empty to trigger simulated content fallback
+
                 if not articles:
                     print(f"NewsAPI returned no articles or failed for {region_key}/{category_key}. Falling back to simulated content.")
                     articles = generate_simulated_content(region_name_full, category_key, count=15)
