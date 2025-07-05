@@ -16,14 +16,16 @@ import asyncio # Import asyncio for running async functions
 # However, if deploying to a custom environment that requires it, you'd set it up.
 # For Canvas environment, the API key is automatically provided in the fetch call.
 GEMINI_API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
-# Leave API key as empty string; Canvas will provide it at runtime.
-GEMINI_API_KEY = "" # os.getenv('GEMINI_API_KEY') if you need to set it up externally
+# Ensure the API key is loaded from the environment variable (GitHub Secret)
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY') 
 
 # --- Debugging Print ---
 if GEMINI_API_KEY:
-    print("GEMINI_API_KEY loaded (though often not needed in Canvas).")
+    # Strip any potential whitespace from the API key
+    GEMINI_API_KEY = GEMINI_API_KEY.strip()
+    print(f"GEMINI_API_KEY successfully loaded from environment. Length: {len(GEMINI_API_KEY)}. Starts with: {GEMINI_API_KEY[:5]}... Ends with: {GEMINI_API_KEY[-5:]}")
 else:
-    print("GEMINI_API_KEY is empty (expected in Canvas environment).")
+    print("WARNING: GEMINI_API_KEY is NOT loaded from environment. Please check GitHub Secrets and workflow env configuration.")
 # --- End Debugging Print ---
 
 # Define the regions and categories that match your index.html
@@ -122,6 +124,8 @@ async def get_gemini_summary_and_image(original_title, original_content, categor
     try:
         headers = {'Content-Type': 'application/json'}
         api_url = GEMINI_API_BASE_URL
+        
+        # Only append API key if it's actually present (i.e., loaded from env)
         if GEMINI_API_KEY:
             api_url += f"?key={GEMINI_API_KEY}"
 
