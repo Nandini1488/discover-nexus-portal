@@ -18,7 +18,7 @@ import asyncio # Import asyncio for running async functions
 GEMINI_API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
 # Ensure the API key is loaded from the environment variable (GitHub Secret)
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY') 
-
+# Key here for data fetch
 # --- Debugging Print ---
 if GEMINI_API_KEY:
     # Strip any potential whitespace from the API key
