@@ -1,5 +1,5 @@
 # This workflow generates news content and deploys it to GitHub Pages.
-# It's configured to run once daily to respect NewsAPI.org's free tier limits.
+# It's configured to run once daily to respect API limits.
 
 name: Generate & Deploy News Content
 
@@ -11,7 +11,7 @@ on:
       - main
   
   # Schedule the workflow to run once every day at 00:00 UTC (midnight).
-  # This is crucial for staying within NewsAPI.org's daily request limit.
+  # This is crucial for staying within API daily request limits.
   schedule:
     - cron: '0 0 * * *' # Runs at 00:00 UTC daily
 
@@ -49,12 +49,13 @@ jobs:
 
       # Step 4: Generate content using the Python script.
       # Executes your 'generate_content.py' script.
-      # The NEWS_API_KEY is securely passed as an environment variable from GitHub Secrets.
+      # The GEMINI_API_KEY is securely passed as an environment variable from GitHub Secrets.
       - name: Generate content
         run: python scripts/generate_content.py
         env:
-          # This variable name (NEWS_API_KEY) must EXACTLY match the name of your GitHub Secret.
-          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+          # This variable name (GEMINI_API_KEY) must EXACTLY match the name your Python script expects
+          # and the name of your GitHub Secret.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # CHANGED THIS LINE
 
       # Step 5: Commit and Push changes to the repository.
       # This step adds the newly generated 'updates.json' file, commits it,
