@@ -49,7 +49,7 @@ CATEGORIES = {
 
 # --- Functions ---
 
-def fetch_content_from_newsapi(query, country_code=None, count=10): # Reduced default count to 10
+def fetch_content_from_newsapi(query, country_code=None, count=10):
     """
     Fetches real news articles from NewsAPI.org.
     """
@@ -63,8 +63,9 @@ def fetch_content_from_newsapi(query, country_code=None, count=10): # Reduced de
         'pageSize': count, # Number of articles to fetch per request
         'apiKey': NEWS_API_KEY
     }
-    if country_code:
-        params['country'] = country_code
+    # REMOVED: The 'country' parameter is often not used with the /v2/everything endpoint
+    # if country_code:
+    #     params['country'] = country_code
 
     try:
         response = requests.get(NEWS_API_BASE_URL, params=params, timeout=10)
@@ -82,7 +83,7 @@ def fetch_content_from_newsapi(query, country_code=None, count=10): # Reduced de
                 })
         return articles
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching from NewsAPI for query '{query}', country '{country_code if country_code else 'N/A'}': {e}")
+        print(f"Error fetching from NewsAPI for query '{query}': {e}") # Updated print message
         return []
 
 def generate_simulated_content(region_name, category_name, count=15):
@@ -112,26 +113,24 @@ def main():
     
     for region_key, region_data in REGIONS.items():
         region_name_full = region_data["name"]
-        country_code = region_data["country_code"]
+        country_code = region_data["country_code"] # Keep country_code for potential future use with /top-headlines
         
         all_content[region_key] = {}
 
         for category_key, keywords in CATEGORIES.items():
             print(f"Processing Region: {region_name_full}, Category: {category_key}")
             
-            # Conditionally fetch from NewsAPI based on API key presence and country code applicability
-            # Note: NewsAPI 'country' parameter only works for specific 2-letter codes.
-            # For 'global' or general categories, country_code will be None.
-            if NEWS_API_KEY and country_code: 
+            # Fetch from NewsAPI if API key is present.
+            # The 'country_code' is now only relevant if we switch to /top-headlines.
+            if NEWS_API_KEY: 
                 query = keywords[0] if keywords else category_key
-                articles = fetch_content_from_newsapi(query, country_code, count=10) # Requesting fewer articles
+                # We are intentionally NOT passing country_code to /everything endpoint to avoid 400 errors.
+                articles = fetch_content_from_newsapi(query, count=10) # Removed country_code from call
                 if not articles:
                     print(f"NewsAPI returned no articles or failed for {region_key}/{category_key}. Falling back to simulated content.")
-                    articles = generate_simulated_content(region_name_full, category_key, count=15) # Generate slightly more simulated if API fails
+                    articles = generate_simulated_content(region_name_full, category_key, count=15)
             else:
-                # For 'global' region, country_code is None, so it will always generate simulated content.
-                # This is expected behavior for regions not directly supported by NewsAPI's country filter.
-                print(f"Skipping NewsAPI for {region_key}/{category_key} (no specific country code for NewsAPI or API key not loaded). Generating simulated content.")
+                print(f"Skipping NewsAPI for {region_key}/{category_key} (API key not loaded). Generating simulated content.")
                 articles = generate_simulated_content(region_name_full, category_key, count=15)
             
             all_content[region_key][category_key] = articles
