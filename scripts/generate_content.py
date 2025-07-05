@@ -5,155 +5,192 @@ import time
 import requests
 
 # --- Configuration ---
-# You'll need to sign up for a NewsAPI.org key: https://newsapi.org/
-# The free developer tier allows up to 100 requests per day.
-# Store this key as a GitHub Secret named NEWS_API_KEY
-NEWS_API_KEY = os.getenv('NEWS_API_KEY') # Fetched from GitHub Secrets
+# Using Gemini API (gemini-2.0-flash model) for content enhancement/summarization.
+# IMPORTANT: Gemini API does NOT fetch raw news. It processes text you provide.
+# For a production portal, you'd need to replace generate_simulated_content
+# with a mechanism to fetch raw news (e.g., RSS feeds, a basic news API for URLs, or web scraping).
+
+# Gemini API is typically accessed via Google Cloud. For local development or
+# within environments that provide it, you might not need an explicit API key here.
+# However, if deploying to a custom environment that requires it, you'd set it up.
+# For Canvas environment, the API key is automatically provided in the fetch call.
+GEMINI_API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+# Leave API key as empty string; Canvas will provide it at runtime.
+GEMINI_API_KEY = "" # os.getenv('GEMINI_API_KEY') if you need to set it up externally
 
 # --- Debugging Print ---
-if NEWS_API_KEY:
-    print("NEWS_API_KEY successfully loaded from environment.")
+if GEMINI_API_KEY:
+    print("GEMINI_API_KEY loaded (though often not needed in Canvas).")
 else:
-    print("WARNING: NEWS_API_KEY is NOT loaded from environment. Please check GitHub Secrets.")
+    print("GEMINI_API_KEY is empty (expected in Canvas environment).")
 # --- End Debugging Print ---
 
 # Define the regions and categories that match your index.html
-# Mapping regions to NewsAPI country codes (simplified, NewsAPI mostly by country)
+# These are used for generating simulated content and structuring the output JSON.
 REGIONS = {
-    "global": {"name": "the entire world", "country_code": None}, # No specific country code for global
-    "north_america": {"name": "North America", "country_code": "us"}, # Focusing on US for simplicity
-    "europe": {"name": "Europe", "country_code": "gb"}, # Focusing on UK for Europe example
-    "asia": {"name": "Asia", "country_code": "in"}, # Focusing on India for Asia example
-    "africa": {"name": "Africa", "country_code": "ng"}, # Focusing on Nigeria for Africa example
-    "oceania": {"name": "Oceania", "country_code": "au"}, # Focusing on Australia for Oceania example
-    "south_america": {"name": "South America", "country_code": "br"}, # Focusing on Brazil for South America example
-    "middle_east": {"name": "Middle East", "country_code": "ae"}, # Focusing on UAE for Middle East example
-    "southeast_asia": {"name": "Southeast Asia", "country_code": "sg"}, # Focusing on Singapore for Southeast Asia example
-    "north_africa": {"name": "North Africa", "country_code": "eg"}, # Focusing on Egypt for North Africa example
-    "sub_saharan_africa": {"name": "Sub-Saharan Africa", "country_code": "za"}, # Focusing on South Africa for Sub-Saharan Africa example
-    "east_asia": {"name": "East Asia", "country_code": "jp"}, # Focusing on Japan for East Asia example
-    "south_asia": {"name": "South Asia", "country_code": "pk"}, # Focusing on Pakistan for South Asia example
-    "australia_nz": {"name": "Australia & NZ", "country_code": "nz"} # Focusing on New Zealand for Australia & NZ example
+    "global": {"name": "the entire world", "country_code": None},
+    "north_america": {"name": "North America", "country_code": "us"},
+    "europe": {"name": "Europe", "country_code": "gb"},
+    "asia": {"name": "Asia", "country_code": "in"},
+    "africa": {"name": "Africa", "country_code": "za"},
+    "oceania": {"name": "Oceania", "country_code": "au"},
+    "south_america": {"name": "South America", "country_code": "br"},
+    "middle_east": {"name": "Middle East", "country_code": "ae"},
+    "southeast_asia": {"name": "Southeast Asia", "country_code": "sg"},
+    "north_africa": {"name": "North Africa", "country_code": "eg"},
+    "sub_saharan_africa": {"name": "Sub-Saharan Africa", "country_code": "ng"},
+    "east_asia": {"name": "East Asia", "country_code": "jp"},
+    "south_asia": {"name": "South Asia", "country_code": "pk"},
+    "australia_nz": {"name": "Australia & NZ", "country_code": "nz"}
 }
 
 CATEGORIES = {
-    # For /top-headlines, these should ideally map to NewsAPI categories
-    # NewsAPI categories: business, entertainment, general, health, science, sports, technology
-    "news": "general", # Using 'general' as a broad category for news
-    "technology": "technology",
-    "finance": "business",
-    "travel": "general", # No direct 'travel' category, using general
-    "world": "general", # No direct 'world' category, using general
-    "weather": "science", # No direct 'weather' category, using science
-    "blogs": "general" # No direct 'blogs' category, using general
+    "news": "general news",
+    "technology": "technology innovations",
+    "finance": "financial market insights",
+    "travel": "travel guides and tips",
+    "world": "international affairs and geopolitics",
+    "weather": "global weather forecasts",
+    "blogs": "featured articles and opinion pieces"
 }
 
 # --- Functions ---
 
-def fetch_content_from_newsapi(api_endpoint, params, query_description=""):
+def generate_simulated_content_base(region_name, category_name, count=15):
     """
-    Fetches real news articles from NewsAPI.org using the specified endpoint and parameters.
-    """
-    if not NEWS_API_KEY:
-        print("NEWS_API_KEY is not set. Cannot fetch real news.")
-        return []
-
-    # Add API key to parameters
-    params['apiKey'] = NEWS_API_KEY
-
-    try:
-        response = requests.get(f"https://newsapi.org/v2/{api_endpoint}", params=params, timeout=10)
-        response.raise_for_status() # Raises HTTPError for bad responses (4xx or 5xx)
-        data = response.json()
-        
-        articles = []
-        for article in data.get('articles', []):
-            # Ensure essential fields exist before adding
-            if article.get('title') and article.get('description') and article.get('url'):
-                articles.append({
-                    "title": article['title'],
-                    "content": article['description'],
-                    "link": article['url'],
-                    "imageUrl": article.get('urlToImage', 'https://placehold.co/600x400/CCCCCC/333333?text=Image+Unavailable')
-                })
-        return articles
-    except requests.exceptions.HTTPError as e:
-        print(f"Error fetching from NewsAPI for {query_description}: {e}")
-        # Print the response body for more details on API errors (e.g., rate limits)
-        if response.text:
-            print(f"API Error Response: {response.text}")
-        return []
-    except requests.exceptions.RequestException as e:
-        print(f"Network or other error fetching from NewsAPI for {query_description}: {e}")
-        return []
-
-def generate_simulated_content(region_name, category_name, count=15):
-    """
-    Generates simulated content as a fallback or for categories not covered by NewsAPI.
+    Generates simulated *base* content. In a real scenario, this would be
+    replaced by fetching raw articles from a news source.
     """
     articles = []
     for i in range(count):
-        hex_color_bg = ''.join([random.choice('0123456789ABCDEF') for _ in range(6)])
-        hex_color_text = ''.join([random.choice('0123456789ABCDEF') for _ in range(6)])
-
-        title = f"{category_name.replace('_', ' ').title()} Update {i + 1} for {region_name}"
-        content = f"This is a simulated summary of {category_name.replace('_', ' ')} related to {region_name}, article number {i + 1}. It highlights key developments and insights."
+        title = f"Simulated {category_name.replace('_', ' ').title()} Headline {i + 1} for {region_name}"
+        content = f"This is a placeholder for the full content of a simulated article about {category_name.replace('_', ' ')} in {region_name}. It would typically be a longer text that Gemini would summarize."
         link = f"https://example.com/{region_name.lower().replace(' ', '-')}/{category_name.lower().replace(' ', '-')}/{i + 1}"
-        image_url = f"https://placehold.co/600x400/{hex_color_bg}/{hex_color_text}?text={category_name.title()}+{i+1}"
+        
+        # We'll let Gemini suggest an image URL, but provide a fallback if it struggles.
+        # For a real app, you'd get actual image URLs from your news source.
+        image_url_placeholder = f"https://placehold.co/600x400/CCCCCC/333333?text={category_name.title()}+{i+1}"
 
         articles.append({
             "title": title,
             "content": content,
             "link": link,
-            "imageUrl": image_url
+            "imageUrl": image_url_placeholder # This will be replaced by Gemini's suggestion
         })
     return articles
+
+async def get_gemini_summary_and_image(original_title, original_content, category_name):
+    """
+    Uses Gemini API to summarize content and suggest a relevant image URL.
+    Ensures structured JSON output.
+    """
+    prompt = f"""
+    You are an AI assistant for a news portal. Your task is to take the following article
+    title and content, and generate a concise summary (around 50-70 words) for a news feed.
+    Additionally, suggest a relevant placeholder image URL that visually represents the article's topic.
+
+    Original Title: "{original_title}"
+    Original Content: "{original_content}"
+    Category: "{category_name}"
+
+    Provide the output in JSON format with the following schema:
+    {{
+      "summary": "string",
+      "suggestedImageUrl": "string"
+    }}
+    """
+
+    chat_history = []
+    chat_history.push({ "role": "user", "parts": [{ "text": prompt }] })
+    
+    payload = {
+        "contents": chat_history,
+        "generationConfig": {
+            "responseMimeType": "application/json",
+            "responseSchema": {
+                "type": "OBJECT",
+                "properties": {
+                    "summary": { "type": "STRING" },
+                    "suggestedImageUrl": { "type": "STRING" }
+                },
+                "propertyOrdering": ["summary", "suggestedImageUrl"]
+            }
+        }
+    }
+
+    try:
+        # Note: In a browser environment (like Canvas), `fetch` is available.
+        # For a Python script running on GitHub Actions, you'd use `requests` library.
+        # This example uses `requests` as it's a Python script.
+        headers = {'Content-Type': 'application/json'}
+        # If GEMINI_API_KEY is provided externally, add it to the URL.
+        # In Canvas, the runtime handles the API key for `generativelanguage.googleapis.com`
+        # so we leave GEMINI_API_KEY as empty string.
+        api_url = GEMINI_API_BASE_URL
+        if GEMINI_API_KEY:
+            api_url += f"?key={GEMINI_API_KEY}"
+
+        response = requests.post(api_url, headers=headers, data=json.dumps(payload), timeout=30)
+        response.raise_for_status()
+        result = response.json()
+
+        if result.get('candidates') and result['candidates'][0].get('content') and result['candidates'][0]['content'].get('parts'):
+            json_string = result['candidates'][0]['content']['parts'][0]['text']
+            parsed_json = json.loads(json_string)
+            return parsed_json.get('summary', original_content), parsed_json.get('suggestedImageUrl', 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback')
+        else:
+            print(f"Gemini API response missing expected structure: {result}")
+            return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback'
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error calling Gemini API: {e}")
+        if response and response.text:
+            print(f"Gemini API Error Response: {response.text}")
+        return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback'
+    except json.JSONDecodeError as e:
+        print(f"Error decoding Gemini API JSON response: {e}")
+        print(f"Raw Gemini response text: {response.text}")
+        return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback'
+
 
 def main():
     all_content = {}
     
+    # Use a session to persist connection settings across requests, potentially speeding things up
+    # and being more efficient with connections.
+    session = requests.Session()
+
     for region_key, region_data in REGIONS.items():
         region_name_full = region_data["name"]
-        country_code = region_data["country_code"]
         
         all_content[region_key] = {}
 
-        for category_key, newsapi_category in CATEGORIES.items():
-            print(f"Processing Region: {region_name_full}, Category: {category_key}")
+        for category_key, category_keyword in CATEGORIES.items():
+            print(f"Processing Region: {region_name_full}, Category: {category_key} with Gemini...")
             
-            articles = []
-            if NEWS_API_KEY:
-                if region_key == "global":
-                    # Use /everything endpoint for global searches with a query
-                    query_term = newsapi_category # Use the mapped category as a query term
-                    params = {
-                        'q': query_term,
-                        'language': 'en',
-                        'pageSize': 10,
-                        'sortBy': 'relevancy' # Good for /everything
-                    }
-                    articles = fetch_content_from_newsapi("everything", params, 
-                                                           query_description=f"query '{query_term}' for global/{category_key}")
-                else:
-                    # Use /top-headlines endpoint for specific countries and categories
-                    if country_code: # Ensure country code exists for top-headlines
-                        params = {
-                            'country': country_code,
-                            'category': newsapi_category,
-                            'language': 'en',
-                            'pageSize': 10
-                        }
-                        articles = fetch_content_from_newsapi("top-headlines", params, 
-                                                               query_description=f"category '{newsapi_category}', country '{country_code}' for {region_key}/{category_key}")
-                    else:
-                        print(f"Skipping NewsAPI for {region_key}/{category_key}: No country code provided for /top-headlines.")
-            
-            if not articles:
-                print(f"NewsAPI returned no articles or failed for {region_key}/{category_key}. Falling back to simulated content.")
-                articles = generate_simulated_content(region_name_full, category_key, count=15)
-            
-            all_content[region_key][category_key] = articles
-            time.sleep(5) # Increased sleep time to 5 seconds to be courteous to API
+            # 1. Get base simulated articles (replace with real news source in production)
+            base_articles = generate_simulated_content_base(region_name_full, category_key, count=10) # Reduced count for faster demo/lower token usage
+
+            processed_articles = []
+            for i, article in enumerate(base_articles):
+                print(f"  - Processing article {i+1}/{len(base_articles)} for {region_key}/{category_key}...")
+                # 2. Use Gemini to summarize and suggest image URL
+                # Note: In a real async scenario (like a web server), you'd use async/await.
+                # For a simple script, we'll call it synchronously.
+                summary_content, suggested_image_url = requests.get_gemini_summary_and_image(
+                    article['title'], article['content'], category_keyword
+                )
+                
+                processed_articles.append({
+                    "title": article['title'],
+                    "content": summary_content, # Gemini's summary
+                    "link": article['link'],
+                    "imageUrl": suggested_image_url # Gemini's suggested image URL
+                })
+                time.sleep(1) # Small delay between Gemini calls to be courteous
+
+            all_content[region_key][category_key] = processed_articles
+            time.sleep(5) # Larger delay between categories/regions
 
     output_file_path = 'updates.json'
     try:
@@ -164,4 +201,7 @@ def main():
         print(f"Error writing to file {output_file_path}: {e}")
 
 if __name__ == "__main__":
+    # Monkey patch requests.get_gemini_summary_and_image to be synchronous for this script's context
+    # In a real async app, you'd use await directly.
+    requests.get_gemini_summary_and_image = get_gemini_summary_and_image
     main()
