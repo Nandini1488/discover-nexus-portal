@@ -140,7 +140,7 @@ def main():
                 # unless a general 'q' parameter is used, which is not ideal for 'top-headlines' by category.
                 # So, for global or regions without a specific country_code, we'll generate simulated content.
                 if country_code:
-                    articles = fetch_content_from_newsapi(category=newsapi_category, country_code=country_code, count=35) # Changed count to 35
+                    articles = fetch_content_from_newsapi(category=newsapi_category, country_code=country_code, count=10)
                 else:
                     # For 'global' or other regions without a country_code, fall back to simulated.
                     # NewsAPI's /top-headlines endpoint requires a country or source.
