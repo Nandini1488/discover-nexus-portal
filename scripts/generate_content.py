@@ -3,11 +3,12 @@ import os
 import random
 import time
 import requests
+import asyncio # Import asyncio for running async functions
 
 # --- Configuration ---
 # Using Gemini API (gemini-2.0-flash model) for content enhancement/summarization.
 # IMPORTANT: Gemini API does NOT fetch raw news. It processes text you provide.
-# For a production portal, you'd need to replace generate_simulated_content
+# For a production portal, you'd need to replace generate_simulated_content_base
 # with a mechanism to fetch raw news (e.g., RSS feeds, a basic news API for URLs, or web scraping).
 
 # Gemini API is typically accessed via Google Cloud. For local development or
@@ -100,8 +101,8 @@ async def get_gemini_summary_and_image(original_title, original_content, categor
     }}
     """
 
-    chat_history = []
-    chat_history.push({ "role": "user", "parts": [{ "text": prompt }] })
+    # chat_history needs to be a list of dictionaries as per Gemini API format
+    chat_history = [{ "role": "user", "parts": [{ "text": prompt }] }]
     
     payload = {
         "contents": chat_history,
@@ -119,17 +120,12 @@ async def get_gemini_summary_and_image(original_title, original_content, categor
     }
 
     try:
-        # Note: In a browser environment (like Canvas), `fetch` is available.
-        # For a Python script running on GitHub Actions, you'd use `requests` library.
-        # This example uses `requests` as it's a Python script.
         headers = {'Content-Type': 'application/json'}
-        # If GEMINI_API_KEY is provided externally, add it to the URL.
-        # In Canvas, the runtime handles the API key for `generativelanguage.googleapis.com`
-        # so we leave GEMINI_API_KEY as empty string.
         api_url = GEMINI_API_BASE_URL
         if GEMINI_API_KEY:
             api_url += f"?key={GEMINI_API_KEY}"
 
+        # Use requests.post for synchronous call within the async function
         response = requests.post(api_url, headers=headers, data=json.dumps(payload), timeout=30)
         response.raise_for_status()
         result = response.json()
@@ -149,16 +145,17 @@ async def get_gemini_summary_and_image(original_title, original_content, categor
         return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback'
     except json.JSONDecodeError as e:
         print(f"Error decoding Gemini API JSON response: {e}")
-        print(f"Raw Gemini response text: {response.text}")
+        if response and response.text: # Check if response exists before accessing .text
+            print(f"Raw Gemini response text: {response.text}")
         return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback'
 
 
-def main():
+async def main(): # Make main function async
     all_content = {}
     
     # Use a session to persist connection settings across requests, potentially speeding things up
     # and being more efficient with connections.
-    session = requests.Session()
+    session = requests.Session() # requests.Session is synchronous, fine to use here
 
     for region_key, region_data in REGIONS.items():
         region_name_full = region_data["name"]
@@ -175,9 +172,8 @@ def main():
             for i, article in enumerate(base_articles):
                 print(f"  - Processing article {i+1}/{len(base_articles)} for {region_key}/{category_key}...")
                 # 2. Use Gemini to summarize and suggest image URL
-                # Note: In a real async scenario (like a web server), you'd use async/await.
-                # For a simple script, we'll call it synchronously.
-                summary_content, suggested_image_url = requests.get_gemini_summary_and_image(
+                # AWAIT the async function call
+                summary_content, suggested_image_url = await get_gemini_summary_and_image(
                     article['title'], article['content'], category_keyword
                 )
                 
@@ -201,7 +197,5 @@ def main():
         print(f"Error writing to file {output_file_path}: {e}")
 
 if __name__ == "__main__":
-    # Monkey patch requests.get_gemini_summary_and_image to be synchronous for this script's context
-    # In a real async app, you'd use await directly.
-    requests.get_gemini_summary_and_image = get_gemini_summary_and_image
-    main()
+    # Run the async main function using asyncio
+    asyncio.run(main())
