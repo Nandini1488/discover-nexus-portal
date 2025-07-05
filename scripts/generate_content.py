@@ -49,7 +49,7 @@ CATEGORIES = {
 
 # --- Functions ---
 
-def fetch_content_from_newsapi(query=None, category=None, country_code=None, count=10):
+def fetch_content_from_newsapi(query=None, category=None, country_code=None, count=30):
     """
     Fetches real news articles from NewsAPI.org using the /v2/top-headlines endpoint.
     """
