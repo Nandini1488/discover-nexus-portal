@@ -57,6 +57,10 @@ CATEGORIES = {
     "blogs": "featured articles and opinion pieces"
 }
 
+# --- Constants for incremental update ---
+MAX_ARTICLES_PER_CATEGORY = 30 # Desired maximum articles to keep per category
+ARTICLES_TO_FETCH_PER_RUN = 5 # Number of NEW articles to attempt to generate per category per run
+
 # --- Functions ---
 
 def generate_simulated_content_base(region_name, category_name, count=15):
@@ -188,14 +192,13 @@ async def main(): # Make main function async
             print(f"Processing Region: {region_name_full}, Category: {category_key} with Gemini...")
             
             # 1. Get base simulated articles (replace with real news source in production)
-            # Keeping count at 3 articles per category.
-            base_articles = generate_simulated_content_base(region_name_full, category_key, count=3) 
+            # Fetch only ARTICLES_TO_FETCH_PER_RUN new articles for this cycle
+            base_articles = generate_simulated_content_base(
+                region_name_full, category_key, count=ARTICLES_TO_FETCH_PER_RUN
+            ) 
 
-            current_processed_articles = [] # This will hold the articles for the current run
+            current_processed_articles_batch = [] # This will hold the articles generated in this specific run
             
-            # Flag to check if any article in this batch was successfully processed by Gemini
-            any_gemini_success_in_batch = False
-
             for i, article in enumerate(base_articles):
                 print(f"  - Processing article {i+1}/{len(base_articles)} for {region_key}/{category_key}...")
                 # 2. Use Gemini to summarize and suggest image URL
@@ -203,43 +206,36 @@ async def main(): # Make main function async
                     article['title'], article['content'], category_keyword
                 )
                 
-                # If Gemini successfully processed, mark as not simulated
-                if not is_simulated_by_gemini_fallback:
-                    any_gemini_success_in_batch = True
-
-                current_processed_articles.append({
+                current_processed_articles_batch.append({
                     "title": article['title'],
                     "content": summary_content, # Gemini's summary (or fallback)
                     "link": article['link'],
                     "imageUrl": suggested_image_url, # Gemini's suggested image URL (or fallback)
                     "is_simulated": is_simulated_by_gemini_fallback # True if Gemini failed, False if Gemini succeeded
                 })
-                # FURTHER INCREASED delay between individual Gemini calls
-                time.sleep(5) # Increased from 3 seconds
+                # Delay between individual Gemini calls
+                time.sleep(5) 
 
-            # --- Merging Logic ---
-            # Check if there's existing content for this category and if it contains non-simulated articles
-            existing_content_for_category = all_content[region_key].get(category_key, [])
-            existing_has_real_content = any(not art.get('is_simulated', True) for art in existing_content_for_category)
-
-            # Check if the newly generated content contains non-simulated articles
-            new_has_real_content = any(not art.get('is_simulated', True) for art in current_processed_articles)
-
-            if new_has_real_content:
-                # If the new batch has real Gemini content, use it
-                all_content[region_key][category_key] = current_processed_articles
-                print(f"  -> Updated {region_key}/{category_key} with fresh Gemini content.")
-            elif existing_has_real_content:
-                # If new batch is all simulated, but existing content has real Gemini content, keep existing
-                print(f"  -> Keeping existing Gemini content for {region_key}/{category_key} (new batch was simulated).")
-                # No change to all_content[region_key][category_key] needed as it already holds existing
-            else:
-                # If both new and existing are simulated, use the new simulated content
-                all_content[region_key][category_key] = current_processed_articles
-                print(f"  -> Updated {region_key}/{category_key} with new simulated content (no real content available).")
+            # --- Incremental Merging Logic ---
+            existing_articles_for_category = all_content[region_key].get(category_key, [])
             
-            # FURTHER INCREASED delay between categories/regions
-            time.sleep(20) # Increased from 10 seconds
+            # Filter out any simulated articles from the existing list if we have real content
+            # This ensures we don't keep old simulated content if new real content is coming in
+            # Or if we're replacing existing simulated content with new simulated content
+            filtered_existing_articles = [
+                art for art in existing_articles_for_category if not art.get('is_simulated', True)
+            ]
+            
+            # Prepend the newly processed articles to the filtered existing ones
+            combined_articles = current_processed_articles_batch + filtered_existing_articles
+            
+            # Trim the list to the maximum desired number of articles
+            all_content[region_key][category_key] = combined_articles[:MAX_ARTICLES_PER_CATEGORY]
+            
+            print(f"  -> Updated {region_key}/{category_key} with {len(current_processed_articles_batch)} new articles. Total for category: {len(all_content[region_key][category_key])}")
+            
+            # Delay between categories/regions
+            time.sleep(20) 
 
     # 2. Save the updated content to updates.json
     try:
