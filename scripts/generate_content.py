@@ -78,7 +78,8 @@ def generate_simulated_content_base(region_name, category_name, count=15):
             "title": title,
             "content": content,
             "link": link,
-            "imageUrl": image_url_placeholder # This will be replaced by Gemini's suggestion
+            "imageUrl": image_url_placeholder, # This will be replaced by Gemini's suggestion
+            "is_simulated": True # Mark as simulated content
         })
     return articles
 
@@ -137,34 +138,51 @@ async def get_gemini_summary_and_image(original_title, original_content, categor
         if result.get('candidates') and result['candidates'][0].get('content') and result['candidates'][0]['content'].get('parts'):
             json_string = result['candidates'][0]['content']['parts'][0]['text']
             parsed_json = json.loads(json_string)
-            return parsed_json.get('summary', original_content), parsed_json.get('suggestedImageUrl', 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback')
+            return parsed_json.get('summary', original_content), parsed_json.get('suggestedImageUrl', 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback'), False # is_simulated = False
         else:
             print(f"Gemini API response missing expected structure: {result}")
-            return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback'
+            return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback', True # Fallback to simulated if structure is wrong
 
     except requests.exceptions.RequestException as e:
         print(f"Error calling Gemini API: {e}")
         if response and response.text:
             print(f"Gemini API Error Response: {response.text}")
-        return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback'
+        return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback', True # Fallback to simulated on API error
     except json.JSONDecodeError as e:
         print(f"Error decoding Gemini API JSON response: {e}")
         if response and response.text: # Check if response exists before accessing .text
             print(f"Raw Gemini response text: {response.text}")
-        return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback'
+        return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback', True # Fallback to simulated on JSON error
 
 
 async def main(): # Make main function async
+    output_file_path = 'updates.json'
     all_content = {}
     
+    # 1. Attempt to load existing content from updates.json
+    if os.path.exists(output_file_path):
+        try:
+            with open(output_file_path, 'r', encoding='utf-8') as f:
+                all_content = json.load(f)
+            print(f"Successfully loaded existing content from {output_file_path}")
+        except json.JSONDecodeError as e:
+            print(f"Error decoding existing {output_file_path}: {e}. Starting with empty content.")
+            all_content = {}
+        except IOError as e:
+            print(f"Error reading existing {output_file_path}: {e}. Starting with empty content.")
+            all_content = {}
+    else:
+        print(f"No existing {output_file_path} found. Starting with empty content.")
+
     # Use a session to persist connection settings across requests, potentially speeding things up
-    # and being more efficient with connections.
     session = requests.Session() # requests.Session is synchronous, fine to use here
 
     for region_key, region_data in REGIONS.items():
         region_name_full = region_data["name"]
         
-        all_content[region_key] = {}
+        # Ensure the region exists in all_content structure
+        if region_key not in all_content:
+            all_content[region_key] = {}
 
         for category_key, category_keyword in CATEGORIES.items():
             print(f"Processing Region: {region_name_full}, Category: {category_key} with Gemini...")
@@ -173,29 +191,57 @@ async def main(): # Make main function async
             # Keeping count at 3 articles per category.
             base_articles = generate_simulated_content_base(region_name_full, category_key, count=3) 
 
-            processed_articles = []
+            current_processed_articles = [] # This will hold the articles for the current run
+            
+            # Flag to check if any article in this batch was successfully processed by Gemini
+            any_gemini_success_in_batch = False
+
             for i, article in enumerate(base_articles):
                 print(f"  - Processing article {i+1}/{len(base_articles)} for {region_key}/{category_key}...")
                 # 2. Use Gemini to summarize and suggest image URL
-                # AWAIT the async function call
-                summary_content, suggested_image_url = await get_gemini_summary_and_image(
+                summary_content, suggested_image_url, is_simulated_by_gemini_fallback = await get_gemini_summary_and_image(
                     article['title'], article['content'], category_keyword
                 )
                 
-                processed_articles.append({
+                # If Gemini successfully processed, mark as not simulated
+                if not is_simulated_by_gemini_fallback:
+                    any_gemini_success_in_batch = True
+
+                current_processed_articles.append({
                     "title": article['title'],
-                    "content": summary_content, # Gemini's summary
+                    "content": summary_content, # Gemini's summary (or fallback)
                     "link": article['link'],
-                    "imageUrl": suggested_image_url # Gemini's suggested image URL
+                    "imageUrl": suggested_image_url, # Gemini's suggested image URL (or fallback)
+                    "is_simulated": is_simulated_by_gemini_fallback # True if Gemini failed, False if Gemini succeeded
                 })
                 # FURTHER INCREASED delay between individual Gemini calls
                 time.sleep(5) # Increased from 3 seconds
 
-            all_content[region_key][category_key] = processed_articles
+            # --- Merging Logic ---
+            # Check if there's existing content for this category and if it contains non-simulated articles
+            existing_content_for_category = all_content[region_key].get(category_key, [])
+            existing_has_real_content = any(not art.get('is_simulated', True) for art in existing_content_for_category)
+
+            # Check if the newly generated content contains non-simulated articles
+            new_has_real_content = any(not art.get('is_simulated', True) for art in current_processed_articles)
+
+            if new_has_real_content:
+                # If the new batch has real Gemini content, use it
+                all_content[region_key][category_key] = current_processed_articles
+                print(f"  -> Updated {region_key}/{category_key} with fresh Gemini content.")
+            elif existing_has_real_content:
+                # If new batch is all simulated, but existing content has real Gemini content, keep existing
+                print(f"  -> Keeping existing Gemini content for {region_key}/{category_key} (new batch was simulated).")
+                # No change to all_content[region_key][category_key] needed as it already holds existing
+            else:
+                # If both new and existing are simulated, use the new simulated content
+                all_content[region_key][category_key] = current_processed_articles
+                print(f"  -> Updated {region_key}/{category_key} with new simulated content (no real content available).")
+            
             # FURTHER INCREASED delay between categories/regions
             time.sleep(20) # Increased from 10 seconds
 
-    output_file_path = 'updates.json'
+    # 2. Save the updated content to updates.json
     try:
         with open(output_file_path, 'w', encoding='utf-8') as f:
             json.dump(all_content, f, indent=2, ensure_ascii=False)
