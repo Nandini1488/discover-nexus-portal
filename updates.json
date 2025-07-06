@@ -3,24 +3,24 @@
     "news": [
       {
         "title": "Simulated News Headline 1 for the entire world",
-        "content": "A new simulated article discusses current events impacting the entire world. The article provides a broad overview of global news, offering insights into various international issues and developments. More details to follow as the simulation progresses.",
+        "content": "A simulated news article discusses global events. The full article, which would typically contain more details, is summarized by the AI. It covers various aspects of news from around the world, providing a broad overview.",
         "link": "https://example.com/the-entire-world/news/1",
-        "imageUrl": "https://placehold.co/600x400?text=World+News",
+        "imageUrl": "https://via.placeholder.com/640x360/007BFF/FFFFFF?text=World+News",
         "is_simulated": false
       },
       {
         "title": "Simulated News Headline 2 for the entire world",
-        "content": "A simulated news article discusses global events. Details are currently placeholder content, intended to represent a broader story about happenings around the world that would typically be summarized by an AI.",
+        "content": "This is a placeholder for the full content of a simulated article about news in the entire world. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/the-entire-world/news/2",
-        "imageUrl": "https://placehold.co/600x400?text=World+News",
-        "is_simulated": false
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 3 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about news in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new simulated article discusses news from around the world. The placeholder article suggests that the full content would provide a comprehensive overview of current global events and developments. More details to follow in the complete article.",
         "link": "https://example.com/the-entire-world/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://example.com/world_news_placeholder.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 4 for the entire world",
@@ -35,6 +35,20 @@
         "link": "https://example.com/the-entire-world/news/5",
         "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
         "is_simulated": true
+      },
+      {
+        "title": "Simulated News Headline 1 for the entire world",
+        "content": "A new simulated article discusses current events impacting the entire world. The article provides a broad overview of global news, offering insights into various international issues and developments. More details to follow as the simulation progresses.",
+        "link": "https://example.com/the-entire-world/news/1",
+        "imageUrl": "https://placehold.co/600x400?text=World+News",
+        "is_simulated": false
+      },
+      {
+        "title": "Simulated News Headline 2 for the entire world",
+        "content": "A simulated news article discusses global events. Details are currently placeholder content, intended to represent a broader story about happenings around the world that would typically be summarized by an AI.",
+        "link": "https://example.com/the-entire-world/news/2",
+        "imageUrl": "https://placehold.co/600x400?text=World+News",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 1 for the entire world",
@@ -84,6 +98,13 @@
         "title": "Simulated Technology Headline 4 for the entire world",
         "content": "This is a placeholder for the full content of a simulated article about technology in the entire world. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/the-entire-world/technology/4",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated Technology Headline 5 for the entire world",
+        "content": "This is a placeholder for the full content of a simulated article about technology in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/the-entire-world/technology/5",
         "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
         "is_simulated": true
       },
@@ -235,10 +256,10 @@
     "world": [
       {
         "title": "Simulated World Headline 1 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about world in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses global issues and events impacting the world. The placeholder content suggests a focus on international affairs and geopolitics, with potential analysis of worldwide events.",
         "link": "https://example.com/the-entire-world/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://via.placeholder.com/640x360/007BFF/FFFFFF?text=World+Affairs",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 2 for the entire world",
