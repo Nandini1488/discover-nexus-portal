@@ -59,7 +59,7 @@ CATEGORIES = {
 
 # --- Constants for incremental update ---
 MAX_ARTICLES_PER_CATEGORY = 30 # Desired maximum articles to keep per category
-ARTICLES_TO_FETCH_PER_RUN = 5 # Number of NEW articles to attempt to generate per category per run
+ARTICLES_TO_FETCH_PER_RUN = 1 # Number of NEW articles to attempt to generate per category per run
 
 # --- Functions ---
 
@@ -213,29 +213,37 @@ async def main(): # Make main function async
                     "imageUrl": suggested_image_url, # Gemini's suggested image URL (or fallback)
                     "is_simulated": is_simulated_by_gemini_fallback # True if Gemini failed, False if Gemini succeeded
                 })
-                # Delay between individual Gemini calls
-                time.sleep(5) 
+                # Significantly INCREASED delay between individual Gemini calls
+                time.sleep(10) # Increased from 5 seconds
 
             # --- Incremental Merging Logic ---
             existing_articles_for_category = all_content[region_key].get(category_key, [])
             
-            # Filter out any simulated articles from the existing list if we have real content
-            # This ensures we don't keep old simulated content if new real content is coming in
-            # Or if we're replacing existing simulated content with new simulated content
-            filtered_existing_articles = [
-                art for art in existing_articles_for_category if not art.get('is_simulated', True)
-            ]
-            
-            # Prepend the newly processed articles to the filtered existing ones
-            combined_articles = current_processed_articles_batch + filtered_existing_articles
+            # Check if the new batch has *any* non-simulated (Gemini-generated) content
+            new_batch_has_gemini_content = any(not art.get('is_simulated', True) for art in current_processed_articles_batch)
+
+            if new_batch_has_gemini_content:
+                # If the new batch contains Gemini content, prepend it and then filter existing simulated
+                # This ensures new Gemini content always takes precedence
+                filtered_existing_articles = [
+                    art for art in existing_articles_for_category if not art.get('is_simulated', True)
+                ]
+                combined_articles = current_processed_articles_batch + filtered_existing_articles
+                print(f"  -> Updated {region_key}/{category_key} with fresh Gemini content.")
+            else:
+                # If the new batch is entirely simulated (Gemini calls failed),
+                # we still prepend it to show "fresher" simulated content if no real content exists,
+                # but we don't filter out existing real content.
+                combined_articles = current_processed_articles_batch + existing_articles_for_category
+                print(f"  -> New batch for {region_key}/{category_key} was simulated. Merging with existing content.")
             
             # Trim the list to the maximum desired number of articles
             all_content[region_key][category_key] = combined_articles[:MAX_ARTICLES_PER_CATEGORY]
             
-            print(f"  -> Updated {region_key}/{category_key} with {len(current_processed_articles_batch)} new articles. Total for category: {len(all_content[region_key][category_key])}")
+            print(f"  -> Total articles for {region_key}/{category_key}: {len(all_content[region_key][category_key])}")
             
-            # Delay between categories/regions
-            time.sleep(20) 
+            # Significantly INCREASED delay between categories/regions
+            time.sleep(30) # Increased from 20 seconds
 
     # 2. Save the updated content to updates.json
     try:
