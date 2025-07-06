@@ -3,141 +3,162 @@
     "news": [
       {
         "title": "Simulated News Headline 1 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about news in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated news article discusses events impacting the entire world. The article provides a general overview of global news, with more details available in the full text. Key developments and potential consequences are expected to be summarized.",
         "link": "https://example.com/the-entire-world/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=World+News",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 2 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about news in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated news article discusses global events. Details are currently placeholder content, but the full article would cover news impacting the entire world. Check back for updates as the simulation evolves and real content is generated.",
         "link": "https://example.com/the-entire-world/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=World+News",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 3 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about news in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new simulated article discusses general news relevant to the entire world. The full article contains more details, which Gemini is designed to summarize comprehensively, providing key insights and information.",
         "link": "https://example.com/the-entire-world/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=World+News",
+        "is_simulated": false
       }
     ],
     "technology": [
       {
         "title": "Simulated Technology Headline 1 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about technology in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology innovation is set to impact the entire world, according to a simulated article. The details of this innovation are currently placeholder content, but it promises significant global implications in the technology sector.",
         "link": "https://example.com/the-entire-world/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 2 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about technology in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technological innovation is poised to impact the world. Specifics are still under wraps, but sources indicate it could revolutionize daily life and global connectivity. Experts are closely monitoring its development and potential implications for various industries.",
         "link": "https://example.com/the-entire-world/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/600x400/?technology",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 3 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about technology in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology innovation is making waves across the globe. While details are still emerging, the simulated report suggests a significant impact worldwide. More information will be available as the story develops, stay tuned for updates.",
         "link": "https://example.com/the-entire-world/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/tech_innovation_global.jpg",
+        "is_simulated": false
       }
     ],
     "finance": [
       {
         "title": "Simulated Finance Headline 1 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about finance in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "Global finance faces simulated scenarios, impacting markets worldwide. A detailed analysis, typically longer, has been summarized. Investors and economists are closely monitoring the potential ripple effects and strategic adjustments needed in response to these simulated conditions.",
         "link": "https://example.com/the-entire-world/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/600x400/?finance",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 2 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about finance in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "Global finance faces simulated challenges. A new report highlights key trends and potential disruptions impacting markets worldwide. Experts advise caution and strategic planning amid growing economic uncertainty. This simulation serves as a critical exercise for understanding future financial landscapes.",
         "link": "https://example.com/the-entire-world/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/placeholder-finance-world.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 3 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about finance in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "Global finance sees simulated activity, according to recent reports. Details remain sparse as this is a placeholder for a more in-depth analysis of worldwide financial trends and market movements. Stay tuned for updates on this developing story.",
         "link": "https://example.com/the-entire-world/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/placeholder-finance-world.jpg",
+        "is_simulated": false
       }
     ],
     "travel": [
       {
         "title": "Simulated Travel Headline 1 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about travel in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore the globe with our comprehensive travel guide! This simulated article offers tips and inspiration for worldwide adventures. From exotic destinations to cultural hotspots, plan your dream trip with insights tailored for the global traveler. Discover the world!",
         "link": "https://example.com/the-entire-world/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/travel_world.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 2 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about travel in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore the world with our simulated travel guide! This placeholder article hints at global travel tips and destinations. A full article would provide more detailed information and insights for planning your next international adventure. Stay tuned for future travel guides!",
         "link": "https://example.com/the-entire-world/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/orange/white?text=World+Travel",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 3 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about travel in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore the globe with our simulated travel guide! Discover new destinations, travel tips, and hidden gems from around the world. This placeholder article teases a journey filled with exciting adventures and cultural experiences, offering inspiration for your next trip.",
         "link": "https://example.com/the-entire-world/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/travel_world_image.jpg",
+        "is_simulated": false
       }
     ],
     "world": [
       {
         "title": "Simulated World Headline 1 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about world in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses global events and issues. The full content, not provided here, would offer a more detailed look at international affairs and geopolitical developments. This placeholder represents a news piece from the 'international affairs and geopolitics' category, awaiting a complete summary.",
         "link": "https://example.com/the-entire-world/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/featured/?world",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 2 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about world in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses global events and international affairs. The placeholder content suggests a focus on worldwide issues and geopolitical dynamics, promising a detailed analysis when the full article is available.",
         "link": "https://example.com/the-entire-world/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=World+Affairs",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 3 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about world in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new simulated article discusses global issues impacting the entire world. Details are currently brief, but the article promises to explore complex topics within international affairs and geopolitics, offering a synthesized perspective on worldwide events and their interconnectedness.",
         "link": "https://example.com/the-entire-world/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/600x400/?world",
+        "is_simulated": false
       }
     ],
     "weather": [
       {
         "title": "Simulated Weather Headline 1 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about weather in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated global weather forecast article discusses worldwide weather patterns. While the full content is a placeholder, it suggests a broad overview of weather conditions across the globe. Stay tuned for more in-depth reports as they become available.",
         "link": "https://example.com/the-entire-world/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/600x400/?weather",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 2 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about weather in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "Global weather patterns are under close observation. A new simulated model provides insights into potential weather events worldwide. Stay informed about changing conditions and forecasts affecting various regions. This is a test for global weather forecasts.",
         "link": "https://example.com/the-entire-world/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/600x400/?weather",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 3 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about weather in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "Global weather patterns are shifting, according to new simulations. The study, encompassing worldwide forecasts, suggests potential impacts on agriculture and energy sectors. Researchers are urging preparedness measures to mitigate the anticipated effects on various regions. A detailed report will be released next week.",
         "link": "https://example.com/the-entire-world/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/featured/?weather",
+        "is_simulated": false
       }
     ],
     "blogs": [
       {
         "title": "Simulated Blogs Headline 1 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new simulated article explores the current state of blogs worldwide. This placeholder article suggests a comprehensive overview of the blogosphere, but the full content is currently unavailable. The complete analysis promises to offer insights into the global blogging trends.",
         "link": "https://example.com/the-entire-world/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/random?blog",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 2 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses the current state of blogs around the world. While the full content is a placeholder, it hints at a broader discussion on the global blogging landscape. The article is featured as an opinion piece.",
         "link": "https://example.com/the-entire-world/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/blogs-world.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 3 for the entire world",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in the entire world. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses the current state of blogs around the world. The piece likely explores the trends, challenges, and evolution of blogging as a global phenomenon. It falls under featured articles and opinion pieces category.",
         "link": "https://example.com/the-entire-world/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=Global+Blogs",
+        "is_simulated": false
       }
     ]
   },
@@ -145,141 +166,162 @@
     "news": [
       {
         "title": "Simulated News Headline 1 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about news in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A placeholder article discusses recent news in North America. The full article, if it existed, would provide more in-depth coverage of the topic. This is a simulation for demonstration purposes.",
         "link": "https://example.com/north-america/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=North+America+News",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 2 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about news in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A placeholder article discusses news in North America. The full article would contain detailed information, but this serves as a simulation for a news feed summary. Check back for detailed reports.",
         "link": "https://example.com/north-america/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=North+America+News",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 3 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about news in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A placeholder article discusses current news in North America. The full article, if present, would offer detailed coverage, which Gemini would summarize to provide key updates and insights relevant to the region.",
         "link": "https://example.com/north-america/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png?text=North+America+News",
+        "is_simulated": false
       }
     ],
     "technology": [
       {
         "title": "Simulated Technology Headline 1 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about technology in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology innovation is making waves in North America. While details are currently limited to a placeholder, the full article promises to deliver a comprehensive overview of this exciting development in the tech sector.",
         "link": "https://example.com/north-america/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 2 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about technology in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology innovation is making waves in North America. While details are currently limited, the simulated article hints at a significant development impacting the tech landscape of the region. Stay tuned for more information as it becomes available.",
         "link": "https://example.com/north-america/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png?text=Tech+in+North+America",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 3 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about technology in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology trend is emerging in North America. While details are limited in this placeholder article, the innovation promises significant impacts in the technology sector. More comprehensive reporting will follow as details become available.",
         "link": "https://example.com/north-america/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png",
+        "is_simulated": false
       }
     ],
     "finance": [
       {
         "title": "Simulated Finance Headline 1 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about finance in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses financial happenings in North America. More details would be included in the full article, which Gemini is designed to summarize. The article falls under financial market insights.",
         "link": "https://example.com/north-america/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/placeholder_finance_north_america.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 2 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about finance in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "North American financial markets are showing interesting trends, according to a new report. While specific details are yet to be released, early indications suggest potential shifts in investment strategies. Experts advise caution amidst the evolving economic landscape.",
         "link": "https://example.com/north-america/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png?text=Finance+North+America",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 3 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about finance in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated finance article focusing on North America. The article discusses financial events and market trends relevant to North America. More detailed information would typically be included in the full article, providing deeper financial market insights.",
         "link": "https://example.com/north-america/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/yellow/black?text=North+America+Finance",
+        "is_simulated": false
       }
     ],
     "travel": [
       {
         "title": "Simulated Travel Headline 1 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about travel in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated travel article focuses on North America, offering potential travel guides and tips. The full article would provide detailed information, which Gemini can summarize for quick updates.",
         "link": "https://example.com/north-america/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/north_america_travel.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 2 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about travel in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore North America's diverse landscapes and vibrant cities. This article offers travel tips and guidance for planning your next adventure, from scenic road trips to cultural experiences. Discover hidden gems and popular destinations across the continent.",
         "link": "https://example.com/north-america/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/north_america_travel.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 3 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about travel in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore North America with our travel guide! Discover tips and destinations for your next adventure. This simulated article provides a brief overview of what you can expect when planning a trip in North America. Stay tuned for more in-depth travel insights!",
         "link": "https://example.com/north-america/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/north_america_travel.jpg",
+        "is_simulated": false
       }
     ],
     "world": [
       {
         "title": "Simulated World Headline 1 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about world in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article focuses on world events in North America. The article discusses international affairs and geopolitics. More details would be provided in the full text of the article, offering a comprehensive overview of the situation.",
         "link": "https://example.com/north-america/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 2 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about world in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses international affairs and geopolitics in North America. The placeholder content suggests a focus on global events impacting the region. Further details would elaborate on specific geopolitical issues and their potential consequences for North America.",
         "link": "https://example.com/north-america/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=North+America+Geopolitics",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 3 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about world in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses international affairs and geopolitics in North America. The full article, not provided here, would offer an in-depth analysis of the region's current global position and potential future developments. Further details are unavailable in this placeholder.",
         "link": "https://example.com/north-america/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/orange/white?text=North+America+Geopolitics",
+        "is_simulated": false
       }
     ],
     "weather": [
       {
         "title": "Simulated Weather Headline 1 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about weather in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated weather article focuses on North America, providing a glimpse into potential weather patterns. The full article, if available, would offer a more detailed overview and forecast for the region.",
         "link": "https://example.com/north-america/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/600x400/?weather",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 2 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about weather in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated weather article headline indicates upcoming weather events in North America. The full article contains more detailed information and forecasts, but is currently a placeholder.",
         "link": "https://example.com/north-america/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/600x400/?weather",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 3 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about weather in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated weather article focusing on North America. The full article, which Gemini would typically summarize in detail, is currently a placeholder. Check back for updates on North American weather forecasts and potential impacts.",
         "link": "https://example.com/north-america/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/600x400/?weather",
+        "is_simulated": false
       }
     ],
     "blogs": [
       {
         "title": "Simulated Blogs Headline 1 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new blog highlights trending topics and opinions in North America. This simulated article explores various perspectives and discussions relevant to the region's current events and cultural landscape. Stay informed with the latest insights and analyses from North American bloggers.",
         "link": "https://example.com/north-america/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://via.placeholder.com/350x150?text=North+America+Blogs",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 2 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses the current state of blogs in North America. The article, part of the featured articles and opinion pieces category, provides insights into the blogging landscape. More detailed information would be available in the full article.",
         "link": "https://example.com/north-america/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/placeholder-blog-image.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 3 for North America",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in North America. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new article discusses the state of blogs in North America. While the full details are not available, the piece likely covers trends, popular platforms, and the evolving role of blogs in the digital landscape.",
         "link": "https://example.com/north-america/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png?text=North+America+Blogs",
+        "is_simulated": false
       }
     ]
   },
@@ -287,141 +329,162 @@
     "news": [
       {
         "title": "Simulated News Headline 1 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about news in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A placeholder article discusses current events in Europe. The full article, if available, would provide extensive details. This is a brief synopsis for news feed dissemination, highlighting key aspects of European news.",
         "link": "https://example.com/europe/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=Europe+News",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 2 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about news in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new article discusses current events in Europe. The full article provides more detailed coverage of the simulated news headline. This is a placeholder summary, and the actual article would contain significantly more information.",
         "link": "https://example.com/europe/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=Europe+News",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 3 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about news in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A placeholder article discusses current events in Europe. The full article is unavailable but would typically contain detailed information and analysis, which Gemini would summarize for readers following European news developments.",
         "link": "https://example.com/europe/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=Europe+News",
+        "is_simulated": false
       }
     ],
     "technology": [
       {
         "title": "Simulated Technology Headline 1 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technological innovation is making waves in Europe. While specifics are currently limited to a placeholder, sources indicate significant advancements are on the horizon. This simulated article anticipates a longer piece detailing these developments.",
         "link": "https://example.com/europe/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png?text=European+Tech",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 2 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology innovation is making waves in Europe. This simulated article explores the details of this advancement and its potential impact on the European technology sector. More details to follow as the story develops.",
         "link": "https://example.com/europe/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png?text=Tech+Europe",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 3 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology innovation is brewing in Europe. This simulated article explores the latest advancements and trends in the European tech scene. Stay tuned for more details on how these innovations are shaping the future of technology in Europe.",
         "link": "https://example.com/europe/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png",
+        "is_simulated": false
       }
     ],
     "finance": [
       {
         "title": "Simulated Finance Headline 1 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses the current state of finance in Europe. The piece offers placeholder content, standing in for a more detailed analysis that would typically be summarized. Key aspects of Europe's financial landscape are examined.",
         "link": "https://example.com/europe/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png?text=European+Finance",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 2 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new finance article focuses on the European financial sector. The article provides in-depth financial market insights within Europe. More details to follow as the simulated article is summarized. Stay tuned for key financial highlights and analysis.",
         "link": "https://example.com/europe/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/european_finance.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 3 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A placeholder article discusses finance in Europe, offering insights into the European financial market. More details would typically follow in a longer article which would be summarized by Gemini, offering deeper analysis on financial trends and market movements.",
         "link": "https://example.com/europe/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/european_finance.jpg",
+        "is_simulated": false
       }
     ],
     "travel": [
       {
         "title": "Simulated Travel Headline 1 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore Europe with our simulated travel guide! This article provides a glimpse into the wonders of European travel, offering tips and inspiration for your next adventure. Stay tuned for more detailed travel insights and planning resources.",
         "link": "https://example.com/europe/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/europe_travel.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 2 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore Europe with our travel guide! Get tips and insights for planning your European adventure. Discover must-see destinations, cultural experiences, and hidden gems across the continent. Start planning your unforgettable trip today!",
         "link": "https://example.com/europe/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/europe_travel.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 3 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore Europe with our travel guide! While the full article content is a placeholder, imagine discovering tips and insights for your next European adventure. Stay tuned for detailed travel guides and tips.",
         "link": "https://example.com/europe/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/941751/fff?text=Europe+Travel",
+        "is_simulated": false
       }
     ],
     "world": [
       {
         "title": "Simulated World Headline 1 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about world in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses current world events impacting Europe. The article likely covers international affairs and geopolitical issues relevant to the European continent. Further details are expected in the full report.",
         "link": "https://example.com/europe/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/orange/white?text=Europe+Geopolitics",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 2 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about world in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses world events with a focus on Europe. Details are not provided, but the full article would offer comprehensive insights, which Gemini would summarize, into international affairs and geopolitics.",
         "link": "https://example.com/europe/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/placeholder/europe_world_affairs.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 3 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about world in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses international affairs and geopolitics in Europe. The article provides insights into simulated world events impacting the continent. More details to follow in the full article.",
         "link": "https://example.com/europe/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=Europe+Geopolitics",
+        "is_simulated": false
       }
     ],
     "weather": [
       {
         "title": "Simulated Weather Headline 1 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated weather article indicates potential weather events in Europe. Details are currently unavailable but will include a forecast summary when populated. Check back for updates on European weather patterns and potential impacts.",
         "link": "https://example.com/europe/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/weather",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 2 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated weather article focuses on the European continent, providing a forecast (placeholder content). The full article would contain more detailed information and analysis, but this is a short summary for a news feed.",
         "link": "https://example.com/europe/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/featured/?europe,weather",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 3 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "Europe is bracing for potentially impactful weather conditions. Details remain sparse, but forecasts suggest noteworthy developments. More comprehensive reports are expected soon as meteorological agencies refine their predictive models and issue further advisories.",
         "link": "https://example.com/europe/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/600x400/?weather",
+        "is_simulated": false
       }
     ],
     "blogs": [
       {
         "title": "Simulated Blogs Headline 1 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new article discusses the current state of blogs in Europe. While the full content is not provided, the piece appears to be an opinion piece or featured article, offering insights into the European blogging landscape.",
         "link": "https://example.com/europe/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=European+Blogs",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 2 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses the current state of blogs in Europe. The article, intended as a placeholder, explores the European blogosphere. More details will be provided when the full content is available.",
         "link": "https://example.com/europe/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=Europe+Blogs",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 3 for Europe",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Europe. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses the state of blogs in Europe. The full article, if available, would provide a more detailed analysis of the European blogosphere, covering trends, popular platforms, and the impact of blogging on European culture and society.",
         "link": "https://example.com/europe/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=European+Blogs",
+        "is_simulated": false
       }
     ]
   },
@@ -429,141 +492,162 @@
     "news": [
       {
         "title": "Simulated News Headline 1 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about news in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated news article discusses current events in Asia. While the full details are not provided here, the placeholder content suggests coverage of general news topics relevant to the Asian continent. Check back for more details as they become available.",
         "link": "https://example.com/asia/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png?text=Asia+News",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 2 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about news in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated news article focuses on current events in Asia. The full article would provide detailed coverage and analysis, which would typically be summarized by an AI. Stay tuned for more updates from the Asian continent.",
         "link": "https://example.com/asia/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png?text=Asia+News",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 3 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about news in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A placeholder article discusses current events in Asia. The full article, which Gemini would summarize, is not available at this time. Check back for updates on developing stories from across the Asian continent.",
         "link": "https://example.com/asia/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://via.placeholder.com/640x360/007BFF/FFFFFF?text=Asia+News",
+        "is_simulated": false
       }
     ],
     "technology": [
       {
         "title": "Simulated Technology Headline 1 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology innovation is emerging in Asia. Details are still limited but the article focuses on breakthroughs and advancements within the Asian technology sector. More information will be provided as it becomes available.",
         "link": "https://example.com/asia/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 2 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology innovation is on the horizon in Asia. The full details are not yet available, but stay tuned for updates on this developing story. The innovation promises to change technology in Asia.",
         "link": "https://example.com/asia/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png?text=Asian+Tech",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 3 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology trend is emerging in Asia. This simulated article discusses the latest innovations and developments in the Asian technology sector. More details will follow in the full article.",
         "link": "https://example.com/asia/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png?text=Asian+Tech",
+        "is_simulated": false
       }
     ],
     "finance": [
       {
         "title": "Simulated Finance Headline 1 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new report on Asian finance indicates potential market shifts. While specific details are currently limited, analysts suggest paying close attention to emerging trends across the region. Investors are advised to monitor key economic indicators for further insights into the evolving financial landscape.",
         "link": "https://example.com/asia/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/yellow/black?text=Asian+Finance",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 2 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses finance in Asia, offering potential insights into the region's financial markets. The full article, if available, would provide a detailed analysis. This summary serves as a placeholder for that future, more comprehensive content.",
         "link": "https://example.com/asia/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/placeholder-finance-asia.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 3 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses financial topics relevant to the Asian market. The full article, which Gemini would normally summarize in detail, provides financial market insights for the region.",
         "link": "https://example.com/asia/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://via.placeholder.com/640x480/blue/white?text=Asian+Finance",
+        "is_simulated": false
       }
     ],
     "travel": [
       {
         "title": "Simulated Travel Headline 1 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore Asia's wonders with our travel guide! This article provides tips and insights for your next Asian adventure. Discover must-see destinations, cultural experiences, and travel hacks to make your trip unforgettable. Get ready to immerse yourself in the beauty and diversity of Asia.",
         "link": "https://example.com/asia/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 2 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore Asia with our travel guide! Get tips and insights for planning your next adventure. This simulated article provides a sneak peek at the wonders and cultural experiences awaiting you. Stay tuned for the full article and detailed recommendations.",
         "link": "https://example.com/asia/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/featured/?asia,travel",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 3 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore Asia's wonders with our travel guide. Though this is a placeholder, imagine vibrant cultures, stunning landscapes, and delicious cuisine. Stay tuned for real travel tips and itineraries to plan your dream Asian adventure! Get ready for an unforgettable journey.",
         "link": "https://example.com/asia/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/orange/white?text=Asia+Travel",
+        "is_simulated": false
       }
     ],
     "world": [
       {
         "title": "Simulated World Headline 1 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about world in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses global events impacting Asia. Details are sparse, but the piece likely covers international affairs and geopolitics within the Asian continent. Further information would normally be included in the full article content.",
         "link": "https://example.com/asia/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/featured/?asia,geopolitics",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 2 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about world in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses international affairs and geopolitics in Asia. Details are currently placeholder content, pending full article generation. This covers potential developments and impacts within the Asian geopolitical landscape.",
         "link": "https://example.com/asia/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/png?text=Asia+Geopolitics",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 3 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about world in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses international affairs and geopolitics in Asia. The full article, which Gemini would summarize, delves into developments impacting the region. Further details were not provided in the placeholder.",
         "link": "https://example.com/asia/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=Asia+Geopolitics",
+        "is_simulated": false
       }
     ],
     "weather": [
       {
         "title": "Simulated Weather Headline 1 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated weather article focuses on conditions across Asia. Details include potential forecasts and impacts, but specifics are omitted in this placeholder. A full report would provide detailed analysis.",
         "link": "https://example.com/asia/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/sky-blue/white?text=Asia+Weather",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 2 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses the weather situation in Asia. The full article would provide detailed forecasts and analysis, offering insights into current and upcoming weather patterns across the continent. Stay tuned for potential real weather updates in Asia.",
         "link": "https://example.com/asia/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/featured/?asia,weather",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 3 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses weather patterns and forecasts across Asia. Details are currently placeholder text, but a full article would provide a comprehensive overview of the region's weather conditions. Stay tuned for detailed weather updates covering Asia.",
         "link": "https://example.com/asia/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/sky",
+        "is_simulated": false
       }
     ],
     "blogs": [
       {
         "title": "Simulated Blogs Headline 1 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new article discusses blogs in Asia. The full article, which is simulated, would provide detailed analysis and opinions on the blogging landscape across the Asian continent. Stay tuned for more in-depth coverage on Asian blogs.",
         "link": "https://example.com/asia/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/asian_blogs.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 2 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new blog trend is emerging in Asia. This article provides insight on the new blogging trends and their impacts. It dives into the content strategies and audiences driving the trend.",
         "link": "https://example.com/asia/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=Asian+Blogs",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 3 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses the blogosphere in Asia. Details are currently represented by placeholder text, standing in for a full article that Gemini would summarize with key insights and analysis regarding blogs in the Asian continent.",
         "link": "https://example.com/asia/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://via.placeholder.com/640x480?text=Asian+Blogs",
+        "is_simulated": false
       }
     ]
   },
@@ -571,81 +655,93 @@
     "news": [
       {
         "title": "Simulated News Headline 1 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about news in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "A placeholder article simulates news from Africa. The full article, which would be longer, is intended for summarization by Gemini, providing a concise overview of African current events.",
         "link": "https://example.com/africa/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/orange/white?text=Africa+News",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 2 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about news in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated news article placeholder discusses general news related to Africa. The full article content is not provided, but it would typically be a longer text that an AI model would summarize for brevity and clarity.",
         "link": "https://example.com/africa/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/orange/white?text=Africa+News",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 3 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about news in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "A placeholder article discusses recent news from Africa. The full article, if present, would provide detailed coverage and analysis of current events shaping the continent. This summary captures the essence of the simulated news piece, focusing on its geographical scope.",
         "link": "https://example.com/africa/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/orange/white?text=Africa+News",
+        "is_simulated": false
       }
     ],
     "technology": [
       {
         "title": "Simulated Technology Headline 1 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology innovation is making waves in Africa. While specifics are currently placeholder content, the article highlights advancements within the continent's tech sector. Stay tuned for detailed updates regarding this developing story and its potential impact.",
         "link": "https://example.com/africa/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/technology_africa.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 2 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology innovation is making waves in Africa. Although details are currently limited, the simulated article hints at significant developments impacting the technology sector across the continent. Further updates are expected as more information becomes available.",
         "link": "https://example.com/africa/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://via.placeholder.com/150/0077cc/ffffff?text=Tech+Africa",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 3 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "A new technology innovation is emerging in Africa, poised to make a significant impact. The full details are still developing, but early signs suggest a transformative potential for the region's technological landscape.",
         "link": "https://example.com/africa/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://source.unsplash.com/600x400/?africa,technology",
+        "is_simulated": false
       }
     ],
     "finance": [
       {
         "title": "Simulated Finance Headline 1 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article focuses on finance in Africa. The article, designed as a placeholder, discusses the financial landscape of the continent. More details would be provided in a full, longer version of the text, which would typically be summarized by an AI.",
         "link": "https://example.com/africa/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/africa_finance.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 2 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses financial dynamics in Africa, offering insights into market trends and potential investment opportunities. The full article would delve into specific economic factors and their impact on the African financial landscape.",
         "link": "https://example.com/africa/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/africa_finance.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 3 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article focuses on finance in Africa, providing insights into the financial market. The full content, which Gemini would typically summarize, is not provided in this placeholder.",
         "link": "https://example.com/africa/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/african_finance.jpg",
+        "is_simulated": false
       }
     ],
     "travel": [
       {
         "title": "Simulated Travel Headline 1 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore Africa with our travel guide! Discover tips and insights for planning your next adventure. This simulated article provides a glimpse into the wonders of African travel, with practical advice and inspiration for unforgettable experiences.",
         "link": "https://example.com/africa/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://example.com/africa_travel.jpg",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 2 for Africa",
         "content": "This is a placeholder for the full content of a simulated article about travel in Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/africa/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 3 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "Explore Africa's diverse landscapes and cultures with our travel guide. Though this is a placeholder, expect tips on destinations, accommodations, and activities. Stay tuned for the full article with detailed travel advice to plan your African adventure.",
         "link": "https://example.com/africa/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://via.placeholder.com/640x480/87CEEB/000000?text=African+Safari",
+        "is_simulated": false
       }
     ],
     "world": [
@@ -653,39 +749,45 @@
         "title": "Simulated World Headline 1 for Africa",
         "content": "This is a placeholder for the full content of a simulated article about world in Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/africa/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 2 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about world in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated report on international affairs in Africa. The article discusses world geopolitics within the African continent, focusing on simulated events and scenarios.",
         "link": "https://example.com/africa/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/0095FF/FFFFFF?text=Africa+Geopolitics",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 3 for Africa",
         "content": "This is a placeholder for the full content of a simulated article about world in Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/africa/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "weather": [
       {
         "title": "Simulated Weather Headline 1 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated weather report focusing on Africa. The full article would contain a detailed forecast, but this is currently a placeholder. Check back for updated weather information for various regions in Africa.",
         "link": "https://example.com/africa/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/weather",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 2 for Africa",
         "content": "This is a placeholder for the full content of a simulated article about weather in Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/africa/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 3 for Africa",
         "content": "This is a placeholder for the full content of a simulated article about weather in Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/africa/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "blogs": [
@@ -693,19 +795,22 @@
         "title": "Simulated Blogs Headline 1 for Africa",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/africa/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 2 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Africa. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated article discusses the state of blogs in Africa. The article, a placeholder for a longer piece, examines the role and impact of blogs on the continent. This is one of our featured articles and opinion pieces.",
         "link": "https://example.com/africa/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400?text=Blogs+Africa",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 3 for Africa",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/africa/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ]
   },
@@ -715,19 +820,22 @@
         "title": "Simulated News Headline 1 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about news in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 2 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about news in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 3 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about news in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "technology": [
@@ -735,19 +843,22 @@
         "title": "Simulated Technology Headline 1 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about technology in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 2 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about technology in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 3 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about technology in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "finance": [
@@ -755,19 +866,22 @@
         "title": "Simulated Finance Headline 1 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about finance in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 2 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about finance in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 3 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about finance in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "travel": [
@@ -775,19 +889,22 @@
         "title": "Simulated Travel Headline 1 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about travel in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 2 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about travel in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 3 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about travel in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "world": [
@@ -795,19 +912,22 @@
         "title": "Simulated World Headline 1 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about world in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 2 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about world in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 3 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about world in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "weather": [
@@ -815,19 +935,22 @@
         "title": "Simulated Weather Headline 1 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about weather in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 2 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about weather in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 3 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about weather in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "blogs": [
@@ -835,19 +958,22 @@
         "title": "Simulated Blogs Headline 1 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 2 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 3 for Oceania",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ]
   },
@@ -857,19 +983,22 @@
         "title": "Simulated News Headline 1 for South America",
         "content": "This is a placeholder for the full content of a simulated article about news in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 2 for South America",
         "content": "This is a placeholder for the full content of a simulated article about news in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 3 for South America",
         "content": "This is a placeholder for the full content of a simulated article about news in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "technology": [
@@ -877,19 +1006,22 @@
         "title": "Simulated Technology Headline 1 for South America",
         "content": "This is a placeholder for the full content of a simulated article about technology in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 2 for South America",
         "content": "This is a placeholder for the full content of a simulated article about technology in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 3 for South America",
         "content": "This is a placeholder for the full content of a simulated article about technology in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "finance": [
@@ -897,19 +1029,22 @@
         "title": "Simulated Finance Headline 1 for South America",
         "content": "This is a placeholder for the full content of a simulated article about finance in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 2 for South America",
         "content": "This is a placeholder for the full content of a simulated article about finance in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 3 for South America",
         "content": "This is a placeholder for the full content of a simulated article about finance in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "travel": [
@@ -917,19 +1052,22 @@
         "title": "Simulated Travel Headline 1 for South America",
         "content": "This is a placeholder for the full content of a simulated article about travel in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 2 for South America",
         "content": "This is a placeholder for the full content of a simulated article about travel in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 3 for South America",
         "content": "This is a placeholder for the full content of a simulated article about travel in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "world": [
@@ -937,19 +1075,22 @@
         "title": "Simulated World Headline 1 for South America",
         "content": "This is a placeholder for the full content of a simulated article about world in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 2 for South America",
         "content": "This is a placeholder for the full content of a simulated article about world in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 3 for South America",
         "content": "This is a placeholder for the full content of a simulated article about world in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "weather": [
@@ -957,19 +1098,22 @@
         "title": "Simulated Weather Headline 1 for South America",
         "content": "This is a placeholder for the full content of a simulated article about weather in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 2 for South America",
         "content": "This is a placeholder for the full content of a simulated article about weather in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 3 for South America",
         "content": "This is a placeholder for the full content of a simulated article about weather in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "blogs": [
@@ -977,19 +1121,22 @@
         "title": "Simulated Blogs Headline 1 for South America",
         "content": "This is a placeholder for the full content of a simulated article about blogs in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 2 for South America",
         "content": "This is a placeholder for the full content of a simulated article about blogs in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 3 for South America",
         "content": "This is a placeholder for the full content of a simulated article about blogs in South America. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-america/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ]
   },
@@ -999,19 +1146,22 @@
         "title": "Simulated News Headline 1 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about news in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 2 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about news in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 3 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about news in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "technology": [
@@ -1019,19 +1169,22 @@
         "title": "Simulated Technology Headline 1 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about technology in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 2 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about technology in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 3 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about technology in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "finance": [
@@ -1039,19 +1192,22 @@
         "title": "Simulated Finance Headline 1 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about finance in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 2 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about finance in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 3 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about finance in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "travel": [
@@ -1059,19 +1215,22 @@
         "title": "Simulated Travel Headline 1 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about travel in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 2 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about travel in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 3 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about travel in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "world": [
@@ -1079,19 +1238,22 @@
         "title": "Simulated World Headline 1 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about world in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 2 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about world in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 3 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about world in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "weather": [
@@ -1099,19 +1261,22 @@
         "title": "Simulated Weather Headline 1 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about weather in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 2 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about weather in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 3 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about weather in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "blogs": [
@@ -1119,19 +1284,22 @@
         "title": "Simulated Blogs Headline 1 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 2 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 3 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Middle East. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/middle-east/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ]
   },
@@ -1141,19 +1309,22 @@
         "title": "Simulated News Headline 1 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about news in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 2 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about news in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 3 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about news in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "technology": [
@@ -1161,19 +1332,22 @@
         "title": "Simulated Technology Headline 1 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about technology in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 2 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about technology in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 3 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about technology in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "finance": [
@@ -1181,19 +1355,22 @@
         "title": "Simulated Finance Headline 1 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about finance in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 2 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about finance in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 3 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about finance in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "travel": [
@@ -1201,19 +1378,22 @@
         "title": "Simulated Travel Headline 1 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about travel in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 2 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about travel in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 3 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about travel in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "world": [
@@ -1221,19 +1401,22 @@
         "title": "Simulated World Headline 1 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about world in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 2 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about world in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 3 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about world in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "weather": [
@@ -1241,19 +1424,22 @@
         "title": "Simulated Weather Headline 1 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about weather in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 2 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about weather in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 3 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about weather in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "blogs": [
@@ -1261,19 +1447,22 @@
         "title": "Simulated Blogs Headline 1 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 2 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 3 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/southeast-asia/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ]
   },
@@ -1283,19 +1472,22 @@
         "title": "Simulated News Headline 1 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about news in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 2 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about news in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 3 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about news in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "technology": [
@@ -1303,19 +1495,22 @@
         "title": "Simulated Technology Headline 1 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about technology in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 2 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about technology in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 3 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about technology in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "finance": [
@@ -1323,19 +1518,22 @@
         "title": "Simulated Finance Headline 1 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about finance in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 2 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about finance in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 3 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about finance in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "travel": [
@@ -1343,19 +1541,22 @@
         "title": "Simulated Travel Headline 1 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about travel in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 2 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about travel in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 3 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about travel in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "world": [
@@ -1363,19 +1564,22 @@
         "title": "Simulated World Headline 1 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about world in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 2 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about world in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 3 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about world in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "weather": [
@@ -1383,19 +1587,22 @@
         "title": "Simulated Weather Headline 1 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about weather in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 2 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about weather in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 3 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about weather in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "blogs": [
@@ -1403,19 +1610,22 @@
         "title": "Simulated Blogs Headline 1 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about blogs in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 2 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about blogs in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 3 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about blogs in North Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/north-africa/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ]
   },
@@ -1425,19 +1635,22 @@
         "title": "Simulated News Headline 1 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about news in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 2 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about news in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 3 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about news in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "technology": [
@@ -1445,19 +1658,22 @@
         "title": "Simulated Technology Headline 1 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about technology in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 2 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about technology in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 3 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about technology in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "finance": [
@@ -1465,19 +1681,22 @@
         "title": "Simulated Finance Headline 1 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about finance in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 2 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about finance in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 3 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about finance in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "travel": [
@@ -1485,19 +1704,22 @@
         "title": "Simulated Travel Headline 1 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about travel in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 2 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about travel in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 3 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about travel in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "world": [
@@ -1505,19 +1727,22 @@
         "title": "Simulated World Headline 1 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about world in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 2 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about world in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 3 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about world in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "weather": [
@@ -1525,19 +1750,22 @@
         "title": "Simulated Weather Headline 1 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about weather in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 2 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about weather in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 3 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about weather in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "blogs": [
@@ -1545,19 +1773,22 @@
         "title": "Simulated Blogs Headline 1 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 2 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 3 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/sub-saharan-africa/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ]
   },
@@ -1567,19 +1798,22 @@
         "title": "Simulated News Headline 1 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about news in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 2 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about news in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 3 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about news in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "technology": [
@@ -1587,19 +1821,22 @@
         "title": "Simulated Technology Headline 1 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about technology in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 2 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about technology in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 3 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about technology in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "finance": [
@@ -1607,19 +1844,22 @@
         "title": "Simulated Finance Headline 1 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about finance in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 2 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about finance in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 3 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about finance in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "travel": [
@@ -1627,19 +1867,22 @@
         "title": "Simulated Travel Headline 1 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about travel in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 2 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about travel in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 3 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about travel in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "world": [
@@ -1647,19 +1890,22 @@
         "title": "Simulated World Headline 1 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about world in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 2 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about world in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 3 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about world in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "weather": [
@@ -1667,19 +1913,22 @@
         "title": "Simulated Weather Headline 1 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about weather in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 2 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about weather in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 3 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about weather in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "blogs": [
@@ -1687,19 +1936,22 @@
         "title": "Simulated Blogs Headline 1 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about blogs in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 2 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about blogs in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 3 for East Asia",
         "content": "This is a placeholder for the full content of a simulated article about blogs in East Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/east-asia/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ]
   },
@@ -1709,19 +1961,22 @@
         "title": "Simulated News Headline 1 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about news in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 2 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about news in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 3 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about news in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "technology": [
@@ -1729,19 +1984,22 @@
         "title": "Simulated Technology Headline 1 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about technology in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 2 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about technology in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 3 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about technology in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "finance": [
@@ -1749,19 +2007,22 @@
         "title": "Simulated Finance Headline 1 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about finance in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 2 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about finance in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 3 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about finance in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "travel": [
@@ -1769,19 +2030,22 @@
         "title": "Simulated Travel Headline 1 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about travel in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 2 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about travel in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 3 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about travel in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "world": [
@@ -1789,19 +2053,22 @@
         "title": "Simulated World Headline 1 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about world in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 2 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about world in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 3 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about world in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "weather": [
@@ -1809,19 +2076,22 @@
         "title": "Simulated Weather Headline 1 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about weather in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 2 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about weather in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 3 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about weather in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "blogs": [
@@ -1829,19 +2099,22 @@
         "title": "Simulated Blogs Headline 1 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about blogs in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 2 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about blogs in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 3 for South Asia",
         "content": "This is a placeholder for the full content of a simulated article about blogs in South Asia. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/south-asia/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ]
   },
@@ -1851,19 +2124,22 @@
         "title": "Simulated News Headline 1 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about news in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 2 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about news in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/news/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated News Headline 3 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about news in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/news/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "technology": [
@@ -1871,19 +2147,22 @@
         "title": "Simulated Technology Headline 1 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about technology in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 2 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about technology in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/technology/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Technology Headline 3 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about technology in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/technology/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "finance": [
@@ -1891,19 +2170,22 @@
         "title": "Simulated Finance Headline 1 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about finance in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 2 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about finance in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/finance/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Finance Headline 3 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about finance in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/finance/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "travel": [
@@ -1911,19 +2193,22 @@
         "title": "Simulated Travel Headline 1 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about travel in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 2 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about travel in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/travel/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Travel Headline 3 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about travel in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/travel/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "world": [
@@ -1931,19 +2216,22 @@
         "title": "Simulated World Headline 1 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about world in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 2 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about world in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/world/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated World Headline 3 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about world in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/world/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "weather": [
@@ -1951,19 +2239,22 @@
         "title": "Simulated Weather Headline 1 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about weather in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 2 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about weather in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/weather/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Weather Headline 3 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about weather in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/weather/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ],
     "blogs": [
@@ -1971,19 +2262,22 @@
         "title": "Simulated Blogs Headline 1 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 2 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/blogs/2",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       },
       {
         "title": "Simulated Blogs Headline 3 for Australia & NZ",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Australia & NZ. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/australia-&-nz/blogs/3",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
       }
     ]
   }
