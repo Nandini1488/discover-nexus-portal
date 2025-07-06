@@ -3,15 +3,15 @@
     "news": [
       {
         "title": "Simulated News Headline 1 for the entire world",
-        "content": "A new placeholder article discusses news from around the world. The simulated content provides a broad overview, touching on various global events and developments. More details will follow in the full article, which is expected to provide greater depth and analysis.",
+        "content": "This is a placeholder for the full content of a simulated article about news in the entire world. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/the-entire-world/news/1",
-        "imageUrl": "https://placehold.co/600x400?text=World+News"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
       },
       {
         "title": "Simulated News Headline 2 for the entire world",
-        "content": "A placeholder article discusses global news, offering a broad overview of events impacting the entire world. Further details would be provided in the full article, summarized by advanced AI models. Stay tuned for updates on world affairs.",
+        "content": "This is a placeholder for the full content of a simulated article about news in the entire world. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/the-entire-world/news/2",
-        "imageUrl": "https://placehold.co/600x400?text=Global+News"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
       },
       {
         "title": "Simulated News Headline 3 for the entire world",
@@ -759,9 +759,9 @@
       },
       {
         "title": "Simulated Finance Headline 2 for Oceania",
-        "content": "A new report offers financial market insights for Oceania. The full article, which Gemini would typically summarize in greater detail, covers key financial trends and developments in the region.",
+        "content": "This is a placeholder for the full content of a simulated article about finance in Oceania. It would typically be a longer text that Gemini would summarize.",
         "link": "https://example.com/oceania/finance/2",
-        "imageUrl": "https://placehold.co/600x400/png?text=Oceania+Finance"
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
       },
       {
         "title": "Simulated Finance Headline 3 for Oceania",
