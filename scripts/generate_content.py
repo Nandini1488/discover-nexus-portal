@@ -170,7 +170,7 @@ async def main(): # Make main function async
             print(f"Processing Region: {region_name_full}, Category: {category_key} with Gemini...")
             
             # 1. Get base simulated articles (replace with real news source in production)
-            # REDUCED count to 3 articles per category to reduce Gemini API calls
+            # Keeping count at 3 articles per category.
             base_articles = generate_simulated_content_base(region_name_full, category_key, count=3) 
 
             processed_articles = []
@@ -188,12 +188,12 @@ async def main(): # Make main function async
                     "link": article['link'],
                     "imageUrl": suggested_image_url # Gemini's suggested image URL
                 })
-                # INCREASED delay between individual Gemini calls
-                time.sleep(3) 
+                # FURTHER INCREASED delay between individual Gemini calls
+                time.sleep(5) # Increased from 3 seconds
 
             all_content[region_key][category_key] = processed_articles
-            # INCREASED delay between categories/regions
-            time.sleep(10) 
+            # FURTHER INCREASED delay between categories/regions
+            time.sleep(20) # Increased from 10 seconds
 
     output_file_path = 'updates.json'
     try:
