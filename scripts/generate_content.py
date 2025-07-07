@@ -4,6 +4,7 @@ import random
 import time
 import requests
 import asyncio # Import asyncio for running async functions
+from datetime import datetime, timezone # Import for time-based batching
 
 # --- Configuration ---
 # Using Gemini API (gemini-2.0-flash model) for content enhancement/summarization.
@@ -60,6 +61,12 @@ CATEGORIES = {
 # --- Constants for incremental update ---
 MAX_ARTICLES_PER_CATEGORY = 30 # Desired maximum articles to keep per category
 ARTICLES_TO_FETCH_PER_RUN = 1 # Number of NEW articles to attempt to generate per category per run
+
+# --- Constants for rotating processing ---
+ALL_CATEGORY_KEYS = [(r_key, c_key) for r_key in REGIONS for c_key in CATEGORIES]
+TOTAL_CATEGORIES = len(ALL_CATEGORY_KEYS) # 14 regions * 7 categories = 98
+NUM_BATCHES = 4 # Since workflow runs every 6 hours (24/6 = 4 runs per day)
+BATCH_SIZE = (TOTAL_CATEGORIES + NUM_BATCHES - 1) // NUM_BATCHES # Ceiling division
 
 # --- Functions ---
 
@@ -158,6 +165,22 @@ async def get_gemini_summary_and_image(original_title, original_content, categor
             print(f"Raw Gemini response text: {response.text}")
         return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback', True # Fallback to simulated on JSON error
 
+def get_current_batch_index():
+    """
+    Determines which batch of categories to process based on the current UTC hour.
+    Assumes workflow runs at 00:00, 06:00, 12:00, 18:00 UTC.
+    """
+    now_utc = datetime.now(timezone.utc)
+    current_hour_utc = now_utc.hour
+
+    if 0 <= current_hour_utc < 6:
+        return 0 # 00:00 UTC run
+    elif 6 <= current_hour_utc < 12:
+        return 1 # 06:00 UTC run
+    elif 12 <= current_hour_utc < 18:
+        return 2 # 12:00 UTC run
+    else: # 18 <= current_hour_utc < 24
+        return 3 # 18:00 UTC run
 
 async def main(): # Make main function async
     output_file_path = 'updates.json'
@@ -178,72 +201,80 @@ async def main(): # Make main function async
     else:
         print(f"No existing {output_file_path} found. Starting with empty content.")
 
+    # Determine which slice of categories to process in this run
+    current_batch_idx = get_current_batch_index()
+    start_idx = current_batch_idx * BATCH_SIZE
+    end_idx = min(start_idx + BATCH_SIZE, TOTAL_CATEGORIES)
+    categories_to_process_in_this_run = ALL_CATEGORY_KEYS[start_idx:end_idx]
+
+    print(f"--- Processing Batch {current_batch_idx + 1}/{NUM_BATCHES} ({len(categories_to_process_in_this_run)} categories) ---")
+
     # Use a session to persist connection settings across requests, potentially speeding things up
     session = requests.Session() # requests.Session is synchronous, fine to use here
 
-    for region_key, region_data in REGIONS.items():
-        region_name_full = region_data["name"]
+    for region_key, category_key in categories_to_process_in_this_run:
+        region_name_full = REGIONS[region_key]["name"]
+        category_keyword = CATEGORIES[category_key]
+
+        print(f"Processing Region: {region_name_full}, Category: {category_key} with Gemini...")
         
         # Ensure the region exists in all_content structure
         if region_key not in all_content:
             all_content[region_key] = {}
+        
+        # 1. Get base simulated articles (replace with real news source in production)
+        # Fetch only ARTICLES_TO_FETCH_PER_RUN new articles for this cycle
+        base_articles = generate_simulated_content_base(
+            region_name_full, category_key, count=ARTICLES_TO_FETCH_PER_RUN
+        ) 
 
-        for category_key, category_keyword in CATEGORIES.items():
-            print(f"Processing Region: {region_name_full}, Category: {category_key} with Gemini...")
+        current_processed_articles_batch = [] # This will hold the articles generated in this specific run
+        
+        for i, article in enumerate(base_articles):
+            print(f"  - Processing article {i+1}/{len(base_articles)} for {region_key}/{category_key}...")
+            # 2. Use Gemini to summarize and suggest image URL
+            summary_content, suggested_image_url, is_simulated_by_gemini_fallback = await get_gemini_summary_and_image(
+                article['title'], article['content'], category_keyword
+            )
             
-            # 1. Get base simulated articles (replace with real news source in production)
-            # Fetch only ARTICLES_TO_FETCH_PER_RUN new articles for this cycle
-            base_articles = generate_simulated_content_base(
-                region_name_full, category_key, count=ARTICLES_TO_FETCH_PER_RUN
-            ) 
+            current_processed_articles_batch.append({
+                "title": article['title'],
+                "content": summary_content, # Gemini's summary (or fallback)
+                "link": article['link'],
+                "imageUrl": suggested_image_url, # Gemini's suggested image URL (or fallback)
+                "is_simulated": is_simulated_by_gemini_fallback # True if Gemini failed, False if Gemini succeeded
+            })
+            # Significantly INCREASED delay between individual Gemini calls
+            time.sleep(30) # Increased from 20 seconds, aiming for 2 calls per minute at most
 
-            current_processed_articles_batch = [] # This will hold the articles generated in this specific run
-            
-            for i, article in enumerate(base_articles):
-                print(f"  - Processing article {i+1}/{len(base_articles)} for {region_key}/{category_key}...")
-                # 2. Use Gemini to summarize and suggest image URL
-                summary_content, suggested_image_url, is_simulated_by_gemini_fallback = await get_gemini_summary_and_image(
-                    article['title'], article['content'], category_keyword
-                )
-                
-                current_processed_articles_batch.append({
-                    "title": article['title'],
-                    "content": summary_content, # Gemini's summary (or fallback)
-                    "link": article['link'],
-                    "imageUrl": suggested_image_url, # Gemini's suggested image URL (or fallback)
-                    "is_simulated": is_simulated_by_gemini_fallback # True if Gemini failed, False if Gemini succeeded
-                })
-                # Significantly INCREASED delay between individual Gemini calls
-                time.sleep(30) # Increased from 20 seconds, aiming for 2 calls per minute at most
+        # --- Incremental Merging Logic ---
+        existing_articles_for_category = all_content[region_key].get(category_key, [])
+        
+        # Check if the new batch has *any* non-simulated (Gemini-generated) content
+        new_batch_has_gemini_content = any(not art.get('is_simulated', True) for art in current_processed_articles_batch)
 
-            # --- Incremental Merging Logic ---
-            existing_articles_for_category = all_content[region_key].get(category_key, [])
-            
-            # Check if the new batch has *any* non-simulated (Gemini-generated) content
-            new_batch_has_gemini_content = any(not art.get('is_simulated', True) for art in current_processed_articles_batch)
-
-            if new_batch_has_gemini_content:
-                # If the new batch contains Gemini content, prepend it and then filter existing simulated
-                # This ensures new Gemini content always takes precedence
-                filtered_existing_articles = [
-                    art for art in existing_articles_for_category if not art.get('is_simulated', True)
-                ]
-                combined_articles = current_processed_articles_batch + filtered_existing_articles
-                print(f"  -> Updated {region_key}/{category_key} with fresh Gemini content.")
-            else:
-                # If the new batch is entirely simulated (Gemini calls failed),
-                # we still prepend it to show "fresher" simulated content if no real content exists,
-                # but we don't filter out existing real content.
-                combined_articles = current_processed_articles_batch + existing_articles_for_category
-                print(f"  -> New batch for {region_key}/{category_key} was simulated. Merging with existing content.")
-            
-            # Trim the list to the maximum desired number of articles
-            all_content[region_key][category_key] = combined_articles[:MAX_ARTICLES_PER_CATEGORY]
-            
-            print(f"  -> Total articles for {region_key}/{category_key}: {len(all_content[region_key][category_key])}")
-            
-            # Significantly INCREASED delay between categories/regions
-            time.sleep(60) # Increased from 45 seconds, aiming for 1 category per minute at most
+        if new_batch_has_gemini_content:
+            # If the new batch contains Gemini content, prepend it and then filter existing simulated
+            # This ensures new Gemini content always takes precedence
+            filtered_existing_articles = [
+                art for art in existing_articles_for_category if not art.get('is_simulated', True)
+            ]
+            combined_articles = current_processed_articles_batch + filtered_existing_articles
+            print(f"  -> Updated {region_key}/{category_key} with fresh Gemini content.")
+        else:
+            # If the new batch is entirely simulated (Gemini calls failed),
+            # we still prepend it to show "fresher" simulated content if no real content exists,
+            # but we don't filter out existing real content.
+            combined_articles = current_processed_articles_batch + existing_articles_for_category
+            print(f"  -> New batch for {region_key}/{category_key} was simulated. Merging with existing content.")
+        
+        # Trim the list to the maximum desired number of articles
+        all_content[region_key][category_key] = combined_articles[:MAX_ARTICLES_PER_CATEGORY]
+        
+        print(f"  -> Total articles for {region_key}/{category_key}: {len(all_content[region_key][category_key])}")
+        
+        # Delay between categories/regions
+        time.sleep(60) # Increased from 45 seconds, aiming for 1 category per minute at most
 
     # 2. Save the updated content to updates.json
     try:
