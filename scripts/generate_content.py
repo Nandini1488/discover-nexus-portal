@@ -214,7 +214,7 @@ async def main(): # Make main function async
                     "is_simulated": is_simulated_by_gemini_fallback # True if Gemini failed, False if Gemini succeeded
                 })
                 # Significantly INCREASED delay between individual Gemini calls
-                time.sleep(10) # Increased from 5 seconds
+                time.sleep(30) # Increased from 20 seconds, aiming for 2 calls per minute at most
 
             # --- Incremental Merging Logic ---
             existing_articles_for_category = all_content[region_key].get(category_key, [])
@@ -243,7 +243,7 @@ async def main(): # Make main function async
             print(f"  -> Total articles for {region_key}/{category_key}: {len(all_content[region_key][category_key])}")
             
             # Significantly INCREASED delay between categories/regions
-            time.sleep(30) # Increased from 20 seconds
+            time.sleep(60) # Increased from 45 seconds, aiming for 1 category per minute at most
 
     # 2. Save the updated content to updates.json
     try:
