@@ -1944,6 +1944,13 @@
       },
       {
         "title": "Simulated Technology Headline 1 for Middle East",
+        "content": "This is a placeholder for the full content of a simulated article about technology in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/middle-east/technology/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated Technology Headline 1 for Middle East",
         "content": "A new technology innovation is emerging in the Middle East, promising to reshape the region's tech landscape. The full article provides a detailed look into this development and its potential impact on various sectors.",
         "link": "https://example.com/middle-east/technology/1",
         "imageUrl": "https://example.com/tech_middle_east.jpg",
@@ -1958,6 +1965,13 @@
       }
     ],
     "finance": [
+      {
+        "title": "Simulated Finance Headline 1 for Middle East",
+        "content": "This is a placeholder for the full content of a simulated article about finance in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/middle-east/finance/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
       {
         "title": "Simulated Finance Headline 1 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about finance in Middle East. It would typically be a longer text that Gemini would summarize.",
@@ -1990,6 +2004,13 @@
       },
       {
         "title": "Simulated Travel Headline 1 for Middle East",
+        "content": "This is a placeholder for the full content of a simulated article about travel in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/middle-east/travel/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated Travel Headline 1 for Middle East",
         "content": "Explore the Middle East with our travel guide! This article provides tips and insights for planning your trip to this fascinating region. Discover cultural hotspots, historical landmarks, and hidden gems. Get ready for an unforgettable adventure in the Middle East.",
         "link": "https://example.com/middle-east/travel/1",
         "imageUrl": "https://example.com/middle_east_travel.jpg",
@@ -2004,6 +2025,13 @@
       }
     ],
     "world": [
+      {
+        "title": "Simulated World Headline 1 for Middle East",
+        "content": "This is a placeholder for the full content of a simulated article about world in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/middle-east/world/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
       {
         "title": "Simulated World Headline 1 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about world in Middle East. It would typically be a longer text that Gemini would summarize.",
@@ -2036,6 +2064,13 @@
       },
       {
         "title": "Simulated Weather Headline 1 for Middle East",
+        "content": "This is a placeholder for the full content of a simulated article about weather in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/middle-east/weather/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated Weather Headline 1 for Middle East",
         "content": "Middle East weather forecast simulated. A detailed article with extended information is expected to be released soon. Expect analysis of temperature, precipitation, and other relevant weather phenomena.",
         "link": "https://example.com/middle-east/weather/1",
         "imageUrl": "https://example.com/weather_middle_east.jpg",
@@ -2050,6 +2085,13 @@
       }
     ],
     "blogs": [
+      {
+        "title": "Simulated Blogs Headline 1 for Middle East",
+        "content": "This is a placeholder for the full content of a simulated article about blogs in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/middle-east/blogs/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
       {
         "title": "Simulated Blogs Headline 1 for Middle East",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Middle East. It would typically be a longer text that Gemini would summarize.",
@@ -2084,6 +2126,13 @@
       },
       {
         "title": "Simulated News Headline 1 for Southeast Asia",
+        "content": "This is a placeholder for the full content of a simulated article about news in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/southeast-asia/news/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated News Headline 1 for Southeast Asia",
         "content": "A simulated news article discusses current events in Southeast Asia. The full article contains more details, but this is a placeholder summary generated by AI. Stay tuned for updates from the region.",
         "link": "https://example.com/southeast-asia/news/1",
         "imageUrl": "https://placehold.co/600x400/png?text=Southeast+Asia+News",
@@ -2098,6 +2147,13 @@
       }
     ],
     "technology": [
+      {
+        "title": "Simulated Technology Headline 1 for Southeast Asia",
+        "content": "This is a placeholder for the full content of a simulated article about technology in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/southeast-asia/technology/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
       {
         "title": "Simulated Technology Headline 1 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about technology in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
@@ -2130,6 +2186,13 @@
       },
       {
         "title": "Simulated Finance Headline 1 for Southeast Asia",
+        "content": "This is a placeholder for the full content of a simulated article about finance in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/southeast-asia/finance/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated Finance Headline 1 for Southeast Asia",
         "content": "A simulated article discusses finance in Southeast Asia, offering insights into the region's financial market. Further details and analysis would typically be included in the full article, providing a comprehensive overview of current trends and potential investment opportunities.",
         "link": "https://example.com/southeast-asia/finance/1",
         "imageUrl": "https://via.placeholder.com/350x150/007BFF/FFFFFF?text=Southeast+Asia+Finance",
@@ -2144,6 +2207,13 @@
       }
     ],
     "travel": [
+      {
+        "title": "Simulated Travel Headline 1 for Southeast Asia",
+        "content": "This is a placeholder for the full content of a simulated article about travel in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/southeast-asia/travel/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
       {
         "title": "Simulated Travel Headline 1 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about travel in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
@@ -2176,6 +2246,13 @@
       },
       {
         "title": "Simulated World Headline 1 for Southeast Asia",
+        "content": "This is a placeholder for the full content of a simulated article about world in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/southeast-asia/world/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated World Headline 1 for Southeast Asia",
         "content": "A simulated article discusses world events impacting Southeast Asia. The piece analyzes the region's geopolitical landscape and its role in international affairs. Further details on specific issues and their potential consequences are expected in the full article.",
         "link": "https://example.com/southeast-asia/world/1",
         "imageUrl": "https://placehold.co/600x400/png?text=Southeast+Asia+Geopolitics",
@@ -2192,10 +2269,10 @@
     "weather": [
       {
         "title": "Simulated Weather Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "content": "A simulated weather article focusing on Southeast Asia's climate conditions. The full article, if available, would provide a detailed analysis of the region's current and predicted weather patterns. This is a summary of a simulated article that Gemini would typically summarize into a shorter text.",
         "link": "https://example.com/southeast-asia/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/featured/?southeastasia,weather",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 1 for Southeast Asia",
@@ -2213,6 +2290,13 @@
       }
     ],
     "blogs": [
+      {
+        "title": "Simulated Blogs Headline 1 for Southeast Asia",
+        "content": "This is a placeholder for the full content of a simulated article about blogs in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/southeast-asia/blogs/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
       {
         "title": "Simulated Blogs Headline 1 for Southeast Asia",
         "content": "This is a placeholder for the full content of a simulated article about blogs in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
@@ -2247,6 +2331,13 @@
       },
       {
         "title": "Simulated News Headline 1 for North Africa",
+        "content": "This is a placeholder for the full content of a simulated article about news in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/north-africa/news/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated News Headline 1 for North Africa",
         "content": "A placeholder article discusses general news in North Africa. The full article would provide a more detailed account, which Gemini would then summarize to provide key details and relevant information.",
         "link": "https://example.com/north-africa/news/1",
         "imageUrl": "https://placehold.co/600x400/orange/white?text=North+Africa+News",
@@ -2261,6 +2352,13 @@
       }
     ],
     "technology": [
+      {
+        "title": "Simulated Technology Headline 1 for North Africa",
+        "content": "This is a placeholder for the full content of a simulated article about technology in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/north-africa/technology/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
       {
         "title": "Simulated Technology Headline 1 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about technology in North Africa. It would typically be a longer text that Gemini would summarize.",
@@ -2293,6 +2391,13 @@
       },
       {
         "title": "Simulated Finance Headline 1 for North Africa",
+        "content": "This is a placeholder for the full content of a simulated article about finance in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/north-africa/finance/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated Finance Headline 1 for North Africa",
         "content": "A simulated article focuses on finance in North Africa. Details are currently unavailable but the full article would typically contain insights and analysis of the financial markets in the North African region.",
         "link": "https://example.com/north-africa/finance/1",
         "imageUrl": "https://placehold.co/600x400/orange/white?text=North+Africa+Finance",
@@ -2307,6 +2412,13 @@
       }
     ],
     "travel": [
+      {
+        "title": "Simulated Travel Headline 1 for North Africa",
+        "content": "This is a placeholder for the full content of a simulated article about travel in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/north-africa/travel/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
       {
         "title": "Simulated Travel Headline 1 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about travel in North Africa. It would typically be a longer text that Gemini would summarize.",
@@ -2339,6 +2451,13 @@
       },
       {
         "title": "Simulated World Headline 1 for North Africa",
+        "content": "This is a placeholder for the full content of a simulated article about world in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/north-africa/world/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated World Headline 1 for North Africa",
         "content": "A simulated report on North Africa examines current world events in the region. The article, part of a series, provides insights into international affairs and geopolitics, offering a concise overview of key developments. More details will be available in the full article.",
         "link": "https://example.com/north-africa/world/1",
         "imageUrl": "https://placehold.co/600x400/orange/white?text=North+Africa",
@@ -2362,6 +2481,13 @@
       },
       {
         "title": "Simulated Weather Headline 1 for North Africa",
+        "content": "This is a placeholder for the full content of a simulated article about weather in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/north-africa/weather/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated Weather Headline 1 for North Africa",
         "content": "A simulated weather article indicates upcoming weather patterns in North Africa. More details to follow in the full article, which would typically be summarized by Gemini.",
         "link": "https://example.com/north-africa/weather/1",
         "imageUrl": "https://source.unsplash.com/600x400/?northafrica,weather",
@@ -2376,6 +2502,13 @@
       }
     ],
     "blogs": [
+      {
+        "title": "Simulated Blogs Headline 1 for North Africa",
+        "content": "This is a placeholder for the full content of a simulated article about blogs in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/north-africa/blogs/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
       {
         "title": "Simulated Blogs Headline 1 for North Africa",
         "content": "This is a placeholder for the full content of a simulated article about blogs in North Africa. It would typically be a longer text that Gemini would summarize.",
@@ -2410,6 +2543,13 @@
       },
       {
         "title": "Simulated News Headline 1 for Sub-Saharan Africa",
+        "content": "This is a placeholder for the full content of a simulated article about news in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/sub-saharan-africa/news/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated News Headline 1 for Sub-Saharan Africa",
         "content": "A simulated news article focuses on Sub-Saharan Africa. The full article, which would typically be more detailed, is currently represented by placeholder text. This summary provides a brief overview of the region being covered.",
         "link": "https://example.com/sub-saharan-africa/news/1",
         "imageUrl": "https://placehold.co/600x400/AFRICA/ffffff",
@@ -2424,6 +2564,13 @@
       }
     ],
     "technology": [
+      {
+        "title": "Simulated Technology Headline 1 for Sub-Saharan Africa",
+        "content": "This is a placeholder for the full content of a simulated article about technology in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/sub-saharan-africa/technology/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
       {
         "title": "Simulated Technology Headline 1 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about technology in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
@@ -2456,6 +2603,13 @@
       },
       {
         "title": "Simulated Finance Headline 1 for Sub-Saharan Africa",
+        "content": "This is a placeholder for the full content of a simulated article about finance in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/sub-saharan-africa/finance/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated Finance Headline 1 for Sub-Saharan Africa",
         "content": "A simulated report on Sub-Saharan Africa's financial sector indicates potential trends and challenges. Insights cover market dynamics and investment opportunities in the region. More details to follow as the full report is analyzed.",
         "link": "https://example.com/sub-saharan-africa/finance/1",
         "imageUrl": "https://placehold.co/600x400/yellow/black?text=African+Finance",
@@ -2479,6 +2633,13 @@
       },
       {
         "title": "Simulated Travel Headline 1 for Sub-Saharan Africa",
+        "content": "This is a placeholder for the full content of a simulated article about travel in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/sub-saharan-africa/travel/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
+      {
+        "title": "Simulated Travel Headline 1 for Sub-Saharan Africa",
         "content": "Explore Sub-Saharan Africa with our travel guide! Discover tips and destinations for an unforgettable adventure. This simulated article offers a glimpse into the diverse cultures and landscapes awaiting travelers in the region. Plan your journey now!",
         "link": "https://example.com/sub-saharan-africa/travel/1",
         "imageUrl": "https://example.com/sub-saharan-africa-travel.jpg",
@@ -2493,6 +2654,13 @@
       }
     ],
     "world": [
+      {
+        "title": "Simulated World Headline 1 for Sub-Saharan Africa",
+        "content": "This is a placeholder for the full content of a simulated article about world in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
+        "link": "https://example.com/sub-saharan-africa/world/1",
+        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
+        "is_simulated": true
+      },
       {
         "title": "Simulated World Headline 1 for Sub-Saharan Africa",
         "content": "This is a placeholder for the full content of a simulated article about world in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
