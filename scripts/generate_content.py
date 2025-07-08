@@ -67,27 +67,84 @@ BATCH_SIZE = (TOTAL_CATEGORIES + NUM_BATCHES - 1) // NUM_BATCHES # Ceiling divis
 
 # --- Functions ---
 
-def generate_simulated_content_base(region_name, category_name, count=15):
+def generate_simulated_content_base(region_name, category_name, count=1): # Changed default count to 1
     """
-    Generates simulated *base* content. In a real scenario, this would be
-    replaced by fetching raw articles from a news source.
+    Generates more realistic (but still simulated) base content for Mistral AI to summarize.
     """
     articles = []
+    sample_contents = {
+        "news": [
+            f"A major political development unfolded in {region_name} today, with implications for upcoming elections. Analysts are closely watching the public's reaction to the new policy proposals.",
+            f"Breaking news from {region_name}: a significant cultural festival has been announced, promising to draw visitors from across the globe. Local authorities are preparing for a large influx of tourists and media.",
+            f"An unexpected economic report from {region_name} indicates a surprising upturn in key sectors. Experts are debating whether this trend is sustainable or a temporary fluctuation.",
+            f"A new public health initiative launched in {region_name} aims to tackle a long-standing issue. Early results are promising, but widespread adoption remains a challenge.",
+            f"Environmental activists in {region_name} are calling for urgent action on climate change, citing recent extreme weather events as evidence of escalating crisis. Government response is pending."
+        ],
+        "technology": [
+            f"Innovators in {region_name} have unveiled a groundbreaking AI model capable of unprecedented data processing speeds. This could revolutionize industries from finance to healthcare.",
+            f"A new quantum computing breakthrough from {region_name} promises to unlock solutions to complex problems currently beyond reach. Scientists are cautiously optimistic about its long-term potential.",
+            f"The tech sector in {region_name} is buzzing about a new sustainable energy storage solution that could drastically reduce reliance on fossil fuels. Pilot projects are already underway.",
+            f"A cybersecurity firm in {region_name} has detected a sophisticated new type of malware, prompting warnings across the digital landscape. Users are advised to update their systems immediately.",
+            f"Virtual reality advancements in {region_name} are pushing the boundaries of immersive experiences, with new applications emerging in education and entertainment."
+        ],
+        "finance": [
+            f"The stock market in {region_name} experienced a volatile session, driven by investor uncertainty over global trade tensions. Analysts predict continued fluctuations in the short term.",
+            f"A major acquisition in {region_name}'s banking sector is set to reshape the financial landscape. Regulators are reviewing the deal for potential market impact.",
+            f"Inflation concerns are rising in {region_name} as consumer prices continue to climb. Central bank officials are considering new measures to stabilize the economy.",
+            f"Real estate markets in {region_name} are showing signs of cooling after a period of rapid growth. Experts suggest a more balanced market could emerge in the coming months.",
+            f"Cryptocurrency adoption is surging in {region_name}, with new regulations being drafted to manage the growing digital asset market."
+        ],
+        "travel": [
+            f"New travel restrictions have been eased for visitors to {region_name}, sparking a surge in tourism bookings. Local businesses are preparing for the influx of international guests.",
+            f"A hidden gem in {region_name} has been named a top travel destination for next year, known for its pristine natural beauty and unique cultural experiences.",
+            f"Sustainable tourism initiatives are gaining traction in {region_name}, with eco-friendly resorts and responsible travel options becoming increasingly popular.",
+            f"Adventure tourism is booming in {region_name}, attracting thrill-seekers to its challenging landscapes and outdoor activities.",
+            f"Food tourism is drawing gourmands to {region_name}, eager to explore its vibrant culinary scene and traditional dishes."
+        ],
+        "world": [
+            f"Geopolitical tensions are escalating in a key region, with international bodies calling for de-escalation and dialogue. World leaders are closely monitoring the situation.",
+            f"A global summit on climate change concluded with new commitments from major nations, though activists argue more urgent action is needed to meet ambitious targets.",
+            f"International aid efforts are underway to assist a nation recovering from a natural disaster, with humanitarian organizations mobilizing resources worldwide.",
+            f"A new trade agreement between several major economies is set to reshape global commerce, promising both opportunities and challenges for various industries.",
+            f"Discussions at the United Nations focus on global health security, with renewed calls for international cooperation to prevent future pandemics."
+        ],
+        "weather": [
+            f"An unprecedented heatwave is gripping parts of {region_name}, prompting health warnings and concerns about agricultural impact. Authorities are urging residents to take precautions.",
+            f"Severe storms have caused widespread disruption across {region_name}, leading to power outages and travel delays. Emergency services are working to restore normalcy.",
+            f"A new study predicts significant changes in precipitation patterns for {region_name} over the next decade, with implications for water management and agriculture.",
+            f"Unusual cold fronts are sweeping through {region_name}, bringing record low temperatures and challenging winter conditions. Residents are advised to prepare for prolonged cold spells.",
+            f"Coastal regions in {region_name} are bracing for higher sea levels, with new infrastructure projects being planned to mitigate the impact of climate change."
+        ],
+        "blogs": [
+            f"A popular blogger from {region_name} has published a viral post dissecting the latest social media trends, sparking widespread debate and discussion.",
+            f"An insightful opinion piece from {region_name} explores the future of remote work, offering unique perspectives on productivity and work-life balance.",
+            f"A new travel blog highlights unexplored destinations in {region_name}, providing practical tips and stunning photography for adventurous readers.",
+            f"The food blogging scene in {region_name} is thriving, with a recent post showcasing traditional recipes and local culinary secrets gaining international attention.",
+            f"A tech blog from {region_name} reviews the newest gadgets and software, providing in-depth analysis and recommendations for tech enthusiasts."
+        ]
+    }
+
     for i in range(count):
-        title = f"Simulated {category_name.replace('_', ' ').title()} Headline {i + 1} for {region_name}"
-        content = f"This is a placeholder for the full content of a simulated article about {category_name.replace('_', ' ')} in {region_name}. It would typically be a longer text that Mistral would summarize."
+        # Use a random sample from the relevant category's content
+        content_options = sample_contents.get(category_name, sample_contents["news"]) # Default to news if category not found
+        content = random.choice(content_options)
+        
+        # Make the title more dynamic, but still related to the simulated content
+        title_prefix = f"Latest {category_name.replace('_', ' ').title()} Update"
+        title = f"{title_prefix} from {region_name} - {random.randint(100, 999)}" # Add random number to make titles unique
+
         link = f"https://example.com/{region_name.lower().replace(' ', '-')}/{category_name.lower().replace(' ', '-')}/{i + 1}"
         
-        # We'll let Mistral suggest an image URL, but provide a fallback if it struggles.
-        # For a real app, you'd get actual image URLs from your news source.
-        image_url_placeholder = f"https://placehold.co/600x400/CCCCCC/333333?text={category_name.title()}+{i+1}"
+        # Generate a more relevant placeholder image URL based on category and region
+        image_query = f"{category_name.replace('_', '+')}+{region_name.replace(' ', '+')}"
+        image_url = f"https://placehold.co/600x400/{random.choice(['CCCCCC', 'FF5733', '33FF57', '3357FF'])}/{random.choice(['333333', 'FFFFFF'])}?text={category_name.title()}+{region_name.replace(' ', '+')}"
 
         articles.append({
             "title": title,
             "content": content,
             "link": link,
-            "imageUrl": image_url_placeholder, # This will be replaced by Mistral's suggestion
-            "is_simulated": True # Mark as simulated content
+            "imageUrl": image_url, # This will be the placeholder, Mistral won't generate real images
+            "is_simulated": True # Still marked as simulated as it's not real news data
         })
     return articles
 
@@ -99,7 +156,9 @@ async def get_mistral_summary_and_image(original_title, original_content, catego
     prompt = f"""
     You are an AI assistant for a news portal. Your task is to take the following article
     title and content, and generate a concise summary (around 50-70 words) for a news feed.
-    Additionally, suggest a relevant placeholder image URL that visually represents the article's topic.
+    The summary should capture the main points and be engaging.
+    Additionally, suggest a relevant placeholder image URL (e.g., from placehold.co or unsplash.com with relevant keywords)
+    that visually represents the article's topic. Do NOT generate base64 images.
 
     Original Title: "{original_title}"
     Original Content: "{original_content}"
@@ -131,11 +190,22 @@ async def get_mistral_summary_and_image(original_title, original_content, catego
         response = requests.post(MISTRAL_API_BASE_URL, headers=headers, data=json.dumps(payload), timeout=30)
         response.raise_for_status()
         result = response.json()
+        
+        # --- DEBUG PRINT: Print raw Mistral response ---
+        print(f"DEBUG: Raw Mistral AI response for '{original_title}': {json.dumps(result, indent=2)}")
+        # --- END DEBUG PRINT ---
 
         if result.get('choices') and result['choices'][0].get('message') and result['choices'][0]['message'].get('content'):
             json_string = result['choices'][0]['message']['content']
             parsed_json = json.loads(json_string)
-            return parsed_json.get('summary', original_content), parsed_json.get('suggestedImageUrl', 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback'), False # is_simulated = False
+            
+            # Use the suggestedImageUrl from Mistral if it's a valid URL, otherwise fallback
+            mistral_suggested_image_url = parsed_json.get('suggestedImageUrl', '')
+            if not mistral_suggested_image_url or not (mistral_suggested_image_url.startswith('http://') or mistral_suggested_image_url.startswith('https://')):
+                # Fallback to a more descriptive placeholder if Mistral doesn't provide a valid URL
+                mistral_suggested_image_url = f"https://placehold.co/600x400/CCCCCC/333333?text={category_name.title()}+{original_title.split(' ')[-1]}"
+
+            return parsed_json.get('summary', original_content), mistral_suggested_image_url, False # is_simulated = False
         else:
             print(f"Mistral AI API response missing expected structure: {result}")
             return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback', True # Fallback to simulated if structure is wrong
