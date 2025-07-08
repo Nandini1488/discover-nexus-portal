@@ -76,6 +76,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
+          # Pull the latest changes from the remote main branch
+          # This ensures the local branch is up-to-date before trying to push
+          git pull origin main --rebase
+          
           # Add the 'updates.json' file to the Git staging area.
           git add updates.json
           
