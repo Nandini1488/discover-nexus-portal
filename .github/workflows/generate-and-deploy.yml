@@ -1,16 +1,16 @@
 # This workflow generates news content and deploys it to GitHub Pages.
-# It's configured to run once daily to respect API limits.
+# It's configured to run every 6 hours to provide more frequent updates.
 
 name: Generate & Deploy News Content
 
 on:
   # Trigger the workflow on pushes to the 'main' branch.
-  # This is useful for initial setup and debugging, but be mindful of API limits.
+  # This is useful for initial setup and debugging.
   push:
     branches:
       - main
   
- # Schedule the workflow to run every 6 hours (at minute 0 of hours 0, 6, 12, 18 UTC).
+  # Schedule the workflow to run every 6 hours (at minute 0 of hours 0, 6, 12, 18 UTC).
   # This provides more frequent updates while trying to manage API limits.
   schedule:
     - cron: '0 */6 * * *' # Runs at 00:00, 06:00, 12:00, 18:00 UTC daily
@@ -49,19 +49,29 @@ jobs:
 
       # Step 4: Generate content using the Python script.
       # Executes your 'generate_content.py' script.
-      # The GEMINI_API_KEY is securely passed as an environment variable from GitHub Secrets.
+      # The MISTRAL_API_KEY is securely passed as an environment variable from GitHub Secrets.
       - name: Generate content
         run: python scripts/generate_content.py
         env:
-          # This variable name (GEMINI_API_KEY) must EXACTLY match the name your Python script expects
+          # This variable name (MISTRAL_API_KEY) must EXACTLY match the name your Python script expects
           # and the name of your GitHub Secret.
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }} # CHANGED THIS LINE
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
 
       # Step 5: Commit and Push changes to the repository.
       # This step adds the newly generated 'updates.json' file, commits it,
       # and pushes the changes back to the 'main' branch.
       - name: Commit and Push changes
         run: |
+          # Exit immediately if any command fails
+          set -e
+
+          # Debug: List file to confirm it exists and its size
+          echo "--- Debugging updates.json before commit ---"
+          ls -l updates.json
+          # Debug: Print first few lines of updates.json to check content
+          head -n 20 updates.json
+          echo "--- End debugging updates.json ---"
+
           # Configure Git user details for the commit.
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -69,9 +79,11 @@ jobs:
           # Add the 'updates.json' file to the Git staging area.
           git add updates.json
           
-          # Commit the changes. The '|| echo "No changes to commit"' part
-          # prevents the workflow from failing if 'updates.json' hasn't changed.
-          git commit -m "Update news content data" || echo "No changes to commit"
+          # Commit the changes. The '|| true' part (instead of || echo)
+          # ensures the step doesn't fail if there are no changes, but still
+          # allows 'set -e' to catch other errors.
+          git commit -m "Update news content data" || true
           
           # Push the committed changes to the 'main' branch.
-          git push
+          # Use GITHUB_TOKEN for authentication and explicitly push to main.
+          git push origin main
