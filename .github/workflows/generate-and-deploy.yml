@@ -55,7 +55,7 @@ jobs:
         env:
           # This variable name (GEMINI_API_KEY) must EXACTLY match the name your Python script expects
           # and the name of your GitHub Secret.
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # CHANGED THIS LINE
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }} # CHANGED THIS LINE
 
       # Step 5: Commit and Push changes to the repository.
       # This step adds the newly generated 'updates.json' file, commits it,
