@@ -2223,18 +2223,11 @@
     ],
     "technology": [
       {
-        "title": "Simulated Technology Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Technology Update from Middle East - 989",
+        "content": "The Middle East is leading the charge in virtual reality advancements, revolutionizing immersive experiences in education and entertainment.",
         "link": "https://example.com/middle-east/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Technology Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Middle East. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/middle-east/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?virtual-reality,middle-east",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 1 for Middle East",
@@ -2253,18 +2246,11 @@
     ],
     "finance": [
       {
-        "title": "Simulated Finance Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Finance Update from Middle East - 573",
+        "content": "Middle East grapples with inflation as consumer prices escalate, with central bank officials mulling over new economic stabilization measures.",
         "link": "https://example.com/middle-east/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Finance Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Middle East. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/middle-east/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?currency,economy,middle_east",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 1 for Middle East",
@@ -2283,18 +2269,11 @@
     ],
     "travel": [
       {
-        "title": "Simulated Travel Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Travel Update from Middle East - 280",
+        "content": "Eased travel restrictions ignite tourism surge in the Middle East, with local businesses anticipating a wave of international guests.",
         "link": "https://example.com/middle-east/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Travel Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Middle East. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/middle-east/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?middle-east,tourism,people",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 1 for Middle East",
@@ -2313,18 +2292,11 @@
     ],
     "world": [
       {
-        "title": "Simulated World Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about world in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest World Update from Middle East - 456",
+        "content": "Rising tensions in the Middle East have international bodies calling for de-escalation and dialogue as world leaders closely monitor the volatile situation.",
         "link": "https://example.com/middle-east/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated World Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about world in Middle East. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/middle-east/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/nqW_dIQlL10/download?force=true",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 1 for Middle East",
@@ -2343,18 +2315,11 @@
     ],
     "weather": [
       {
-        "title": "Simulated Weather Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Weather Update from Middle East - 752",
+        "content": "Middle East grapples with unexpected heatwave, triggering health alerts and agricultural concerns. Authorities urge residents to take precautions.",
         "link": "https://example.com/middle-east/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Weather Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Middle East. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/middle-east/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?middle_east,heatwave,desert",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 1 for Middle East",
@@ -2373,18 +2338,11 @@
     ],
     "blogs": [
       {
-        "title": "Simulated Blogs Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Blogs Update from Middle East - 727",
+        "content": "Delve into the undiscovered beauty of the Middle East with our latest travel blog, offering practical advice and breathtaking visuals for intrepid travelers.",
         "link": "https://example.com/middle-east/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Blogs Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Middle East. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/middle-east/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/Mh2zJ_lRScQ",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 1 for Middle East",
@@ -2405,18 +2363,11 @@
   "southeast_asia": {
     "news": [
       {
-        "title": "Simulated News Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about news in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest News Update from Southeast Asia - 172",
+        "content": "Environmental activists in Southeast Asia demand immediate action on climate change, pointing to recent extreme weather events as a sign of escalating crisis. Governments have yet to respond.",
         "link": "https://example.com/southeast-asia/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated News Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about news in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/southeast-asia/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?climate, activism, southeast-asia",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 1 for Southeast Asia",
@@ -2435,18 +2386,11 @@
     ],
     "technology": [
       {
-        "title": "Simulated Technology Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Technology Update from Southeast Asia - 934",
+        "content": "Southeast Asia's tech sector abuzz with a new sustainable energy storage solution promising to slash reliance on fossil fuels, as pilot projects are underway.",
         "link": "https://example.com/southeast-asia/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Technology Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/southeast-asia/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/-b_5-NhZ8Ko/download?force=true",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 1 for Southeast Asia",
@@ -2465,18 +2409,11 @@
     ],
     "finance": [
       {
-        "title": "Simulated Finance Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Finance Update from Southeast Asia - 261",
+        "content": "Southeast Asia banking sector on the brink of a game-changing acquisition, with regulators reviewing the deal for potential market implications.",
         "link": "https://example.com/southeast-asia/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Finance Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/southeast-asia/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://placeimg.com/640/480/money",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 1 for Southeast Asia",
@@ -2495,18 +2432,11 @@
     ],
     "travel": [
       {
-        "title": "Simulated Travel Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Travel Update from Southeast Asia - 191",
+        "content": "Southeast Asia embraces sustainable tourism, with eco-friendly resorts and responsible travel options on the rise.",
         "link": "https://example.com/southeast-asia/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Travel Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/southeast-asia/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?southeast-asia,eco-resort,sustainable-tourism",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 1 for Southeast Asia",
@@ -2525,18 +2455,11 @@
     ],
     "world": [
       {
-        "title": "Simulated World Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about world in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest World Update from Southeast Asia - 832",
+        "content": "UN Discussions Highlight Global Health Security, Emphasizing International Cooperation to Prevent Future Pandemics",
         "link": "https://example.com/southeast-asia/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated World Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about world in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/southeast-asia/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?world,united-nations,global-health",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 1 for Southeast Asia",
@@ -2554,6 +2477,13 @@
       }
     ],
     "weather": [
+      {
+        "title": "Latest Weather Update from Southeast Asia - 766",
+        "content": "An unprecedented heatwave is causing concern across parts of Southeast Asia, with authorities issuing health warnings and expressing worries about agricultural impact. Residents are urged to take precautions.",
+        "link": "https://example.com/southeast-asia/weather/1",
+        "imageUrl": "https://unsplash.com/photos/t70J7w2G4F0/download?force=true",
+        "is_simulated": false
+      },
       {
         "title": "Simulated Weather Headline 1 for Southeast Asia",
         "content": "A simulated weather article focusing on Southeast Asia's climate conditions. The full article, if available, would provide a detailed analysis of the region's current and predicted weather patterns. This is a summary of a simulated article that Gemini would typically summarize into a shorter text.",
@@ -2578,18 +2508,11 @@
     ],
     "blogs": [
       {
-        "title": "Simulated Blogs Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Blogs Update from Southeast Asia - 223",
+        "content": "Unearth Southeast Asia's hidden gems with our latest travel blog! Packed with practical tips and breathtaking photos, it's a must-read for adventurous souls.",
         "link": "https://example.com/southeast-asia/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Blogs Headline 1 for Southeast Asia",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Southeast Asia. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/southeast-asia/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?southeast-asia,travel,exploration",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 1 for Southeast Asia",
@@ -2610,18 +2533,11 @@
   "north_africa": {
     "news": [
       {
-        "title": "Simulated News Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about news in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest News Update from North Africa - 868",
+        "content": "A new public health initiative in North Africa shows promise in addressing a long-standing issue, but challenges remain in achieving widespread adoption.",
         "link": "https://example.com/north-africa/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated News Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about news in North Africa. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/north-africa/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/jqzq-Ki2KlA/download?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 1 for North Africa",
@@ -2640,18 +2556,11 @@
     ],
     "technology": [
       {
-        "title": "Simulated Technology Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about technology in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Technology Update from North Africa - 659",
+        "content": "North Africa's virtual reality technology is revolutionizing education and entertainment, marking a significant leap in immersive experiences.",
         "link": "https://example.com/north-africa/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Technology Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about technology in North Africa. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/north-africa/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?virtualreality,northafrica",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 1 for North Africa",
@@ -2670,18 +2579,11 @@
     ],
     "finance": [
       {
-        "title": "Simulated Finance Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about finance in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Finance Update from North Africa - 831",
+        "content": "North African stock market faces volatility amid global trade tensions; analysts anticipate short-term fluctuations.",
         "link": "https://example.com/north-africa/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Finance Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about finance in North Africa. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/north-africa/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://placehold.it/350x200?text=Stock+Market+Graph+North+Africa",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 1 for North Africa",
@@ -2700,18 +2602,11 @@
     ],
     "travel": [
       {
-        "title": "Simulated Travel Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about travel in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Travel Update from North Africa - 636",
+        "content": "Discover North Africa's rich culinary heritage as food tourism blooms, inviting gourmands to savor traditional dishes.",
         "link": "https://example.com/north-africa/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Travel Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about travel in North Africa. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/north-africa/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?north-africa,food,culinary",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 1 for North Africa",
@@ -2730,18 +2625,11 @@
     ],
     "world": [
       {
-        "title": "Simulated World Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about world in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest World Update from North Africa - 771",
+        "content": "UN discussions zero in on global health security, with leaders pledging renewed cooperation to prevent future pandemics in North Africa and beyond.",
         "link": "https://example.com/north-africa/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated World Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about world in North Africa. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/north-africa/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/4PzpD7N5Rzo?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 1 for North Africa",
@@ -2760,18 +2648,11 @@
     ],
     "weather": [
       {
-        "title": "Simulated Weather Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about weather in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Weather Update from North Africa - 567",
+        "content": "North Africa's Coastal Regions Prepare for Rising Sea Levels, Implementing Climate Change Mitigation Projects",
         "link": "https://example.com/north-africa/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Weather Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about weather in North Africa. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/north-africa/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?north-africa,coast,ocean,climate-change",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 1 for North Africa",
@@ -2790,18 +2671,11 @@
     ],
     "blogs": [
       {
-        "title": "Simulated Blogs Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in North Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Blogs Update from North Africa - 885",
+        "content": "Explore the latest tech reviews from North Africa! Discover the newest gadgets and software, with expert analysis and recommendations for tech enthusiasts.",
         "link": "https://example.com/north-africa/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Blogs Headline 1 for North Africa",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in North Africa. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/north-africa/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/ photographs/107963688570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 1 for North Africa",
@@ -2822,18 +2696,11 @@
   "sub_saharan_africa": {
     "news": [
       {
-        "title": "Simulated News Headline 1 for Sub-Saharan Africa",
-        "content": "This is a placeholder for the full content of a simulated article about news in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest News Update from Sub-Saharan Africa - 182",
+        "content": "Sub-Saharan environmentalists demand immediate climate change action following extreme weather events; governments yet to respond.",
         "link": "https://example.com/sub-saharan-africa/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated News Headline 1 for Sub-Saharan Africa",
-        "content": "This is a placeholder for the full content of a simulated article about news in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/sub-saharan-africa/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/Y5_B-95mGtA?cristal= generator-generated&auto=format&fit=crop&w=600&h=315&q=80",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 1 for Sub-Saharan Africa",
@@ -2852,18 +2719,11 @@
     ],
     "technology": [
       {
-        "title": "Simulated Technology Headline 1 for Sub-Saharan Africa",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Technology Update from Sub-Saharan Africa - 710",
+        "content": "A new AI model with unmatched data processing speeds is making waves in Sub-Saharan Africa, poised to revolutionize industries from finance to healthcare.",
         "link": "https://example.com/sub-saharan-africa/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Technology Headline 1 for Sub-Saharan Africa",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/sub-saharan-africa/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?ai,technology,africa",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 1 for Sub-Saharan Africa",
@@ -2882,18 +2742,11 @@
     ],
     "finance": [
       {
-        "title": "Simulated Finance Headline 1 for Sub-Saharan Africa",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Finance Update from Sub-Saharan Africa - 226",
+        "content": "Sub-Saharan Africa banking sector set for transformation as a major acquisition is under review by regulators, potentially reshaping the financial landscape.",
         "link": "https://example.com/sub-saharan-africa/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Finance Headline 1 for Sub-Saharan Africa",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/sub-saharan-africa/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/tT4YBZR-_Jc/download?force=true",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 1 for Sub-Saharan Africa",
@@ -2912,18 +2765,11 @@
     ],
     "travel": [
       {
-        "title": "Simulated Travel Headline 1 for Sub-Saharan Africa",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Travel Update from Sub-Saharan Africa - 628",
+        "content": "Sub-Saharan Africa's culinary scene blooms as food tourism takes off, enticing gourmands to savor traditional dishes.",
         "link": "https://example.com/sub-saharan-africa/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated Travel Headline 1 for Sub-Saharan Africa",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/sub-saharan-africa/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?africa,food,culinary",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 1 for Sub-Saharan Africa",
@@ -2942,18 +2788,11 @@
     ],
     "world": [
       {
-        "title": "Simulated World Headline 1 for Sub-Saharan Africa",
-        "content": "This is a placeholder for the full content of a simulated article about world in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest World Update from Sub-Saharan Africa - 596",
+        "content": "International aid mobilized for disaster-stricken nation in Sub-Saharan Africa, as humanitarian organizations work to aid recovery efforts.",
         "link": "https://example.com/sub-saharan-africa/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
-      },
-      {
-        "title": "Simulated World Headline 1 for Sub-Saharan Africa",
-        "content": "This is a placeholder for the full content of a simulated article about world in Sub-Saharan Africa. It would typically be a longer text that Gemini would summarize.",
-        "link": "https://example.com/sub-saharan-africa/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/F_3_I9tQbYk?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 1 for Sub-Saharan Africa",
