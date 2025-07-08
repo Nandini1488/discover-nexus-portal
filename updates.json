@@ -1297,11 +1297,11 @@
     ],
     "world": [
       {
-        "title": "Simulated World Headline 1 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about world in Asia. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest World Update from Asia - 282",
+        "content": "Major nations commit to action at global climate change summit, but activists call for more urgent steps to meet ambitious targets.",
         "link": "https://example.com/asia/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?climate-change,summit,activists",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 1 for Asia",
@@ -1341,11 +1341,11 @@
     ],
     "weather": [
       {
-        "title": "Simulated Weather Headline 1 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Asia. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Weather Update from Asia - 869",
+        "content": "Asia grapples with an exceptional heatwave, triggering health alerts and agricultural concerns. Authorities urge caution as temperatures soar.",
         "link": "https://example.com/asia/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/-CZvQZW36bE/download?force=true",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 1 for Asia",
@@ -1385,11 +1385,11 @@
     ],
     "blogs": [
       {
-        "title": "Simulated Blogs Headline 1 for Asia",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Asia. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Blogs Update from Asia - 259",
+        "content": "Discover the latest tech trends in Asia with our comprehensive review of new gadgets and software, offering expert insights for tech enthusiasts.",
         "link": "https://example.com/asia/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?tech,electronics,asia",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 1 for Asia",
@@ -1431,11 +1431,11 @@
   "africa": {
     "news": [
       {
-        "title": "Simulated News Headline 1 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about news in Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest News Update from Africa - 516",
+        "content": "A major cultural festival is set to captivate Africa, attracting tourists and media from around the world. Local authorities are gearing up for this global event.",
         "link": "https://example.com/africa/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?africa,culture,festival",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 1 for Africa",
@@ -1475,11 +1475,11 @@
     ],
     "technology": [
       {
-        "title": "Simulated Technology Headline 1 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Technology Update from Africa - 115",
+        "content": "Africa's tech sector is abuzz with a new sustainable energy storage solution, set to significantly decrease reliance on fossil fuels. Pilot projects are currently underway.",
         "link": "https://example.com/africa/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/-7y4Qx7-t9w?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 1 for Africa",
@@ -1519,11 +1519,11 @@
     ],
     "finance": [
       {
-        "title": "Simulated Finance Headline 1 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Finance Update from Africa - 877",
+        "content": "African stock market sees volatility due to global trade tensions, with analysts predicting further fluctuations in the short term.",
         "link": "https://example.com/africa/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?stock-market,africa",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 1 for Africa",
@@ -1563,11 +1563,11 @@
     ],
     "travel": [
       {
-        "title": "Simulated Travel Headline 1 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Travel Update from Africa - 223",
+        "content": "Africa's adventure tourism is surging, drawing thrill-seekers to its breathtaking landscapes and outdoor activities. Discover the latest travel update here!",
         "link": "https://example.com/africa/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?africa,adventure,outdoor",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 1 for Africa",
@@ -1600,6 +1600,13 @@
     ],
     "world": [
       {
+        "title": "Latest World Update from Africa - 680",
+        "content": "UN Discussions Highlight Need for Global Health Security Cooperation as Calls to Prevent Future Pandemics Echo",
+        "link": "https://example.com/africa/world/1",
+        "imageUrl": "https://unsplash.com/photos/jDv87zf-3Yw?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated World Headline 1 for Africa",
         "content": "A simulated article focuses on international affairs and geopolitics in Africa. The placeholder content suggests a deeper exploration of the world within the African continent, hinting at potential geopolitical issues or global collaborations.",
         "link": "https://example.com/africa/world/1",
@@ -1630,11 +1637,11 @@
     ],
     "weather": [
       {
-        "title": "Simulated Weather Headline 1 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Weather Update from Africa - 879",
+        "content": "New study points to a shift in Africa's precipitation patterns over the next decade, potentially impacting water management and agriculture. Stay updated with the latest global weather forecasts.",
         "link": "https://example.com/africa/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/-Qv2TQVeX5c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 1 for Africa",
@@ -1660,11 +1667,11 @@
     ],
     "blogs": [
       {
-        "title": "Simulated Blogs Headline 1 for Africa",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Africa. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Blogs Update from Africa - 646",
+        "content": "Discover fresh African insights on the future of remote work, exploring productivity and work-life balance in a unique light. Catch the latest opinion piece now.",
         "link": "https://example.com/africa/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/D-NyN8-gMqk",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 1 for Africa",
@@ -1692,11 +1699,11 @@
   "oceania": {
     "news": [
       {
-        "title": "Simulated News Headline 1 for Oceania",
-        "content": "This is a placeholder for the full content of a simulated article about news in Oceania. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest News Update from Oceania - 351",
+        "content": "A major cultural festival set to captivate Oceania, attracting tourists and media from around the globe. Local authorities gear up for the event.",
         "link": "https://example.com/oceania/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?ocean,festival,crowd",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 1 for Oceania",
@@ -1715,11 +1722,11 @@
     ],
     "technology": [
       {
-        "title": "Simulated Technology Headline 1 for Oceania",
-        "content": "This is a placeholder for the full content of a simulated article about technology in Oceania. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Technology Update from Oceania - 200",
+        "content": "Oceania cybersecurity firm discovers new malware, urging immediate system updates across digital landscape.",
         "link": "https://example.com/oceania/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?cybersecurity,hack,ocean",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 1 for Oceania",
@@ -1738,11 +1745,11 @@
     ],
     "finance": [
       {
-        "title": "Simulated Finance Headline 1 for Oceania",
-        "content": "This is a placeholder for the full content of a simulated article about finance in Oceania. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Finance Update from Oceania - 571",
+        "content": "Oceania's stock market fluctuates due to global trade tensions, with analysts predicting short-term volatility.",
         "link": "https://example.com/oceania/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/0Ql_uq67DpU/download?force=true",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 1 for Oceania",
@@ -1761,11 +1768,11 @@
     ],
     "travel": [
       {
-        "title": "Simulated Travel Headline 1 for Oceania",
-        "content": "This is a placeholder for the full content of a simulated article about travel in Oceania. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Travel Update from Oceania - 836",
+        "content": "New travel restrictions eased in Oceania, leading to a spike in tourism bookings and preparations by local businesses.",
         "link": "https://example.com/oceania/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/-Td8JZ8dJZo/download?force=true",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 1 for Oceania",
@@ -1784,11 +1791,11 @@
     ],
     "world": [
       {
-        "title": "Simulated World Headline 1 for Oceania",
-        "content": "This is a placeholder for the full content of a simulated article about world in Oceania. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest World Update from Oceania - 215",
+        "content": "Geopolitical tensions rise in a critical Oceania region, causing concern among world leaders and international bodies, who urge for de-escalation and dialogue.",
         "link": "https://example.com/oceania/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?world-leaders,un,flags,ocean",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 1 for Oceania",
@@ -1807,11 +1814,11 @@
     ],
     "weather": [
       {
-        "title": "Simulated Weather Headline 1 for Oceania",
-        "content": "This is a placeholder for the full content of a simulated article about weather in Oceania. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Weather Update from Oceania - 442",
+        "content": "Oceania's Coastal Regions Prepare for Rising Seas: New Infrastructure Projects on the Horizon to Combat Climate Change Impacts",
         "link": "https://example.com/oceania/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?_nfp=next&q=ocean%20coast&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 1 for Oceania",
@@ -1830,11 +1837,11 @@
     ],
     "blogs": [
       {
-        "title": "Simulated Blogs Headline 1 for Oceania",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in Oceania. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Blogs Update from Oceania - 488",
+        "content": "Explore the future of remote work with unique Oceania perspectives on productivity and work-life balance in our latest opinion piece.",
         "link": "https://example.com/oceania/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://placeimg.com/640/480/people/office",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 1 for Oceania",
@@ -1855,11 +1862,11 @@
   "south_america": {
     "news": [
       {
-        "title": "Simulated News Headline 1 for South America",
-        "content": "This is a placeholder for the full content of a simulated article about news in South America. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest News Update from South America - 342",
+        "content": "South America sees economic surprise: Experts debate sustainability of sector upturn",
         "link": "https://example.com/south-america/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/rKNJ9Rlz8m0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 1 for South America",
@@ -1878,11 +1885,11 @@
     ],
     "technology": [
       {
-        "title": "Simulated Technology Headline 1 for South America",
-        "content": "This is a placeholder for the full content of a simulated article about technology in South America. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Technology Update from South America - 242",
+        "content": "South American scientists make a quantum leap in computing, promising to tackle complex problems previously unreachable. Optimism grows for future advancements.",
         "link": "https://example.com/south-america/technology/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?quantum-computing,technology",
+        "is_simulated": false
       },
       {
         "title": "Simulated Technology Headline 1 for South America",
@@ -1901,11 +1908,11 @@
     ],
     "finance": [
       {
-        "title": "Simulated Finance Headline 1 for South America",
-        "content": "This is a placeholder for the full content of a simulated article about finance in South America. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Finance Update from South America - 580",
+        "content": "South American stock market volatile amid global trade tensions, with analysts predicting short-term fluctuations.",
         "link": "https://example.com/south-america/finance/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/Vr_RZ1T-Wz4/download?force=true",
+        "is_simulated": false
       },
       {
         "title": "Simulated Finance Headline 1 for South America",
@@ -1924,11 +1931,11 @@
     ],
     "travel": [
       {
-        "title": "Simulated Travel Headline 1 for South America",
-        "content": "This is a placeholder for the full content of a simulated article about travel in South America. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Travel Update from South America - 971",
+        "content": "South America embraces eco-friendly tourism, with an influx of sustainable resorts and responsible travel options making waves in the region.",
         "link": "https://example.com/south-america/travel/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?sustainable,travel,south-america",
+        "is_simulated": false
       },
       {
         "title": "Simulated Travel Headline 1 for South America",
@@ -1947,11 +1954,11 @@
     ],
     "world": [
       {
-        "title": "Simulated World Headline 1 for South America",
-        "content": "This is a placeholder for the full content of a simulated article about world in South America. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest World Update from South America - 510",
+        "content": "International aid rushes to a South American nation hit by disaster, as humanitarian groups mobilize resources globally.",
         "link": "https://example.com/south-america/world/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/63-_Cf-b9b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGVhZHk6MHx8MHx8&w=1000&q=80",
+        "is_simulated": false
       },
       {
         "title": "Simulated World Headline 1 for South America",
@@ -1970,11 +1977,11 @@
     ],
     "weather": [
       {
-        "title": "Simulated Weather Headline 1 for South America",
-        "content": "This is a placeholder for the full content of a simulated article about weather in South America. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Weather Update from South America - 282",
+        "content": "New study predicts significant changes in South American precipitation patterns over the next decade, affecting water management and agriculture.",
         "link": "https://example.com/south-america/weather/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/-2vCX0hXgTQ, South_America, weather, precipitation",
+        "is_simulated": false
       },
       {
         "title": "Simulated Weather Headline 1 for South America",
@@ -1993,11 +2000,11 @@
     ],
     "blogs": [
       {
-        "title": "Simulated Blogs Headline 1 for South America",
-        "content": "This is a placeholder for the full content of a simulated article about blogs in South America. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest Blogs Update from South America - 822",
+        "content": "Discover hidden gems of South America with a fresh travel blog! Learn about unique destinations and get inspired by breathtaking photography for your next adventure.",
         "link": "https://example.com/south-america/blogs/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://source.unsplash.com/1600x900/?south-america,travel,adventure",
+        "is_simulated": false
       },
       {
         "title": "Simulated Blogs Headline 1 for South America",
@@ -2018,11 +2025,11 @@
   "middle_east": {
     "news": [
       {
-        "title": "Simulated News Headline 1 for Middle East",
-        "content": "This is a placeholder for the full content of a simulated article about news in Middle East. It would typically be a longer text that Gemini would summarize.",
+        "title": "Latest News Update from Middle East - 706",
+        "content": "A major cultural festival is set to captivate the world from the Middle East, with authorities bracing for a global influx of tourists and media.",
         "link": "https://example.com/middle-east/news/1",
-        "imageUrl": "https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback",
-        "is_simulated": true
+        "imageUrl": "https://unsplash.com/photos/random?signature=middle_east_festival",
+        "is_simulated": false
       },
       {
         "title": "Simulated News Headline 1 for Middle East",
