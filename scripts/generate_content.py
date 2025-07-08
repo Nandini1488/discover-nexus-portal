@@ -7,26 +7,23 @@ import asyncio # Import asyncio for running async functions
 from datetime import datetime, timezone # Import for time-based batching
 
 # --- Configuration ---
-# Using Gemini API (gemini-2.0-flash model) for content enhancement/summarization.
-# IMPORTANT: Gemini API does NOT fetch raw news. It processes text you provide.
+# Using Mistral AI API for content enhancement/summarization.
+# IMPORTANT: Mistral AI does NOT fetch raw news. It processes text you provide.
 # For a production portal, you'd need to replace generate_simulated_content_base
 # with a mechanism to fetch raw news (e.g., RSS feeds, a basic news API for URLs, or web scraping).
 
-# Gemini API is typically accessed via Google Cloud. For local development or
-# within environments that provide it, you might not need an explicit API key here.
-# However, if deploying to a custom environment that requires it, you'd set it up.
-# For Canvas environment, the API key is automatically provided in the fetch call.
-GEMINI_API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+# Mistral AI API key should be stored as a GitHub Secret named MISTRAL_API_KEY.
+MISTRAL_API_BASE_URL = "https://api.mistral.ai/v1/chat/completions"
 # Ensure the API key is loaded from the environment variable (GitHub Secret)
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY') 
+MISTRAL_API_KEY = os.getenv('MISTRAL_API_KEY') 
 
 # --- Debugging Print ---
-if GEMINI_API_KEY:
+if MISTRAL_API_KEY:
     # Strip any potential whitespace from the API key
-    GEMINI_API_KEY = GEMINI_API_KEY.strip()
-    print(f"GEMINI_API_KEY successfully loaded from environment. Length: {len(GEMINI_API_KEY)}. Starts with: {GEMINI_API_KEY[:5]}... Ends with: {GEMINI_API_KEY[-5:]}")
+    MISTRAL_API_KEY = MISTRAL_API_KEY.strip()
+    print(f"MISTRAL_API_KEY successfully loaded from environment. Length: {len(MISTRAL_API_KEY)}. Starts with: {MISTRAL_API_KEY[:5]}... Ends with: {MISTRAL_API_KEY[-5:]}")
 else:
-    print("WARNING: GEMINI_API_KEY is NOT loaded from environment. Please check GitHub Secrets and workflow env configuration.")
+    print("WARNING: MISTRAL_API_KEY is NOT loaded from environment. Please check GitHub Secrets and workflow env configuration.")
 # --- End Debugging Print ---
 
 # Define the regions and categories that match your index.html
@@ -78,10 +75,10 @@ def generate_simulated_content_base(region_name, category_name, count=15):
     articles = []
     for i in range(count):
         title = f"Simulated {category_name.replace('_', ' ').title()} Headline {i + 1} for {region_name}"
-        content = f"This is a placeholder for the full content of a simulated article about {category_name.replace('_', ' ')} in {region_name}. It would typically be a longer text that Gemini would summarize."
+        content = f"This is a placeholder for the full content of a simulated article about {category_name.replace('_', ' ')} in {region_name}. It would typically be a longer text that Mistral would summarize."
         link = f"https://example.com/{region_name.lower().replace(' ', '-')}/{category_name.lower().replace(' ', '-')}/{i + 1}"
         
-        # We'll let Gemini suggest an image URL, but provide a fallback if it struggles.
+        # We'll let Mistral suggest an image URL, but provide a fallback if it struggles.
         # For a real app, you'd get actual image URLs from your news source.
         image_url_placeholder = f"https://placehold.co/600x400/CCCCCC/333333?text={category_name.title()}+{i+1}"
 
@@ -89,14 +86,14 @@ def generate_simulated_content_base(region_name, category_name, count=15):
             "title": title,
             "content": content,
             "link": link,
-            "imageUrl": image_url_placeholder, # This will be replaced by Gemini's suggestion
+            "imageUrl": image_url_placeholder, # This will be replaced by Mistral's suggestion
             "is_simulated": True # Mark as simulated content
         })
     return articles
 
-async def get_gemini_summary_and_image(original_title, original_content, category_name):
+async def get_mistral_summary_and_image(original_title, original_content, category_name):
     """
-    Uses Gemini API to summarize content and suggest a relevant image URL.
+    Uses Mistral AI API to summarize content and suggest a relevant image URL.
     Ensures structured JSON output.
     """
     prompt = f"""
@@ -115,55 +112,45 @@ async def get_gemini_summary_and_image(original_title, original_content, categor
     }}
     """
 
-    # chat_history needs to be a list of dictionaries as per Gemini API format
-    chat_history = [{ "role": "user", "parts": [{ "text": prompt }] }]
-    
+    # Mistral AI payload structure
     payload = {
-        "contents": chat_history,
-        "generationConfig": {
-            "responseMimeType": "application/json",
-            "responseSchema": {
-                "type": "OBJECT",
-                "properties": {
-                    "summary": { "type": "STRING" },
-                    "suggestedImageUrl": { "type": "STRING" }
-                },
-                "propertyOrdering": ["summary", "suggestedImageUrl"]
-            }
-        }
+        "model": "mistral-tiny", # Using mistral-tiny for potentially higher free tier limits
+        "messages": [
+            {"role": "user", "content": prompt}
+        ],
+        "response_format": {"type": "json_object"} # Requesting JSON output
     }
 
     try:
-        headers = {'Content-Type': 'application/json'}
-        api_url = GEMINI_API_BASE_URL
+        headers = {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': f'Bearer {MISTRAL_API_KEY}' # Mistral uses Bearer token for auth
+        }
         
-        # Only append API key if it's actually present (i.e., loaded from env)
-        if GEMINI_API_KEY:
-            api_url += f"?key={GEMINI_API_KEY}"
-
-        # Use requests.post for synchronous call within the async function
-        response = requests.post(api_url, headers=headers, data=json.dumps(payload), timeout=30)
+        response = requests.post(MISTRAL_API_BASE_URL, headers=headers, data=json.dumps(payload), timeout=30)
         response.raise_for_status()
         result = response.json()
 
-        if result.get('candidates') and result['candidates'][0].get('content') and result['candidates'][0]['content'].get('parts'):
-            json_string = result['candidates'][0]['content']['parts'][0]['text']
+        if result.get('choices') and result['choices'][0].get('message') and result['choices'][0]['message'].get('content'):
+            json_string = result['choices'][0]['message']['content']
             parsed_json = json.loads(json_string)
             return parsed_json.get('summary', original_content), parsed_json.get('suggestedImageUrl', 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback'), False # is_simulated = False
         else:
-            print(f"Gemini API response missing expected structure: {result}")
+            print(f"Mistral AI API response missing expected structure: {result}")
             return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback', True # Fallback to simulated if structure is wrong
 
     except requests.exceptions.RequestException as e:
-        print(f"Error calling Gemini API: {e}")
+        print(f"Error calling Mistral AI API: {e}")
         if response and response.text:
-            print(f"Gemini API Error Response: {response.text}")
+            print(f"Mistral AI API Error Response: {response.text}")
         return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback', True # Fallback to simulated on API error
     except json.JSONDecodeError as e:
-        print(f"Error decoding Gemini API JSON response: {e}")
+        print(f"Error decoding Mistral AI API JSON response: {e}")
         if response and response.text: # Check if response exists before accessing .text
-            print(f"Raw Gemini response text: {response.text}")
+            print(f"Raw Mistral AI response text: {response.text}")
         return original_content, 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback', True # Fallback to simulated on JSON error
+
 
 def get_current_batch_index():
     """
@@ -216,7 +203,7 @@ async def main(): # Make main function async
         region_name_full = REGIONS[region_key]["name"]
         category_keyword = CATEGORIES[category_key]
 
-        print(f"Processing Region: {region_name_full}, Category: {category_key} with Gemini...")
+        print(f"Processing Region: {region_name_full}, Category: {category_key} with Mistral AI...")
         
         # Ensure the region exists in all_content structure
         if region_key not in all_content:
@@ -232,37 +219,37 @@ async def main(): # Make main function async
         
         for i, article in enumerate(base_articles):
             print(f"  - Processing article {i+1}/{len(base_articles)} for {region_key}/{category_key}...")
-            # 2. Use Gemini to summarize and suggest image URL
-            summary_content, suggested_image_url, is_simulated_by_gemini_fallback = await get_gemini_summary_and_image(
+            # 2. Use Mistral AI to summarize and suggest image URL
+            summary_content, suggested_image_url, is_simulated_by_mistral_fallback = await get_mistral_summary_and_image(
                 article['title'], article['content'], category_keyword
             )
             
             current_processed_articles_batch.append({
                 "title": article['title'],
-                "content": summary_content, # Gemini's summary (or fallback)
+                "content": summary_content, # Mistral AI's summary (or fallback)
                 "link": article['link'],
-                "imageUrl": suggested_image_url, # Gemini's suggested image URL (or fallback)
-                "is_simulated": is_simulated_by_gemini_fallback # True if Gemini failed, False if Gemini succeeded
+                "imageUrl": suggested_image_url, # Mistral AI's suggested image URL (or fallback)
+                "is_simulated": is_simulated_by_mistral_fallback # True if Mistral AI failed, False if Mistral AI succeeded
             })
-            # Significantly INCREASED delay between individual Gemini calls
-            time.sleep(30) # Increased from 20 seconds, aiming for 2 calls per minute at most
+            # Keep generous delays between individual LLM calls
+            time.sleep(30) 
 
         # --- Incremental Merging Logic ---
         existing_articles_for_category = all_content[region_key].get(category_key, [])
         
-        # Check if the new batch has *any* non-simulated (Gemini-generated) content
-        new_batch_has_gemini_content = any(not art.get('is_simulated', True) for art in current_processed_articles_batch)
+        # Check if the new batch has *any* non-simulated (Mistral AI-generated) content
+        new_batch_has_mistral_content = any(not art.get('is_simulated', True) for art in current_processed_articles_batch)
 
-        if new_batch_has_gemini_content:
-            # If the new batch contains Gemini content, prepend it and then filter existing simulated
-            # This ensures new Gemini content always takes precedence
+        if new_batch_has_mistral_content:
+            # If the new batch contains Mistral AI content, prepend it and then filter existing simulated
+            # This ensures new Mistral AI content always takes precedence
             filtered_existing_articles = [
                 art for art in existing_articles_for_category if not art.get('is_simulated', True)
             ]
             combined_articles = current_processed_articles_batch + filtered_existing_articles
-            print(f"  -> Updated {region_key}/{category_key} with fresh Gemini content.")
+            print(f"  -> Updated {region_key}/{category_key} with fresh Mistral AI content.")
         else:
-            # If the new batch is entirely simulated (Gemini calls failed),
+            # If the new batch is entirely simulated (Mistral AI calls failed),
             # we still prepend it to show "fresher" simulated content if no real content exists,
             # but we don't filter out existing real content.
             combined_articles = current_processed_articles_batch + existing_articles_for_category
@@ -273,8 +260,8 @@ async def main(): # Make main function async
         
         print(f"  -> Total articles for {region_key}/{category_key}: {len(all_content[region_key][category_key])}")
         
-        # Delay between categories/regions
-        time.sleep(60) # Increased from 45 seconds, aiming for 1 category per minute at most
+        # Keep generous delays between categories/regions
+        time.sleep(60) 
 
     # 2. Save the updated content to updates.json
     try:
