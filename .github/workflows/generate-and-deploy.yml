@@ -83,10 +83,16 @@ jobs:
           # if 'updates.json' hasn't changed (e.g., Mistral output was identical).
           git commit -m "Update news content data" || true
           
-          # Pull the latest changes from the remote main branch
-          # This ensures the local branch is up-to-date before trying to push
-          # --rebase option reapplies local commits on top of fetched changes for a clean history
-          git pull origin main --rebase
+          # Pull the latest changes from the remote main branch and rebase
+          # On conflict, automatically choose 'ours' (the local version) for updates.json
+          # This ensures the latest generated data is always kept.
+          git pull origin main --rebase || {
+            echo "Merge conflict detected during rebase. Resolving for updates.json..."
+            # Automatically choose 'ours' (the version from the current workflow run) for updates.json
+            git checkout --ours updates.json
+            git add updates.json # Mark as resolved
+            git rebase --continue # Continue the rebase
+          }
           
           # Push the committed changes to the 'main' branch.
           # Use GITHUB_TOKEN for authentication and explicitly push to main.
