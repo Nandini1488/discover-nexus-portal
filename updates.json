@@ -2,6 +2,13 @@
   "global": {
     "news": [
       {
+        "title": "Latest News Update from the entire world - 137",
+        "content": "Urgent global call for action on climate change as recent extreme weather events underscore a worsening crisis. Governments are yet to respond.",
+        "link": "https://example.com/the-entire-world/news/1",
+        "imageUrl": "https://unsplash.com/photos/-6D9q-5BpKQ,earth_globe,environment,climate_change",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated News Headline 1 for the entire world",
         "content": "Simulated news article covers global news, providing insights into world events.",
         "link": "https://example.com/the-entire-world/news/1",
@@ -109,6 +116,13 @@
     ],
     "technology": [
       {
+        "title": "Latest Technology Update from the entire world - 139",
+        "content": "New sustainable energy storage solution set to revolutionize tech sector, reducing fossil fuel reliance and boosting pilot projects worldwide.",
+        "link": "https://example.com/the-entire-world/technology/1",
+        "imageUrl": "https://source.unsplash.com/1600x900/?solar-power,energy-storage,technology",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated Technology Headline 1 for the entire world",
         "content": "Simulated article discusses global technology innovations, covering advancements shaping the world.",
         "link": "https://example.com/the-entire-world/technology/1",
@@ -181,6 +195,13 @@
     ],
     "finance": [
       {
+        "title": "Latest Finance Update from the entire world - 438",
+        "content": "Global real estate markets show signs of cooling, potentially leading to a balanced market in the near future.",
+        "link": "https://example.com/the-entire-world/finance/1",
+        "imageUrl": "https://unsplash.com/photos/c4F38Uy36Vk?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated Finance Headline 1 for the entire world",
         "content": "Article discusses simulated finance insights for the global market, shedding light on economic trends and investment opportunities worldwide.",
         "link": "https://example.com/the-entire-world/finance/1",
@@ -246,6 +267,13 @@
     ],
     "travel": [
       {
+        "title": "Latest Travel Update from the entire world - 238",
+        "content": "Booming adventure tourism draws thrill-seekers to world's diverse landscapes, offering a plethora of outdoor activities.",
+        "link": "https://example.com/the-entire-world/travel/1",
+        "imageUrl": "https://source.unsplash.com/1600x900/?adventure,travel,landscape",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated Travel Headline 1 for the entire world",
         "content": "Simulated article reveals tips for global travel, exploring the world's diverse destinations.",
         "link": "https://example.com/the-entire-world/travel/1",
@@ -289,6 +317,13 @@
       }
     ],
     "world": [
+      {
+        "title": "Latest World Update from the entire world - 150",
+        "content": "Major nations commit to climate change action at global summit, but activists call for more urgent measures to meet ambitious targets.",
+        "link": "https://example.com/the-entire-world/world/1",
+        "imageUrl": "https://unsplash.com/photos/-Wz19GbD_y4/download?force=true",
+        "is_simulated": false
+      },
       {
         "title": "Simulated World Headline 1 for the entire world",
         "content": "Simulated global headline discusses international affairs and geopolitics, providing insights into worldwide issues.",
@@ -348,6 +383,13 @@
     ],
     "weather": [
       {
+        "title": "Latest Weather Update from the entire world - 590",
+        "content": "A global heatwave is causing health alerts and agricultural concerns, as authorities urge residents to take precautions.",
+        "link": "https://example.com/the-entire-world/weather/1",
+        "imageUrl": "https://source.unsplash.com/1600x900/?heatwave,world",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated Weather Headline 1 for the entire world",
         "content": "Simulated global weather forecast predicts various atmospheric conditions across the world.",
         "link": "https://example.com/the-entire-world/weather/1",
@@ -398,6 +440,13 @@
       }
     ],
     "blogs": [
+      {
+        "title": "Latest Blogs Update from the entire world - 275",
+        "content": "Explore the world's hidden gems with our latest travel blog, featuring practical tips and breathtaking photos for the adventurous traveller.",
+        "link": "https://example.com/the-entire-world/blogs/1",
+        "imageUrl": "https://unsplash.com/photos/rYg_pY99LVE?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+        "is_simulated": false
+      },
       {
         "title": "Simulated Blogs Headline 1 for the entire world",
         "content": "Exploring the global impact and reach of blogs through an analysis of their role in modern communication.",
@@ -459,6 +508,13 @@
   "north_america": {
     "news": [
       {
+        "title": "Latest News Update from North America - 352",
+        "content": "A major cultural festival is set to attract visitors worldwide in North America, with local authorities gearing up for a tourism boom.",
+        "link": "https://example.com/north-america/news/1",
+        "imageUrl": "https://source.unsplash.com/1600x900/?crowd,festival,northamerica",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated News Headline 1 for North America",
         "content": "Simulated article discusses general news in North America.",
         "link": "https://example.com/north-america/news/1",
@@ -509,6 +565,13 @@
       }
     ],
     "technology": [
+      {
+        "title": "Latest Technology Update from North America - 495",
+        "content": "North American scientists make a groundbreaking quantum computing breakthrough, potentially revolutionizing the solution to complex problems once thought unattainable.",
+        "link": "https://example.com/north-america/technology/1",
+        "imageUrl": "https://unsplash.com/photos/8QWnzP96Ym8/download?force=true",
+        "is_simulated": false
+      },
       {
         "title": "Simulated Technology Headline 1 for North America",
         "content": "Simulated technology article discusses innovations in North America, focusing on cutting-edge developments shaping the tech landscape.",
@@ -561,6 +624,13 @@
     ],
     "finance": [
       {
+        "title": "Latest Finance Update from North America - 266",
+        "content": "North American economies face rising inflation concerns, with consumer prices surging. Central bank officials deliberate on new measures to stabilize the economy.",
+        "link": "https://example.com/north-america/finance/1",
+        "imageUrl": "https://placehold.it/350x200?text=Graph+of+Rising+Prices",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated Finance Headline 1 for North America",
         "content": "Article discusses finance trends in North America, offering insights into the financial market.",
         "link": "https://example.com/north-america/finance/1",
@@ -611,6 +681,13 @@
       }
     ],
     "travel": [
+      {
+        "title": "Latest Travel Update from North America - 304",
+        "content": "North America sees a surge in eco-friendly travel as sustainable initiatives take root, offering travelers more responsible options.",
+        "link": "https://example.com/north-america/travel/1",
+        "imageUrl": "https://source.unsplash.com/1600x900/?nature,sustainability,travel",
+        "is_simulated": false
+      },
       {
         "title": "Simulated Travel Headline 1 for North America",
         "content": "Article previews travel guide for North America, offering insights into its diverse destinations.",
@@ -663,6 +740,13 @@
     ],
     "world": [
       {
+        "title": "Latest World Update from North America - 495",
+        "content": "International aid pouring in for disaster-stricken nation in North America as humanitarian groups mobilize global resources",
+        "link": "https://example.com/north-america/world/1",
+        "imageUrl": "https://unsplash.com/photos/OQz7_dQgwMo?w=640",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated World Headline 1 for North America",
         "content": "Simulated North American headlines discuss international affairs, providing an overview of geopolitics within the region.",
         "link": "https://example.com/north-america/world/1",
@@ -706,6 +790,13 @@
       }
     ],
     "weather": [
+      {
+        "title": "Latest Weather Update from North America - 358",
+        "content": "New study signals impending shifts in North American precipitation patterns over the next decade, potentially impacting water management and agriculture.",
+        "link": "https://example.com/north-america/weather/1",
+        "imageUrl": "https://unsplash.com/photos/bd3_P-XoJ_s?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw=true&ixid=eyJhcHBfaWQiOjE3Njc0fQ",
+        "is_simulated": false
+      },
       {
         "title": "Simulated Weather Headline 1 for North America",
         "content": "Simulated weather report for North America details forecasts for regions.",
@@ -765,6 +856,13 @@
     ],
     "blogs": [
       {
+        "title": "Latest Blogs Update from North America - 309",
+        "content": "Discover the future of remote work in a captivating opinion piece from North America, shedding light on productivity and work-life balance. Catch the latest in featured articles and opinion pieces!",
+        "link": "https://example.com/north-america/blogs/1",
+        "imageUrl": "https://unsplash.com/photos/-1mzJ-tPgxg",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated Blogs Headline 1 for North America",
         "content": "A simulated article discusses blogs in North America, exploring their impact and trends within the region.",
         "link": "https://example.com/north-america/blogs/1",
@@ -811,6 +909,13 @@
   "europe": {
     "news": [
       {
+        "title": "Latest News Update from Europe - 808",
+        "content": "Europe undergoes significant political shakeup as new policy proposals ignite anticipation for upcoming elections.",
+        "link": "https://example.com/europe/news/1",
+        "imageUrl": "https://unsplash.com/photos/rN5N843gSUA/download?force=true",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated News Headline 1 for Europe",
         "content": "Article discusses European news in a simulated scenario, detailing current events. Mistral summarizes the content for a concise news feed.",
         "link": "https://example.com/europe/news/1",
@@ -854,6 +959,13 @@
       }
     ],
     "technology": [
+      {
+        "title": "Latest Technology Update from Europe - 428",
+        "content": "European innovators introduce lightning-fast AI model set to revolutionize finance and healthcare industries.",
+        "link": "https://example.com/europe/technology/1",
+        "imageUrl": "https://unsplash.com/photos/n_HNkRUk8qc",
+        "is_simulated": false
+      },
       {
         "title": "Simulated Technology Headline 1 for Europe",
         "content": "Article discusses technology innovations in Europe, providing insights into the latest advancements.",
@@ -899,6 +1011,13 @@
     ],
     "finance": [
       {
+        "title": "Latest Finance Update from Europe - 464",
+        "content": "New regulations proposed in Europe as cryptocurrency adoption surges, marking a significant shift in the digital asset market.",
+        "link": "https://example.com/europe/finance/1",
+        "imageUrl": "https://source.unsplash.com/1600x900/?cryptocurrency,europe",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated Finance Headline 1 for Europe",
         "content": "Article discusses finance trends in Europe, providing insights into the European financial market.",
         "link": "https://example.com/europe/finance/1",
@@ -942,6 +1061,13 @@
       }
     ],
     "travel": [
+      {
+        "title": "Latest Travel Update from Europe - 270",
+        "content": "Explore Europe's rich culinary heritage with the latest food tourism trend, as gourmands flock to taste traditional dishes in vibrant European cities.",
+        "link": "https://example.com/europe/travel/1",
+        "imageUrl": "https://source.unsplash.com/1600x900/?food,europe,travel",
+        "is_simulated": false
+      },
       {
         "title": "Simulated Travel Headline 1 for Europe",
         "content": "Simulated article discusses travel tips for exploring Europe",
@@ -987,6 +1113,13 @@
     ],
     "world": [
       {
+        "title": "Latest World Update from Europe - 570",
+        "content": "Major nations commit to action at global climate change summit, but activists call for more urgent steps to meet ambitious targets.",
+        "link": "https://example.com/europe/world/1",
+        "imageUrl": "https://source.unsplash.com/1600x900/?climate-change,summit,activists",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated World Headline 1 for Europe",
         "content": "Simulated article discusses international affairs and geopolitics in Europe, providing insights into the current state and potential developments.",
         "link": "https://example.com/europe/world/1",
@@ -1031,6 +1164,13 @@
     ],
     "weather": [
       {
+        "title": "Latest Weather Update from Europe - 310",
+        "content": "Record low temperatures and challenging winter conditions sweep through Europe as unusual cold fronts take over, prompting residents to prepare for prolonged cold spells.",
+        "link": "https://example.com/europe/weather/1",
+        "imageUrl": "https://unsplash.com/photos/EG1kZ8jFtEQ",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated Weather Headline 1 for Europe",
         "content": "Article previews simulated weather forecast for Europe.",
         "link": "https://example.com/europe/weather/1",
@@ -1074,6 +1214,13 @@
       }
     ],
     "blogs": [
+      {
+        "title": "Latest Blogs Update from Europe - 318",
+        "content": "European blogger's viral post dissects latest social media trends, sparks debate and discussion.",
+        "link": "https://example.com/europe/blogs/1",
+        "imageUrl": "https://unsplash.com/photos/-6_zXKi-7zQ, social-media, debate, europe",
+        "is_simulated": false
+      },
       {
         "title": "Simulated Blogs Headline 1 for Europe",
         "content": "Simulated article discusses blogs in Europe, shedding light on the digital landscape and opinions within the continent.",
@@ -1121,6 +1268,13 @@
   "asia": {
     "news": [
       {
+        "title": "Latest News Update from Asia - 665",
+        "content": "Asia unveils a major cultural festival attracting global attention, with local authorities gearing up for a massive tourist and media influx.",
+        "link": "https://example.com/asia/news/1",
+        "imageUrl": "https://unsplash.com/photos/-QJ6mWl-4Ns",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated News Headline 1 for Asia",
         "content": "Article discusses general news in Asia, providing a placeholder for the full content.",
         "link": "https://example.com/asia/news/1",
@@ -1164,6 +1318,13 @@
       }
     ],
     "technology": [
+      {
+        "title": "Latest Technology Update from Asia - 552",
+        "content": "Asian scientists unveil groundbreaking quantum computing breakthrough, offering a glimpse into solving complex problems previously out of reach. Scientists are optimistic about its long-term potential.",
+        "link": "https://example.com/asia/technology/1",
+        "imageUrl": "https://source.unsplash.com/1600x900/?quantum-computing,technology,asian-cityscape",
+        "is_simulated": false
+      },
       {
         "title": "Simulated Technology Headline 1 for Asia",
         "content": "Simulated article discusses technology innovations in Asia, highlighting advancements in the tech sector.",
@@ -1209,6 +1370,13 @@
     ],
     "finance": [
       {
+        "title": "Latest Finance Update from Asia - 720",
+        "content": "Asia sees a surge in cryptocurrency adoption, with new regulations being proposed to manage the burgeoning digital asset market.",
+        "link": "https://example.com/asia/finance/1",
+        "imageUrl": "https://source.unsplash.com/1600x900/?cryptocurrency,finance,asia",
+        "is_simulated": false
+      },
+      {
         "title": "Simulated Finance Headline 1 for Asia",
         "content": "This article provides financial insights about the Asian market, covering key trends and predictions in the region's economy.",
         "link": "https://example.com/asia/finance/1",
@@ -1252,6 +1420,13 @@
       }
     ],
     "travel": [
+      {
+        "title": "Latest Travel Update from Asia - 135",
+        "content": "Asia's adventure tourism is skyrocketing, offering thrill-seekers unique challenges in breathtaking landscapes. Explore Asia's outdoor activities now!",
+        "link": "https://example.com/asia/travel/1",
+        "imageUrl": "https://unsplash.com/photos/-sTB-L3FaKo",
+        "is_simulated": false
+      },
       {
         "title": "Simulated Travel Headline 1 for Asia",
         "content": "Simulated article previews travel tips for Asia, exploring its diverse culture and scenic beauty.",
