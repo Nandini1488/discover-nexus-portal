@@ -76,17 +76,17 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Pull the latest changes from the remote main branch
-          # This ensures the local branch is up-to-date before trying to push
-          git pull origin main --rebase
-          
           # Add the 'updates.json' file to the Git staging area.
           git add updates.json
           
-          # Commit the changes. The '|| true' part (instead of || echo)
-          # ensures the step doesn't fail if there are no changes, but still
-          # allows 'set -e' to catch other errors.
+          # Commit the changes. The '|| true' part ensures the step doesn't fail
+          # if 'updates.json' hasn't changed (e.g., Mistral output was identical).
           git commit -m "Update news content data" || true
+          
+          # Pull the latest changes from the remote main branch
+          # This ensures the local branch is up-to-date before trying to push
+          # --rebase option reapplies local commits on top of fetched changes for a clean history
+          git pull origin main --rebase
           
           # Push the committed changes to the 'main' branch.
           # Use GITHUB_TOKEN for authentication and explicitly push to main.
