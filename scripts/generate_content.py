@@ -57,7 +57,7 @@ CATEGORIES = {
 
 # --- Constants for incremental update ---
 MAX_ARTICLES_PER_CATEGORY = 30 # Desired maximum articles to keep per category
-ARTICLES_TO_FETCH_PER_RUN = 1 # Number of NEW articles to attempt to generate per category per run
+ARTICLES_TO_FETCH_PER_RUN = 8 # Number of NEW articles to attempt to generate per category per run
 
 # --- Constants for rotating processing ---
 ALL_CATEGORY_KEYS = [(r_key, c_key) for r_key in REGIONS for c_key in CATEGORIES]
