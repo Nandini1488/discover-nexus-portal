@@ -66,8 +66,10 @@ ARTICLES_TO_FETCH_PER_RUN = 8
 # --- Constants for rotating processing ---
 ALL_CATEGORY_KEYS = [(r_key, c_key) for r_key in REGIONS for c_key in NEWSAPI_CATEGORIES]
 TOTAL_CATEGORIES = len(ALL_CATEGORY_KEYS) 
-NUM_BATCHES = 4 
-BATCH_SIZE = (TOTAL_CATEGORIES + NUM_BATCHES - 1) // NUM_BATCHES 
+NUM_BATCHES = 4 # Still running 4 times per day (every 6 hours)
+# NEW: Reduced BATCH_SIZE to make fewer API calls per run
+# Aiming for ~10 categories per run to stay well within 1000 daily calls
+BATCH_SIZE = 10 
 
 # --- Functions ---
 
