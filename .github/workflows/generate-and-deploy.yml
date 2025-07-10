@@ -49,13 +49,15 @@ jobs:
 
       # Step 4: Generate content using the Python script.
       # Executes your 'generate_content.py' script.
-      # The MISTRAL_API_KEY is securely passed as an environment variable from GitHub Secrets.
+      # The MISTRAL_API_KEY and NEWSAPI_API_KEY are securely passed as environment variables from GitHub Secrets.
       - name: Generate content
         run: python scripts/generate_content.py
         env:
           # This variable name (MISTRAL_API_KEY) must EXACTLY match the name your Python script expects
           # and the name of your GitHub Secret.
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          # NEW: Pass the NEWSAPI_API_KEY from GitHub Secrets to the script
+          NEWSAPI_API_KEY: ${{ secrets.NEWSAPI_API_KEY }}
 
       # Step 5: Commit and Push changes to the repository.
       # This step adds the newly generated 'updates.json' file, commits it,
@@ -83,7 +85,7 @@ jobs:
           # if 'updates.json' hasn't changed (e.g., Mistral output was identical).
           git commit -m "Update news content data" || true
           
-          # Pull the latest changes from the remote main branch and rebase
+          # Pull the latest changes from the remote main branch
           # On conflict, automatically choose 'ours' (the local version) for updates.json
           # This ensures the latest generated data is always kept.
           git pull origin main --rebase || {
