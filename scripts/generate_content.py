@@ -32,10 +32,10 @@ else:
 # Define the regions and categories that match your index.html
 # Added country_code for NewsAPI.org
 REGIONS = {
-    "global": {"name": "the entire world", "country_codes": ["us", "gb", "ca", "au", "in"]}, # Try multiple countries for global
+    "global": {"name": "the entire world", "country_codes": ["us", "gb", "ca", "au", "in"]}, # Try multiple countries for global news
     "north_america": {"name": "North America", "country_codes": ["us", "ca"]},
     "europe": {"name": "Europe", "country_codes": ["gb", "de", "fr", "es", "it"]}, # Multiple European countries
-    "asia": {"name": "Asia", "country_codes": ["in", "cn", "jp", "kr"]}, # Multiple Asian countries
+    "asia": {"name": "Asia", "country_codes": ["in", "cn", "jp", "kr"]}, # Multiple Asian countries (China might have limited coverage on NewsAPI free tier)
     "africa": {"name": "Africa", "country_codes": ["za", "ng", "eg"]}, # Multiple African countries
     "oceania": {"name": "Oceania", "country_codes": ["au", "nz"]},
     "south_america": {"name": "South America", "country_codes": ["br", "ar", "co"]}, # Multiple South American countries
@@ -71,6 +71,8 @@ BATCH_SIZE = (TOTAL_CATEGORIES + NUM_BATCHES - 1) // NUM_BATCHES
 
 # --- Functions ---
 
+# This function is retained for potential future use or debugging, 
+# but will no longer be used to populate updates.json in the main loop.
 def generate_simulated_content_base(region_name, category_name, count=1):
     """
     Generates more realistic (but still simulated) base content for Mistral AI to summarize.
@@ -132,27 +134,21 @@ def generate_simulated_content_base(region_name, category_name, count=1):
     }
 
     for i in range(count):
-        # Select a random content item for the given category
         content_item = random.choice(sample_contents.get(category_name, sample_contents["news"]))
         
-        # Use a more descriptive title based on the content_item's keywords
         title = f"{content_item['title_keywords']} in {region_name}"
 
-        # Generate a more specific placeholder image URL using keywords
-        # Using picsum.photos for more varied realistic placeholders
         image_url = f"https://picsum.photos/seed/{random.randint(1, 1000)}/600/400/?random&keywords={content_item['image_keywords'].replace(' ', ',')}"
 
-        # Generate a unique, but still simulated, link that looks more like a real news site
-        # This is still a placeholder, but designed to look more convincing.
         domain_name = f"{region_name.lower().replace(' ', '-')}-news.com"
         link = f"https://www.{domain_name}/{category_name.lower().replace('_', '-')}/article-{random.randint(10000, 99999)}"
         
         articles.append({
             "title": title,
-            "content_raw": content_item['content'], # Use content_raw for simulated content too
+            "content_raw": content_item['content'],
             "link": link,
             "imageUrl_raw": image_url, 
-            "is_simulated": True # Marked as simulated
+            "is_simulated": True 
         })
     return articles
 
@@ -167,12 +163,14 @@ async def fetch_news_from_newsapi(region_key, category_key, page_size=ARTICLES_T
 
     articles = []
     
+    # Iterate through each country code for the region
     for country_code in country_codes_for_region:
         # List of categories to try, starting with the specific one, then general
         categories_to_try = [newsapi_category]
         if newsapi_category != "general":
             categories_to_try.append("general") # Add general as a fallback
 
+        # Iterate through categories for the current country
         for current_cat_to_try in categories_to_try:
             params = {
                 "apiKey": NEWSAPI_API_KEY,
@@ -191,37 +189,40 @@ async def fetch_news_from_newsapi(region_key, category_key, page_size=ARTICLES_T
 
                 if data.get('articles'):
                     for article_data in data['articles']:
+                        # Basic validation and fallback for essential fields
                         title = article_data.get('title')
                         description = article_data.get('description')
                         url = article_data.get('url')
                         image_url = article_data.get('urlToImage')
 
+                        # Skip articles with missing essential data
                         if not title or not description or not url:
+                            print(f"DEBUG: Skipping article due to missing title, description, or URL for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}').")
                             continue
                         
                         articles.append({
                             "title": title,
-                            "content_raw": description,
+                            "content_raw": description, # Store raw description for Mistral to summarize
                             "link": url,
-                            "imageUrl_raw": image_url,
-                            "is_simulated": False
+                            "imageUrl_raw": image_url, # Store raw image URL for Mistral to potentially refine
+                            "is_simulated": False # This is real data from NewsAPI
                         })
-                    print(f"DEBUG: Successfully fetched {len(articles)} articles for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}').")
-                    return articles # Return immediately upon successful fetch
+                    print(f"DEBUG: Successfully fetched {len(articles)} articles from NewsAPI for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}').")
+                    return articles # Return immediately upon successful fetch from any country/category combo
                 else:
                     print(f"DEBUG: NewsAPI returned no articles for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}'). Trying next category/country if available.")
-                    continue 
+                    continue # Try the next category or country
 
             except requests.exceptions.HTTPError as http_err:
                 error_response = {}
                 try:
                     error_response = http_err.response.json()
                 except json.JSONDecodeError:
-                    pass
+                    pass # Not a JSON error response
 
                 if error_response.get('code') == 'categoryNotApplicable':
                     print(f"DEBUG: NewsAPI returned 'categoryNotApplicable' for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}'). Trying next category/country if available.")
-                    continue
+                    continue # Continue to the next category in categories_to_try or next country
                 else:
                     print(f"Error fetching from NewsAPI.org for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}'): {http_err}")
                     if http_err.response and http_err.response.text:
@@ -230,15 +231,15 @@ async def fetch_news_from_newsapi(region_key, category_key, page_size=ARTICLES_T
 
             except requests.exceptions.RequestException as e:
                 print(f"Error fetching from NewsAPI.org for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}'): {e}")
-                continue # Continue to next category/country on request errors
+                continue # Continue to next category/country on general request errors
 
-    print(f"DEBUG: No articles found for {region_key}/{category_key} after trying all countries and categories. Will use simulated content.")
-    return [] # Return empty list if no articles found after all attempts
+    print(f"DEBUG: No articles found from NewsAPI for {region_key}/{category_key} after trying all countries and categories. No new content will be published for this section.")
+    return [] # Return empty list if no articles found after all attempts from NewsAPI
 
 async def get_mistral_summary_and_image(original_title, original_content_raw, category_name, original_image_url_raw):
     """
     Uses Mistral AI API to summarize content and suggest a relevant image URL.
-    This function now processes real data from NewsAPI.org or simulated data.
+    This function now processes real data from NewsAPI.org.
     """
     prompt = f"""
     You are an AI assistant for a news portal. Your task is to take the following article
@@ -293,27 +294,30 @@ async def get_mistral_summary_and_image(original_title, original_content_raw, ca
             elif suggested_image_url and (suggested_image_url.startswith('http://') or suggested_image_url.startswith('https://')):
                 final_image_url = suggested_image_url
             else:
-                # Fallback to a generic placeholder if neither is valid
+                # Fallback to a generic placeholder if neither is valid or if Mistral didn't provide one
                 image_keywords_for_fallback = category_name.replace('_', '+') + "+" + original_title.replace(' ', '+')
                 final_image_url = f"https://placehold.co/600x400/CCCCCC/333333?text={image_keywords_for_fallback}"
 
-            return summary, final_image_url, False # is_simulated = False (Mistral processed it)
+            # Return 'True' for 'is_simulated' only if Mistral *failed to process*, not if the original was simulated.
+            # Here, the original article is always from NewsAPI.
+            return summary, final_image_url, False # Mistral successfully processed NewsAPI content
+
         else:
-            print(f"Mistral AI API response missing expected structure: {result}")
-            # If Mistral fails, use original raw content/image, and mark as simulated
-            return original_content_raw, original_image_url_raw or 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback', True 
+            print(f"Mistral AI API response missing expected structure for '{original_title}': {result}")
+            # If Mistral fails, use original raw content/image, and mark as simulated (due to AI processing failure)
+            return original_content_raw, original_image_url_raw or 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Process+Failed', True 
 
     except requests.exceptions.RequestException as e:
-        print(f"Error calling Mistral AI API: {e}")
+        print(f"Error calling Mistral AI API for '{original_title}': {e}")
         if response and response.text:
             print(f"Mistral AI API Error Response: {response.text}")
-        # If Mistral API call fails, use original raw content/image, and mark as simulated
+        # If Mistral API call fails, use original raw content/image, and mark as simulated (due to AI processing failure)
         return original_content_raw, original_image_url_raw or 'https://placehold.co/600x400/CCCCCC/333333?text=API+Error+Image', True 
     except json.JSONDecodeError as e:
-        print(f"Error decoding Mistral AI API JSON response: {e}")
+        print(f"Error decoding Mistral AI API JSON response for '{original_title}': {e}")
         if response and response.text:
             print(f"Raw Mistral AI response text: {response.text}")
-        # If JSON decoding fails, use original raw content/image, and mark as simulated
+        # If JSON decoding fails, use original raw content/image, and mark as simulated (due to AI processing failure)
         return original_content_raw, original_image_url_raw or 'https://placehold.co/600x400/CCCCCC/333333?text=JSON+Error+Image', True 
 
 
@@ -372,63 +376,57 @@ async def main():
         # --- Attempt to fetch articles from NewsAPI.org ---
         newsapi_articles = await fetch_news_from_newsapi(region_key, category_key, page_size=ARTICLES_TO_FETCH_PER_RUN)
         
-        articles_for_processing = []
-        if newsapi_articles:
-            articles_for_processing = newsapi_articles
-            print(f"  -> Successfully fetched {len(newsapi_articles)} articles from NewsAPI for {region_key}/{category_key}.")
-        else:
-            # --- FALLBACK: Generate simulated content if NewsAPI.org yields no results ---
-            print(f"  -> NewsAPI.org returned no articles for {region_key}/{category_key}. Falling back to generating simulated content.")
-            articles_for_processing = generate_simulated_content_base(
-                region_name_full, category_key, count=ARTICLES_TO_FETCH_PER_RUN
-            )
-            # Ensure simulated content is marked as such
-            for article in articles_for_processing:
-                article['is_simulated'] = True 
-
         current_processed_articles_batch = [] 
         
-        for i, article_to_process in enumerate(articles_for_processing):
-            print(f"  - Processing article {i+1}/{len(articles_for_processing)} for {region_key}/{category_key}...")
-            
-            # Use Mistral AI to summarize the content_raw and potentially refine the image URL
-            summary_content, final_image_url, is_simulated_by_mistral_fallback = await get_mistral_summary_and_image(
-                article_to_process['title'], 
-                article_to_process['content_raw'], 
-                category_key,
-                article_to_process['imageUrl_raw']
-            )
-            
-            current_processed_articles_batch.append({
-                "title": article_to_process['title'], # Use original title (from NewsAPI or simulated)
-                "content": summary_content, # Mistral AI's summary
-                "link": article_to_process['link'], # Original link (from NewsAPI or simulated)
-                "imageUrl": final_image_url, # NewsAPI's image, Mistral's suggestion, or fallback
-                "is_simulated": article_to_process['is_simulated'] or is_simulated_by_mistral_fallback # True if original was simulated OR Mistral failed
-            })
-            time.sleep(15) # Shorter delay between article processing within a category
+        if newsapi_articles: # Only proceed if real news articles were successfully found from NewsAPI
+            print(f"  -> Successfully fetched {len(newsapi_articles)} articles from NewsAPI for {region_key}/{category_key}. Now processing with Mistral AI.")
+            for i, article_from_newsapi in enumerate(newsapi_articles):
+                print(f"  - Processing article {i+1}/{len(newsapi_articles)} for {region_key}/{category_key} from NewsAPI...")
+                
+                # Use Mistral AI to summarize the description and potentially refine the image URL
+                summary_content, final_image_url, mistral_processing_failed = await get_mistral_summary_and_image(
+                    article_from_newsapi['title'], 
+                    article_from_newsapi['content_raw'], 
+                    category_key,
+                    article_from_newsapi['imageUrl_raw']
+                )
+                
+                current_processed_articles_batch.append({
+                    "title": article_from_newsapi['title'], # Use original title from NewsAPI
+                    "content": summary_content, # Mistral AI's summary
+                    "link": article_from_newsapi['link'], # Original link from NewsAPI
+                    "imageUrl": final_image_url, # NewsAPI's image or Mistral's suggested fallback
+                    "is_simulated": mistral_processing_failed # True if Mistral failed to process this specific real article
+                })
+                time.sleep(15) # Shorter delay between article processing within a category
+        else:
+            print(f"  -> NewsAPI.org returned no articles for {region_key}/{category_key}. This section will NOT be updated in this run to avoid simulated content.")
+            # current_processed_articles_batch remains empty, so no new content will be added for this category.
 
         # --- Incremental Merging Logic ---
-        if category_key not in all_content[region_key]:
-            all_content[region_key][category_key] = []
+        # ONLY update the category if we have new, successfully processed (non-simulated) articles from NewsAPI.
+        if current_processed_articles_batch:
+            if category_key not in all_content[region_key]:
+                all_content[region_key][category_key] = []
+                
+            existing_articles_for_category = all_content[region_key].get(category_key, [])
             
-        existing_articles_for_category = all_content[region_key].get(category_key, [])
-        
-        # Filter out old simulated articles if new real articles were fetched in this run
-        # If this batch was entirely simulated, don't filter existing real articles.
-        if newsapi_articles: # If we successfully got real articles from NewsAPI in this run
+            # Filter out old articles that were marked as simulated (e.g., if Mistral failed on them previously).
+            # This ensures we only retain existing *real* articles.
             filtered_existing_articles = [
-                art for art in existing_articles_for_category if not art.get('is_simulated', True)
+                art for art in existing_articles_for_category if not art.get('is_simulated', False) # Default to False, assuming existing is real unless marked
             ]
-        else: # If this batch resorted to simulated content
-            filtered_existing_articles = existing_articles_for_category # Keep all existing (real or simulated)
-
-        combined_articles = current_processed_articles_batch + filtered_existing_articles
-        
-        # Trim to MAX_ARTICLES_PER_CATEGORY
-        all_content[region_key][category_key] = combined_articles[:MAX_ARTICLES_PER_CATEGORY]
-        
-        print(f"  -> Total articles for {region_key}/{category_key}: {len(all_content[region_key][category_key])}")
+            
+            combined_articles = current_processed_articles_batch + filtered_existing_articles
+            
+            # Trim to MAX_ARTICLES_PER_CATEGORY
+            all_content[region_key][category_key] = combined_articles[:MAX_ARTICLES_PER_CATEGORY]
+            print(f"  -> Total articles for {region_key}/{category_key}: {len(all_content[region_key][category_key])}")
+        else:
+            # If no new real articles were fetched and processed successfully, 
+            # we explicitly do nothing to this category in all_content.
+            # Its state (empty, or old real news) will be preserved.
+            print(f"  -> {region_key}/{category_key} content remains unchanged (no new real articles successfully processed).")
         
         time.sleep(30) # Delay between categories/regions
 
