@@ -74,54 +74,85 @@ BATCH_SIZE = (TOTAL_CATEGORIES + NUM_BATCHES - 1) // NUM_BATCHES
 async def fetch_news_from_newsapi(region_key, category_key, page_size=ARTICLES_TO_FETCH_PER_RUN):
     """
     Fetches real news articles from NewsAPI.org.
+    Includes a fallback to 'general' category if the specific category is not applicable.
     """
     country_code = REGIONS[region_key]["country_code"]
     newsapi_category = NEWSAPI_CATEGORIES[category_key]
 
-    # For 'global' region, we can iterate through a few countries or use a default
-    # NewsAPI requires a country for top-headlines. Let's default to 'us' for global.
     if country_code is None:
         country_code = 'us' # Default country for global news
 
-    params = {
-        "apiKey": NEWSAPI_API_KEY,
-        "category": newsapi_category,
-        "country": country_code,
-        "pageSize": page_size,
-        "language": "en"
-    }
+    # List of categories to try, starting with the specific one, then general
+    categories_to_try = [newsapi_category]
+    if newsapi_category != "general":
+        categories_to_try.append("general") # Add general as a fallback
 
-    try:
-        response = requests.get(NEWSAPI_BASE_URL, params=params, timeout=30)
-        response.raise_for_status() # Raise an HTTPError for bad responses (4xx or 5xx)
-        data = response.json()
+    articles = []
+    for current_cat_to_try in categories_to_try:
+        params = {
+            "apiKey": NEWSAPI_API_KEY,
+            "category": current_cat_to_try,
+            "country": country_code,
+            "pageSize": page_size,
+            "language": "en"
+        }
+        
+        print(f"DEBUG: Attempting NewsAPI Request Params for {region_key}/{category_key} with category='{current_cat_to_try}': {params}")
 
-        articles = []
-        if data.get('articles'):
-            for article_data in data['articles']:
-                # Basic validation and fallback for essential fields
-                title = article_data.get('title')
-                description = article_data.get('description')
-                url = article_data.get('url')
-                image_url = article_data.get('urlToImage')
+        try:
+            response = requests.get(NEWSAPI_BASE_URL, params=params, timeout=30)
+            response.raise_for_status() # Raise an HTTPError for bad responses (4xx or 5xx)
+            data = response.json()
 
-                # Skip articles with missing essential data
-                if not title or not description or not url:
-                    continue
-                
-                articles.append({
-                    "title": title,
-                    "content_raw": description, # Store raw description for Mistral to summarize
-                    "link": url,
-                    "imageUrl_raw": image_url, # Store raw image URL for Mistral to potentially refine
-                    "is_simulated": False # This is real data from NewsAPI
-                })
-        return articles
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching from NewsAPI.org for {region_key}/{category_key}: {e}")
-        if response and response.text:
-            print(f"NewsAPI.org Error Response: {response.text}")
-        return [] # Return empty list on error
+            if data.get('articles'):
+                for article_data in data['articles']:
+                    # Basic validation and fallback for essential fields
+                    title = article_data.get('title')
+                    description = article_data.get('description')
+                    url = article_data.get('url')
+                    image_url = article_data.get('urlToImage')
+
+                    # Skip articles with missing essential data
+                    if not title or not description or not url:
+                        continue
+                    
+                    articles.append({
+                        "title": title,
+                        "content_raw": description, # Store raw description for Mistral to summarize
+                        "link": url,
+                        "imageUrl_raw": image_url, # Store raw image URL for Mistral to potentially refine
+                        "is_simulated": False # This is real data from NewsAPI
+                    })
+                # If we successfully get articles, break the loop (no need to try 'general' if specific worked)
+                if articles:
+                    print(f"DEBUG: Successfully fetched {len(articles)} articles for {region_key}/{category_key} using category='{current_cat_to_try}'.")
+                    return articles
+            else:
+                print(f"DEBUG: NewsAPI returned no articles for {region_key}/{category_key} with category='{current_cat_to_try}'. Trying next category if available.")
+                continue # Try the next category in categories_to_try (e.g., 'general')
+
+        except requests.exceptions.HTTPError as http_err:
+            error_response = {}
+            try:
+                error_response = http_err.response.json()
+            except json.JSONDecodeError:
+                pass # Not a JSON error response
+
+            if error_response.get('code') == 'categoryNotApplicable' and current_cat_to_try == newsapi_category and newsapi_category != "general":
+                print(f"DEBUG: NewsAPI returned 'categoryNotApplicable' for {region_key}/{category_key} with category='{current_cat_to_try}'. Falling back to 'general'.")
+                continue # Continue to the next category in categories_to_try (which would be 'general')
+            else:
+                print(f"Error fetching from NewsAPI.org for {region_key}/{category_key} with category='{current_cat_to_try}': {http_err}")
+                if http_err.response and http_err.response.text:
+                    print(f"NewsAPI.org Error Response: {http_err.response.text}")
+                return [] # Return empty list for other HTTP errors
+
+        except requests.exceptions.RequestException as e:
+            print(f"Error fetching from NewsAPI.org for {region_key}/{category_key} with category='{current_cat_to_try}': {e}")
+            return [] # Return empty list for other request errors
+
+    print(f"DEBUG: No articles found for {region_key}/{category_key} after trying all categories.")
+    return [] # Return empty list if no articles found after all attempts
 
 async def get_mistral_summary_and_image(original_title, original_content_raw, category_name, original_image_url_raw):
     """
