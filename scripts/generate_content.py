@@ -10,7 +10,7 @@ from datetime import datetime, timezone # Import for time-based batching
 # Using Mistral AI API for content enhancement/summarization.
 # IMPORTANT: Mistral AI does NOT fetch raw news. It processes text you provide.
 # For a production portal, you'd need to replace generate_simulated_content_base
-# with a mechanism to fetch raw news (e.g., RSS feeds, a basic news API for URLs, or web scraping).
+# with a mechanism to fetch raw articles (e.g., RSS feeds, a basic news API for URLs, or web scraping).
 
 # Mistral AI API key should be stored as a GitHub Secret named MISTRAL_API_KEY.
 MISTRAL_API_BASE_URL = "https://api.mistral.ai/v1/chat/completions"
@@ -57,7 +57,7 @@ CATEGORIES = {
 
 # --- Constants for incremental update ---
 MAX_ARTICLES_PER_CATEGORY = 30 # Desired maximum articles to keep per category
-ARTICLES_TO_FETCH_PER_RUN = 8 # Number of NEW articles to attempt to generate per category per run
+ARTICLES_TO_FETCH_PER_RUN = 8 # Number of NEW articles to attempt to generate per category per run (Increased for faster refresh)
 
 # --- Constants for rotating processing ---
 ALL_CATEGORY_KEYS = [(r_key, c_key) for r_key in REGIONS for c_key in CATEGORIES]
@@ -70,80 +70,82 @@ BATCH_SIZE = (TOTAL_CATEGORIES + NUM_BATCHES - 1) // NUM_BATCHES # Ceiling divis
 def generate_simulated_content_base(region_name, category_name, count=1): # Changed default count to 1
     """
     Generates more realistic (but still simulated) base content for Mistral AI to summarize.
+    Includes more descriptive titles and direct image URLs.
     """
     articles = []
+    
+    # Define more varied and descriptive content snippets
     sample_contents = {
         "news": [
-            f"A major political development unfolded in {region_name} today, with implications for upcoming elections. Analysts are closely watching the public's reaction to the new policy proposals.",
-            f"Breaking news from {region_name}: a significant cultural festival has been announced, promising to draw visitors from across the globe. Local authorities are preparing for a large influx of tourists and media.",
-            f"An unexpected economic report from {region_name} indicates a surprising upturn in key sectors. Experts are debating whether this trend is sustainable or a temporary fluctuation.",
-            f"A new public health initiative launched in {region_name} aims to tackle a long-standing issue. Early results are promising, but widespread adoption remains a challenge.",
-            f"Environmental activists in {region_name} are calling for urgent action on climate change, citing recent extreme weather events as evidence of escalating crisis. Government response is pending."
+            {"title_keywords": "Political Development", "content": f"A major political development unfolded in {region_name} today, with implications for upcoming elections. Analysts are closely watching the public's reaction to the new policy proposals.", "image_keywords": "politics, election"},
+            {"title_keywords": "Cultural Festival Announced", "content": f"Breaking news from {region_name}: a significant cultural festival has been announced, promising to draw visitors from across the globe. Local authorities are preparing for a large influx of tourists and media.", "image_keywords": "festival, culture"},
+            {"title_keywords": "Economic Report Upturn", "content": f"An unexpected economic report from {region_name} indicates a surprising upturn in key sectors. Experts are debating whether this trend is sustainable or a temporary fluctuation.", "image_keywords": "economy, finance"},
+            {"title_keywords": "Public Health Initiative", "content": f"A new public health initiative launched in {region_name} aims to tackle a long-standing issue. Early results are promising, but widespread adoption remains a challenge.", "image_keywords": "health, public health"},
+            {"title_keywords": "Environmental Activism", "content": f"Environmental activists in {region_name} are calling for urgent action on climate change, citing recent extreme weather events as evidence of escalating crisis. Government response is pending.", "image_keywords": "environment, climate change"}
         ],
         "technology": [
-            f"Innovators in {region_name} have unveiled a groundbreaking AI model capable of unprecedented data processing speeds. This could revolutionize industries from finance to healthcare.",
-            f"A new quantum computing breakthrough from {region_name} promises to unlock solutions to complex problems currently beyond reach. Scientists are cautiously optimistic about its long-term potential.",
-            f"The tech sector in {region_name} is buzzing about a new sustainable energy storage solution that could drastically reduce reliance on fossil fuels. Pilot projects are already underway.",
-            f"A cybersecurity firm in {region_name} has detected a sophisticated new type of malware, prompting warnings across the digital landscape. Users are advised to update their systems immediately.",
-            f"Virtual reality advancements in {region_name} are pushing the boundaries of immersive experiences, with new applications emerging in education and entertainment."
+            {"title_keywords": "AI Model Breakthrough", "content": f"Innovators in {region_name} have unveiled a groundbreaking AI model capable of unprecedented data processing speeds. This could revolutionize industries from finance to healthcare.", "image_keywords": "AI, technology, innovation"},
+            {"title_keywords": "Quantum Computing", "content": f"A new quantum computing breakthrough from {region_name} promises to unlock solutions to complex problems currently beyond reach. Scientists are cautiously optimistic about its long-term potential.", "image_keywords": "quantum computing, science"},
+            {"title_keywords": "Sustainable Energy Solution", "content": f"The tech sector in {region_name} is buzzing about a new sustainable energy storage solution that could drastically reduce reliance on fossil fuels. Pilot projects are already underway.", "image_keywords": "energy, sustainability, tech"},
+            {"title_keywords": "Cybersecurity Alert", "content": f"A cybersecurity firm in {region_name} has detected a sophisticated new type of malware, prompting warnings across the digital landscape. Users are advised to update their systems immediately.", "image_keywords": "cybersecurity, hacking"},
+            {"title_keywords": "Virtual Reality Advancements", "content": f"Virtual reality advancements in {region_name} are pushing the boundaries of immersive experiences, with new applications emerging in education and entertainment.", "image_keywords": "VR, virtual reality, gaming"}
         ],
         "finance": [
-            f"The stock market in {region_name} experienced a volatile session, driven by investor uncertainty over global trade tensions. Analysts predict continued fluctuations in the short term.",
-            f"A major acquisition in {region_name}'s banking sector is set to reshape the financial landscape. Regulators are reviewing the deal for potential market impact.",
-            f"Inflation concerns are rising in {region_name} as consumer prices continue to climb. Central bank officials are considering new measures to stabilize the economy.",
-            f"Real estate markets in {region_name} are showing signs of cooling after a period of rapid growth. Experts suggest a more balanced market could emerge in the coming months.",
-            f"Cryptocurrency adoption is surging in {region_name}, with new regulations being drafted to manage the growing digital asset market."
+            {"title_keywords": "Stock Market Volatility", "content": f"The stock market in {region_name} experienced a volatile session, driven by investor uncertainty over global trade tensions. Analysts predict continued fluctuations in the short term.", "image_keywords": "stock market, finance, economy"},
+            {"title_keywords": "Banking Sector Acquisition", "content": f"A major acquisition in {region_name}'s banking sector is set to reshape the financial landscape. Regulators are reviewing the deal for potential market impact.", "image_keywords": "banking, acquisition, finance"},
+            {"title_keywords": "Rising Inflation Concerns", "content": f"Inflation concerns are rising in {region_name} as consumer prices continue to climb. Central bank officials are considering new measures to stabilize the economy.", "image_keywords": "inflation, economy, money"},
+            {"title_keywords": "Real Estate Cooling", "content": f"Real estate markets in {region_name} are showing signs of cooling after a period of rapid growth. Experts suggest a more balanced market could emerge in the coming months.", "image_keywords": "real estate, housing"},
+            {"title_keywords": "Cryptocurrency Adoption", "content": f"Cryptocurrency adoption is surging in {region_name}, with new regulations being drafted to manage the growing digital asset market.", "image_keywords": "cryptocurrency, blockchain"}
         ],
         "travel": [
-            f"New travel restrictions have been eased for visitors to {region_name}, sparking a surge in tourism bookings. Local businesses are preparing for the influx of international guests.",
-            f"A hidden gem in {region_name} has been named a top travel destination for next year, known for its pristine natural beauty and unique cultural experiences.",
-            f"Sustainable tourism initiatives are gaining traction in {region_name}, with eco-friendly resorts and responsible travel options becoming increasingly popular.",
-            f"Adventure tourism is booming in {region_name}, attracting thrill-seekers to its challenging landscapes and outdoor activities.",
-            f"Food tourism is drawing gourmands to {region_name}, eager to explore its vibrant culinary scene and traditional dishes."
+            {"title_keywords": "Travel Restrictions Eased", "content": f"New travel restrictions have been eased for visitors to {region_name}, sparking a surge in tourism bookings. Local businesses are preparing for the influx of international guests.", "image_keywords": "travel, tourism, destination"},
+            {"title_keywords": "Hidden Gem Destination", "content": f"A hidden gem in {region_name} has been named a top travel destination for next year, known for its pristine natural beauty and unique cultural experiences.", "image_keywords": "travel, nature, culture"},
+            {"title_keywords": "Sustainable Tourism", "content": f"Sustainable tourism initiatives are gaining traction in {region_name}, with eco-friendly resorts and responsible travel options becoming increasingly popular.", "image_keywords": "eco-tourism, sustainable travel"},
+            {"title_keywords": "Adventure Tourism Boom", "content": f"Adventure tourism is booming in {region_name}, attracting thrill-seekers to its challenging landscapes and outdoor activities.", "image_keywords": "adventure, outdoor, travel"},
+            {"title_keywords": "Food Tourism Draws Gourmands", "content": f"Food tourism is drawing gourmands to {region_name}, eager to explore its vibrant culinary scene and traditional dishes.", "image_keywords": "food, cuisine, travel"}
         ],
         "world": [
-            f"Geopolitical tensions are escalating in a key region, with international bodies calling for de-escalation and dialogue. World leaders are closely monitoring the situation.",
-            f"A global summit on climate change concluded with new commitments from major nations, though activists argue more urgent action is needed to meet ambitious targets.",
-            f"International aid efforts are underway to assist a nation recovering from a natural disaster, with humanitarian organizations mobilizing resources worldwide.",
-            f"A new trade agreement between several major economies is set to reshape global commerce, promising both opportunities and challenges for various industries.",
-            f"Discussions at the United Nations focus on global health security, with renewed calls for international cooperation to prevent future pandemics."
+            {"title_keywords": "Geopolitical Tensions", "content": f"Geopolitical tensions are escalating in a key region, with international bodies calling for de-escalation and dialogue. World leaders are closely monitoring the situation.", "image_keywords": "geopolitics, world map"},
+            {"title_keywords": "Global Climate Summit", "content": f"A global summit on climate change concluded with new commitments from major nations, though activists argue more urgent action is needed to meet ambitious targets.", "image_keywords": "climate change, summit"},
+            {"title_keywords": "International Aid Efforts", "content": f"International aid efforts are underway to assist a nation recovering from a natural disaster, with humanitarian organizations mobilizing resources worldwide.", "image_keywords": "aid, disaster relief"},
+            {"title_keywords": "New Trade Agreement", "content": f"A new trade agreement between several major economies is set to reshape global commerce, promising both opportunities and challenges for various industries.", "image_keywords": "trade, economy, global"},
+            {"title_keywords": "UN Health Security Talks", "content": f"Discussions at the United Nations focus on global health security, with renewed calls for international cooperation to prevent future pandemics.", "image_keywords": "UN, health, global health"}
         ],
         "weather": [
-            f"An unprecedented heatwave is gripping parts of {region_name}, prompting health warnings and concerns about agricultural impact. Authorities are urging residents to take precautions.",
-            f"Severe storms have caused widespread disruption across {region_name}, leading to power outages and travel delays. Emergency services are working to restore normalcy.",
-            f"A new study predicts significant changes in precipitation patterns for {region_name} over the next decade, with implications for water management and agriculture.",
-            f"Unusual cold fronts are sweeping through {region_name}, bringing record low temperatures and challenging winter conditions. Residents are advised to prepare for prolonged cold spells.",
-            f"Coastal regions in {region_name} are bracing for higher sea levels, with new infrastructure projects being planned to mitigate the impact of climate change."
+            {"title_keywords": "Unprecedented Heatwave", "content": f"An unprecedented heatwave is gripping parts of {region_name}, prompting health warnings and concerns about agricultural impact. Authorities are urging residents to take precautions.", "image_keywords": "heatwave, weather"},
+            {"title_keywords": "Severe Storms Disrupt", "content": f"Severe storms have caused widespread disruption across {region_name}, leading to power outages and travel delays. Emergency services are working to restore normalcy.", "image_keywords": "storm, weather, disaster"},
+            {"title_keywords": "Precipitation Pattern Changes", "content": f"A new study predicts significant changes in precipitation patterns for {region_name} over the next decade, with implications for water management and agriculture.", "image_keywords": "rain, climate, agriculture"},
+            {"title_keywords": "Unusual Cold Fronts", "content": f"Unusual cold fronts are sweeping through {region_name}, bringing record low temperatures and challenging winter conditions. Residents are advised to prepare for prolonged cold spells.", "image_keywords": "cold, winter, snow"},
+            {"title_keywords": "Coastal Sea Level Rise", "content": f"Coastal regions in {region_name} are bracing for higher sea levels, with new infrastructure projects being planned to mitigate the impact of climate change.", "image_keywords": "sea level, coast, climate"}
         ],
         "blogs": [
-            f"A popular blogger from {region_name} has published a viral post dissecting the latest social media trends, sparking widespread debate and discussion.",
-            f"An insightful opinion piece from {region_name} explores the future of remote work, offering unique perspectives on productivity and work-life balance.",
-            f"A new travel blog highlights unexplored destinations in {region_name}, providing practical tips and stunning photography for adventurous readers.",
-            f"The food blogging scene in {region_name} is thriving, with a recent post showcasing traditional recipes and local culinary secrets gaining international attention.",
-            f"A tech blog from {region_name} reviews the newest gadgets and software, providing in-depth analysis and recommendations for tech enthusiasts."
+            {"title_keywords": "Viral Social Media Post", "content": f"A popular blogger from {region_name} has published a viral post dissecting the latest social media trends, sparking widespread debate and discussion.", "image_keywords": "social media, blog"},
+            {"title_keywords": "Future of Remote Work", "content": f"An insightful opinion piece from {region_name} explores the future of remote work, offering unique perspectives on productivity and work-life balance.", "image_keywords": "remote work, productivity"},
+            {"title_keywords": "Unexplored Travel Destinations", "content": f"A new travel blog highlights unexplored destinations in {region_name}, providing practical tips and stunning photography for adventurous readers.", "image_keywords": "travel blog, adventure"},
+            {"title_keywords": "Thriving Food Blogging", "content": f"The food blogging scene in {region_name} is thriving, with a recent post showcasing traditional recipes and local culinary secrets gaining international attention.", "image_keywords": "food blog, cuisine"},
+            {"title_keywords": "New Tech Gadget Review", "content": f"A tech blog from {region_name} reviews the newest gadgets and software, providing in-depth analysis and recommendations for tech enthusiasts.", "image_keywords": "tech blog, gadgets"}
         ]
     }
 
     for i in range(count):
-        # Use a random sample from the relevant category's content
-        content_options = sample_contents.get(category_name, sample_contents["news"]) # Default to news if category not found
-        content = random.choice(content_options)
+        # Select a random content item for the given category
+        content_item = random.choice(sample_contents.get(category_name, sample_contents["news"]))
         
-        # Make the title more dynamic, but still related to the simulated content
-        title_prefix = f"Latest {category_name.replace('_', ' ').title()} Update"
-        title = f"{title_prefix} from {region_name} - {random.randint(100, 999)}" # Add random number to make titles unique
+        # Use a more descriptive title based on the content_item's keywords
+        title = f"{content_item['title_keywords']} in {region_name}"
 
-        link = f"https://example.com/{region_name.lower().replace(' ', '-')}/{category_name.lower().replace(' ', '-')}/{i + 1}"
+        # Generate a more specific placeholder image URL using keywords
+        # Using picsum.photos for more varied realistic placeholders
+        image_url = f"https://picsum.photos/seed/{random.randint(1, 1000)}/600/400/?random&keywords={content_item['image_keywords'].replace(' ', ',')}"
+
+        # Generate a unique, but still simulated, link
+        link = f"https://example.com/{region_name.lower().replace(' ', '-')}/{category_name.lower().replace(' ', '-')}/{random.randint(1000, 9999)}"
         
-        # Generate a more relevant placeholder image URL based on category and region
-        image_query = f"{category_name.replace('_', '+')}+{region_name.replace(' ', '+')}"
-        image_url = f"https://placehold.co/600x400/{random.choice(['CCCCCC', 'FF5733', '33FF57', '3357FF'])}/{random.choice(['333333', 'FFFFFF'])}?text={category_name.title()}+{region_name.replace(' ', '+')}"
-
         articles.append({
             "title": title,
-            "content": content,
+            "content": content_item['content'],
             "link": link,
-            "imageUrl": image_url, # This will be the placeholder, Mistral won't generate real images
+            "imageUrl": image_url, 
             "is_simulated": True # Still marked as simulated as it's not real news data
         })
     return articles
@@ -157,8 +159,8 @@ async def get_mistral_summary_and_image(original_title, original_content, catego
     You are an AI assistant for a news portal. Your task is to take the following article
     title and content, and generate a concise summary (around 50-70 words) for a news feed.
     The summary should capture the main points and be engaging.
-    Additionally, suggest a relevant placeholder image URL (e.g., from placehold.co or unsplash.com with relevant keywords)
-    that visually represents the article's topic. Do NOT generate base64 images.
+    Additionally, suggest a relevant direct image URL (e.g., from 'https://picsum.photos/600/400/?random&keywords=KEYWORD' or 'https://placehold.co/600x400/HEX/HEX?text=TEXT')
+    that visually represents the article's topic. Provide keywords for the image URL.
 
     Original Title: "{original_title}"
     Original Content: "{original_content}"
@@ -201,9 +203,11 @@ async def get_mistral_summary_and_image(original_title, original_content, catego
             
             # Use the suggestedImageUrl from Mistral if it's a valid URL, otherwise fallback
             mistral_suggested_image_url = parsed_json.get('suggestedImageUrl', '')
+            # Check if it looks like a valid URL
             if not mistral_suggested_image_url or not (mistral_suggested_image_url.startswith('http://') or mistral_suggested_image_url.startswith('https://')):
                 # Fallback to a more descriptive placeholder if Mistral doesn't provide a valid URL
-                mistral_suggested_image_url = f"https://placehold.co/600x400/CCCCCC/333333?text={category_name.title()}+{original_title.split(' ')[-1]}"
+                image_keywords = category_name.replace('_', '+') + "+" + original_title.replace(' ', '+')
+                mistral_suggested_image_url = f"https://placehold.co/600x400/CCCCCC/333333?text={image_keywords}"
 
             return parsed_json.get('summary', original_content), mistral_suggested_image_url, False # is_simulated = False
         else:
@@ -258,6 +262,9 @@ async def main(): # Make main function async
     else:
         print(f"No existing {output_file_path} found. Starting with empty content.")
 
+    # Add a timestamp to the top level of the JSON for debugging/freshness check
+    all_content['last_updated_utc'] = datetime.now(timezone.utc).isoformat()
+
     # Determine which slice of categories to process in this run
     current_batch_idx = get_current_batch_index()
     start_idx = current_batch_idx * BATCH_SIZE
@@ -305,6 +312,10 @@ async def main(): # Make main function async
             time.sleep(30) 
 
         # --- Incremental Merging Logic ---
+        # Ensure the category list exists before attempting to get it
+        if category_key not in all_content[region_key]:
+            all_content[region_key][category_key] = []
+            
         existing_articles_for_category = all_content[region_key].get(category_key, [])
         
         # Check if the new batch has *any* non-simulated (Mistral AI-generated) content
