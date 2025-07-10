@@ -3,1030 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover Nexus - Your Personalized Content Hub</title>
-    <!-- Tailwind CSS CDN for styling -->
+    <title>Discover Nexus Portal</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        html.dark {
-            /* Tailwind's dark mode class */
-        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Very light background */
-            color: #1a202c;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+            background-color: #f3f4f6; /* Light gray background */
         }
-        /* Dark mode styles */
-        body.dark {
-            background-color: #1a202c; /* Dark background */
-            color: #e2e8f0; /* Light text */
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px; /* Wider for more content */
-            margin: 2.5rem auto;
-            padding: 2rem;
+        .news-card {
             background-color: #ffffff;
-            border-radius: 1.5rem; /* Large rounded corners */
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); /* Prominent shadow */
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .container.dark {
-            background-color: #2d3748; /* Darker background */
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-        }
-
-        .header {
-            text-align: center;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #e2e8f0;
-            transition: border-color 0.3s ease;
-        }
-        .header.dark {
-            border-bottom-color: #4a5568;
-        }
-        .header h1 {
-            font-size: 3.8rem; /* Very large heading */
-            font-weight: 800; /* Extra bold */
-            margin-bottom: 0.8rem;
-            background: linear-gradient(90deg, #6366f1, #3b82f6); /* Purple-blue gradient */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.05em; /* Tighter spacing */
-        }
-        .header p {
-            font-size: 1.25rem;
-            color: #64748b;
-            max-width: 700px;
-            margin: 0.5rem auto;
-        }
-        .header.dark p {
-            color: #a0aec0; /* Lighter text for dark mode */
-        }
-
-        .controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-        .region-select-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-        .region-select {
-            padding: 0.75rem 1.25rem;
-            border-radius: 0.75rem; /* Rounded select */
-            border: 2px solid #cbd5e1;
-            background-color: #f8fafc;
-            font-weight: 500;
-            color: #475569;
-            appearance: none; /* Remove default arrow */
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            cursor: pointer;
-            padding-right: 2.5rem; /* Space for custom arrow */
-            transition: all 0.2s ease-in-out;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .region-select.dark {
-            background-color: #4a5568;
-            color: #e2e8f0;
-            border-color: #64748b;
-        }
-        .region-select:focus {
-            outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
-        }
-        .region-select-wrapper::after {
-            content: '▼'; /* Custom dropdown arrow */
-            font-size: 0.75rem;
-            color: #64748b;
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-        }
-        .region-select-wrapper.dark::after {
-            color: #cbd5e1;
-        }
-
-        /* Theme Toggle */
-        .theme-toggle-button {
-            background-color: #f0f4f8;
-            color: #475569;
-            padding: 0.75rem 1.25rem;
-            border-radius: 0.75rem;
-            border: 2px solid #cbd5e1;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .theme-toggle-button:hover {
-            background-color: #e2e8f0;
-        }
-        .theme-toggle-button.dark {
-            background-color: #4a5568;
-            color: #e2e8f0;
-            border-color: #64748b;
-        }
-        .theme-toggle-button.dark:hover {
-            background-color: #64748b;
-        }
-
-
-        .nav-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 2rem;
-            background-color: #f0f4f8; /* Light background for tabs */
-            border-radius: 1rem;
-            padding: 0.5rem;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .nav-tabs.dark {
-            background-color: #2d3748;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
-        }
-        .nav-tab-item {
-            padding: 0.75rem 1.5rem;
-            cursor: pointer;
-            font-weight: 600;
-            color: #64748b;
-            border-radius: 0.75rem;
-            transition: all 0.3s ease;
-            position: relative;
-            flex-grow: 1; /* Distribute tabs evenly */
-            text-align: center;
-            white-space: nowrap; /* Prevent wrapping */
-        }
-        .nav-tab-item.dark {
-            color: #a0aec0;
-        }
-        .nav-tab-item:hover {
-            color: #3b82f6;
-            background-color: #e0e7ff; /* Light blue hover */
-        }
-        .nav-tab-item.dark:hover {
-            background-color: #3f4a5a; /* Darker hover for dark mode */
-            color: #a0aec0;
-        }
-        .nav-tab-item.active {
-            background-color: #3b82f6; /* Active tab background */
-            color: white;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            transform: translateY(-2px); /* Slight lift */
-        }
-        .nav-tab-item.active.dark {
-            background-color: #3b82f6; /* Keep blue for active */
-            color: white;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.5);
-        }
-        .nav-tab-item.active:hover {
-             color: white; /* Keep white on hover for active tab */
-             background-color: #3b82f6; /* Maintain active color */
-        }
-
-        .content-section {
-            padding-top: 0.5rem;
-        }
-        .content-area {
-            display: none; /* Hidden by default */
-            animation: fadeIn 0.5s ease-out; /* Fade in animation */
-        }
-        .content-area.active {
-            display: block;
-        }
-        .section-header {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #1a202c;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid #e2e8f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: color 0.3s ease, border-color 0.3s ease;
-        }
-        .section-header.dark {
-            color: #e2e8f0;
-            border-bottom-color: #4a5568;
-        }
-        .update-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-            gap: 1.5rem; /* Space between cards */
-        }
-        .update-item {
-            background-color: #ffffff;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease, border-color 0.3s ease;
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow: hidden; /* Ensure content doesn't break rounded corners */
-        }
-        .update-item.dark {
-            background-color: #4a5568;
-            border-color: #64748b;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .update-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-        .update-item.dark:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
-        .update-item h3 {
-            font-size: 1.4rem; /* Larger title */
-            font-weight: 600;
-            color: #1e3a8a; /* Darker blue for titles */
-            margin-bottom: 0.75rem;
-            line-height: 1.3;
-            transition: color 0.3s ease;
-        }
-        .update-item.dark h3 {
-            color: #90cdf4; /* Lighter blue for dark mode titles */
-        }
-        .update-item p {
-            font-size: 0.98rem;
-            color: #475569;
-            margin-bottom: 1rem;
-            flex-grow: 1; /* Allows paragraph to take up available space */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
             overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 4; /* Limit content to 4 lines */
-            -webkit-box-orient: vertical;
-            transition: color 0.3s ease;
+            transition: transform 0.2s ease-in-out;
         }
-        .update-item.dark p {
-            color: #cbd5e1;
+        .news-card:hover {
+            transform: translateY(-5px);
         }
-        .update-item a {
-            display: inline-block;
-            padding: 0.6rem 1.2rem;
-            background-color: #3b82f6; /* Bright blue button */
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
-            text-align: center;
-            align-self: flex-start; /* Align link to start of flex item */
-        }
-        .update-item a:hover {
-            background-color: #2563eb;
-            transform: translateY(-1px);
-        }
-        .update-item img {
+        .news-image {
             width: 100%;
             height: 180px; /* Fixed height for consistency */
-            object-fit: cover; /* Cover the area, cropping if necessary */
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            transition: transform 0.2s ease;
+            object-fit: cover; /* Ensures image covers the area */
+            border-radius: 0.75rem 0.75rem 0 0; /* Rounded top corners */
         }
-        .update-item img:hover {
-            transform: scale(1.02); /* Slight zoom on hover */
+        .category-section {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
-        .footer {
-            text-align: center;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-            color: #94a3b8;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e2e8f0;
-            transition: color 0.3s ease, border-color 0.3s ease;
+        .tab-button.active {
+            background-color: #4f46e5; /* Indigo 600 */
+            color: #ffffff;
         }
-        .footer.dark {
-            color: #a0aec0;
-            border-top-color: #4a5568;
-        }
-        /* Message box styling (remains similar, just ensures it looks good in both themes) */
-        .message-box {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-            transform: translateY(-20px);
-        }
-        .message-box.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .message-box.error {
-            background-color: #ef4444;
-        }
-        .message-box.info {
-            background-color: #3b82f6;
-        }
-
-        /* Ad Placeholder Styling */
-        .ad-banner {
-            background-color: #f0f4f8;
-            border: 1px dashed #cbd5e1;
-            border-radius: 8px;
-            padding: 1rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #64748b;
-            margin: 1rem auto;
-            max-width: 728px; /* Standard leaderboard ad size width */
-            height: 90px; /* Standard leaderboard ad size height */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden; /* Important for ads */
-            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-        }
-        .ad-banner.dark {
-            background-color: #4a5568;
-            border-color: #a0aec0;
-            color: #e2e8f0;
-        }
-        .ad-banner-placeholder {
-            font-weight: 600;
-        }
-
-        /* Loading Spinner */
-        .loading-spinner {
-            display: none; /* Hidden by default */
-            border: 4px solid #f3f3f3; /* Light grey */
-            border-top: 4px solid #3b82f6; /* Blue */
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            margin: 2rem auto; /* Center it */
-        }
-        .loading-spinner.show {
-            display: block;
-        }
-        .loading-spinner.dark {
-            border-top: 4px solid #90cdf4; /* Lighter blue for dark mode */
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* No More Content message */
-        .no-more-content {
-            text-align: center;
-            color: #94a3b8;
-            font-size: 1rem;
-            padding: 1rem;
-            margin-top: 1rem;
-            display: none; /* Hidden by default */
-        }
-        .no-more-content.show {
-            display: block;
-        }
-        .no-more-content.dark {
-            color: #a0aec0;
-        }
-
-
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 768px) {
-            .container {
-                margin: 1rem auto;
-                padding: 1rem;
-                border-radius: 1rem;
-            }
-            .header h1 {
-                font-size: 2.5rem;
-                margin-bottom: 0.5rem;
-            }
-            .header p {
-                font-size: 1rem;
-            }
-            .nav-tab-item {
-                padding: 0.6rem 0.8rem;
-                font-size: 0.85rem;
-                border-radius: 0.5rem;
-            }
-            .nav-tabs {
-                padding: 0.3rem;
-                border-radius: 0.8rem;
-            }
-            .section-header {
-                font-size: 1.8rem;
-            }
-            .update-grid {
-                grid-template-columns: 1fr; /* Single column on small screens */
-            }
-            .region-select {
-                width: 100%; /* Full width on small screens */
-            }
-            .controls {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .ad-banner {
-                width: 100%;
-                max-width: 320px; /* Mobile leaderboard ad size */
-                height: 50px;
-                margin: 0.5rem auto;
-            }
+        .tab-button {
+            transition: background-color 0.3s ease;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-100">
 
-    <div class="container" id="mainContainer">
-        <header class="header" id="mainHeader">
-            <h1>Discover Nexus</h1>
-            <p>Your centralized hub for personalized news, insights, and global updates powered by AI.</p>
-            <div class="controls">
-                <div class="region-select-wrapper">
-                    <select id="regionSelect" class="region-select">
-                        <option value="global">Global</option>
-                        <option value="north_america">North America</option>
-                        <option value="europe">Europe</option>
-                        <option value="asia">Asia</option>
-                        <option value="africa">Africa</option>
-                        <option value="oceania">Oceania</option>
-                        <option value="south_america">South America</option>
-                        <option value="middle_east">Middle East</option>
-                        <option value="southeast_asia">Southeast Asia</option>
-                        <option value="north_africa">North Africa</option>
-                        <option value="sub_saharan_africa">Sub-Saharan Africa</option>
-                        <option value="east_asia">East Asia</option>
-                        <option value="south_asia">South Asia</option>
-                        <option value="australia_nz">Australia & NZ</option>
-                        <!-- Add more regions as needed, ensuring your GitHub Action generates content for them -->
-                    </select>
-                </div>
-                <button id="themeToggleButton" class="theme-toggle-button">Toggle Dark Mode</button>
+    <header class="bg-indigo-700 text-white p-4 shadow-md">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-3xl font-bold mb-2 md:mb-0">Discover Nexus Portal</h1>
+            <nav>
+                <ul id="region-tabs" class="flex flex-wrap justify-center md:justify-end space-x-2 md:space-x-4">
+                    <!-- Region tabs will be dynamically loaded here -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 mt-4">
+        <!-- Timestamp display -->
+        <div id="last-updated-timestamp" class="text-sm text-gray-500 text-center mb-4">Loading...</div>
+
+        <!-- Category tabs -->
+        <div class="bg-white p-4 rounded-xl shadow-md mb-6">
+            <div id="category-tabs" class="flex flex-wrap justify-center space-x-2 md:space-x-4">
+                <!-- Category tabs will be dynamically loaded here -->
             </div>
-            <!-- Ad Space in Header -->
-            <div class="ad-banner" id="headerAd">
-                <span class="ad-banner-placeholder">Advertisement: Header Banner (728x90)</span>
-            </div>
-        </header>
+        </div>
 
-        <nav class="nav-tabs" id="navTabs">
-            <div class="nav-tab-item active" data-category="news">News</div>
-            <div class="nav-tab-item" data-category="technology">Technology</div>
-            <div class="nav-tab-item" data-category="finance">Finance</div>
-            <div class="nav-tab-item" data-category="travel">Travel</div>
-            <div class="nav-tab-item" data-category="world">World</div>
-            <div class="nav-tab-item" data-category="weather">Weather</div>
-            <div class="nav-tab-item" data-category="blogs">Blogs</div>
-        </nav>
+        <!-- News content sections -->
+        <div id="news-content" class="grid grid-cols-1 gap-6">
+            <!-- News articles will be dynamically loaded here -->
+        </div>
+    </main>
 
-        <section class="content-section">
-            <!-- News Section -->
-            <div id="newsContent" class="content-area active" data-category-content="news">
-                <h2 class="section-header" id="newsHeader">
-                    Global News & Current Events
-                    <span id="newsLastUpdated" class="text-base font-normal text-gray-500"></span>
-                </h2>
-                <div id="newsUpdates" class="update-grid">
-                    <!-- News updates will be loaded here -->
-                </div>
-                 <div class="loading-spinner" id="newsSpinner"></div>
-                 <div class="no-more-content" id="newsNoMore">No more news updates.</div>
-            </div>
-
-            <!-- Technology Section -->
-            <div id="technologyContent" class="content-area" data-category-content="technology">
-                <h2 class="section-header" id="technologyHeader">
-                    Tech Innovations & Gadgets
-                    <span id="technologyLastUpdated" class="text-base font-normal text-gray-500"></span>
-                </h2>
-                <div id="technologyUpdates" class="update-grid">
-                    <!-- Technology updates will be loaded here -->
-                </div>
-                <div class="loading-spinner" id="technologySpinner"></div>
-                <div class="no-more-content" id="technologyNoMore">No more technology updates.</div>
-            </div>
-
-            <!-- Finance Section -->
-            <div id="financeContent" class="content-area" data-category-content="finance">
-                <h2 class="section-header" id="financeHeader">
-                    Market & Financial Insights
-                    <span id="financeLastUpdated" class="text-base font-normal text-gray-500"></span>
-                </h2>
-                <div id="financeUpdates" class="update-grid">
-                    <!-- Finance updates will be loaded here -->
-                </div>
-                <div class="loading-spinner" id="financeSpinner"></div>
-                <div class="no-more-content" id="financeNoMore">No more finance updates.</div>
-            </div>
-
-            <!-- Travel Section -->
-            <div id="travelContent" class="content-area" data-category-content="travel">
-                <h2 class="section-header" id="travelHeader">
-                    Destination Guides & Travel Tips
-                    <span id="travelLastUpdated" class="text-base font-normal text-gray-500"></span>
-                </h2>
-                <div id="travelUpdates" class="update-grid">
-                    <!-- Travel updates will be loaded here -->
-                </div>
-                <div class="loading-spinner" id="travelSpinner"></div>
-                <div class="no-more-content" id="travelNoMore">No more travel updates.</div>
-            </div>
-
-            <!-- World Section -->
-            <div id="worldContent" class="content-area" data-category-content="world">
-                <h2 class="section-header" id="worldHeader">
-                    International Affairs & Geopolitics
-                    <span id="worldLastUpdated" class="text-base font-normal text-gray-500"></span>
-                </h2>
-                <div id="worldUpdates" class="update-grid">
-                    <!-- World updates will be loaded here -->
-                </div>
-                <div class="loading-spinner" id="worldSpinner"></div>
-                <div class="no-more-content" id="worldNoMore">No more world updates.</div>
-            </div>
-
-            <!-- Weather Section -->
-            <div id="weatherContent" class="content-area" data-category-content="weather">
-                <h2 class="section-header" id="weatherHeader">
-                    Global Weather Forecasts
-                    <span id="weatherLastUpdated" class="text-base font-normal text-gray-500"></span>
-                </h2>
-                <div id="weatherUpdates" class="update-grid">
-                    <!-- Weather updates will be loaded here -->
-                </div>
-                <div class="loading-spinner" id="weatherSpinner"></div>
-                <div class="no-more-content" id="weatherNoMore">No more weather updates.</div>
-            </div>
-
-            <!-- Blogs Section -->
-            <div id="blogsContent" class="content-area" data-category-content="blogs">
-                <h2 class="section-header" id="blogsHeader">
-                    Featured Blogs & Articles
-                    <span id="blogsLastUpdated" class="text-base font-normal text-gray-500"></span>
-                </h2>
-                <div id="blogsUpdates" class="update-grid">
-                    <!-- Blogs updates will be loaded here -->
-                </div>
-                <div class="loading-spinner" id="blogsSpinner"></div>
-                <div class="no-more-content" id="blogsNoMore">No more blog updates.</div>
-            </div>
-
-            <!-- Optional Ad Space in Footer/Before Footer -->
-            <div class="ad-banner" id="footerAd">
-                <span class="ad-banner-placeholder">Advertisement: Footer Banner (728x90)</span>
-            </div>
-
-        </section>
-
-        <footer class="footer" id="mainFooter">
-            <p>&copy; 2025 Discover Nexus. Powered by Gemini AI.</p>
-        </footer>
-    </div>
-
-   <!-- Add this div where you want the timestamp to appear, e.g., in your header or footer -->
-<div id="last-updated-timestamp" class="text-sm text-gray-500 text-center mt-4"></div>
-
-<script>
-// FIX: Changed the fetch URL to an absolute path for better compatibility
-// especially when running in sandboxed environments or subdirectories.
-// Replace 'Nandini1488' with your GitHub username and 'discover-nexus-portal' with your repository name.
-fetch('https://Nandini1488.github.io/discover-nexus-portal/updates.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Display the timestamp if it exists
-        if (data.last_updated_utc) {
-            const timestampDiv = document.getElementById('last-updated-timestamp');
-            const date = new Date(data.last_updated_utc);
-            timestampDiv.textContent = `Last updated: ${date.toLocaleString()}`;
-        }
-        
-        // Your existing code to render the news content goes here
-        // For example:
-        // displayNewsContent(data); 
-        // (Assuming you have a function like displayNewsContent that takes the data)
-
-        // Example of how you might access specific region/category data:
-        // const globalNews = data.global.news;
-        // console.log("Global News Articles:", globalNews);
-        // You would then use this 'data' object to populate your news sections.
-
-        // If your existing code is already iterating through data.global.news etc.
-        // and rendering, this timestamp addition won't break it.
-        // The issue might be in how your existing rendering logic handles the 'is_simulated' flag
-        // or if it's somehow prioritizing older content.
-        
-        // To specifically debug Sub-Saharan Africa:
-        // const subSaharanAfricaNews = data.sub_saharan_africa ? data.sub_saharan_africa.news : [];
-        // console.log("Sub-Saharan Africa News Articles:", subSaharanAfricaNews);
-        // Ensure your rendering loop for this section correctly uses this data.
-    })
-    .catch(error => {
-        console.error('Error fetching or parsing updates.json:', error);
-        document.getElementById('last-updated-timestamp').textContent = 'Error loading content.';
-    });
-</script>
-
-    <!-- Message box for notifications -->
-    <div id="messageBox" class="message-box"></div>
+    <footer class="bg-gray-800 text-white p-4 text-center mt-8">
+        <p>&copy; 2024 Discover Nexus Portal. All rights reserved.</p>
+    </footer>
 
     <script>
-        // Function to show a message in the custom message box
-        function showMessage(message, type = 'success') {
-            const msgBox = document.getElementById('messageBox');
-            msgBox.textContent = message;
-            // Remove previous type classes and add the new one
-            msgBox.classList.remove('success', 'error', 'info');
-            msgBox.classList.add(type);
-            msgBox.classList.add('show');
-            setTimeout(() => {
-                msgBox.classList.remove('show');
-            }, 3000); // Hide after 3 seconds
-        }
+        // Define regions and categories - MUST match Python script's keys
+        const REGIONS = {
+            "global": {"name": "Global"},
+            "north_america": {"name": "North America"},
+            "europe": {"name": "Europe"},
+            "asia": {"name": "Asia"},
+            "africa": {"name": "Africa"},
+            "oceania": {"name": "Oceania"},
+            "south_america": {"name": "South America"},
+            "middle_east": {"name": "Middle East"},
+            "southeast_asia": {"name": "Southeast Asia"},
+            "north_africa": {"name": "North Africa"},
+            "sub_saharan_africa": {"name": "Sub-Saharan Africa"},
+            "east_asia": {"name": "East Asia"},
+            "south_asia": {"name": "South Asia"},
+            "australia_nz": {"name": "Australia & NZ"}
+        };
 
-        // Global variables
-        let allContentData = {};
-        let activeCategory = 'news'; // Default active category
-        let activeRegion = 'global'; // Default active region
-        const ITEMS_PER_LOAD = 6; // Number of items to load initially and on scroll
-        let loadedItemCounts = {}; // Keeps track of how many items are loaded per region/category
-        let isLoadingMore = false; // Flag to prevent multiple load calls
+        const CATEGORIES = {
+            "news": "News",
+            "technology": "Technology",
+            "finance": "Finance",
+            "travel": "Travel",
+            "world": "World",
+            "weather": "Weather",
+            "blogs": "Blogs"
+        };
 
-        // Function to render content for a specific category and region
-        // `append` flag: true to add new items, false to clear and re-render from start
-        function renderContent(region, category, append = false) {
-            const updatesContainer = document.getElementById(`${category}Updates`);
-            const lastUpdatedSpan = document.getElementById(`${category}LastUpdated`);
-            const loadingSpinner = document.getElementById(`${category}Spinner`);
-            const noMoreContentMessage = document.getElementById(`${category}NoMore`);
+        let allNewsData = {}; // Stores all fetched news data
+        let currentRegion = 'global'; // Default selected region
+        let currentCategory = 'news'; // Default selected category
 
-            // Initialize loadedItemCounts if not present
-            if (!loadedItemCounts[region]) {
-                loadedItemCounts[region] = {};
-            }
-            if (!loadedItemCounts[region][category] || !append) {
-                loadedItemCounts[region][category] = 0; // Start from 0 if not appending or first load
-            }
-
-            const data = allContentData[region] && allContentData[region][category] ? allContentData[region][category] : [];
-            const startIndex = append ? loadedItemCounts[region][category] : 0;
-            const endIndex = startIndex + ITEMS_PER_LOAD;
-            const itemsToRender = data.slice(startIndex, endIndex);
-
-            if (!append) { // Clear only if not appending
-                updatesContainer.innerHTML = '';
-                noMoreContentMessage.classList.remove('show'); // Hide "No more content" message
-            }
-
-            if (data.length === 0) {
-                updatesContainer.innerHTML = `<p class="text-center text-gray-500 py-8">No updates available for ${category} in ${region.replace('_', ' ')}.</p>`;
-                noMoreContentMessage.classList.add('show');
-            } else if (itemsToRender.length === 0 && data.length > 0) {
-                // All content loaded
-                noMoreContentMessage.classList.add('show');
-            } else {
-                itemsToRender.forEach(item => {
-                    const updateItem = document.createElement('div');
-                    updateItem.className = 'update-item';
-
-                    let imageHtml = '';
-                    if (item.imageUrl && item.imageUrl.trim() !== '') {
-                        imageHtml = `<img src="${item.imageUrl}" alt="${item.title}" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Unavailable';" />`;
-                    }
-
-                    updateItem.innerHTML = `
-                        ${imageHtml}
-                        <h3>${item.title}</h3>
-                        <p>${item.content}</p>
-                        <a href="${item.link}" target="_blank" rel="noopener noreferrer">Read More</a>
-                    `;
-                    updatesContainer.appendChild(updateItem);
-                });
-
-                loadedItemCounts[region][category] += itemsToRender.length; // Update count of loaded items
-
-                // If fewer items were rendered than ITEMS_PER_LOAD, it means we've reached the end
-                if (itemsToRender.length < ITEMS_PER_LOAD && data.length > 0) {
-                    noMoreContentMessage.classList.add('show');
-                } else if (loadedItemCounts[region][category] >= data.length && data.length > 0) {
-                    // All items have been loaded if current count is >= total available
-                    noMoreContentMessage.classList.add('show');
-                }
-            }
-
-            if (!append) { // Update last updated time only on initial render, not on scroll
-                lastUpdatedSpan.textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
-            }
-
-            loadingSpinner.classList.remove('show');
-            isLoadingMore = false;
-            applyTheme(document.documentElement.classList.contains('dark')); // Re-apply dark mode to new elements
-        }
-
-        // Function to fetch all content data (runs only once or on full refresh)
-        async function fetchAllUpdates() {
-            showMessage('Fetching latest updates...', 'info');
-            // IMPORTANT: Replace 'YOUR_GITHUB_USERNAME' and 'YOUR_REPOSITORY_NAME'
-            // with your actual GitHub username and repository name in the URL below.
-            // Example: 'https://raw.githubusercontent.com/john-doe/my-awesome-portal/main/updates.json'
-            const GITHUB_PAGES_DATA_URL = 'https://raw.githubusercontent.com/Nandini1488/discover-nexus-portal/refs/heads/main/updates.json';
-
-            console.log("Attempting to fetch from URL:", GITHUB_PAGES_DATA_URL); // Log the URL being fetched
-
+        // Function to fetch and process news data
+        async function fetchNewsData() {
             try {
-                const response = await fetch(GITHUB_PAGES_DATA_URL);
-
-                if (response.ok) {
-                    allContentData = await response.json(); // Store all data globally
-                    // Reset loaded item counts for all categories/regions when new data is fetched
-                    loadedItemCounts = {};
-                    
-                    // Render initial batch for the currently active category and region
-                    renderContent(activeRegion, activeCategory, false);
-                    showMessage('All updates loaded successfully!', 'success');
-                } else {
-                    // Log more details if the response is not OK
-                    console.error(`Failed to fetch updates from source: Status ${response.status}, StatusText: "${response.statusText}"`);
-                    showMessage(`Failed to load updates. Status: ${response.status}. Please ensure updates.json is accessible and valid.`, 'error');
-                    // Render empty state if fetch fails
-                    renderContent(activeRegion, activeCategory, false); // Still try to render with empty data
+                // Use the absolute URL for updates.json
+                const response = await fetch('https://Nandini1488.github.io/discover-nexus-portal/updates.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
+                allNewsData = await response.json();
+                console.log("Successfully fetched and parsed updates.json:", allNewsData);
+
+                // Display last updated timestamp
+                const timestampDiv = document.getElementById('last-updated-timestamp');
+                if (allNewsData.last_updated_utc) {
+                    const date = new Date(allNewsData.last_updated_utc);
+                    timestampDiv.textContent = `Last updated: ${date.toLocaleString()}`;
+                } else {
+                    timestampDiv.textContent = 'Last updated: N/A (Timestamp not found)';
+                }
+
+                renderTabs();
+                renderNews(); // Initial render of news content
             } catch (error) {
-                // Log the full error object for network issues or malformed JSON
-                console.error('An error occurred while fetching updates:', error);
-                showMessage('An error occurred while fetching updates. Check your network or the updates.json URL.', 'error');
-                // Render empty state if an error occurs
-                renderContent(activeRegion, activeCategory, false); // Still try to render with empty data
+                console.error('Error fetching or parsing updates.json:', error);
+                document.getElementById('last-updated-timestamp').textContent = 'Error loading content.';
+                document.getElementById('news-content').innerHTML = '<p class="text-red-600 text-center">Failed to load news content. Please try again later.</p>';
             }
         }
 
-        // Function to load more content when scrolling
-        function loadMoreContent() {
-            if (isLoadingMore) return; // Prevent multiple loads
-            
-            const currentData = allContentData[activeRegion] && allContentData[activeRegion][activeCategory] ? allContentData[activeRegion][activeCategory] : [];
-            const currentLoadedCount = loadedItemCounts[activeRegion] && loadedItemCounts[activeRegion][activeCategory] ? loadedItemCounts[activeRegion][activeCategory] : 0;
+        // Function to render region and category tabs
+        function renderTabs() {
+            const regionTabsContainer = document.getElementById('region-tabs');
+            regionTabsContainer.innerHTML = ''; // Clear existing tabs
+            for (const key in REGIONS) {
+                const li = document.createElement('li');
+                const button = document.createElement('button');
+                button.textContent = REGIONS[key].name;
+                button.className = `tab-button px-4 py-2 rounded-lg font-semibold ${key === currentRegion ? 'active bg-indigo-600 text-white' : 'bg-indigo-500 text-white hover:bg-indigo-600'}`;
+                button.onclick = () => {
+                    currentRegion = key;
+                    renderTabs(); // Re-render tabs to update active state
+                    renderNews(); // Re-render news for new region
+                };
+                li.appendChild(button);
+                regionTabsContainer.appendChild(li);
+            }
 
-            if (currentLoadedCount >= currentData.length) {
-                // All content already loaded for this category/region
+            const categoryTabsContainer = document.getElementById('category-tabs');
+            categoryTabsContainer.innerHTML = ''; // Clear existing tabs
+            for (const key in CATEGORIES) {
+                const li = document.createElement('li');
+                const button = document.createElement('button');
+                button.textContent = CATEGORIES[key];
+                button.className = `tab-button px-4 py-2 rounded-lg font-semibold ${key === currentCategory ? 'active bg-indigo-600 text-white' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'}`;
+                button.onclick = () => {
+                    currentCategory = key;
+                    renderTabs(); // Re-render tabs to update active state
+                    renderNews(); // Re-render news for new category
+                };
+                li.appendChild(button);
+                categoryTabsContainer.appendChild(li);
+            }
+        }
+
+        // Function to render news articles based on current region and category
+        function renderNews() {
+            const newsContentContainer = document.getElementById('news-content');
+            newsContentContainer.innerHTML = ''; // Clear existing news articles
+
+            const articles = allNewsData[currentRegion] && allNewsData[currentRegion][currentCategory]
+                ? allNewsData[currentRegion][currentCategory]
+                : [];
+
+            if (articles.length === 0) {
+                newsContentContainer.innerHTML = `<p class="text-gray-600 text-center py-8">No articles available for ${REGIONS[currentRegion].name} - ${CATEGORIES[currentCategory]}.</p>`;
                 return;
             }
 
-            isLoadingMore = true;
-            const loadingSpinner = document.getElementById(`${activeCategory}Spinner`);
-            loadingSpinner.classList.add('show');
-            if (document.documentElement.classList.contains('dark')) {
-                loadingSpinner.classList.add('dark');
-            }
+            // Create a grid for news cards
+            const gridDiv = document.createElement('div');
+            gridDiv.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6';
 
-            setTimeout(() => { // Simulate async loading (replace with actual data processing if needed)
-                renderContent(activeRegion, activeCategory, true); // Append new items
-            }, 500); // Small delay to show spinner
-        }
+            articles.forEach(article => {
+                const card = document.createElement('div');
+                card.className = 'news-card flex flex-col'; // Use flexbox for card content
+                
+                // Image container with fallback
+                const img = document.createElement('img');
+                img.src = article.imageUrl || 'https://placehold.co/600x400/CCCCCC/333333?text=Image+Missing';
+                img.alt = article.title;
+                img.className = 'news-image';
+                img.onerror = function() {
+                    this.onerror=null; // Prevent infinite loop if fallback also fails
+                    this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';
+                };
 
-        // Scroll event handler for infinite scrolling
-        function handleScroll() {
-            // Get the active content area (the one currently visible)
-            const activeContentArea = document.getElementById(`${activeCategory}Content`);
-            if (!activeContentArea) return; // Should not happen if a category is active
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'p-4 flex flex-col flex-grow'; // flex-grow to push footer to bottom
 
-            // Check if the user has scrolled to the bottom of the active content area
-            const scrollThreshold = 200; // Load more when 200px from bottom of active content area
-            const containerBottom = activeContentArea.getBoundingClientRect().bottom;
-            const windowHeight = window.innerHeight;
+                const title = document.createElement('h2');
+                title.className = 'text-xl font-semibold text-gray-900 mb-2';
+                title.textContent = article.title;
 
-            if (containerBottom <= windowHeight + scrollThreshold) {
-                loadMoreContent();
-            }
-        }
+                const summary = document.createElement('p');
+                summary.className = 'text-gray-700 text-sm mb-4 flex-grow'; // flex-grow for summary
+                summary.textContent = article.content;
 
-        // Function to switch active content tab
-        function switchCategory(category) {
-            // Remove active class from all tabs and content areas
-            document.querySelectorAll('.nav-tab-item').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.content-area').forEach(area => area.classList.remove('active'));
+                const link = document.createElement('a');
+                link.href = article.link;
+                link.target = '_blank'; // Open in new tab
+                link.rel = 'noopener noreferrer';
+                link.className = 'inline-block bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors duration-200 mt-auto'; // mt-auto to push to bottom
+                link.textContent = 'Read More';
 
-            // Add active class to the selected tab and content area
-            document.querySelector(`.nav-tab-item[data-category="${category}"]`).classList.add('active');
-            document.getElementById(`${category}Content`).classList.add('active');
-            activeCategory = category;
+                contentDiv.appendChild(title);
+                contentDiv.appendChild(summary);
+                contentDiv.appendChild(link);
 
-            // Re-render content for the newly active category and current region (initial batch)
-            renderContent(activeRegion, activeCategory, false); // Important: re-render from start
-        }
-
-        // Function to apply/remove dark theme classes
-        function applyTheme(isDarkMode) {
-            const htmlElement = document.documentElement;
-            const bodyElement = document.body;
-            const mainContainer = document.getElementById('mainContainer');
-            const mainHeader = document.getElementById('mainHeader');
-            const regionSelect = document.getElementById('regionSelect');
-            const navTabs = document.getElementById('navTabs');
-            const themeToggleButton = document.getElementById('themeToggleButton');
-            const footer = document.getElementById('mainFooter');
-            const adBanners = document.querySelectorAll('.ad-banner');
-            const contentHeaders = document.querySelectorAll('.section-header');
-            const updateItems = document.querySelectorAll('.update-item'); // Select all current update items
-            const loadingSpinners = document.querySelectorAll('.loading-spinner');
-            const noMoreContentMessages = document.querySelectorAll('.no-more-content');
-
-
-            if (isDarkMode) {
-                htmlElement.classList.add('dark');
-                bodyElement.classList.add('dark');
-                mainContainer.classList.add('dark');
-                mainHeader.classList.add('dark');
-                regionSelect.classList.add('dark');
-                navTabs.classList.add('dark');
-                themeToggleButton.classList.add('dark');
-                themeToggleButton.textContent = 'Toggle Light Mode';
-                footer.classList.add('dark');
-                adBanners.forEach(ad => ad.classList.add('dark'));
-                contentHeaders.forEach(header => header.classList.add('dark'));
-                // Apply dark mode to *existing* items
-                document.querySelectorAll('.update-item').forEach(item => item.classList.add('dark'));
-                loadingSpinners.forEach(spinner => spinner.classList.add('dark'));
-                noMoreContentMessages.forEach(msg => msg.classList.add('dark'));
-            } else {
-                htmlElement.classList.remove('dark');
-                bodyElement.classList.remove('dark');
-                mainContainer.classList.remove('dark');
-                mainHeader.classList.remove('dark');
-                regionSelect.classList.remove('dark');
-                navTabs.classList.remove('dark');
-                themeToggleButton.classList.remove('dark');
-                themeToggleButton.textContent = 'Toggle Dark Mode';
-                footer.classList.remove('dark');
-                adBanners.forEach(ad => ad.classList.remove('dark'));
-                contentHeaders.forEach(header => header.classList.remove('dark'));
-                // Remove dark mode from *existing* items
-                document.querySelectorAll('.update-item').forEach(item => item.classList.remove('dark'));
-                loadingSpinners.forEach(spinner => spinner.classList.remove('dark'));
-                noMoreContentMessages.forEach(msg => msg.classList.remove('dark'));
-            }
-            // Ensure region select wrapper's after pseudo-element also updates color
-            document.querySelector('.region-select-wrapper').classList.toggle('dark', isDarkMode);
-        }
-
-        // Function to get user's geolocation and set default region
-        function autoSelectRegionBasedOnGeolocation() {
-            if (navigator.geolocation) {
-                showMessage('Attempting to detect your location for personalized content...', 'info');
-                navigator.geolocation.getCurrentPosition(
-                    async (position) => {
-                        const lat = position.coords.latitude;
-                        const lon = position.coords.longitude;
-                        console.log(`Detected location: Lat ${lat}, Lon ${lon}`);
-
-                        // In a real scenario, you'd use a reverse geocoding API to get a country/region
-                        // based on lat/lon, and then map that to your predefined regions.
-                        // For this example, we'll use a very simple (and limited) mapping.
-                        let detectedRegion = 'global'; // Default fallback
-
-                        // Simple geographic mapping (highly simplified for demonstration)
-                        // This needs to be expanded and refined based on your actual data and needs
-                        if (lat > 25 && lat < 50 && lon > -125 && lon < -65) { // Roughly continental US
-                            detectedRegion = 'north_america';
-                        } else if (lat > 35 && lat < 70 && lon > -10 && lon < 40) { // Roughly Europe
-                            detectedRegion = 'europe';
-                        } else if (lat > -45 && lat < 0 && lon > -80 && lon < -30) { // Roughly South America
-                            detectedRegion = 'south_america';
-                        } else if (lat > -35 && lat < 40 && lon > 0 && lon < 50) { // Roughly Africa
-                            detectedRegion = 'africa';
-                        } else if (lat > -45 && lat < 10 && lon > 110 && lon < 180) { // Roughly Oceania
-                            detectedRegion = 'oceania';
-                        } else if (lat > 5 && lat < 50 && lon > 40 && lon < 150) { // Roughly Asia
-                            detectedRegion = 'asia';
-                        }
-                        // Add more refined logic for other regions as needed
-
-                        if (document.getElementById('regionSelect').querySelector(`option[value="${detectedRegion}"]`)) {
-                            document.getElementById('regionSelect').value = detectedRegion;
-                            activeRegion = detectedRegion;
-                            showMessage(`Region set to: ${detectedRegion.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}`, 'success');
-                        } else {
-                            showMessage('Could not map your location to a specific region. Defaulting to Global.', 'info');
-                            document.getElementById('regionSelect').value = 'global';
-                            activeRegion = 'global';
-                        }
-                        // After setting the region, fetch and render content
-                        fetchAllUpdates();
-
-                    },
-                    (error) => {
-                        console.warn(`Geolocation error (${error.code}): ${error.message}`);
-                        if (error.code === error.PERMISSION_DENIED) {
-                            showMessage('Geolocation denied. Defaulting to Global content. You can manually select a region.', 'info');
-                        } else if (error.code === error.POSITION_UNAVAILABLE) {
-                            showMessage('Location information unavailable. Defaulting to Global content.', 'info');
-                        } else if (error.code === error.TIMEOUT) {
-                            showMessage('Location request timed out. Defaulting to Global content.', 'info');
-                        }
-                        // Always fallback to global and fetch updates if geolocation fails
-                        document.getElementById('regionSelect').value = 'global';
-                        activeRegion = 'global';
-                        fetchAllUpdates();
-                    },
-                    {
-                        enableHighAccuracy: true,
-                        timeout: 5000,
-                        maximumAge: 0
-                    }
-                );
-            } else {
-                showMessage('Geolocation is not supported by your browser. Defaulting to Global content.', 'info');
-                // Always fallback to global and fetch updates if geolocation is not supported
-                document.getElementById('regionSelect').value = 'global';
-                activeRegion = 'global';
-                fetchAllUpdates();
-            }
-        }
-
-
-        // Event listeners
-        document.addEventListener('DOMContentLoaded', () => {
-            const regionSelect = document.getElementById('regionSelect');
-            const navTabs = document.querySelector('.nav-tabs');
-            const themeToggleButton = document.getElementById('themeToggleButton');
-
-            // Load theme preference from local storage
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                applyTheme(true);
-            } else {
-                applyTheme(false); // Default to light if no preference or 'light'
-            }
-
-            // Event listener for theme toggle button
-            themeToggleButton.addEventListener('click', () => {
-                const isDarkMode = document.documentElement.classList.contains('dark');
-                applyTheme(!isDarkMode);
-                localStorage.setItem('theme', !isDarkMode ? 'dark' : 'light'); // Save preference
+                card.appendChild(img);
+                card.appendChild(contentDiv);
+                gridDiv.appendChild(card);
             });
 
-            // Event listener for region selection change
-            regionSelect.addEventListener('change', (event) => {
-                activeRegion = event.target.value;
-                // Fetch all updates (which will then render the initial batch for the new region/category)
-                // This will use the pre-generated updates.json
-                fetchAllUpdates();
-            });
+            newsContentContainer.appendChild(gridDiv);
+        }
 
-            // Event listener for navigation tabs
-            navTabs.addEventListener('click', (event) => {
-                if (event.target.classList.contains('nav-tab-item')) {
-                    const category = event.target.dataset.category;
-                    switchCategory(category);
-                }
-            });
-
-            // Initial load of content - Try to autodetect location, otherwise fallback to global
-            autoSelectRegionBasedOnGeolocation();
-
-            // Set interval to refresh all updates (re-fetches JSON and resets scroll position)
-            const refreshInterval = 15 * 60 * 1000; // Every 15 minutes
-            setInterval(fetchAllUpdates, refreshInterval);
-
-            // Add scroll listener for infinite scrolling
-            window.addEventListener('scroll', handleScroll);
-        });
+        // Fetch data when the page loads
+        document.addEventListener('DOMContentLoaded', fetchNewsData);
     </script>
 </body>
 </html>
