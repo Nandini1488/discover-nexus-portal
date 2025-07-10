@@ -615,6 +615,54 @@
         </footer>
     </div>
 
+   <!-- Add this div where you want the timestamp to appear, e.g., in your header or footer -->
+<div id="last-updated-timestamp" class="text-sm text-gray-500 text-center mt-4"></div>
+
+<script>
+// FIX: Changed the fetch URL to an absolute path for better compatibility
+// especially when running in sandboxed environments or subdirectories.
+// Replace 'Nandini1488' with your GitHub username and 'discover-nexus-portal' with your repository name.
+fetch('https://Nandini1488.github.io/discover-nexus-portal/updates.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Display the timestamp if it exists
+        if (data.last_updated_utc) {
+            const timestampDiv = document.getElementById('last-updated-timestamp');
+            const date = new Date(data.last_updated_utc);
+            timestampDiv.textContent = `Last updated: ${date.toLocaleString()}`;
+        }
+        
+        // Your existing code to render the news content goes here
+        // For example:
+        // displayNewsContent(data); 
+        // (Assuming you have a function like displayNewsContent that takes the data)
+
+        // Example of how you might access specific region/category data:
+        // const globalNews = data.global.news;
+        // console.log("Global News Articles:", globalNews);
+        // You would then use this 'data' object to populate your news sections.
+
+        // If your existing code is already iterating through data.global.news etc.
+        // and rendering, this timestamp addition won't break it.
+        // The issue might be in how your existing rendering logic handles the 'is_simulated' flag
+        // or if it's somehow prioritizing older content.
+        
+        // To specifically debug Sub-Saharan Africa:
+        // const subSaharanAfricaNews = data.sub_saharan_africa ? data.sub_saharan_africa.news : [];
+        // console.log("Sub-Saharan Africa News Articles:", subSaharanAfricaNews);
+        // Ensure your rendering loop for this section correctly uses this data.
+    })
+    .catch(error => {
+        console.error('Error fetching or parsing updates.json:', error);
+        document.getElementById('last-updated-timestamp').textContent = 'Error loading content.';
+    });
+</script>
+
     <!-- Message box for notifications -->
     <div id="messageBox" class="message-box"></div>
 
