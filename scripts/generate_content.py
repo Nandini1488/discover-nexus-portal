@@ -173,7 +173,7 @@ async def fetch_news_from_newsapi(region_key, category_key, page_size=ARTICLES_T
         # Iterate through categories for the current country
         for current_cat_to_try in categories_to_try:
             params = {
-                "apiKey": NEWSAPI_API_KEY,
+                "apiKey": NEWSAPI_API_KEY, # This should now be correctly populated
                 "category": current_cat_to_try,
                 "country": country_code,
                 "pageSize": page_size,
