@@ -9,7 +9,12 @@ from datetime import datetime, timezone
 # --- API Keys Configuration ---
 # NewsAPI.org API key should be stored as a GitHub Secret named NEWSAPI_API_KEY.
 NEWSAPI_API_KEY = os.getenv('NEWSAPI_API_KEY')
-NEWSAPI_BASE_URL = "https://newsapi.org/v2/top-headlines"
+NEWSAPI_BASE_URL = "https://newsapi.org/v2/"
+
+# World News API key should be stored as a GitHub Secret named WORLD_NEWS_API_KEY.
+# Sign up here: https://worldnewsapi.com/
+WORLD_NEWS_API_KEY = os.getenv('WORLD_NEWS_API_KEY')
+WORLD_NEWS_API_BASE_URL = "https://api.worldnewsapi.com/"
 
 # Mistral AI API key should be stored as a GitHub Secret named MISTRAL_API_KEY.
 MISTRAL_API_BASE_URL = "https://api.mistral.ai/v1/chat/completions"
@@ -22,6 +27,12 @@ if NEWSAPI_API_KEY:
 else:
     print("WARNING: NEWSAPI_API_KEY is NOT loaded from environment. Please check GitHub Secrets and workflow env configuration.")
 
+if WORLD_NEWS_API_KEY:
+    WORLD_NEWS_API_KEY = WORLD_NEWS_API_KEY.strip()
+    print(f"WORLD_NEWS_API_KEY successfully loaded from environment. Length: {len(WORLD_NEWS_API_KEY)}. Starts with: {WORLD_NEWS_API_KEY[:5]}... Ends with: {WORLD_NEWS_API_KEY[-5:]}")
+else:
+    print("WARNING: WORLD_NEWS_API_KEY is NOT loaded from environment. Please check GitHub Secrets and workflow env configuration.")
+
 if MISTRAL_API_KEY:
     MISTRAL_API_KEY = MISTRAL_API_KEY.strip()
     print(f"MISTRAL_API_KEY successfully loaded from environment. Length: {len(MISTRAL_API_KEY)}. Starts with: {MISTRAL_API_KEY[:5]}... Ends with: {MISTRAL_API_KEY[-5:]}")
@@ -30,139 +41,71 @@ else:
 # --- End Debugging Print ---
 
 # Define the regions and categories that match your index.html
-# Added country_code for NewsAPI.org
 REGIONS = {
-    "global": {"name": "the entire world", "country_codes": ["us", "gb", "ca", "au", "in"]}, # Try multiple countries for global news
+    "global": {"name": "the entire world", "country_codes": ["us", "gb", "ca", "au", "in"]}, 
     "north_america": {"name": "North America", "country_codes": ["us", "ca"]},
-    "europe": {"name": "Europe", "country_codes": ["gb", "de", "fr", "es", "it"]}, # Multiple European countries
-    "asia": {"name": "Asia", "country_codes": ["in", "cn", "jp", "kr"]}, # Multiple Asian countries (China might have limited coverage on NewsAPI free tier)
-    "africa": {"name": "Africa", "country_codes": ["za", "ng", "eg"]}, # Multiple African countries
+    "europe": {"name": "Europe", "country_codes": ["gb", "de", "fr", "es", "it"]}, 
+    "asia": {"name": "Asia", "country_codes": ["in", "cn", "jp", "kr"]}, 
+    "africa": {"name": "Africa", "country_codes": ["za", "ng", "eg"]}, 
     "oceania": {"name": "Oceania", "country_codes": ["au", "nz"]},
-    "south_america": {"name": "South America", "country_codes": ["br", "ar", "co"]}, # Multiple South American countries
-    "middle_east": {"name": "Middle East", "country_codes": ["ae", "sa"]}, # UAE, Saudi Arabia
-    "southeast_asia": {"name": "Southeast Asia", "country_codes": ["sg", "ph", "id"]}, # Singapore, Philippines, Indonesia
-    "north_africa": {"name": "North Africa", "country_codes": ["eg"]}, # Egypt
-    "sub_saharan_africa": {"name": "Sub-Saharan Africa", "country_codes": ["ng", "za"]}, # Nigeria, South Africa
-    "east_asia": {"name": "East Asia", "country_codes": ["jp", "kr", "cn"]}, # Japan, South Korea, China
-    "south_asia": {"name": "South Asia", "country_codes": ["in", "pk"]}, # India, Pakistan
+    "south_america": {"name": "South America", "country_codes": ["br", "ar", "co"]}, 
+    "middle_east": {"name": "Middle East", "country_codes": ["ae", "sa"]}, 
+    "southeast_asia": {"name": "Southeast Asia", "country_codes": ["sg", "ph", "id"]}, 
+    "north_africa": {"name": "North Africa", "country_codes": ["eg"]}, 
+    "sub_saharan_africa": {"name": "Sub-Saharan Africa", "country_codes": ["ng", "za"]}, 
+    "east_asia": {"name": "East Asia", "country_codes": ["jp", "kr", "cn"]}, 
+    "south_asia": {"name": "South Asia", "country_codes": ["in", "pk"]}, 
     "australia_nz": {"name": "Australia & NZ", "country_codes": ["au", "nz"]} 
 }
 
-# Map internal categories to NewsAPI.org categories
-NEWSAPI_CATEGORIES = {
-    "news": "general",
-    "technology": "technology",
-    "finance": "business",
-    "travel": "general", # NewsAPI doesn't have a specific 'travel' category for top headlines
-    "world": "general",
-    "weather": "science", # Closest fit for weather-related science news
-    "blogs": "general" # NewsAPI doesn't have a specific 'blogs' category for top headlines
+# Mapping internal categories to NewsAPI.org and World News API categories/keywords
+CATEGORIES = {
+    "news": {"newsapi_cat": "general", "worldnewsapi_query": "general news"},
+    "technology": {"newsapi_cat": "technology", "worldnewsapi_query": "technology OR tech"},
+    "finance": {"newsapi_cat": "business", "worldnewsapi_query": "business OR finance OR economy"},
+    "travel": {"newsapi_cat": "general", "worldnewsapi_query": "travel OR tourism"}, 
+    "world": {"newsapi_cat": "general", "worldnewsapi_query": "world affairs OR international news"},
+    "weather": {"newsapi_cat": "science", "worldnewsapi_query": "weather OR climate"}, 
+    "blogs": {"newsapi_cat": "general", "worldnewsapi_query": "blogs OR opinion pieces"} 
 }
 
 # --- Constants for incremental update ---
 MAX_ARTICLES_PER_CATEGORY = 30 
-ARTICLES_TO_FETCH_PER_RUN = 8 
+ARTICLES_TO_FETCH_PER_RUN = 8 # Number of articles to try and fetch/process for each category
 
 # --- Constants for rotating processing ---
-ALL_CATEGORY_KEYS = [(r_key, c_key) for r_key in REGIONS for c_key in NEWSAPI_CATEGORIES]
+ALL_CATEGORY_KEYS = [(r_key, c_key) for r_key in REGIONS for c_key in CATEGORIES]
 TOTAL_CATEGORIES = len(ALL_CATEGORY_KEYS) 
 NUM_BATCHES = 6 # Runs every 4 hours (24/4 = 6 runs per day)
 BATCH_SIZE = 10 # Process 10 categories per run
 
 # --- Functions ---
 
-# This function is retained for potential future use or debugging, 
-# but will no longer be used to populate updates.json in the main loop.
-def generate_simulated_content_base(region_name, category_name, count=1):
+def generate_simulated_content(region_name, category_name, count=ARTICLES_TO_FETCH_PER_RUN):
     """
-    Generates more realistic (but still simulated) base content for Mistral AI to summarize.
-    Includes more descriptive titles and direct image URLs.
+    Generates simulated content as a last-resort fallback.
+    These articles will be explicitly marked as is_simulated=True.
     """
     articles = []
-    
-    # Define more varied and descriptive content snippets
-    sample_contents = {
-        "news": [
-            {"title_keywords": "Political Development", "content": f"A major political development unfolded in {region_name} today, with implications for upcoming elections. Analysts are closely watching the public's reaction to the new policy proposals.", "image_keywords": "politics, election"},
-            {"title_keywords": "Cultural Festival Announced", "content": f"Breaking news from {region_name}: a significant cultural festival has been announced, promising to draw visitors from across the globe. Local authorities are preparing for a large influx of tourists and media.", "image_keywords": "festival, culture"},
-            {"title_keywords": "Economic Report Upturn", "content": f"An unexpected economic report from {region_name} indicates a surprising upturn in key sectors. Experts are debating whether this trend is sustainable or a temporary fluctuation.", "image_keywords": "economy, finance"},
-            {"title_keywords": "Public Health Initiative", "content": f"A new public health initiative launched in {region_name} aims to tackle a long-standing issue. Early results are promising, but widespread adoption remains a challenge.", "image_keywords": "health, public health"},
-            {"title_keywords": "Environmental Activism", "content": f"Environmental activists in {region_name} are calling for urgent action on climate change, citing recent extreme weather events as evidence of escalating crisis. Government response is pending.", "image_keywords": "environment, climate change"}
-        ],
-        "technology": [
-            {"title_keywords": "AI Model Breakthrough", "content": f"Innovators in {region_name} have unveiled a groundbreaking AI model capable of unprecedented data processing speeds. This could revolutionize industries from finance to healthcare.", "image_keywords": "AI, technology, innovation"},
-            {"title_keywords": "Quantum Computing", "content": f"A new quantum computing breakthrough from {region_name} promises to unlock solutions to complex problems currently beyond reach. Scientists are cautiously optimistic about its long-term potential.", "image_keywords": "quantum computing, science"},
-            {"title_keywords": "Sustainable Energy Solution", "content": f"The tech sector in {region_name} is buzzing about a new sustainable energy storage solution that could drastically reduce reliance on fossil fuels. Pilot projects are already underway.", "image_keywords": "energy, sustainability, tech"},
-            {"title_keywords": "Cybersecurity Alert", "content": f"A cybersecurity firm in {region_name} has detected a sophisticated new type of malware, prompting warnings across the digital landscape. Users are advised to update their systems immediately.", "image_keywords": "cybersecurity, hacking"},
-            {"title_keywords": "Virtual Reality Advancements", "content": f"Virtual reality advancements in {region_name} are pushing the boundaries of immersive experiences, with new applications emerging in education and entertainment.", "image_keywords": "VR, virtual reality, gaming"}
-        ],
-        "finance": [
-            {"title_keywords": "Stock Market Volatility", "content": f"The stock market in {region_name} experienced a volatile session, driven by investor uncertainty over global trade tensions. Analysts predict continued fluctuations in the short term.", "image_keywords": "stock market, finance, economy"},
-            {"title_keywords": "Banking Sector Acquisition", "content": f"A major acquisition in {region_name}'s banking sector is set to reshape the financial landscape. Regulators are reviewing the deal for potential market impact.", "image_keywords": "banking, acquisition, finance"},
-            {"title_keywords": "Rising Inflation Concerns", "content": f"Inflation concerns are rising in {region_name} as consumer prices continue to climb. Central bank officials are considering new measures to stabilize the economy.", "image_keywords": "inflation, economy, money"},
-            {"title_keywords": "Real Estate Cooling", "content": f"Real estate markets in {region_name} are showing signs of cooling after a period of rapid growth. Experts suggest a more balanced market could emerge in the coming months.", "image_keywords": "real estate, housing"},
-            {"title_keywords": "Cryptocurrency Adoption", "content": f"Cryptocurrency adoption is surging in {region_name}, with new regulations being drafted to manage the growing digital asset market.", "image_keywords": "cryptocurrency, blockchain"}
-        ],
-        "travel": [
-            {"title_keywords": "Travel Restrictions Eased", "content": f"New travel restrictions have been eased for visitors to {region_name}, sparking a surge in tourism bookings. Local businesses are preparing for the influx of international guests.", "image_keywords": "travel, tourism, destination"},
-            {"title_keywords": "Hidden Gem Destination", "content": f"A hidden gem in {region_name} has been named a top travel destination for next year, known for its pristine natural beauty and unique cultural experiences.", "image_keywords": "travel, nature, culture"},
-            {"title_keywords": "Sustainable Tourism", "content": f"Sustainable tourism initiatives are gaining traction in {region_name}, with eco-friendly resorts and responsible travel options becoming increasingly popular.", "image_keywords": "eco-tourism, sustainable travel"},
-            {"title_keywords": "Adventure Tourism Boom", "content": f"Adventure tourism is booming in {region_name}, attracting thrill-seekers to its challenging landscapes and outdoor activities.", "image_keywords": "adventure, outdoor, travel"},
-            {"title_keywords": "Food Tourism Draws Gourmands", "content": f"Food tourism is drawing gourmands to {region_name}, eager to explore its vibrant culinary scene and traditional dishes.", "image_keywords": "food, cuisine, travel"}
-        ],
-        "world": [
-            {"title_keywords": "Geopolitical Tensions", "content": f"Geopolitical tensions are escalating in a key region, with international bodies calling for de-escalation and dialogue. World leaders are closely monitoring the situation.", "image_keywords": "geopolitics, world map"},
-            {"title_keywords": "Global Climate Summit", "content": f"A global summit on climate change concluded with new commitments from major nations, though activists argue more urgent action is needed to meet ambitious targets.", "image_keywords": "climate change, summit"},
-            {"title_keywords": "International Aid Efforts", "content": f"International aid efforts are underway to assist a nation recovering from a natural disaster, with humanitarian organizations mobilizing resources worldwide.", "image_keywords": "aid, disaster relief"},
-            {"title_keywords": "New Trade Agreement", "content": f"A new trade agreement between several major economies is set to reshape global commerce, promising both opportunities and challenges for various industries.", "image_keywords": "trade, economy, global"},
-            {"title_keywords": "UN Health Security Talks", "content": f"Discussions at the United Nations focus on global health security, with renewed calls for international cooperation to prevent future pandemics.", "image_keywords": "UN, health, global health"}
-        ],
-        "weather": [
-            {"title_keywords": "Unprecedented Heatwave", "content": f"An unprecedented heatwave is gripping parts of {region_name}, prompting health warnings and concerns about agricultural impact. Authorities are urging residents to take precautions.", "image_keywords": "heatwave, weather"},
-            {"title_keywords": "Severe Storms Disrupt", "content": f"Severe storms have caused widespread disruption across {region_name}, leading to power outages and travel delays. Emergency services are working to restore normalcy.", "image_keywords": "storm, weather, disaster"},
-            {"title_keywords": "Precipitation Pattern Changes", "content": f"A new study predicts significant changes in precipitation patterns for {region_name} over the next decade, with implications for water management and agriculture.", "image_keywords": "rain, climate, agriculture"},
-            {"title_keywords": "Unusual Cold Fronts", "content": f"Unusual cold fronts are sweeping through {region_name}, bringing record low temperatures and challenging winter conditions. Residents are advised to prepare for prolonged cold spells.", "image_keywords": "cold, winter, snow"},
-            {"title_keywords": "Coastal Sea Level Rise", "content": f"Coastal regions in {region_name} are bracing for higher sea levels, with new infrastructure projects being planned to mitigate the impact of climate change.", "image_keywords": "sea level, coast, climate"}
-        ],
-        "blogs": [
-            {"title_keywords": "Viral Social Media Post", "content": f"A popular blogger from {region_name} has published a viral post dissecting the latest social media trends, sparking widespread debate and discussion.", "image_keywords": "social media, blog"},
-            {"title_keywords": "Future of Remote Work", "content": f"An insightful opinion piece from {region_name} explores the future of remote work, offering unique perspectives on productivity and work-life balance.", "image_keywords": "remote work, productivity"},
-            {"title_keywords": "Unexplored Travel Destinations", "content": f"A new travel blog highlights unexplored destinations in {region_name}, providing practical tips and stunning photography for adventurous readers.", "image_keywords": "travel blog, adventure"},
-            {"title_keywords": "Thriving Food Blogging", "content": f"The food blogging scene in {region_name} is thriving, with a recent post showcasing traditional recipes and local culinary secrets gaining international attention.", "image_keywords": "food blog, cuisine"},
-            {"title_keywords": "New Tech Gadget Review", "content": f"A tech blog from {region_name} reviews the newest gadgets and software, providing in-depth analysis and recommendations for tech enthusiasts.", "image_keywords": "tech blog, gadgets"}
-        ]
-    }
-
     for i in range(count):
-        content_item = random.choice(sample_contents.get(category_name, sample_contents["news"]))
-        
-        title = f"{content_item['title_keywords']} in {region_name}"
-
-        image_url = f"https://picsum.photos/seed/{random.randint(1, 1000)}/600/400/?random&keywords={content_item['image_keywords'].replace(' ', ',')}"
-
-        domain_name = f"{region_name.lower().replace(' ', '-')}-news.com"
-        link = f"https://www.{domain_name}/{category_name.lower().replace('_', '-')}/article-{random.randint(10000, 99999)}"
+        # Use more descriptive placeholder text for images
+        image_text = f"{category_name.replace('_', ' ').title()} {region_name.replace(' ', ' ').title()}"
         
         articles.append({
-            "title": title,
-            "content_raw": content_item['content'],
-            "link": link,
-            "imageUrl_raw": image_url, 
-            "is_simulated": True 
+            "title": f"Simulated {category_name.replace('_', ' ').title()} Headline for {region_name} - {random.randint(100, 999)}",
+            "content_raw": f"This is a simulated summary of {category_name.replace('_', ' ')} related to {region_name}, article number {i + 1}. It highlights key developments and insights. This content is for placeholder purposes only.",
+            "link": f"https://example.com/simulated/{region_name.lower().replace(' ', '-')}/{category_name.lower().replace(' ', '-')}/{i + 1}",
+            "imageUrl_raw": f"https://placehold.co/600x400/CCCCCC/333333?text=SIMULATED+{image_text.upper()}", 
+            "is_simulated": True # Explicitly mark as simulated
         })
     return articles
 
-async def fetch_news_from_newsapi(region_key, category_key, page_size=20): # Increased page_size
-    """
-    Fetches real news articles from NewsAPI.org.
-    Includes a fallback to 'general' category if the specific category is not applicable.
-    Tries multiple countries for regions with multiple country codes.
-    """
+async def fetch_from_newsapi_org(region_key, category_info, page_size):
+    """Attempts to fetch news from NewsAPI.org."""
     country_codes_for_region = REGIONS[region_key]["country_codes"]
-    newsapi_category = NEWSAPI_CATEGORIES[category_key]
+    newsapi_category = category_info["newsapi_cat"]
+    query_keyword = category_info["query_keyword"]
 
-    articles = []
-    
     for country_code in country_codes_for_region:
         categories_to_try = [newsapi_category]
         if newsapi_category != "general":
@@ -170,44 +113,42 @@ async def fetch_news_from_newsapi(region_key, category_key, page_size=20): # Inc
 
         for current_cat_to_try in categories_to_try:
             params = {
-                "apiKey": NEWSAPI_API_KEY,
                 "category": current_cat_to_try,
                 "country": country_code,
-                "pageSize": page_size, # Use increased page_size
+                "pageSize": page_size,
                 "language": "en"
             }
+            headers = {'X-Api-Key': NEWSAPI_API_KEY}
             
-            print(f"DEBUG: Attempting NewsAPI Request Params for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}'): {params}")
+            print(f"DEBUG: NewsAPI.org Attempt for {region_key}/{category_info['newsapi_cat']} (Country: {country_code}, Category: '{current_cat_to_try}'): {params}")
 
             try:
-                response = requests.get(NEWSAPI_BASE_URL, params=params, timeout=30)
+                response = requests.get(f"{NEWSAPI_BASE_URL}top-headlines", params=params, headers=headers, timeout=15)
                 response.raise_for_status()
                 data = response.json()
+                
+                fetched_articles = []
+                for article_data in data.get('articles', []):
+                    title = article_data.get('title')
+                    description = article_data.get('description')
+                    url = article_data.get('url')
+                    image_url = article_data.get('urlToImage')
 
-                if data.get('articles'):
-                    for article_data in data['articles']:
-                        title = article_data.get('title')
-                        description = article_data.get('description')
-                        url = article_data.get('url')
-                        image_url = article_data.get('urlToImage')
-
-                        if not title or not description or not url:
-                            print(f"DEBUG: Skipping article due to missing title, description, or URL for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}').")
-                            continue
-                        
-                        articles.append({
+                    if title and description and url:
+                        fetched_articles.append({
                             "title": title,
                             "content_raw": description,
                             "link": url,
                             "imageUrl_raw": image_url,
                             "is_simulated": False
                         })
-                    print(f"DEBUG: Successfully fetched {len(articles)} articles from NewsAPI for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}').")
-                    return articles 
+                if fetched_articles:
+                    print(f"DEBUG: Successfully fetched {len(fetched_articles)} articles from NewsAPI.org for {region_key}/{category_info['newsapi_cat']} (Country: {country_code}, Category: '{current_cat_to_try}').")
+                    return fetched_articles
                 else:
-                    print(f"DEBUG: NewsAPI returned no articles for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}'). Trying next category/country if available.")
-                    time.sleep(1) # Small delay after no articles found
-                    continue 
+                    print(f"DEBUG: NewsAPI.org returned no articles for {region_key}/{category_info['newsapi_cat']} (Country: {country_code}, Category: '{current_cat_to_try}').")
+                    time.sleep(1) # Small delay
+                    continue
 
             except requests.exceptions.HTTPError as http_err:
                 error_response = {}
@@ -215,30 +156,152 @@ async def fetch_news_from_newsapi(region_key, category_key, page_size=20): # Inc
                     error_response = http_err.response.json()
                 except json.JSONDecodeError:
                     pass
-
-                if error_response.get('code') == 'categoryNotApplicable':
-                    print(f"DEBUG: NewsAPI returned 'categoryNotApplicable' for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}'). Trying next category/country if available.")
-                    time.sleep(1) # Small delay after specific error
-                    continue 
-                else:
-                    print(f"Error fetching from NewsAPI.org for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}'): {http_err}")
-                    if http_err.response and http_err.response.text:
-                        print(f"NewsAPI.org Error Response: {http_err.response.text}")
-                    time.sleep(1) # Small delay after other HTTP errors
-                    continue 
-
+                print(f"Error from NewsAPI.org for {region_key}/{category_info['newsapi_cat']} (Country: {country_code}, Category: '{current_cat_to_try}'): {http_err}. Response: {error_response}")
+                time.sleep(1) # Small delay
+                continue
             except requests.exceptions.RequestException as e:
-                print(f"Error fetching from NewsAPI.org for {region_key}/{category_key} (Country: {country_code}, Category: '{current_cat_to_try}'): {e}")
-                time.sleep(1) # Small delay after general request errors
-                continue 
+                print(f"Network error from NewsAPI.org for {region_key}/{category_info['newsapi_cat']} (Country: {country_code}, Category: '{current_cat_to_try}'): {e}")
+                time.sleep(1) # Small delay
+                continue
+    
+    # For 'global' region, try the /everything endpoint with query
+    if region_key == "global" and query_keyword:
+        params = {
+            'q': query_keyword,
+            'language': 'en',
+            'pageSize': page_size,
+            'sortBy': 'relevancy'
+        }
+        headers = {'X-Api-Key': NEWSAPI_API_KEY}
+        print(f"DEBUG: NewsAPI.org Attempt for global/{category_info['newsapi_cat']} (Query: '{query_keyword}'): {params}")
+        try:
+            response = requests.get(f"{NEWSAPI_BASE_URL}everything", params=params, headers=headers, timeout=15)
+            response.raise_for_status()
+            data = response.json()
+            fetched_articles = []
+            for article_data in data.get('articles', []):
+                title = article_data.get('title')
+                description = article_data.get('description')
+                url = article_data.get('url')
+                image_url = article_data.get('urlToImage')
+                if title and description and url:
+                    fetched_articles.append({
+                        "title": title,
+                        "content_raw": description,
+                        "link": url,
+                        "imageUrl_raw": image_url,
+                        "is_simulated": False
+                    })
+            if fetched_articles:
+                print(f"DEBUG: Successfully fetched {len(fetched_articles)} articles from NewsAPI.org (everything) for global/{category_info['newsapi_cat']}.")
+                return fetched_articles
+            else:
+                print(f"DEBUG: NewsAPI.org (everything) returned no articles for global/{category_info['newsapi_cat']}.")
+        except requests.exceptions.RequestException as e:
+            print(f"Error from NewsAPI.org (everything) for global/{category_info['newsapi_cat']}: {e}")
+    
+    return [] # Return empty if no articles found from NewsAPI.org
 
-    print(f"DEBUG: No articles found from NewsAPI for {region_key}/{category_key} after trying all countries and categories. No new content will be published for this section.")
-    return [] 
+async def fetch_from_worldnewsapi(region_key, category_info, page_size):
+    """Attempts to fetch news from World News API."""
+    country_codes_for_region = REGIONS[region_key]["country_codes"]
+    query_keyword = category_info["worldnewsapi_query"]
+
+    # World News API often works better with 'search-news' and keywords for categories
+    # It also uses 'source-countries' for filtering.
+    
+    for country_code in country_codes_for_region:
+        params = {
+            'api-key': WORLD_NEWS_API_KEY,
+            'text': query_keyword,
+            'language': 'en',
+            'number': page_size, # World News API uses 'number' for page size
+            'source-countries': country_code
+        }
+        print(f"DEBUG: World News API Attempt for {region_key}/{category_info['worldnewsapi_query']} (Country: {country_code}, Query: '{query_keyword}'): {params}")
+        try:
+            response = requests.get(f"{WORLD_NEWS_API_BASE_URL}search-news", params=params, timeout=15)
+            response.raise_for_status()
+            data = response.json()
+            
+            fetched_articles = []
+            for article_data in data.get('news', []): # World News API uses 'news' key
+                title = article_data.get('title')
+                content_text = article_data.get('text') # World News API uses 'text' for content
+                url = article_data.get('url')
+                image_url = article_data.get('image') # World News API uses 'image' for image URL
+
+                if title and content_text and url:
+                    fetched_articles.append({
+                        "title": title,
+                        "content_raw": content_text,
+                        "link": url,
+                        "imageUrl_raw": image_url,
+                        "is_simulated": False
+                    })
+            if fetched_articles:
+                print(f"DEBUG: Successfully fetched {len(fetched_articles)} articles from World News API for {region_key}/{category_info['worldnewsapi_query']} (Country: {country_code}).")
+                return fetched_articles
+            else:
+                print(f"DEBUG: World News API returned no articles for {region_key}/{category_info['worldnewsapi_query']} (Country: {country_code}).")
+                time.sleep(1) # Small delay
+                continue
+
+        except requests.exceptions.HTTPError as http_err:
+            error_response = {}
+            try:
+                error_response = http_err.response.json()
+            except json.JSONDecodeError:
+                pass
+            print(f"Error from World News API for {region_key}/{category_info['worldnewsapi_query']} (Country: {country_code}): {http_err}. Response: {error_response}")
+            time.sleep(1) # Small delay
+            continue
+        except requests.exceptions.RequestException as e:
+            print(f"Network error from World News API for {region_key}/{category_info['worldnewsapi_query']} (Country: {country_code}): {e}")
+            time.sleep(1) # Small delay
+            continue
+    
+    # For 'global' region, try a broader search without country filter
+    if region_key == "global" and query_keyword:
+        params = {
+            'api-key': WORLD_NEWS_API_KEY,
+            'text': query_keyword,
+            'language': 'en',
+            'number': page_size
+        }
+        print(f"DEBUG: World News API Attempt for global/{category_info['worldnewsapi_query']} (Query: '{query_keyword}'): {params}")
+        try:
+            response = requests.get(f"{WORLD_NEWS_API_BASE_URL}search-news", params=params, timeout=15)
+            response.raise_for_status()
+            data = response.json()
+            fetched_articles = []
+            for article_data in data.get('news', []):
+                title = article_data.get('title')
+                content_text = article_data.get('text')
+                url = article_data.get('url')
+                image_url = article_data.get('image')
+                if title and content_text and url:
+                    fetched_articles.append({
+                        "title": title,
+                        "content_raw": content_text,
+                        "link": url,
+                        "imageUrl_raw": image_url,
+                        "is_simulated": False
+                    })
+            if fetched_articles:
+                print(f"DEBUG: Successfully fetched {len(fetched_articles)} articles from World News API (global search) for global/{category_info['worldnewsapi_query']}.")
+                return fetched_articles
+            else:
+                print(f"DEBUG: World News API (global search) returned no articles for global/{category_info['worldnewsapi_query']}.")
+        except requests.exceptions.RequestException as e:
+            print(f"Error from World News API (global search) for global/{category_info['worldnewsapi_query']}: {e}")
+
+    return [] # Return empty if no articles found from World News API
 
 async def get_mistral_summary_and_image(original_title, original_content_raw, category_name, original_image_url_raw):
     """
     Uses Mistral AI API to summarize content and suggest a relevant image URL.
-    This function now processes real data from NewsAPI.org.
+    This function now processes real data from NewsAPI.org or World News API.
     """
     prompt = f"""
     You are an AI assistant for a news portal. Your task is to take the following article
@@ -293,10 +356,9 @@ async def get_mistral_summary_and_image(original_title, original_content_raw, ca
                 final_image_url = suggested_image_url
             else:
                 image_keywords_for_fallback = category_name.replace('_', '+') + "+" + original_title.replace(' ', '+')
-                final_image_url = f"https://placehold.co/600x400/CCCCCC/333333?text={image_keywords_for_fallback}"
+                final_image_url = f"https://placehold.co/600x400/CCCCCC/333333?text=AI+Image+Fallback"
 
-            return summary, final_image_url, False 
-
+            return summary, final_image_url, False # Mistral successfully processed
         else:
             print(f"Mistral AI API response missing expected structure for '{original_title}': {result}")
             return original_content_raw, original_image_url_raw or 'https://placehold.co/600x400/CCCCCC/333333?text=AI+Process+Failed', True 
@@ -363,45 +425,77 @@ async def main():
 
     for region_key, category_key in categories_to_process_in_this_run:
         region_name_full = REGIONS[region_key]["name"]
+        category_info = CATEGORIES[category_key]
         
-        print(f"Processing Region: {region_name_full}, Category: {category_key} with NewsAPI.org and Mistral AI...")
+        print(f"Processing Region: {region_name_full}, Category: {category_key} with NewsAPI.org, World News API, and Mistral AI...")
         
         if region_key not in all_content:
             all_content[region_key] = {}
         
-        newsapi_articles = await fetch_news_from_newsapi(region_key, category_key, page_size=ARTICLES_TO_FETCH_PER_RUN)
-        
+        articles_to_add = []
+
+        # 1. Attempt to fetch from NewsAPI.org
+        if NEWSAPI_API_KEY:
+            newsapi_articles = await fetch_from_newsapi_org(region_key, category_info, ARTICLES_TO_FETCH_PER_RUN)
+            if newsapi_articles:
+                articles_to_add = newsapi_articles
+                print(f"  -> Fetched {len(newsapi_articles)} articles from NewsAPI.org for {region_key}/{category_key}.")
+            else:
+                print(f"  -> NewsAPI.org returned no articles for {region_key}/{category_key}. Trying World News API.")
+        else:
+            print(f"  -> NEWSAPI_API_KEY not configured. Skipping NewsAPI.org for {region_key}/{category_key}.")
+
+        # 2. If NewsAPI.org failed, attempt to fetch from World News API
+        if not articles_to_add and WORLD_NEWS_API_KEY:
+            worldnewsapi_articles = await fetch_from_worldnewsapi(region_key, category_info, ARTICLES_TO_FETCH_PER_RUN)
+            if worldnewsapi_articles:
+                articles_to_add = worldnewsapi_articles
+                print(f"  -> Fetched {len(worldnewsapi_articles)} articles from World News API for {region_key}/{category_key}.")
+            else:
+                print(f"  -> World News API returned no articles for {region_key}/{category_key}. Falling back to simulated content (not published).")
+        elif not articles_to_add and not WORLD_NEWS_API_KEY:
+            print(f"  -> WORLD_NEWS_API_KEY not configured. Skipping World News API for {region_key}/{category_key}.")
+            
         current_processed_articles_batch = [] 
-        
-        if newsapi_articles: 
-            print(f"  -> Successfully fetched {len(newsapi_articles)} articles from NewsAPI for {region_key}/{category_key}. Now processing with Mistral AI.")
-            for i, article_from_newsapi in enumerate(newsapi_articles):
-                print(f"  - Processing article {i+1}/{len(newsapi_articles)} for {region_key}/{category_key} from NewsAPI...")
+
+        if articles_to_add: # Only process with Mistral if we got articles from either API
+            for i, article_raw in enumerate(articles_to_add):
+                print(f"  - Processing article {i+1}/{len(articles_to_add)} for {region_key}/{category_key} with Mistral AI...")
                 
                 summary_content, final_image_url, mistral_processing_failed = await get_mistral_summary_and_image(
-                    article_from_newsapi['title'], 
-                    article_from_newsapi['content_raw'], 
+                    article_raw['title'], 
+                    article_raw['content_raw'], 
                     category_key,
-                    article_from_newsapi['imageUrl_raw']
+                    article_raw['imageUrl_raw']
                 )
                 
                 current_processed_articles_batch.append({
-                    "title": article_from_newsapi['title'], 
+                    "title": article_raw['title'], 
                     "content": summary_content, 
-                    "link": article_from_newsapi['link'], 
+                    "link": article_raw['link'], 
                     "imageUrl": final_image_url, 
-                    "is_simulated": mistral_processing_failed 
+                    "is_simulated": article_raw['is_simulated'] or mistral_processing_failed # True if original was simulated OR Mistral failed
                 })
-                time.sleep(20) # Increased delay after each Mistral AI call
+                time.sleep(20) # Delay after each Mistral AI call
         else:
-            print(f"  -> NewsAPI.org returned no articles for {region_key}/{category_key}. This section will NOT be updated in this run to avoid simulated content.")
+            # If no articles from either API, generate simulated content, but mark it as such
+            # This content will NOT be published to updates.json if it's purely simulated.
+            simulated_fallback_articles = generate_simulated_content(
+                region_name_full, category_key, count=ARTICLES_TO_FETCH_PER_RUN
+            )
+            print(f"  -> No real articles found for {region_key}/{category_key}. Generated simulated fallback content (will be filtered by frontend).")
+            # We don't add simulated_fallback_articles to current_processed_articles_batch
+            # because we are explicitly NOT publishing simulated content to updates.json.
 
-        if current_processed_articles_batch:
+        # --- Incremental Merging Logic ---
+        # ONLY update the category if we have new, successfully processed (non-simulated) articles from APIs.
+        if current_processed_articles_batch: # If this batch contains real articles processed by Mistral
             if category_key not in all_content[region_key]:
                 all_content[region_key][category_key] = []
                 
             existing_articles_for_category = all_content[region_key].get(category_key, [])
             
+            # Filter out old articles that were marked as simulated (e.g., if Mistral failed on them previously, or if they were old simulated content).
             filtered_existing_articles = [
                 art for art in existing_articles_for_category if not art.get('is_simulated', False) 
             ]
@@ -413,7 +507,7 @@ async def main():
         else:
             print(f"  -> {region_key}/{category_key} content remains unchanged (no new real articles successfully processed).")
         
-        time.sleep(45) # Increased delay between categories/regions
+        time.sleep(45) # Delay between categories/regions
 
     try:
         with open(output_file_path, 'w', encoding='utf-8') as f:
