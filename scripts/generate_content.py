@@ -60,13 +60,13 @@ REGIONS = {
 
 # Mapping internal categories to NewsAPI.org and World News API categories/keywords
 CATEGORIES = {
-    "news": {"newsapi_cat": "general", "worldnewsapi_query": "general news"},
-    "technology": {"newsapi_cat": "technology", "worldnewsapi_query": "technology OR tech"},
-    "finance": {"newsapi_cat": "business", "worldnewsapi_query": "business OR finance OR economy"},
-    "travel": {"newsapi_cat": "general", "worldnewsapi_query": "travel OR tourism"}, 
-    "world": {"newsapi_cat": "general", "worldnewsapi_query": "world affairs OR international news"},
-    "weather": {"newsapi_cat": "science", "worldnewsapi_query": "weather OR climate"}, 
-    "blogs": {"newsapi_cat": "general", "worldnewsapi_query": "blogs OR opinion pieces"} 
+    "news": {"newsapi_cat": "general", "newsapi_query_keyword": "general news", "worldnewsapi_query": "general news"},
+    "technology": {"newsapi_cat": "technology", "newsapi_query_keyword": "technology OR tech", "worldnewsapi_query": "technology OR tech"},
+    "finance": {"newsapi_cat": "business", "newsapi_query_keyword": "business OR finance OR economy", "worldnewsapi_query": "business OR finance OR economy"},
+    "travel": {"newsapi_cat": "general", "newsapi_query_keyword": "travel OR tourism", "worldnewsapi_query": "travel OR tourism"}, 
+    "world": {"newsapi_cat": "general", "newsapi_query_keyword": "world affairs OR international news", "worldnewsapi_query": "world affairs OR international news"},
+    "weather": {"newsapi_cat": "science", "newsapi_query_keyword": "weather OR climate", "worldnewsapi_query": "weather OR climate"}, 
+    "blogs": {"newsapi_cat": "general", "newsapi_query_keyword": "blogs OR opinion pieces", "worldnewsapi_query": "blogs OR opinion pieces"} 
 }
 
 # --- Constants for incremental update ---
@@ -104,7 +104,7 @@ async def fetch_from_newsapi_org(region_key, category_info, page_size):
     """Attempts to fetch news from NewsAPI.org."""
     country_codes_for_region = REGIONS[region_key]["country_codes"]
     newsapi_category = category_info["newsapi_cat"]
-    query_keyword = category_info["query_keyword"]
+    newsapi_query_keyword = category_info["newsapi_query_keyword"] # Use the new key
 
     for country_code in country_codes_for_region:
         categories_to_try = [newsapi_category]
@@ -165,15 +165,16 @@ async def fetch_from_newsapi_org(region_key, category_info, page_size):
                 continue
     
     # For 'global' region, try the /everything endpoint with query
-    if region_key == "global" and query_keyword:
+    # Use the new newsapi_query_keyword here
+    if region_key == "global" and newsapi_query_keyword:
         params = {
-            'q': query_keyword,
+            'q': newsapi_query_keyword,
             'language': 'en',
             'pageSize': page_size,
             'sortBy': 'relevancy'
         }
         headers = {'X-Api-Key': NEWSAPI_API_KEY}
-        print(f"DEBUG: NewsAPI.org Attempt for global/{category_info['newsapi_cat']} (Query: '{query_keyword}'): {params}")
+        print(f"DEBUG: NewsAPI.org Attempt for global/{category_info['newsapi_cat']} (Query: '{newsapi_query_keyword}'): {params}")
         try:
             response = requests.get(f"{NEWSAPI_BASE_URL}everything", params=params, headers=headers, timeout=15)
             response.raise_for_status()
