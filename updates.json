@@ -5482,6 +5482,62 @@
     ],
     "weather": [
       {
+        "title": "Experiencing extreme weather and disasters is not enough to change views on climate action, study shows",
+        "content": "A new study suggests that firsthand experience of extreme weather events may not be enough to change people's views on climate action. However, linking these events to climate change can significantly impact public support for climate policies. Global data from over 70,000 people in 68 countries was used to reach this conclusion.",
+        "link": "https://theconversation.com/experiencing-extreme-weather-and-disasters-is-not-enough-to-change-views-on-climate-action-study-shows-260308",
+        "imageUrl": "https://images.theconversation.com/files/678033/original/file-20250703-56-3zen0t.jpg?ixlib=rb-4.1.0&rect=0%2C882%2C5616%2C2808&q=45&auto=format&w=1356&h=668&fit=crop",
+        "is_simulated": false
+      },
+      {
+        "title": "Earth's shrinking cloud cover may hold the key to climate mystery ",
+        "content": "New research suggests Earth's shrinking cloud cover, particularly over oceans, may explain the extraordinary heat of the last two years, contributing to global warming. Changes in wind patterns due to climate change are causing stormy regions to retreat and patchy clouds to prevail.",
+        "link": "https://www.abc.net.au/news/2025-06-19/shrinking-cloud-cover-driving-temperature-records/105428180",
+        "imageUrl": "https://live-production.wcms.abc-cdn.net.au/7ee6f190de6d7dbb04203e514bfae9ec?impolicy=wcms_crop_resize&cropH=700&cropW=700&xPos=0&yPos=0&width=862&height=862",
+        "is_simulated": false
+      },
+      {
+        "title": "Climavision Selected by IRCAI and AWS for 2025 Compute for Climate Fellowship",
+        "content": "Weather tech company Climavision selected for 2025 Compute for Climate Fellowship by IRCAI and AWS. The fellowship will support Climavision's efforts to enhance its AI-supported weather prediction system, Horizon AI HIRES, to improve forecast speed and precision for extreme weather events.",
+        "link": "https://kalkinemedia.com/news/world-news/climavision-selected-by-ircai-and-aws-for-2025-compute-for-climate-fellowship",
+        "imageUrl": "https://kalkinemedia.com/storage/uploads/large/1752202118_68707b86ea5ab_www.einpresswire.com",
+        "is_simulated": false
+      },
+      {
+        "title": "The world needs bold, equitable climate action at the 2025 G7 summit",
+        "content": "The 2025 G7 summit is crucial for bold, equitable action on climate change to mitigate its impacts on public health, particularly in vulnerable populations. Experts warn of increasing health risks due to extreme weather events, food and water insecurity, and infectious diseases. The Royal Society of Canada's S7 statement calls for innovative solutions, regulations, and investments to transform health services and safeguard against climate change impacts.",
+        "link": "https://theconversation.com/the-world-needs-bold-equitable-climate-action-at-the-2025-g7-summit-256876",
+        "imageUrl": "https://images.theconversation.com/files/672055/original/file-20250603-56-yuecih.JPG?ixlib=rb-4.1.0&rect=0%2C293%2C6000%2C3000&q=45&auto=format&w=1356&h=668&fit=crop",
+        "is_simulated": false
+      },
+      {
+        "title": "Climate change has doubled the world’s heatwaves: how Africa is affected",
+        "content": "New study reveals climate change has doubled global heatwaves, with Africa facing a significant impact. Over 4 billion people worldwide suffered an extra 30 days of extreme heat in the last year, and Africa experienced several countries with more than 90 days of unusually hot temperatures. Heatwaves in countries like Mali and South Sudan were up to 15 times more likely due to climate change, causing serious health and agricultural issues.",
+        "link": "https://theconversation.com/climate-change-has-doubled-the-worlds-heatwaves-how-africa-is-affected-258594",
+        "imageUrl": "https://images.theconversation.com/files/677577/original/file-20250701-56-tvgii7.jpg?ixlib=rb-4.1.0&rect=12%2C465%2C3398%2C1699&q=45&auto=format&w=1356&h=668&fit=crop",
+        "is_simulated": false
+      },
+      {
+        "title": "How high-latitude peat and forest fires could shape the future of Earth’s climate",
+        "content": "High-latitude peat and forest fires are advancing further north due to climate change, releasing massive amounts of carbon and influencing weather patterns. These fires, known as 'zombie' fires, are difficult to extinguish and could shape the future of Earth's climate. Increased research is needed to better understand and predict these fires and their impacts.",
+        "link": "https://theconversation.com/how-high-latitude-peat-and-forest-fires-could-shape-the-future-of-earths-climate-258721",
+        "imageUrl": "https://images.theconversation.com/files/673600/original/file-20250611-56-dm4fls.jpg?ixlib=rb-4.1.0&rect=0%2C499%2C6048%2C3024&q=45&auto=format&w=1356&h=668&fit=crop",
+        "is_simulated": false
+      },
+      {
+        "title": "Your essential guide to climate finance",
+        "content": "This guide explains essential terms in climate finance, including Green Bonds, Carbon Credits, Carbon Offsetting, and Carbon Tax. It also discusses the Carbon Budget, Carbon Border Adjustment Mechanism, and Just Transition. The guide aims to make climate finance more accessible.",
+        "link": "https://theconversation.com/your-essential-guide-to-climate-finance-256358",
+        "imageUrl": "https://images.theconversation.com/files/676805/original/file-20250626-68-moixu.jpg?ixlib=rb-4.1.0&rect=0%2C799%2C6399%2C3199&q=45&auto=format&w=1356&h=668&fit=crop",
+        "is_simulated": false
+      },
+      {
+        "title": "Weathering the Storm: Defining Extreme Weather With Our NRG Load Forecasting Team",
+        "content": "NRG Energy's Load Forecasting team prepares for extreme weather events to ensure power supply reliability during harsh conditions, such as winter storms or heat waves. The team monitors weather patterns and collaborates with plant operators to deliver power to the grid. stay tuned for more on NRG's proactive strategies.",
+        "link": "https://kalkinemedia.com/news/world-news/weathering-the-storm-defining-extreme-weather-with-our-nrg-load-forecasting-team",
+        "imageUrl": "https://kalkinemedia.com/storage/uploads/large/1695367561_650d4189d32c8_1692951951_64e8658fe70f4_breaking_news_600.png",
+        "is_simulated": false
+      },
+      {
         "title": "Latest Weather Update from Oceania - 805",
         "content": "Oceania braces for record-breaking cold fronts, causing challenging winter conditions. Prepare for prolonged cold spells, advises meteorological service.",
         "link": "https://example.com/oceania/weather/1",
@@ -5634,16 +5690,65 @@
         "link": "https://example.com/oceania/weather/1",
         "imageUrl": "https://placehold.co/600x400/007BFF/FFFFFF?text=Oceania+Weather",
         "is_simulated": false
-      },
-      {
-        "title": "Simulated Weather Headline 1 for Oceania",
-        "content": "A simulated weather article for Oceania indicates potential weather events. The full article, not provided here, would contain a detailed weather forecast and analysis for the region. Check back for complete updates.",
-        "link": "https://example.com/oceania/weather/1",
-        "imageUrl": "https://example.com/oceania_weather.jpg",
-        "is_simulated": false
       }
     ],
     "blogs": [
+      {
+        "title": "A Nationals senator’s Israeli gift, ScoMo flops, Tim confirmed Crikey reader, and Trump’s football diplomacy",
+        "content": "A Nationals Senator received a controversial gift from the Israeli ambassador, a keychain made from repurposed Palestinian rockets. Scott Morrison's op-ed about space technology under AUKUS failed to make an impact, while Donald Trump's statement on Iran's nuclear weapons was met with confusion as football players stood behind him. Tim Wilson was called 'eminent political strategist' but the source remains unclear. AI in education is causing concerns as a company uses stock images for student testimonials.",
+        "link": "https://www.crikey.com.au/2025/06/19/scott-morrison-op-ed-nationals-israel-gift-tim-wilson-linkedin/",
+        "imageUrl": "https://www.crikey.com.au/wp-content/uploads/sites/3/2025/06/tipsjune19-v2.jpg?quality=70&w=1024",
+        "is_simulated": false
+      },
+      {
+        "title": "Lanna Hill: Do industry awards matter or are they an indulgence?",
+        "content": "Discusses the commercial nature of industry awards and their role in business, highlighting the importance of third-party endorsement and the potential for narrow perspectives. Lanna Hill, founder of Leverage Media Group, explores the impact of paid media on visibility and credibility.",
+        "link": "https://thewest.com.au/opinion/lanna-hill-do-industry-awards-matter-or-are-they-an-indulgence--c-19171197",
+        "imageUrl": "https://images.thewest.com.au/publication/C-19171197/f7f79d7369e5b3de3873eab9e4922f3c6d9859d9-16x9-x131y0w8366h4706.jpg?imwidth=1200",
+        "is_simulated": false
+      },
+      {
+        "title": "Media Bangladesh - MediaBangladesh.net Transforms into a Global All-Niche Informative Platform",
+        "content": "Media Bangladesh rebrands as a global all-niche informative platform, offering multi-niche content, SEO-optimized insights, user-friendly design, open contribution policy, and a focus on Bangladeshi perspective and global impact. The revamped site also includes a shopping section for office electronics, furniture, and school supplies.",
+        "link": "https://kalkinemedia.com/news/world-news/media-bangladesh-mediabangladeshnet-transforms-into-a-global-all-niche-informative-platform",
+        "imageUrl": "https://kalkinemedia.com/storage/uploads/large/1751828446_686ac7de70f93_23325070_mediabangladesh_net_1279x738.jpeg",
+        "is_simulated": false
+      },
+      {
+        "title": "Was Lyme disease first identified in CT&quest;",
+        "content": "Lyme disease was first identified in Connecticut in 1975, and the state has been a hub for research and response efforts. Today, Connecticut consistently ranks among the top 10 states for reported Lyme disease cases, with factors like suburban development and reforested land contributing to its high risk.",
+        "link": "https://ctmirror.org/2025/07/03/ct-lyme-disease-identified/",
+        "imageUrl": "https://ctmirror.org/wp-content/uploads/2025/05/Gigifact-Default-Image.png",
+        "is_simulated": false
+      },
+      {
+        "title": "Albanese’s China mission - managing a complex relationship in a world of shifting alliances",
+        "content": "Prime Minister Anthony Albanese travels to China, aiming to manage complex relations with a strategic power. Despite domestic criticism, Albanese's visit prioritizes economic ties, with China being Australia's biggest supplier and a more reliable trading partner. The visit also emphasizes national security and stability.",
+        "link": "https://theconversation.com/albaneses-china-mission-managing-a-complex-relationship-in-a-world-of-shifting-alliances-260404",
+        "imageUrl": "https://images.theconversation.com/files/679229/original/file-20250709-56-udz8vv.jpg?ixlib=rb-4.1.0&rect=0%2C689%2C8256%2C4128&q=45&auto=format&w=1356&h=668&fit=crop",
+        "is_simulated": false
+      },
+      {
+        "title": "ESET Annual Report 2024: Profit and revenue growth continues, R&D investment delivers strong returns",
+        "content": "ESET announces significant growth in profit and revenue for 2024, with a focus on R&D investment in AI-driven threat detection and response systems. The company reported strong performance in the EMEA region and the B2B segment, and introduced new MDR services.",
+        "link": "https://kalkinemedia.com/news/world-news/eset-annual-report-2024-profit-and-revenue-growth-continues-rd-investment-delivers-strong-returns",
+        "imageUrl": "https://kalkinemedia.com/storage/uploads/large/1751539725_6866600d47110_23310381_eset_annual_report_2024_1200x671.jpeg",
+        "is_simulated": false
+      },
+      {
+        "title": "Weiner on US Main St Radio & Grt Brit Nws; Top Op-Eds Wash Post, Charlotte Observer, MSN, Dallas News, Seattle Times",
+        "content": "Robert Weiner, former White House spokesman, published op-eds in major news outlets like The Washington Post and The Charlotte Observer, addressing topics such as Social Security, Syria, and a woman president. Weiner's team also appeared on several radio and TV segments, discussing national issues.",
+        "link": "https://kalkinemedia.com/news/world-news/weiner-on-us-main-st-radio-grt-brit-nws-top-op-eds-wash-post-charlotte-observer-msn-dallas-news-seattle-times",
+        "imageUrl": "https://kalkinemedia.com/storage/uploads/large/1751932868_686c5fc4ea233_www.einpresswire.com",
+        "is_simulated": false
+      },
+      {
+        "title": "Albanese hoping for Trump meet as AUKUS looks on shaky ground",
+        "content": "PM Anthony Albanese seeks meeting with Trump amid AUKUS review and potential US submarine shortage. Meanwhile, an Air India plane crash in India leaves over 240 dead.",
+        "link": "https://www.crikey.com.au/2025/06/13/anthony-albanese-donald-trump-aukus-air-india-crash/",
+        "imageUrl": "https://www.crikey.com.au/wp-content/uploads/sites/3/2025/06/albi.jpg?quality=70&w=1024",
+        "is_simulated": false
+      },
       {
         "title": "Latest Blogs Update from Oceania - 908",
         "content": "Discover the buzzing food blogging scene in Oceania, as traditional recipes and local culinary secrets garner international attention in the latest posts.",
@@ -5797,18 +5902,25 @@
         "link": "https://example.com/oceania/blogs/1",
         "imageUrl": "https://placehold.co/600x400?text=Oceania+Blogs",
         "is_simulated": false
-      },
-      {
-        "title": "Simulated Blogs Headline 1 for Oceania",
-        "content": "A simulated article discusses the blogosphere in Oceania. The full article, which would typically be a longer text, provides a detailed overview of the current state and trends of blogs in the region. More details to follow in the complete article.",
-        "link": "https://example.com/oceania/blogs/1",
-        "imageUrl": "https://via.placeholder.com/640x480.png?text=Oceania+Blogs",
-        "is_simulated": false
       }
     ]
   },
   "south_america": {
     "news": [
+      {
+        "title": "Global Christian News Roundup: Most Compelling Stories July 1 to 10, 2025",
+        "content": "A roundup of significant and thought-provoking religious news stories from July 1–10, 2025, covers topics such as the passing of televangelist Jimmy Swaggart, a tragic flood at a Christian camp in Texas, leadership changes at The Potter's House megachurch, a UK law expansion on abortion access, the election of a South American Adventist leader, a bounty on Christians in India, a deadly bombing at a Syrian church, a challenge to the Johnson Amendment in the US, Pope Leo XIV's retreat, church political endorsements in the US, massacres of Christians in Nigeria, the release of a Pakistani Christian after 23 years, a cover-up scandal at New Life Church, a settlement for a Christian camp exempting it from transgender accommodation rules, settler attacks on a Christian village in the West Bank, a surge in young adult baptisms in Ireland, rising attacks on US churches, Chris Pratt's bold faith declaration, Franklin Graham's successful London outreach, hidden Christians thriving in Bhutan.",
+        "link": "https://www.riotimesonline.com/global-christian-news-roundup-most-compelling-stories-july-1-to-10-2025/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-10-at-11.01.38-PM.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "How Decades of Power-Drunk Elites Are Boomeranging on Brazil",
+        "content": "A power-drunk Brazilian elite is facing backlash due to years of authoritarian overreach, culminating in a 50% tariff by the U.S. on Brazilian imports. The tariff is a consequence of Brazil's internal authoritarianism colliding with the populist realignment sweeping the West.",
+        "link": "https://www.riotimesonline.com/how-decades-of-power-drunk-elites-are-boomeranging-on-brazil/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/Brazil-economy-1-1-1-2.webp",
+        "is_simulated": false
+      },
       {
         "title": "Latest News Update from South America - 717",
         "content": "A major cultural festival is set to captivate South America, with global visitors and media anticipated. Local authorities are gearing up for the influx.",
@@ -5973,6 +6085,62 @@
     ],
     "technology": [
       {
+        "title": "Trump Stops Canada Trade Talks Over New Tech Tax, Raising Tensions for Businesses",
+        "content": "President Trump halts trade talks with Canada due to new tech tax targeting US tech firms. The tax, a 3% levy on digital services, mostly affects companies like Google, Amazon, and Meta. The dispute could lead to higher costs for businesses and consumers on both sides, and is a potential obstacle for the wider economy in both countries.",
+        "link": "https://www.riotimesonline.com/trump-stops-canada-trade-talks-over-new-tech-tax-raising-tensions-for-businesses/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/canada-scaled.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Silicon Valley’s Nuclear Bet: Why Tech Titans Are Powering Up America’s Next Energy Race",
+        "content": "Tech titans Bill Gates, Sam Altman, and Peter Thiel are investing billions in nuclear energy to ensure stable electricity for AI and maintain U.S. competitiveness with China. The International Energy Agency projects a record high in nuclear electricity production by 2025, with China also ramping up nuclear capacity. This shift signals a new era in U.S. energy, driven by industry needs and national security, not just environmental goals.",
+        "link": "https://www.riotimesonline.com/silicon-valleys-nuclear-bet-why-tech-titans-are-powering-up-americas-next-energy-race/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/small-modular-reactors-companies-innovation-e1749977056126.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Google and Meta Warn of Free Speech Risks After Brazil’s Supreme Court Ruling on Tech Liability",
+        "content": "Google and Meta express concerns over freedom of speech and digital economy impact following Brazil's Supreme Court ruling that expands tech liability for user-posted content, requiring platforms to act on private notifications for unlawful material. The new rules could introduce legal uncertainty and operational challenges.",
+        "link": "https://www.riotimesonline.com/google-and-meta-warn-of-free-speech-risks-after-brazils-supreme-court-ruling-on-tech-liability/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/h6hqo6h4l5nbrlzhvpaimibv44.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Why Innovation Clusters Reject Populism in the U.S. While Surrounding Areas Embrace It",
+        "content": "A study by Cambridge University Press reveals technology hubs in the U.S. consistently reject populist candidates, while surrounding areas support them. This divide is due to the dependence of innovation clusters on global supply chains, immigration, and international cooperation, which are threatened by populist economic policies.",
+        "link": "https://www.riotimesonline.com/why-innovation-clusters-reject-populism-in-the-u-s-while-surrounding-areas-embrace-it/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/07/Trumpism.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Florianópolis and Recife: New Stars in Latin America’s Startup Scene",
+        "content": "Florianópolis and Recife, Brazil's 'Silicon Island' and emerging tech hub, are making waves in Latin America's startup scene, with Florianópolis leading in startup density, funding, and internet speed, while Recife benefits from lower operational costs and government support.",
+        "link": "https://www.riotimesonline.com/florianopolis-and-recife-new-stars-in-latin-americas-startup-scene/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/Morro_da_Cruz_Florianopolis_-_SC_Brazil_-_panoramio_cropped.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Meta Invests $3.5 Billion to Bring More A.I. to Ray-Ban Smart Glasses",
+        "content": "Meta invests $3.5B in EssilorLuxottica to boost AI capabilities in Ray-Ban Smart Glasses, aiming to make AI-powered glasses as common as smartphones. The partnership will increase production capacity to 10 million units annually by 2026.",
+        "link": "https://www.riotimesonline.com/meta-invests-3-5-billion-to-bring-more-a-i-to-ray-ban-smart-glasses/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/07/436058587.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "A.I.’s Imperial Quest: Echoes of the East India Company’s Ruin",
+        "content": "Op-Ed analysis compares the ambitions and potential harm of modern AI giants to the East India Company, warning of erosion of democracy and equity. AI firms control global tech market, exploit resources, and threaten social cohesion, echoing the EIC's destructive legacy.",
+        "link": "https://www.riotimesonline.com/ais-imperial-quest-echoes-of-the-east-india-companys-ruin/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/07/AI-east-india-1024x683.png",
+        "is_simulated": false
+      },
+      {
+        "title": "Paraguay’s Startup Scene Climbs Global Ranks but Faces Tough Hurdles",
+        "content": "Paraguay's startup scene advances globally, ranking 97th worldwide and 8th in South America. The government supports growth through digital initiatives, but challenges persist, including limited funding, unclear regulations, and a shortage of skilled workers. Despite these hurdles, the sector shows promise with a focus on fintech, agritech, and e-commerce.",
+        "link": "https://www.riotimesonline.com/paraguays-startup-scene-climbs-global-ranks-but-faces-tough-hurdles/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/3I75IDLBFZDTTJLHJHWXBT4P7Q.webp",
+        "is_simulated": false
+      },
+      {
         "title": "Latest Technology Update from South America - 986",
         "content": "South American innovators unveil lightning-fast AI model, set to revolutionize industries from finance to healthcare.",
         "link": "https://example.com/south-america/technology/1",
@@ -6125,16 +6293,65 @@
         "link": "https://example.com/south-america/technology/1",
         "imageUrl": "https://example.com/technology_south_america.jpg",
         "is_simulated": false
-      },
-      {
-        "title": "Simulated Technology Headline 1 for South America",
-        "content": "A simulated article discusses technology innovations in South America. The detailed content, which Gemini would typically summarize, is currently a placeholder. Further information on specific advancements and their impact is expected in the full version.",
-        "link": "https://example.com/south-america/technology/1",
-        "imageUrl": "https://source.unsplash.com/800x600/?technology,southamerica",
-        "is_simulated": false
       }
     ],
     "finance": [
+      {
+        "title": "Kenya’s Kirubi Group: A Business Engine Shaping the Nation’s Economy",
+        "content": "Kenya's Kirubi Group, founded by late business magnate Chris Kirubi, is a leading conglomerate shaping Kenya's economy through investments in manufacturing, real estate, media, and finance. Under new leadership, the group continues to innovate, investing in renewable energy and sustainable practices.",
+        "link": "https://www.riotimesonline.com/kenyas-kirubi-group-a-business-engine-shaping-the-nations-economy/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/Chris-Kirubi-Photo.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Mexico’s Economy Grows Slightly in May Amid Trade and Debt Challenges",
+        "content": "Mexico's economy grew by 0.1% in May 2025 amid trade challenges, particularly from US tariffs on steel, aluminum, and automobiles. The auto industry and domestic consumption are struggling, leading to a projected growth of only 0.1% for the year. Inflation remains high and public debt is at a record high, limiting government spending.",
+        "link": "https://www.riotimesonline.com/mexicos-economy-grows-slightly-in-may-amid-trade-and-debt-challenges/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/04/mexico-flag-on-coins-background-business-and-finance-concept-free-photo.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Paraguay’s Economy Grows Steadily as Services and Construction Lead Gains",
+        "content": "Paraguay's economy grew by 4.9% in Q1 2025, driven by services and construction. Services sector accounts for 40% of economic output, with strong performances in financial intermediation, household services, and transport. Construction activity increased, boosting demand for materials and equipment. Foreign trade balance showed a surplus, thanks to increased beef, offal, and manufactured agricultural goods exports. The economy remains stable with inflation at 4% and GDP growth projected at 3.8% for 2025.",
+        "link": "https://www.riotimesonline.com/paraguays-economy-grows-steadily-as-services-and-construction-lead-gains/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/paraguay-flag.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "U.S. Tariffs Push Japan’s Economy Toward Recession as Exports Falter",
+        "content": "New U.S. tariffs on Japanese goods are causing a slump in Japan's exports, pushing the economy towards a potential recession. The trade deficit has widened, and negotiations to reduce or remove tariffs, especially on cars, are ongoing.",
+        "link": "https://www.riotimesonline.com/u-s-tariffs-push-japans-economy-toward-recession-as-exports-falter/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/gettyimages-1408873766.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Gaming, Gadgets, and Growth: Campus Party Brasil 17 Highlights Brazil’s Digital Economy",
+        "content": "Campus Party Brasil 17, held in Brasília, showcased Brazil's thriving digital economy with a focus on gaming, gadgets, and networking. The event attracted over 6000 participants, including software developers, entrepreneurs, and cosplayers. The gaming competition, Just Dance, and business exhibitions highlighted the event's significance for both entertainment and business growth.",
+        "link": "https://www.riotimesonline.com/gaming-gadgets-and-growth-campus-party-brasil-17-highlights-brazils-digital-economy/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/17-edicao-da-Campus-Party-Brasil-acontece-na-Arena-BRB-Mane-Garrincha-Metropoles-2.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Comic Con Bogotá 2025: Pop Culture Event Boosts Business in Colombia",
+        "content": "Colombia's Comic Con Bogotá 2025 attracts over 40,000 attendees, showcasing comics, anime, games, and movies. Big names like Drake Bell and Mika Kobayashi attend, boosting local economy and highlighting the growth of Colombia's creative businesses.",
+        "link": "https://www.riotimesonline.com/comic-con-bogota-2025-pop-culture-event-boosts-business-in-colombia/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/comiccon-02.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Brazilian Business Visas to U.S. Surge in 2025 as Entrepreneurs Seek Opportunity",
+        "content": "In 2025, a surge in Brazilian business visas to the U.S. indicates increasing entrepreneurial migration. The EB-1, EB-2, and EB-5 visas are popular choices for long-term business and professional migration. The U.S.'s stable business environment and clearer tax rules attract Brazilian entrepreneurs seeking growth and a better life.",
+        "link": "https://www.riotimesonline.com/brazilian-business-visas-to-u-s-surge-in-2025-as-entrepreneurs-seek-opportunity/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/american-visa-1.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Paraguay’s June Inflation Hits 0% as Food Prices Drop, Economy Holds Steady",
+        "content": "Paraguay's June inflation holds steady at 0% due to falling food prices, with annual inflation rising slightly to 4.0%. Gasoline and diesel prices rose, but construction, services, and energy sectors saw growth. The economy expanded by 5.9% in Q1 2025, with construction and energy sectors leading.",
+        "link": "https://www.riotimesonline.com/paraguays-june-inflation-hits-0-as-food-prices-drop-economy-holds-steady/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/07/Central-Bank-Paraguay.webp",
+        "is_simulated": false
+      },
       {
         "title": "Latest Finance Update from South America - 250",
         "content": "South American stock market sees volatility amid global trade tensions, with analysts predicting further fluctuations in the short term.",
@@ -6288,16 +6505,65 @@
         "link": "https://example.com/south-america/finance/1",
         "imageUrl": "https://example.com/south_america_finance.jpg",
         "is_simulated": false
-      },
-      {
-        "title": "Simulated Finance Headline 1 for South America",
-        "content": "A simulated article discusses financial happenings in South America. The full article, if available, would provide detailed insights. This summary is intended as a placeholder for a more comprehensive overview of South American financial market news.",
-        "link": "https://example.com/south-america/finance/1",
-        "imageUrl": "https://via.placeholder.com/150/28a745/ffffff?text=South+America+Finance",
-        "is_simulated": false
       }
     ],
     "travel": [
+      {
+        "title": "U.S. Tourism Drops as Brazil Becomes a Key Source of Visitors",
+        "content": "U.S. tourism is declining due to factors like trade tariffs and immigration rules, with fewer visitors from traditional countries such as Canada, Mexico, and Europe. However, Brazil is bucking this trend, with a 20% increase in visitors to the U.S. in 2024. Despite this, Brazilian visitor numbers dropped by 21% in early 2025. Meanwhile, Brazil's own tourism industry is booming, with a 51% increase in international tourists in the first four months of 2025.",
+        "link": "https://www.riotimesonline.com/u-s-tourism-drops-as-brazil-becomes-a-key-source-of-visitors/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/07/Brazil-4-850x486-1.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Argentina Faces Dollar Shortage as More Citizens Travel Abroad and Fewer Tourists Visit",
+        "content": "Argentina faces a growing dollar shortage due to increasing outbound travel and decreasing tourism. nearly 1.8 million Argentines traveled outside the country in Feb 2025, while only 494,000 foreign tourists visited, draining dollars from the economy. The government needs to strike a balance between allowing travel and keeping enough dollars to avoid a financial crisis.",
+        "link": "https://www.riotimesonline.com/argentina-faces-dollar-shortage-as-more-citizens-travel-abroad-and-fewer-tourists-visit/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/VOP5TGOGANGHTCUYDLSH3COJM4.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "The Reality Behind Brazil’s Tourism Record: A Giant’s Struggle for Global Tourists",
+        "content": "Brazil's 'tourism record' of 8 million foreign visitors is dwarfed by other destinations, despite its size and natural wonders. Barriers such as distance, safety concerns, language, cost, and image hinder Brazil's tourism growth.",
+        "link": "https://www.riotimesonline.com/the-reality-behind-brazils-tourism-record-a-giants-struggle-for-global-tourists/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/Brazil-foreign-tourists-1024x683-1.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "SKY Airline Adds More Flights Between Chile and Brazil, Making Travel Easier and Cheaper",
+        "content": "SKY Airline increases flights between Chile and Brazil by 40%, offering 62 weekly flights for the winter season, aiming to make travel more affordable and accessible. The new routes include Santiago to Porto Alegre and Belo Horizonte.",
+        "link": "https://www.riotimesonline.com/sky-airline-adds-more-flights-between-chile-and-brazil-making-travel-easier-and-cheaper/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/CC-AZJ-Sky-Airline-Airbus-A320-251N-1-3-scaled-1.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Trump Administration Considers Major Expansion of U.S. Travel Ban, Mostly to African Nations",
+        "content": "The Trump administration is planning to expand its travel ban, targeting up to 36 countries, mostly in Africa. This move, aimed at boosting national security, may affect key U.S. trade and security partners such as Egypt and Djibouti. The new ban, set to take effect after a 60-day compliance window, will impact many seeking business, education, or family opportunities in the U.S.",
+        "link": "https://www.riotimesonline.com/trump-administration-considers-major-expansion-of-us-travel-ban-mostly-to-african-nations/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/05/james-wiseman-vYGR3b_naPA-unsplash-1-1024x683-1-1.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Missed Flights and Long Waits: Madrid Airport Faces Summer Travel Crisis",
+        "content": "Madrid's main airport faced a travel crisis on July 2, 2025, with long lines and missed flights due to a lack of police officers and a surge in summer travelers. The airport served 5.74 million passengers in May, a 1% increase from the previous year, and the passport control areas struggled to handle the growth. Temporary border checks during a big international meeting in Seville further exacerbated the problem.",
+        "link": "https://www.riotimesonline.com/missed-flights-and-long-waits-madrid-airport-faces-summer-travel-crisis/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/07/Aeroporto_Espanha-1.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Copa Airlines Grows Routes, Strengthens Panama’s Position as Key Connector in the Americas",
+        "content": "Copa Airlines expands its routes, connecting 91 cities in 32 countries, strengthening Panama's position as a key travel and business hub in the Americas. By adding flights to Los Cabos, Mexico, Santiago de los Caballeros in the Dominican Republic, and Salvador de Bahia in Brazil, Copa Airlines aims to carry over 18 million passengers this year, with growth anticipated.",
+        "link": "https://www.riotimesonline.com/copa-airlines-grows-routes-strengthens-panamas-position-as-key-connector-in-the-americas/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/07/Screenshot-2023-04-21-at-9.19.11-PM-1.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Air Europa Strengthens Panama-Europe Ties with New Daily Flight Schedule",
+        "content": "Air Europa increases daily flights between Panama City and Madrid, offering more travel options and better connectivity for passengers. The modern Boeing 787-9 Dreamliner planes, known for their fuel efficiency and comfort, will be used on this route.",
+        "link": "https://www.riotimesonline.com/air-europa-strengthens-panama-europe-ties-with-new-daily-flight-schedule/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/63d1baf89ce0eb6fbc689411_air-europa-min.webp",
+        "is_simulated": false
+      },
       {
         "title": "Latest Travel Update from South America - 956",
         "content": "Discover the rising star of South American travel: an untouched paradise offering a unique blend of natural beauty and cultural experiences, named as a top destination for next year.",
@@ -6451,16 +6717,37 @@
         "link": "https://example.com/south-america/travel/1",
         "imageUrl": "https://example.com/south_america_travel.jpg",
         "is_simulated": false
-      },
-      {
-        "title": "Simulated Travel Headline 1 for South America",
-        "content": "Explore South America with our travel guide! While this is a placeholder, imagine detailed tips and insights for your next adventure. Discover the vibrant cultures, breathtaking landscapes, and hidden gems of this diverse continent. Stay tuned for the full article!",
-        "link": "https://example.com/south-america/travel/1",
-        "imageUrl": "https://placehold.co/600x400/474F7A/FFFFFF?text=South+America+Travel",
-        "is_simulated": false
       }
     ],
     "world": [
+      {
+        "title": "Global Christian News Roundup: Most Compelling Stories July 1 to 10, 2025",
+        "content": "A roundup of the most significant religious news stories from July 1-10, 2025, highlights major developments affecting Christian communities, including the passing of televangelist Jimmy Swaggart, a Texas Christian camp flood tragedy, T.D. Jakes' transition of megachurch leadership, the UK expanding abortion access, the election of the first South American Adventist leader, an Indian lawmaker's bounty on Christians, a Syrian church bombing, the IRS easing the ban on church political endorsements, massacres of Christians in Nigeria, the acquittal of a Pakistani Christian after 23 years, a Colorado megachurch pastor's resignation over abuse cover-up, a Christian camp winning a transgender exemption, settlers attacking a Christian village in the West Bank, a surge in young adults seeking baptism in Ireland, rising attacks on U.S. churches, Chris Pratt's bold faith declaration, Franklin Graham's successful London outreach, Bhutan's hidden Christians, and more.",
+        "link": "https://www.riotimesonline.com/global-christian-news-roundup-most-compelling-stories-july-1-to-10-2025/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-10-at-11.01.38-PM.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "How Brazilians in the US Are Pressing for the US to Impose Sanctions on Brazil’s Supreme",
+        "content": "Brazilian ex-president Jair Bolsonaro's son and a grandson of a former dictator are lobbying the US government to sanction Brazilian Supreme Court justices who have accused him of leading an attempted coup in 2022. The son, Eduardo Bolsonaro, is under investigation for coercion and obstruction of justice in Brazil. US Secretary of State Marco Rubio has expressed the possibility of sanctions against the justices under the Magnitsky Act.",
+        "link": "https://www.brazzil.com/how-brazilians-in-the-us-are-pressing-for-the-us-to-impose-sanctions-on-brazils-supreme/",
+        "imageUrl": "https://www.brazzil.com/wp-content/uploads/2025/07/bolsonaro061225.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Brazil’s Lula Vows an Eye for an Eye Against Trump’s 50% Tariff",
+        "content": "Brazil's President Lula vows to retaliate against a 50% tariff on exports to the US, invoking the Reciprocity Law. The move comes after US President Trump blamed a trade deficit for the tariffs, a claim Brazil refutes. Notable economist Paul Krugman has criticized Trump for the move, calling it 'evil and megalomaniacal'.",
+        "link": "https://www.brazzil.com/brazils-lula-vows-an-eye-for-an-eye-against-trumps-50-tariff/",
+        "imageUrl": "https://www.brazzil.com/wp-content/uploads/2025/07/factory071025.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Argentina Raises Export Taxes on Soy and Corn, Farmers Hurry to Sell Before Deadline",
+        "content": "Argentina raises export taxes on soybeans and corn, prompting farmers to rush sales before the new rates take effect on July 1, 2025. The move aims to generate more revenue for the country but could strain farmers' profits.",
+        "link": "https://www.riotimesonline.com/argentina-raises-export-taxes-on-soy-and-corn-farmers-hurry-to-sell-before-deadline/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/argentina.webp",
+        "is_simulated": false
+      },
       {
         "title": "Latest World Update from South America - 305",
         "content": "Major nations commit to climate change action at global summit, but activists call for more urgent measures to meet ambitious targets",
@@ -6625,6 +6912,62 @@
     ],
     "weather": [
       {
+        "title": "Argentina’s Soybean Harvest Holds Steady Amid Weather Swings and Market Pressures",
+        "content": "Argentina's soybean harvest for the 2024/25 season stands between 48.5 and 50 million tons, despite weather challenges. The country, a leading soybean exporter, maintains its significant role in the global market.",
+        "link": "https://www.riotimesonline.com/argentinas-soybean-harvest-holds-steady-amid-weather-swings-and-market-pressures/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/soy-argentina-scaled-1.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "EU Scales Back Green Rules to Help Businesses and Farmers",
+        "content": "The European Union is relaxing green regulations to aid businesses and farmers, aiming to balance climate action with economic growth. This move comes amid complaints about excessive rules and their impact on costs, particularly for small companies and farmers. The EU's primary climate goals remain unchanged, but the approach to reaching them will be less stringent.",
+        "link": "https://www.riotimesonline.com/eu-scales-back-green-rules-to-help-businesses-and-farmers/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/eu-farmers.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Panama Canal Invests $8.5 Billion to Secure Water and Keep Global Trade Moving",
+        "content": "Panama Canal invests $8.5B over next decade to secure water supply and maintain global trade, with projects including a new reservoir and a gas pipeline. The updates aim to address recent water shortages and improve efficiency and sustainability.",
+        "link": "https://www.riotimesonline.com/panama-canal-invests-8-5-billion-to-secure-water-and-keep-global-trade-moving/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/Wodne-Sprawy-6_2024-10.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Global Christian News Roundup: Most Compelling Stories July 1 to 10, 2025",
+        "content": "This week's global Christian news highlights include the passing of Jimmy Swaggart, a flood tragedy at a Texas Christian camp, T.D. Jakes transitioning from The Potter's House leadership, the UK debating abortion access expansion, the election of Erton Köhler as the first South American Adventist leader, and ongoing persecution of Christians in various countries.",
+        "link": "https://www.riotimesonline.com/global-christian-news-roundup-most-compelling-stories-july-1-to-10-2025/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-10-at-11.01.38-PM.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Economic Calendar: Key Market Events for the Week from June 23 to June 27, 2025",
+        "content": "A dynamic week ahead with key market events from June 23 to June 27, 2025. Critical economic data from Brazil, Mexico, US, Eurozone, Japan, and more will shape global trends. Stay informed to capitalize on opportunities and risks.",
+        "link": "https://www.riotimesonline.com/economic-calendar-key-market-events-for-the-week-from-june-23-to-june-27-2025/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2024/08/Calendar.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "The Importance and Current Reality of Peru’s Fishing Sector",
+        "content": "Peru's fishing sector experienced a significant 329% increase in production in 2024, mainly due to a record anchovy season. The sector's growth has been accompanied by stricter regulations to combat illegal fishing and protect marine resources, contributing over 1% to Peru's GDP and supporting hundreds of thousands of jobs. However, ongoing challenges such as climate change and disputes over fishing rights persist.",
+        "link": "https://www.riotimesonline.com/the-importance-and-current-reality-of-perus-fishing-sector/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/20240813_artisanal_fishers_Peru_1001500-produce_@Produce.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "New Brazil-Caribbean Agreements Aim to Revitalize Regional Commerce and Stability",
+        "content": "Brazil-Caribbean Summit in Brasilia aims to revitalize regional commerce and stability, focusing on food security, climate action, energy, disaster management, and connectivity. Brazil targets $35.4B in foreign investments to modernize ports and airports, and commits to training 400 Haitian police officers.",
+        "link": "https://www.riotimesonline.com/new-brazil-caribbean-agreements-aim-to-revitalize-regional-commerce-and-stability/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/caricom-csme-2-728-e1749888962521.webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Santa Catarina Surpasses São Paulo as Brazil’s Top Magnet for Movers",
+        "content": "Santa Catarina has surpassed São Paulo as Brazil's top magnet for movers, attracting more new residents due to its high standard of living, low crime rates, and diverse economy. With a growing population and a balanced development model, the state offers a desirable lifestyle for families, retirees, and young professionals.",
+        "link": "https://www.riotimesonline.com/santa-catarina-surpasses-sao-paulo-as-brazils-top-magnet-for-movers/",
+        "imageUrl": "https://www.riotimesonline.com/wp-content/uploads/2025/06/morar-em-santa-catarina.webp",
+        "is_simulated": false
+      },
+      {
         "title": "Latest Weather Update from South America - 978",
         "content": "A new study predicts South America's precipitation patterns to change substantially over the next decade, potentially impacting water management and agriculture.",
         "link": "https://example.com/south-america/weather/1",
@@ -6777,16 +7120,23 @@
         "link": "https://example.com/south-america/weather/1",
         "imageUrl": "https://placehold.co/600x400/sky-blue/white?text=South+America+Weather",
         "is_simulated": false
-      },
-      {
-        "title": "Simulated Weather Headline 1 for South America",
-        "content": "A simulated weather report focuses on South America, providing a brief overview of the expected conditions. Further details would typically be included in the full article. This is a placeholder summary for a weather-related news item.",
-        "link": "https://example.com/south-america/weather/1",
-        "imageUrl": "https://placehold.co/600x400/weather",
-        "is_simulated": false
       }
     ],
     "blogs": [
+      {
+        "title": "Anti-Milei sentiment growing among Argentina’s elites",
+        "content": "Growing sentiment among Argentine elites suggests Javier Milei's administration may face failure due to economic inconsistencies and loss of popular support, sparking a potential political crisis.",
+        "link": "https://www.batimes.com.ar/news/opinion-and-analysis/anti-milei-sentiment-growing-among-argentinas-elites.phtml",
+        "imageUrl": "https://fotos.perfil.com/2025/07/04/cropped/696/696/center/in-the-sights-of-the-red-circle-art-milei-circulo-rojo-2055211.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "The Operation Condor files: These kidnapped children were returned to their family — thanks in part to the Buenos Aires Herald",
+        "content": "Four-year-old Gabriela Schroeder Barredo was kidnapped during Operation Condor, a brutal repression campaign in 1970s South America. Her family's search for her was aided by the Buenos Aires Herald, leading to her eventual reunion with her family.",
+        "link": "https://buenosairesherald.com/human-rights/the-operation-condor-files-these-kidnapped-children-were-returned-to-their-family-thanks-in-part-to-the-buenos-aires-herald",
+        "imageUrl": "https://buenosairesherald.com/wp-content/uploads/2025/06/imagen-de-nota.png.jpg",
+        "is_simulated": false
+      },
       {
         "title": "Latest Blogs Update from South America - 788",
         "content": "Discover hidden gems of South America through a fresh travel blog, featuring practical tips and breathtaking photography for thrill-seeking wanderers.",
@@ -6953,6 +7303,62 @@
   "middle_east": {
     "news": [
       {
+        "title": "Air India plane crash: Ill-fated runway 23 of Ahmedabad airport back in news after 1988 accident",
+        "content": "A second major plane crash at Ahmedabad airport's runway 23 since 1988 occurred on Thursday, killing 133 out of 139 passengers in 1988. The latest crash, involving an Air India flight to London, may be linked to pilot error and poor visibility. Both crashes resulted in high degrees of negligence, as confirmed by investigations.",
+        "link": "https://gulfnews.com/world/asia/india/air-india-plane-crash-ill-fated-runway-23-of-ahmedabad-airport-back-in-news-after-1988-accident-1.500161334",
+        "imageUrl": "https://media.assettype.com/gulfnews/2025-06-12/2dw30hqv/20250612199F.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true",
+        "is_simulated": false
+      },
+      {
+        "title": "Dubai Police step up traffic safety drive for ‘Summer Without Accidents’ campaign",
+        "content": "Dubai Police launched a traffic safety drive for the 'Summer Without Accidents' campaign, aiming to reduce traffic accidents and fatalities. Major General Al Ghaithi highlighted distraction, particularly mobile phone use, as a leading cause of accidents. The UAE government, private sector, and Dubai Police are collaborating to ensure vehicle maintenance and offer free inspections during the summer.",
+        "link": "https://gulfnews.com/uae/transport/dubai-police-step-up-traffic-safety-drive-for-summer-without-accidents-campaign-1.500194013",
+        "imageUrl": "https://media.assettype.com/gulfnews/2025-07-10/n1wnq4ql/New.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true",
+        "is_simulated": false
+      },
+      {
+        "title": "US strikes Iran’s nuclear sites: What we know so far — and what could happen next",
+        "content": "The US has bombed three of Iran's nuclear sites, escalating the Israel-Iran conflict. The US claims the facilities were 'completely and fully obliterated', and warns of further strikes if Iran retaliates. Iran maintains its nuclear program is peaceful, but Israel considers it an existential threat.",
+        "link": "https://gulfnews.com/world/mena/us-strikes-irans-nuclear-sites-what-we-know-so-far-and-what-could-happen-next-1.500172646",
+        "imageUrl": "https://media.assettype.com/gulfnews/2025-06-22/51e4d3pn/fordow.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true",
+        "is_simulated": false
+      },
+      {
+        "title": "The Epstein files, the US government’s denial, and a MAGA meltdown",
+        "content": "The US Justice Department denies the existence of Jeffrey Epstein's 'client list' and refuses to release additional files related to his sex trafficking investigation. The announcement contradicts months of claims made by Trump-era Attorney General Pam Bondi and has sparked outrage within the MAGA movement, with Elon Musk escalating his criticism of Trump's administration.",
+        "link": "https://gulfnews.com/world/americas/the-epstein-files-the-us-governments-denial-and-a-maga-meltdown-1.500193791",
+        "imageUrl": "https://media.assettype.com/gulfnews/2025-07-07/94y2nt7m/newsml_afp_com_20250707T195557Z_doc_663b7ke.jpeg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true",
+        "is_simulated": false
+      },
+      {
+        "title": "The UAE Growth and Investment Forum gets underway today at V Hotel Dubai",
+        "content": "The UAE Growth and Investment Forum, sponsored by Ajman Free Zone, kicks off today at V Hotel Dubai, bringing together policymakers, business leaders, and investors for discussions on investment opportunities, regulatory compliance, and the evolving role of free zones in the UAE's growth strategy. Keynote speakers include Dr. Maria Hanif Al Qassim and Ismail Al Naqi, Director-General of the Free Zones Authority of Ajman.",
+        "link": "https://gulfnews.com/uae/the-uae-growth-and-investment-forum-gets-underway-today-at-v-hotel-dubai-1.500182015",
+        "imageUrl": "https://media.assettype.com/gulfnews/2025-06-30/sevf3t0a/GN-Invest-Forum-Crowd-General-25.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true",
+        "is_simulated": false
+      },
+      {
+        "title": "UAE businesses get clarity on VAT invoices for imports",
+        "content": "UAE businesses have received clarity on VAT invoicing for imports, as the Federal Tax Authority (FTA) has confirmed that businesses are not required to issue tax invoices to themselves for imported services. FTA also announced that businesses can recover input credit on VAT paid under the reverse charge mechanism on imported services, even without issuing tax invoices to themselves. The decision is expected to save costs for UAE businesses.",
+        "link": "https://gulfnews.com/business/tax-news/uae-businesses-get-clarity-on-vat-invoices-for-imports-1.500158179",
+        "imageUrl": "https://media.assettype.com/gulfnews/2025-04-10/jnahy884/Corporate-Tax1.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true",
+        "is_simulated": false
+      },
+      {
+        "title": "Content scraping, and the AI gold rush: Why Meta, Apple, and Samsung are chasing Perplexity — and stirring up a storm",
+        "content": "Tech giants Meta, Apple, and Samsung are reportedly courting Perplexity AI, a company known for its 'answer engine' search engine that could rival Google. The platform, backed by investors like Jeff Bezos and Nvidia, offers AI-powered search, content scraping, and user-centric features. However, it's controversial for content scraping without permission, raising concerns of 'AI plagiarism'.",
+        "link": "https://gulfnews.com/technology/content-scraping-and-the-ai-gold-rush-why-meta-apple-and-samsung-are-chasing-perplexity-and-stirring-up-a-storm-1.500176860",
+        "imageUrl": "https://media.assettype.com/gulfnews/2025-06-25/lmf95643/Aravind_Srinivas_Perplexity_AI.jpeg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true",
+        "is_simulated": false
+      },
+      {
+        "title": "Trump says US and Iranian officials will talk next week as ceasefire holds",
+        "content": "U.S. and Iranian officials are set to talk next week amid a ceasefire between Israel and Iran, raising hopes for a potential long-term peace. Trump claimed the U.S. strikes had destroyed Iran's nuclear program, but Iran insists it will not give it up.",
+        "link": "https://gulfnews.com/world/americas/trump-says-us-and-iranian-officials-will-talk-next-week-as-ceasefire-holds-1.500177056",
+        "imageUrl": "https://media.assettype.com/gulfnews/2025-06-25/nc9lbqvm/newsml_afp_com_20250625T151339Z_doc_63rg4rk.jpeg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true",
+        "is_simulated": false
+      },
+      {
         "title": "Latest News Update from Middle East - 606",
         "content": "A groundbreaking public health initiative in the Middle East promises to address a persistent issue, yet widespread acceptance remains elusive.",
         "link": "https://example.com/middle-east/news/1",
@@ -7102,13 +7508,6 @@
       {
         "title": "Simulated News Headline 1 for Middle East",
         "content": "A new report indicates developments in the Middle East. Specifics are currently limited to this placeholder, as a full article isn't available. Further updates will provide a more detailed analysis of the situation.",
-        "link": "https://example.com/middle-east/news/1",
-        "imageUrl": "https://placehold.co/600x400/orange/white?text=Middle+East+News",
-        "is_simulated": false
-      },
-      {
-        "title": "Simulated News Headline 1 for Middle East",
-        "content": "A new story is developing in the Middle East. Details are still emerging, but this simulated news piece provides a brief overview of current events in the region. Stay tuned for more updates as the situation unfolds.",
         "link": "https://example.com/middle-east/news/1",
         "imageUrl": "https://placehold.co/600x400/orange/white?text=Middle+East+News",
         "is_simulated": false
@@ -10779,5 +11178,5 @@
       }
     ]
   },
-  "last_updated_utc": "2025-07-11T08:54:03.451558+00:00"
+  "last_updated_utc": "2025-07-11T16:48:11.939638+00:00"
 }
