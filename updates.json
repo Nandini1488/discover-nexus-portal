@@ -2,6 +2,62 @@
   "global": {
     "news": [
       {
+        "title": "Out of the blue: How a Quake blog turned PC gaming news site has stayed a haven from 'internet enshittification' for nearly 30 years",
+        "content": "Blue's News, a PC gaming news site founded in the '90s, has managed to stay neutral and ad-free for nearly 30 years, bucking the trend of 'internet enshittification'.",
+        "link": "https://www.pcgamer.com/gaming-industry/out-of-the-blue-how-a-quake-blog-turned-pc-gaming-news-site-has-stayed-a-haven-from-internet-enshittification-for-nearly-30-years/",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/yy945wpZk87NwFeYZyUmq3.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "CBS, ABC, CNN and National Geographic Among Top Winners at 2025 News Emmys",
+        "content": "CBS, ABC, CNN, and National Geographic are top winners at the 2025 News Emmys. ABC's World News Tonight with David Muir wins Outstanding Live News Program for the third year in a row, while CNN's The Whole Story with Anderson Cooper takes Outstanding Recorded News Program for the second year in a row.",
+        "link": "https://www.hollywoodreporter.com/tv/tv-news/news-documentary-emmys-2025-night-one-winners-1236299987/",
+        "imageUrl": "https://www.hollywoodreporter.com/wp-content/uploads/2024/09/David-Muir-Anderson-Cooper-publicity-getty-H-2024.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Rise in ‘alert fatigue’ risks phone users disabling news notifications, study finds",
+        "content": "Study finds 'alert fatigue' among phone users, leading to disabling of news notifications. Publishers walk a fine line between crucial updates and excessive notifications.",
+        "link": "https://www.theguardian.com/media/2025/jun/20/increase-alert-fatigue-phone-users-disable-news-notifications-study-finds",
+        "imageUrl": "https://i.guim.co.uk/img/media/8686aa90b5fff9a73aedc21e16f675927deb2094/0_0_5906_4724/master/5906.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmY",
+        "is_simulated": false
+      },
+      {
+        "title": "Day 1,227 of WW3. After DonOld sent Pooty Poot a signal by suspending air defense deliveries to Ukraine, Pooty Poot signals back by launching massive attack on Kyiv during the Big Beautiful Phone Call. This is your Friday Ukraine War thread [News]",
+        "content": "Day 1,227 of WW3. After DonOld sent Pooty Poot a signal by suspending air defense deliveries to Ukraine, Pooty Poot signals back by launching massive attack on Kyiv during the Big Beautiful Phone Call. This is your Friday Ukraine War thread.",
+        "link": "https://www.fark.com/comments/13729526",
+        "imageUrl": "https://usrimg-full.fark.net/o/oZ/fark_oZMio9DSn-u28xV0IFc_2urRwD4.jpg?AWSAccessKeyId=JO3ELGV4BGLFW7Y3EZXN&Expires=1751860800&Signature=3fSvcK%2BG3Uxq5nBilth5VC%2BhwM8%3D",
+        "is_simulated": false
+      },
+      {
+        "title": "Daytime Emmy Nominations Include ‘General Hospital,’ ‘The View,’ ‘Live with Kelly and Mark,’ and Anthony Mackie",
+        "content": "The 52nd annual Daytime Emmy Awards nominations are out, with 'General Hospital' leading the pack with 16 nominations, followed by 'The View', 'Live with Kelly and Mark', and Anthony Mackie's 'Shark Beach'. Other notable mentions include 'The Young and the Restless', 'National Parks: USA', and 'The Drew Barrymore Show'.",
+        "link": "https://internewscast.com/news/us/daytime-emmy-nominations-include-general-hospital-the-view-live-with-kelly-and-mark-and-anthony-mackie/",
+        "imageUrl": "https://internewscast.com/wp-content/uploads/2025/07/General-Hospital-The-View-Live-with-Kelly-and-Mark-and.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Aaron Reitz, top DOJ official and former Paxton aide, launches bid for Texas attorney general",
+        "content": "Former DOJ official Aaron Reitz launches bid for Texas Attorney General, touting his experience in conservative legal battles and service under Ken Paxton and Ted Cruz. His campaign website emphasizes his commitment to defending Texan and American rights.",
+        "link": "https://www.texastribune.org/2025/06/10/texas-attorney-general-aaron-reitz-gop-primary-paxton/",
+        "imageUrl": "https://thumbnails.texastribune.org/OjYa6bxi1It4-FpIXwzfMcUCupE=/450x300/https://static.texastribune.org/media/files/68ef4924a39ca3ac6d2c8c7afd707f60/Aaron%20Reitz%20KC%20TT%2002.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Texas Divorce Drama: Senator Accuses Attorney General Paxton of Infidelity and Reveals New Findings",
+        "content": "Texas Attorney General Ken Paxton faces divorce allegations from his wife, Senator Angela Paxton, over adultery and recent discoveries. The controversy comes amidst Paxton's impeachment trial in 2023, where he was accused of improper actions related to a donor and extramarital affair. The upcoming divorce could impact Paxton's political career, particularly his primary challenge against Senator John Cornyn.",
+        "link": "https://internewscast.com/news/texas-divorce-drama-senator-accuses-attorney-general-paxton-of-infidelity-and-reveals-new-findings/",
+        "imageUrl": "https://internewscast.com/wp-content/uploads/2025/07/rewrite-this-title-PAXTON-vs-PAXTON-Texas-State-Senator-Alleges.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Republican attorneys general accuse California of excusing 'lawlessness'",
+        "content": "Republican attorneys general accuse California's Democratic leaders of condoning criminal behavior, stating that local and state officials are unable to control anti-immigration enforcement riots. They support President Trump's activation of the National Guard to address the situation.",
+        "link": "https://www.foxnews.com/politics/republican-attorneys-general-accuse-california-excusing-lawlessness",
+        "imageUrl": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2024/07/931/523/Gavin-Newsom.png?ve=1&tl=1",
+        "is_simulated": false
+      },
+      {
         "title": "Latest News Update from the entire world - 917",
         "content": "A global public health initiative targets a persistent issue, showing early promise but facing challenges in widespread adoption.",
         "link": "https://example.com/the-entire-world/news/1",
@@ -154,23 +210,65 @@
         "link": "https://example.com/the-entire-world/news/1",
         "imageUrl": "https://placehold.co/600x400?text=World+News",
         "is_simulated": false
-      },
-      {
-        "title": "Simulated News Headline 2 for the entire world",
-        "content": "A simulated news article discusses global events. Details are currently placeholder content, but the full article would cover news impacting the entire world. Check back for updates as the simulation evolves and real content is generated.",
-        "link": "https://example.com/the-entire-world/news/2",
-        "imageUrl": "https://placehold.co/600x400?text=World+News",
-        "is_simulated": false
-      },
-      {
-        "title": "Simulated News Headline 3 for the entire world",
-        "content": "A new simulated article discusses general news relevant to the entire world. The full article contains more details, which Gemini is designed to summarize comprehensively, providing key insights and information.",
-        "link": "https://example.com/the-entire-world/news/3",
-        "imageUrl": "https://placehold.co/600x400?text=World+News",
-        "is_simulated": false
       }
     ],
     "technology": [
+      {
+        "title": "UK Technology Secretary hits out at critics, tells tech giants to “bring their best tech, at the best price”",
+        "content": "UK Technology Secretary Peter Kyle urges global tech giants to invest in the UK with the latest technology at competitive prices, following a series of meetings with tech firms such as Amazon, Google, Microsoft, and Meta.",
+        "link": "https://www.techradar.com/pro/uk-technology-secretary-hits-out-at-critics-tells-tech-giants-to-bring-their-best-tech-at-the-best-price",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/d2QWa99vUfxyZBBTbioi9V.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Traitors to the Earth: Fascism, Christian Nationalism, and the Tech Elite",
+        "content": "In this episode of 'Movement Memos', Astra Taylor discusses the apocalyptic politics of the far right, warning of a rising fascist movement driven by technofascism and Christian nationalism. Taylor argues that these forces are undermining democracy and threatening the planet and its inhabitants, and calls for a movement that fights for the livability and habitability of the earth.",
+        "link": "https://truthout.org/audio/traitors-to-the-earth-fascism-christian-nationalism-and-the-tech-elite/",
+        "imageUrl": "https://truthout.org/app/uploads/2025/06/2025_0625-astra-taylor.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Technology Buying Power Has Shifted - Here’s What It Means",
+        "content": "A major shift in enterprise technology purchasing influence is underway, with business-led tech investment and committee-driven decision making on the rise. Cybersecurity, regulations, and the economy are key factors shaping tech purchase decisions, and effective leaders are using technology to drive growth and long-term resilience. Read more about the Forbes Enterprise Technology Purchasing Report.",
+        "link": "https://www.forbes.com/sites/forbes-research/2025/07/03/technology-buying-power-has-shifted-heres-what-it-means/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/686425ff10eaf888e1dc9119/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "How Cristina Mancini Is Rewriting The Future Of Tech And Who Gets To Code It",
+        "content": "Cristina Mancini, CEO of Black Girls Code, is working to ensure that the future of tech is inclusive and driven by groundbreaking innovation. She is leading efforts to increase the number of girls of color in the tech industry and equipping learners with a broad understanding of tech skills, from AI to cybersecurity.",
+        "link": "https://www.forbes.com/sites/pauleannareid/2025/06/18/how-cristina-mancini-is-rewriting-the-future-of-tech-and-who-gets-to-code-it/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/6852d06da379e497abea8580/0x0.jpg?format=jpg&crop=996,561,x0,y74,safe&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "Exporting defense supremacy: Why U.S. tech is fueling a foreign power shift",
+        "content": "Article reveals how India is using 'Atmanirbharata' to gain access to U.S. military technology, defense partnerships, and global trade advantages, aiming to dominate key global industries by 2047. U.S. policy-makers are warned of the risks of technology transfer to India.",
+        "link": "https://www.wnd.com/2025/06/exporting-defense-supremacy-why-u-s-tech-is/",
+        "imageUrl": "https://www.wnd.com/wp-content/uploads/2020/07/warplanes-pilots-flying-wings-cockpit-sky-military-defense.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Google Cloud and UK Government reveal major push to end \"ball and chain\" legacy tech",
+        "content": "Google Cloud partners with UK Government to modernize public services and rid them of outdated legacy tech, potentially saving up to $45 billion in efficiency. The partnership aims to upgrade services from the NHS to local council tools, including bin collection and tax returns.",
+        "link": "https://www.techradar.com/pro/google-cloud-and-uk-government-reveal-major-push-to-end-ball-and-chain-legacy-tech",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/YjMxnWD6VaMJDt45aVQYzC.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "This breakthrough battery tech could help EVs break the 1,000-mile range barrier – and give them a 190-mile boost in under four minutes",
+        "content": "24M Technologies announces breakthrough battery tech that could charge EVs four times faster, perform in extreme cold conditions, and offer over 1,000-mile range. The new Eternalyte electrolyte technology could revolutionize the EV industry.",
+        "link": "https://www.techradar.com/vehicle-tech/hybrid-electric-vehicles/this-breakthrough-battery-tech-could-help-evs-break-the-1-000-mile-range-barrier-and-give-them-a-190-mile-boost-in-under-four-minutes",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/vxTW2VenAZPxqnavhgZxgg.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "'We really believe that Lidar is mission critical': Ford CEO says Waymo's self-driving car tech makes more sense Tesla's",
+        "content": "Ford CEO Jim Farley believes that LiDar is crucial for autonomous driving and prefers Waymo's tech over Tesla's due to its progress in self-driving. Tesla uses a camera-only approach, while Waymo relies on a suite of cameras, LiDAR, radar, and audio receivers.",
+        "link": "https://www.techradar.com/vehicle-tech/hybrid-electric-vehicles/we-really-believe-that-lidar-is-mission-critical-ford-ceo-says-waymos-self-driving-car-tech-makes-more-sense-teslas",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/CYxtj4AhqvncETtY9uiSh4.jpg",
+        "is_simulated": false
+      },
       {
         "title": "Latest Technology Update from the entire world - 877",
         "content": "Quantum computing breakthrough promises to revolutionize complex problem-solving, offering long-term solutions that were previously unreachable.",
@@ -307,6 +405,62 @@
     ],
     "finance": [
       {
+        "title": "Why 2026 Will Be A Big Year For AI In Business Finance",
+        "content": "AI adoption in finance departments is expected to surge by 2026, with 86% of finance departments planning to use it in full force. Despite initial efficiency struggles, companies see operational benefits, with 30% reporting cost savings and 20% improved forecasting and planning. Increased software spending on financial AI is anticipated for next year.",
+        "link": "https://www.forbes.com/sites/cfo/2025/06/17/why-2026-will-be-a-big-year-for-ai-in-business-finance/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/68519f1457e2b16f23afb766/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "The real risk of a recession, and other key points about the US economy right now",
+        "content": "The article discusses the risks of a recession and the resilience of the US economy, the impact of AI on various industries, and the importance of diversification in investing. It also highlights the repetition of historical lessons in investing and the current state of the labor market.",
+        "link": "https://finance.yahoo.com/news/the-real-risk-of-a-recession-and-other-key-points-about-the-us-economy-right-now-164822925.html",
+        "imageUrl": "https://s.yimg.com/ny/api/res/1.2/ZKtckCbKRnPoqENsr0ee4Q--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTY0MA--/https://s.yimg.com/os/creatr-uploaded-images/2025-07/a18e7cc0-5a87-11f0-aefb-3fba702cc09d",
+        "is_simulated": false
+      },
+      {
+        "title": "Why the Trump admin’s immigration sweeps threaten California’s population, economy",
+        "content": "California's economy faces potential threats from Trump's immigration policies, as the state relies heavily on immigrant labor and population growth. The policies could lead to a decrease in economic activity, loss of congressional seats, and a drain on state revenue.",
+        "link": "https://timesofsandiego.com/politics/2025/06/29/why-the-trump-admins-immigration-sweeps-threaten-californias-population-economy/",
+        "imageUrl": "https://timesofsandiego.com/wp-content/uploads/2025/06/SigamaniICEPresser-scaled.jpeg",
+        "is_simulated": false
+      },
+      {
+        "title": "What Bonds, Dollar Stores Say About the Economy",
+        "content": "This podcast discusses the earnings of CrowdStrike and Dollar Tree, and the impact on the economy. Analysis of CrowdStrike's growth, profitability, and subscription revenue is provided, along with insights on the Falcon Flex platform. Dollar Tree's results reveal a potential tariff problem, but strong sales growth. The podcast also touches on the importance of the bond market for stock investors and its signals.",
+        "link": "https://www.fool.com/investing/2025/06/17/what-bonds-dollar-stores-say-about-economy/",
+        "imageUrl": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F820786%2Fwhat-bonds-dollar-stores-say-about-economy.jpg&amp;op=resize&amp;w=1200&amp;h=630",
+        "is_simulated": false
+      },
+      {
+        "title": "Tariffs Top CFOs’ Business Concerns",
+        "content": "Tariffs are causing concern for CFOs, with 40% citing them as their top worry. Businesses expect increased costs, higher prices, and reduced hiring due to the tariffs. This uncertainty is affecting financing and economic outlooks.",
+        "link": "https://www.forbes.com/sites/cfo/2025/07/01/tariffs-top-cfos-business-concerns/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/6864087202eaac8c69e93fe0/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "Why Traditional Banks Still Fail The $250 Billion Creator Economy",
+        "content": "Traditional banks overlook the $250B creator economy, prompting the launch of Karat Banking, a platform tailored for creators' business needs. This service offers FDIC-insured accounts, tax planning tools, and high yield, addressing the funding gap for creators like Alexandra Botez and Lindsey Lugrin.",
+        "link": "https://www.forbes.com/sites/ianshepherd/2025/07/02/why-traditional-banks-still-fail-the-250-billion-creator-economy/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/6865b928f61c62ab2c98c1f1/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "Elon Musk’s DOGE Gimmicks Have No Place In South Korea",
+        "content": "South Korea's new President Lee Jae Myung appoints a finance minister aiming to run the economy like a business, contradicting Elon Musk's failed DOGE experiment in the US. The appointment has raised concerns about corporate influence and the need for reform in family-owned conglomerates.",
+        "link": "https://www.forbes.com/sites/williampesek/2025/06/30/elon-musks-doge-gimmicks-have-no-place-in-south-korea/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/6862ab6fa2ba93bc19ab57c8/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "Checking In on the Economy and Some Stocks Worth Watching",
+        "content": "Motley Fool analysts discuss the latest Fed meeting, AI's impact on consulting, earnings from Kroger and Darden, and two stocks worth watching: Ferrari and CAVA. Tom Gardner discusses how AI is changing his investing process.",
+        "link": "https://www.fool.com/investing/2025/06/26/checking-in-on-the-economy-and-some-stocks-worth-w/",
+        "imageUrl": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F822702%2Feconomy-is-solid-economy-is-uncertain.jpg&amp;op=resize&amp;w=1200&amp;h=630",
+        "is_simulated": false
+      },
+      {
         "title": "Latest Finance Update from the entire world - 768",
         "content": "Global economies face rising inflation as consumer prices climb, with central bank officials exploring new measures to stabilize the economy.",
         "link": "https://example.com/the-entire-world/finance/1",
@@ -435,6 +589,62 @@
     ],
     "travel": [
       {
+        "title": "Brunei, Malaysia, Vietnam, Thailand, Philippines, Singapore, Cambodia, Laos Empower Indonesia’s Tourism Transformation with High-Impact Visa-Free Access Driving Regional Growth Global Visitor Surge and Sustainable Economic Development - Travel And Tour Wo",
+        "content": "Indonesia expands visa-free access to multiple nations to boost tourism and stimulate economic growth, aiming to diversify its markets beyond traditional Western ones. The latest addition includes Turkey and Brazil, with the goal of attracting more visitors and investors. This policy shift aligns with Indonesia's broader vision of becoming a global tourism hub.",
+        "link": "https://www.travelandtourworld.com/news/article/brunei-malaysia-vietnam-thailand-philippines-singapore-cambodia-laos-empower-indonesias-tourism-transformation-with-high-impact-visa-free-access-driving-regional-growth-global-visitor-surge-a/",
+        "imageUrl": "https://www.travelandtourworld.com/wp-content/uploads/2025/07/Tusmai_Das_Indonesia_tourism_sop-1.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "From AI to Overtourism: The Future of Travel Debated at Newsweek Summit",
+        "content": "The Newsweek Summit on New Destinations discussed the future of travel, focusing on technology, sustainability, and human connection. Notable speakers included Paul Griffiths of Dubai Airports, Steve Hill of the Las Vegas Convention and Visitors Authority, and Jane Sun of the Trip.com Group. The summit emphasized the need for airports to evolve beyond transactional spaces, the importance of real human experiences over AI-generated content, and the recovery of Chinese travel.",
+        "link": "https://www.newsweek.com/newsweek-summit-future-travel-trends-ai-overtourism-sustainability-2096567",
+        "imageUrl": "https://d.newsweek.com/en/full/2679810/speakers-newsweek-travel-summit.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "U.S. Tourism Will Lose Up To $29 Billion As Visitors Plummet Amid Trump Policies",
+        "content": "U.S. tourism facing a $29 billion loss as international travelers avoid the U.S. due to Trump policies, with tens of millions choosing to travel elsewhere. The decline in visitors from Canada, particularly, is costly, accounting for a quarter of all foreign travelers in 2024.",
+        "link": "https://www.forbes.com/sites/suzannerowankelleher/2025/07/03/us-tourism-lose-29-billion-trump-policies/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/68667e2af87d2dd30b4ae365/0x0.jpg?format=jpg&crop=3668,2062,x0,y215,safe&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "Newsweek To Host Leading Voices on the Future of Travel in Upcoming Event",
+        "content": "Newsweek is hosting a travel summit in London next month, gathering leading industry figures for discussions on AI, sustainability, and shifting traveler expectations. Notable speakers include CEOs of Dubai Airports, Las Vegas Visitors, and Hawaii Visitors bureaus, among others. The event aims to foster sustainable, inclusive, and transformative travel experiences. Register at Newsweek's website for more information.",
+        "link": "https://www.newsweek.com/newsweek-speakers-event-future-travel-tourism-summit-innovation-industry-leaders-2089935",
+        "imageUrl": "https://d.newsweek.com/en/full/2670202/tourists-cappadocia-turkey.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "'Hidden gem': Growing number of visitors discovering southern Illinois as travel destination",
+        "content": "The Shawnee National Forest in southern Illinois is gaining popularity as a travel destination, offering outdoor activities, vineyards, and unexpected gems like Makanda, a hippie town with local artisans. Tourism is driving economic growth and creating jobs, with a recent increase in visitor spending surpassing pre-pandemic numbers.",
+        "link": "https://www.dailyherald.com/20250630/business/hidden-gem-growing-number-of-visitors-discovering-southern-illinois-as-travel-destination/",
+        "imageUrl": "https://imengine.public.prod.pdh.navigacloud.com/?uuid=2a4b434a-2c03-5b68-bac5-7fe87fd95684&function=fit&type=preview",
+        "is_simulated": false
+      },
+      {
+        "title": "Inside The New World Of Italian Soccer Tourism",
+        "content": "Italian soccer is transforming, integrating natural beauty and culinary culture into match-day experiences, and leading the race to export games abroad. Clubs are expanding fan bases, exploring revenue streams, and tourism is a key focus. Como 1907, for instance, launched SENT Tourism to offer VIP access to matches, player meet-and-greets, and cultural tours.",
+        "link": "https://www.forbes.com/sites/davidferrini/2025/06/21/inside-the-new-world-of-italian-soccer-tourism/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/6856de42c39d0f6de53ab6d6/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "How Gen Alpha Will Travel: New Report Says AI And Entertainment Can Reshape Trip Planning",
+        "content": "New report predicts AI and entertainment will reshape travel planning for Gen Alpha, with social media and binge-watching influencing trip bookings. Travel platforms will integrate into entertainment content for seamless booking.",
+        "link": "https://www.forbes.com/sites/ramseyqubein/2025/07/01/how-gen-alpha-will-travel-new-report-says-ai-and-entertainment-can-reshape-trip-planning/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/6862c1fee87248e06fdcc2ee/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "U.S. Is About To Lose $12.5B, California’s Entire Tourism Tax Revenue",
+        "content": "The U.S. faces a $12.5B loss in international visitor spending due to travel restrictions, equivalent to California's annual tourism tax revenue. California, Florida, New York, Nevada, and Texas are expected to be hardest hit by a drop in Canadian visitors. International travel from Western Europe, Asia, and South America also continues to decline.",
+        "link": "https://www.forbes.com/sites/emesemaczko/2025/06/12/us-is-about-to-lose-125b-californias-entire-tourism-tax-revenue/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/6849802552b6fc3d0a8d656c/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
         "title": "Latest Travel Update from the entire world - 613",
         "content": "The world invites thrill-seekers with a surge in adventure tourism, offering breathtaking landscapes and exhilarating outdoor activities.",
         "link": "https://example.com/the-entire-world/travel/1",
@@ -541,6 +751,62 @@
       }
     ],
     "world": [
+      {
+        "title": "Iran's allies in the Middle East and around the world",
+        "content": "Iran's allies, including Hezbollah and Russia, rally to support Iran in its conflict with Israel. China and North Korea also offer support in a 'marriage of convenience'.",
+        "link": "https://theweek.com/politics/irans-allies-in-the-middle-east-and-around-the-world",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/BQQDKgvEqnmaTUBzwxWzW5.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Majority of Australians think China will be world’s most powerful country by 2035, poll finds",
+        "content": "A poll reveals a majority of Australians expect China to be the world's most powerful country by 2035, as trust in the US plummets to its lowest level since 2005. Australians see China as both an economic partner and a potential security threat.",
+        "link": "https://www.theguardian.com/australia-news/2025/jun/16/lowy-poll-2025-china-us-trump-trust",
+        "imageUrl": "https://i.guim.co.uk/img/media/a6fe6db214c9f90b535828ac31e05d615514331e/225_0_2500_2000/master/2500.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGV",
+        "is_simulated": false
+      },
+      {
+        "title": "Israel-Iran Conflict Dominates Global News",
+        "content": "Israel and Iran continue their military conflict, with both nations trading strikes and casualties reaching close to 250. The conflict dominates global news, with CNN and Al Jazeera providing extensive coverage. International reactions vary, with some nations like the US supporting Israel's preemptive strike, while others like France question potential Russian mediation.",
+        "link": "https://www.hollywoodreporter.com/news/general-news/israel-iran-conflict-dominates-global-news-coverage-1236291678/",
+        "imageUrl": "https://www.hollywoodreporter.com/wp-content/uploads/2025/06/GettyImages-2219474308.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Fmr. Trump Secy. of State Pompeo says Iran strike sends message: 'America is back leading in the world'",
+        "content": "Former Secretary of State Mike Pompeo claims that the U.S. military strike on Iran's nuclear facilities sends a message of America leading in the world again. Pompeo praises the Trump administration's handling of the strike and calls for continued U.S. global leadership. Pompeo also hints at potential future political aspirations.",
+        "link": "https://www.foxnews.com/politics/fmr-trump-secy-state-pompeo-says-iran-strike-sends-message-america-back-leading-world",
+        "imageUrl": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2025/06/931/523/mike-pompeo-fox-news-intv-nhiop-june-25-2025.jpg?ve=1&tl=1",
+        "is_simulated": false
+      },
+      {
+        "title": "How to watch Brazil vs Paraguay: Live stream 2026 World Cup qualifier online from anywhere",
+        "content": "Watch Brazil vs Paraguay live stream online from anywhere in the world. Brazil could secure qualification for the 2026 World Cup, but Paraguay pose a significant challenge. Tune in to catch the action.",
+        "link": "https://www.tomsguide.com/entertainment/sports/how-to-watch-brazil-vs-paraguay-live-2026-world-cup-qualifier",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/C9hjUc5PtzC2EKNgUuTdAQ.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Pacific Ridge students place 5th in the world at international championship for underwater robotics",
+        "content": "Pacific Ridge School's eighth-grade robotics team places 5th at the International SeaPerch Challenge, showcasing advanced robotics skills and creative problem-solving. The team from Carlsbad, CA represented the pinnacle of achievement in underwater robotics, competing against 181 teams from 31 states and four countries.",
+        "link": "https://www.sandiegouniontribune.com/2025/06/13/pacific-ridge-students-place-5th-in-the-world-at-international-championship-for-underwater-robotics/",
+        "imageUrl": "https://www.sandiegouniontribune.com/wp-content/uploads/2025/06/RSF-L-PACRIDGE-ROBOTICS-0619-01.jpg?w=1024&h=768",
+        "is_simulated": false
+      },
+      {
+        "title": "World reacts to U.S. strikes on Iran with alarm, caution — and some praise",
+        "content": "World reacts with alarm, caution, and some praise to U.S. strikes on Iran's nuclear facilities, with Iran's allies, Middle Eastern governments, and Israel expressing diverse opinions. Europe takes a cautious approach, and the U.N. urges de-escalation.",
+        "link": "https://www.npr.org/2025/06/22/nx-s1-5441661/world-reacts-to-u-s-strikes-on-iran-with-alarm-caution-and-some-praise",
+        "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7436x4923+0+0/resize/7436x4923!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F7e%2Fe1%2F4efb75a041689be07e331f86adca%2Fap25173327692571.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Mario Kart World's new Rewind feature can be used in Time Trials to set wild records, like this 13-second lap",
+        "content": "New Rewind feature in Mario Kart World allows for record-breaking Time Trials, with a player setting a 13-second lap.",
+        "link": "https://www.gamesradar.com/games/super-mario/mario-kart-worlds-new-rewind-feature-can-be-used-in-time-trials-to-set-wild-records-like-this-13-second-lap/",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/f8Za63E5QtKkay2Vz5WYzT.jpg",
+        "is_simulated": false
+      },
       {
         "title": "Latest World Update from the entire world - 142",
         "content": "Rising geopolitical tensions in a critical area are causing concern among international bodies, who are urging for dialogue and de-escalation. World leaders are keeping a close watch on the developing situation.",
@@ -663,6 +929,62 @@
     ],
     "weather": [
       {
+        "title": "Debate erupts over role job cuts played in weather forecasts ahead of deadly Texas floods",
+        "content": "Staffing cuts at the National Weather Service under President Trump have raised concerns over safety, as inadequate forecasts before deadly Texas floods have been criticized. Questions remain about communication and coordination between NWS and local officials.",
+        "link": "https://www.bostonherald.com/2025/07/07/trump-weather-cuts/",
+        "imageUrl": "https://www.bostonherald.com/wp-content/uploads/2025/07/APTOPIX_Extreme_Weather_Texas_33068_9ee74c-1.jpg?w=1024&h=682",
+        "is_simulated": false
+      },
+      {
+        "title": "Debate erupts over role job cuts played in weather forecasts ahead of deadly Texas floods",
+        "content": "Deep staff cuts to the National Weather Service under President Trump are under scrutiny after deadly Texas floods, with critics saying inadequate forecasts could be a result. Questions remain about coordination and communication between NWS and local officials.",
+        "link": "https://www.mercurynews.com/2025/07/07/trump-weather-cuts/",
+        "imageUrl": "https://www.mercurynews.com/wp-content/uploads/2025/07/APTOPIX_Extreme_Weather_Texas_33068_9ee74c-1.jpg?w=150&strip=all",
+        "is_simulated": false
+      },
+      {
+        "title": "Debate erupts over role job cuts played in weather forecasts ahead of deadly Texas floods",
+        "content": "Staffing cuts at National Weather Service questioned following deadly Texas floods, with concerns over inadequate forecasts and potential impact on future weather predictions.",
+        "link": "https://www.sandiegouniontribune.com/2025/07/07/trump-weather-cuts/",
+        "imageUrl": "https://www.sandiegouniontribune.com/wp-content/uploads/2025/07/APTOPIX_Extreme_Weather_Texas_33068_9ee74c-1.jpg?w=150&strip=all",
+        "is_simulated": false
+      },
+      {
+        "title": "Debate erupts over role job cuts played in weather forecasts ahead of deadly Texas floods",
+        "content": "A debate erupts over whether job cuts at the National Weather Service contributed to inadequate forecasts ahead of deadly Texas floods, with Democrats pressing the Trump administration for answers.",
+        "link": "https://www.ocregister.com/2025/07/07/trump-weather-cuts/",
+        "imageUrl": "https://www.ocregister.com/wp-content/uploads/2025/07/APTOPIX_Extreme_Weather_Texas_33068_9ee74c-1.jpg?w=150&strip=all",
+        "is_simulated": false
+      },
+      {
+        "title": "Can 3D-printed homes weather climate change?",
+        "content": "3D-printed homes, pioneered by Icon, are being built in Texas to withstand climate change. The homes, currently under construction at Wolf Ranch, are 2.5 times more energy-efficient and 3.5 times stronger than the standard building code in Texas, withstanding extreme weather conditions, high winds, fires, and termite damage. The technology is expected to revolutionize the home-building industry.",
+        "link": "https://www.cbsnews.com/news/3d-printed-homes-withstand-climate-change-jason-ballard-icon-60-minutes/",
+        "imageUrl": "https://assets2.cbsnewsstatic.com/hub/i/r/2023/10/08/fe52bc4e-673d-40c3-8b67-69c4193a8219/thumbnail/1200x630/784130cc9af82658732e14ddebc88fce/ot-3dprintingfd.jpg?v=d2f497bd9339ad99d2e0559414346698",
+        "is_simulated": false
+      },
+      {
+        "title": "New Index Ranks Vulnerabilities of 188 Nations to Climate Shocks",
+        "content": "A new index identifies 65 'Red Zone' nations most at-risk to climate shocks, with 43 in Sub-Saharan Africa being the most affected. The index aims to help close the gap between risk assessments and funding allocations to vulnerable countries.",
+        "link": "https://www.berkshireeagle.com/online_features/press_releases/new-index-ranks-vulnerabilities-of-188-nations-to-climate-shocks/article_dab4e18e-b7c7-51c4-8655-26fdf0c501d0.html",
+        "imageUrl": "https://bloximages.newyork1.vip.townnews.com/berkshireeagle.com/content/tncms/custom/image/2b802cce-8455-11ec-8935-3f9640429655.jpg?resize=600%2C315",
+        "is_simulated": false
+      },
+      {
+        "title": "250 years after J.M.W. Turner's birth, painter's work resonates in age of climate crisis",
+        "content": "250 years after his birth, J.M.W. Turner's paintings continue to resonate, particularly in the age of climate crisis. Known for his captivating natural light and depictions of violent nature, Turner's works like 'Fishing Boats with Hucksters Bargaining for Fish' and 'Valley of Aosta: Snowstorm, Avalanche, and Thunderstorm' still mesmerize visitors. His art's relevance today lies in its portrayal of extreme weather and the environment, making him an interesting figure for those concerned about climate change.",
+        "link": "https://chicago.suntimes.com/art/2025/06/26/british-landscape-painter-jmw-turner-art-institute-of-chicago",
+        "imageUrl": "https://cst.brightspotcdn.com/dims4/default/bfd83bd/2147483647/strip/true/crop/3000x1713+0+144/resize/1461x834!/quality/90/?url=https%3A%2F%2Fchorus-production-cst-web.s3.us-east-1.amazonaws.com%2Fbrightspot%2F2b%2Fa5%2Ff4b849654745a675a78ca0d489cd%2Fturn",
+        "is_simulated": false
+      },
+      {
+        "title": "Trump’s Pick to Head NOAA Faces Senators in the Wake of Multiple Weather-Stoked Disasters",
+        "content": "Trump's nominee for NOAA head, Neil Jacobs, faced Senate scrutiny over his stance on climate change and budget cuts amidst recent weather disasters. Witnesses expressed concerns about Jacobs' understanding of NOAA's responsibilities and his potential impact on weather forecasting and climate research.",
+        "link": "https://insideclimatenews.org/news/09072025/trump-picks-neil-jacobs-to-lead-noaa/",
+        "imageUrl": "https://insideclimatenews.org/wp-content/uploads/2025/07/GettyImages-1151214678-1024x698.jpg",
+        "is_simulated": false
+      },
+      {
         "title": "Latest Weather Update from the entire world - 835",
         "content": "World's coastal regions prepare for rising sea levels amid climate change, with new infrastructure projects underway to mitigate impact.",
         "link": "https://example.com/the-entire-world/weather/1",
@@ -776,6 +1098,62 @@
       }
     ],
     "blogs": [
+      {
+        "title": "We’re committed to an opinion section from and for Maine",
+        "content": "Maine's newspaper commits to an opinion section focused on local matters, prioritizing Maine-centric opinions and ideas. The section will feature fresh, sharp points of view from across the state and region, with a goal to encourage reader engagement.",
+        "link": "https://www.centralmaine.com/2025/06/13/were-committed-to-opinion-section-from-and-for-maine/",
+        "imageUrl": "https://www.centralmaine.com/wp-content/uploads/sites/2/2023/04/MST-and-PPH-1682298218.jpg?w=1024",
+        "is_simulated": false
+      },
+      {
+        "title": "AI tools like ChatGPT 'help' authors, but I see literature crumbling around me | Opinion - Detroit Free Press",
+        "content": "Opinion piece discusses the growing use of AI tools like ChatGPT in literature, particularly in self-published genres. Two authors were caught using AI in their novels, sparking controversy and raising concerns about originality and the devaluation of human authorship.",
+        "link": "https://www.freep.com/story/opinion/columnists/2025/06/25/ai-authors-booktok-books-theft/84050103007/",
+        "imageUrl": "https://www.freep.com/gcdn/authoring/authoring-images/2025/01/09/PDTF/77581051007-getty-images-1383963898.jpg?crop=4799,2699,x0,y0&width=1600&height=800&format=pjpg&auto=webp",
+        "is_simulated": false
+      },
+      {
+        "title": "Wikipedia pauses AI summary experiment after editors say it 'would do immediate and irreversible harm to our readers and to our reputation as a decently trustworthy and serious source'",
+        "content": "Wikipedia pauses AI summary experiment due to concerns it would harm the platform's reputation and trustworthiness among readers.",
+        "link": "https://www.pcgamer.com/software/ai/wikipedia-pauses-ai-summary-experiment-after-editors-say-it-would-do-immediate-and-irreversible-harm-to-our-readers-and-to-our-reputation-as-a-decently-trustworthy-and-serious-source/",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/BAWeoLkBMndbdruzsVi7RT.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "X's latest terrible idea allows AI chatbots to propose community notes—you'll likely start seeing them in your feed later this month",
+        "content": "X is set to launch a pilot scheme allowing AI chatbots to generate community notes on its platform, starting late this month. This move is aimed at accelerating the speed and scale of community notes, but concerns about AI hallucinations and disinformation remain.",
+        "link": "https://www.pcgamer.com/software/ai/xs-latest-terrible-idea-allows-ai-chatbots-to-propose-community-notes-youll-likely-start-seeing-them-in-your-feed-later-this-month/",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/Ys7MfNq389eTS6XfsRusFd.png",
+        "is_simulated": false
+      },
+      {
+        "title": "Letter: Another term, another childish public feud from this president",
+        "content": "A letter criticizes President Trump for engaging in another childish public feud, this time with a car salesman, likening his behavior to that of a high school freshman.",
+        "link": "https://www.stltoday.com/opinion/letters/article_bf495f14-46d7-4138-9391-797c1f31e48f.html",
+        "imageUrl": "https://bloximages.newyork1.vip.townnews.com/stltoday.com/content/tncms/assets/v3/editorial/b/f4/bf495f14-46d7-4138-9391-797c1f31e48f/6848804fea2d3.preview.jpg?crop=1763%2C926%2C0%2C124&resize=1200%2C630&order=crop%2Cresize",
+        "is_simulated": false
+      },
+      {
+        "title": "2025 hiker’s gear guide — 9 pieces of outdoor gear I can’t live without",
+        "content": "Expert shares 9 essential hiking gear picks for 2025, including Timberland Motion Access Mid Waterproof Sneakers, Timberland Mt. Maddsen Waterproof Hiking Boots, Timberland Winnick Waterproof Shell, Timberland Earthkeepers Sunglasses, Timberland Smartwool Hiking Socks, Garmin Instinct 3 smartwatch, Rocky Talkie Mountain Radios, Nocs Zero Tube telescope, and Helinox Chair Zero.",
+        "link": "https://www.tomsguide.com/wellness/fitness/2025-hikers-gear-guide-9-pieces-of-outdoor-gear-i-cant-live-without",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/x7cHp5Y32FNtWABZC88CtW.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Psych-rock band The Velvet Sundown racks up well over 400,000 Spotify listens within a month, but very quickly turns out to be AI-generated",
+        "content": "Psych-rock band The Velvet Sundown, with over 400,000 Spotify listens, is revealed to be AI-generated, raising concerns about algorithmic manipulation and AI-generated content in the music industry.",
+        "link": "https://www.pcgamer.com/software/ai/psych-rock-band-the-velvet-sundown-racks-up-well-over-400-000-spotify-listens-within-a-month-but-turns-out-to-be-ai-generated/",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/KHmHdUri8APZdojZD2dDuW.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "\"Warhammer 40,000: Space Marine: Master Crafted Edition\" Review \\\\ paulsemel",
+        "content": "The much-anticipated 'Warhammer 40,000: Space Marine: Master Crafted Edition' is here, with reviews praising its improved version of the third-person shooter/hack & slash action game. However, it's exclusive to Xbox and PC, skipping the PS5 at launch.",
+        "link": "https://n4g.com/news/2672415/warhammer-40-000-space-marine-master-crafted-edition-review-paulsemel",
+        "imageUrl": "https://newsboilerstorage.blob.core.windows.net/news/2672415_1_lg.jpg",
+        "is_simulated": false
+      },
       {
         "title": "Latest Blogs Update from the entire world - 573",
         "content": "Discover 573 fresh travel blogs showcasing unexplored destinations worldwide, complete with practical tips and breathtaking photography for an adventure of a lifetime!",
@@ -900,6 +1278,62 @@
   "north_america": {
     "news": [
       {
+        "title": "Out of the blue: How a Quake blog turned PC gaming news site has stayed a haven from 'internet enshittification' for nearly 30 years",
+        "content": "PC Gaming News site, Blue's News, has remained a haven from 'internet enshittification' for nearly 30 years, thanks to its founder's commitment to neutral, concise news roundups and minimal monetization.",
+        "link": "https://www.pcgamer.com/gaming-industry/out-of-the-blue-how-a-quake-blog-turned-pc-gaming-news-site-has-stayed-a-haven-from-internet-enshittification-for-nearly-30-years/",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/yy945wpZk87NwFeYZyUmq3.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "CBS, ABC, CNN and National Geographic Among Top Winners at 2025 News Emmys",
+        "content": "CBS, ABC, CNN, and National Geographic lead the 2025 News & Documentary Emmy Awards, with ABC's World News Tonight and CNN's The Whole Story winning top awards for live and recorded news programs respectively.",
+        "link": "https://www.hollywoodreporter.com/tv/tv-news/news-documentary-emmys-2025-night-one-winners-1236299987/",
+        "imageUrl": "https://www.hollywoodreporter.com/wp-content/uploads/2024/09/David-Muir-Anderson-Cooper-publicity-getty-H-2024.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Rise in ‘alert fatigue’ risks phone users disabling news notifications, study finds",
+        "content": "Study reveals rising 'alert fatigue' among phone users, leading to disabling of news notifications. Publishers walk a tightrope between keeping users informed and causing them to unsubscribe due to excessive updates.",
+        "link": "https://www.theguardian.com/media/2025/jun/20/increase-alert-fatigue-phone-users-disable-news-notifications-study-finds",
+        "imageUrl": "https://i.guim.co.uk/img/media/8686aa90b5fff9a73aedc21e16f675927deb2094/0_0_5906_4724/master/5906.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmY",
+        "is_simulated": false
+      },
+      {
+        "title": "Day 1,227 of WW3. After DonOld sent Pooty Poot a signal by suspending air defense deliveries to Ukraine, Pooty Poot signals back by launching massive attack on Kyiv during the Big Beautiful Phone Call. This is your Friday Ukraine War thread [News]",
+        "content": "Russia intensifies attacks on Kyiv amidst suspended air defense deliveries and a big beautiful phone call between Trump and Putin. This is your Friday Ukraine War thread.",
+        "link": "https://www.fark.com/comments/13729526",
+        "imageUrl": "https://usrimg-full.fark.net/o/oZ/fark_oZMio9DSn-u28xV0IFc_2urRwD4.jpg?AWSAccessKeyId=JO3ELGV4BGLFW7Y3EZXN&Expires=1751860800&Signature=3fSvcK%2BG3Uxq5nBilth5VC%2BhwM8%3D",
+        "is_simulated": false
+      },
+      {
+        "title": "Daytime Emmy Nominations Include ‘General Hospital,’ ‘The View,’ ‘Live with Kelly and Mark,’ and Anthony Mackie",
+        "content": "The Daytime Emmy Awards nominations are out, with 'General Hospital' leading the pack with 16 nods, followed by 'The View', 'Live with Kelly and Mark', and Anthony Mackie's 'Shark Beach'. Notable nominees include Dominic Zamprogna, Nancy Lee Grahn, and Laura Wright from 'General Hospital', and 'Live with Kelly and Mark' for Outstanding Daytime Talk Series.",
+        "link": "https://internewscast.com/news/us/daytime-emmy-nominations-include-general-hospital-the-view-live-with-kelly-and-mark-and-anthony-mackie/",
+        "imageUrl": "https://internewscast.com/wp-content/uploads/2025/07/General-Hospital-The-View-Live-with-Kelly-and-Mark-and.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Aaron Reitz, top DOJ official and former Paxton aide, launches bid for Texas attorney general",
+        "content": "Former DOJ official and Texas Attorney General Ken Paxton's aide, Aaron Reitz, launches bid for Texas Attorney General, promising to defend sovereignty, Constitutional rights, and combat wokeness. His campaign emphasizes his experience in the conservative legal movement and his support from Trump officials.",
+        "link": "https://www.texastribune.org/2025/06/10/texas-attorney-general-aaron-reitz-gop-primary-paxton/",
+        "imageUrl": "https://thumbnails.texastribune.org/OjYa6bxi1It4-FpIXwzfMcUCupE=/450x300/https://static.texastribune.org/media/files/68ef4924a39ca3ac6d2c8c7afd707f60/Aaron%20Reitz%20KC%20TT%2002.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Texas Divorce Drama: Senator Accuses Attorney General Paxton of Infidelity and Reveals New Findings",
+        "content": "Texas Attorney General Ken Paxton faces divorce alleging adultery by his wife, State Senator Angela Paxton, who also cites 'recent discoveries'. The divorce could impact Paxton's political career, as he is challenging long-time Republican Senator John Cornyn in the 2026 primary.",
+        "link": "https://internewscast.com/news/texas-divorce-drama-senator-accuses-attorney-general-paxton-of-infidelity-and-reveals-new-findings/",
+        "imageUrl": "https://internewscast.com/wp-content/uploads/2025/07/rewrite-this-title-PAXTON-vs-PAXTON-Texas-State-Senator-Alleges.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Republican attorneys general accuse California of excusing 'lawlessness'",
+        "content": "Republican Attorneys General accuse California's Democratic leaders of excusing 'lawlessness', and blame them for the need to activate National Guard soldiers to address anti-immigration enforcement riots. The attorneys general's statement contrasts with Governor Gavin Newsom's condemnation of the move.",
+        "link": "https://www.foxnews.com/politics/republican-attorneys-general-accuse-california-excusing-lawlessness",
+        "imageUrl": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2024/07/931/523/Gavin-Newsom.png?ve=1&tl=1",
+        "is_simulated": false
+      },
+      {
         "title": "Latest News Update from North America - 366",
         "content": "North American cultural festival to attract global visitors, local authorities prepare for influx of tourists and media.",
         "link": "https://example.com/north-america/news/1",
@@ -1014,6 +1448,62 @@
     ],
     "technology": [
       {
+        "title": "UK Technology Secretary hits out at critics, tells tech giants to “bring their best tech, at the best price”",
+        "content": "UK Technology Secretary Peter Kyle urges tech giants to invest in Britain's technology sector, promising access to the country's largest client base in return. Kyle defends meetings with tech firms, stating it's part of his job.",
+        "link": "https://www.techradar.com/pro/uk-technology-secretary-hits-out-at-critics-tells-tech-giants-to-bring-their-best-tech-at-the-best-price",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/d2QWa99vUfxyZBBTbioi9V.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Traitors to the Earth: Fascism, Christian Nationalism, and the Tech Elite",
+        "content": "“They understand that what they’re doing is devastating, and they’re doing it anyway,” says Astra Taylor. In this episode of “Movement Memos,” Taylor joins host Kelly Hayes to unpack the apocalyptic politics of the right — and why we need “a movement that is attuned to the fact that the people we’re up against are traitors to this planet, and its people, and the other species who we share the earth with.”\n\nMusic by Son Monarcas, Isobel O’Connor & David Celeste\n\nNote: This a rush transcript and has been lightly edited for clarity. Copy may not be in its final form.\n\nKelly Hayes: Welcome to “Movement Memos,” a Truthout podcast about organizing, solidarity and the work of making change. I’m your host, writer and organizer Kelly Hayes. Today we are talking about technofascism, Christian Nationalism, and the apocalyptic politics of the right. We will be hearing from Astra Taylor, who recently co-authored a piece called “The Rise of End Times Fascism” with Naomi Klein. In their piece, Astra and Naomi describe the supremacist siege mentality of the tech billionaires and Evangelical Christians who are currently working to rewrite our reality—and what it might take to stop them. Astra is a writer, organizer, and documentarian. Her books include Democracy May Not Exist, but We’ll Miss It When It’s Gone, Solidarity, and The Age of Insecurity. \n\nIf you appreciate this podcast, and you would like to support “Movement Memos,” you can subscribe to Truthout’s newsletter or make a donation at truthout.org. You can also support the show by subscribing to “Movement Memos” on Apple or Spotify, or wherever you get your podcasts, or by leaving a positive review on those platforms. Sharing episodes on social media is also a huge help.\n\nTruthout is an independent news organization, publishing stories that the craven corporate media won’t touch. We are a union shop with the best family and sick leave policies in the industry, and we could not do this work without the support of readers and listeners like you. So thanks for believing in us and for all that you do. And with that, I hope you enjoy the show.\n\n[musical interlude]\n\nKH: Astra Taylor, welcome to “Movement Memos.”\n\nAstra Taylor: Thanks for having me.\n\nKH: How are you doing today?\n\nAT: I’m doing okay. I’ve got a bit of a heavy heart, watching all the news of the world, and we’re not sure when this will air, but we’re speaking in the midst of the big anti-ICE rebellion in Los Angeles. And also, as a lot of the work that I’ve been organizing for with the Debt Collective is in the crosshairs of the Trump administration. So, it’s been real, I’ll say that.\n\nKH: This is such an overwhelming time, and I’m really grateful for the opportunity to talk with you amid everything that’s happening. Some of our listeners are no doubt familiar with your work and might remember our last conversation, but for the unacquainted, can you tell us a bit about yourself and what you do?\n\nAT: I am a writer and an occasional documentary filmmaker and an organizer. So, I’ve written books on democracy, my most recent book is on solidarity, but a lot of my energy over the last decade has been focused on building a movement of debtors. So, I co-founded a group called the Debt Collective, which is an experimental union of debtors. We’re most known for our work on student debt cancellation, but we are actually involved in organizing rent debtors or tenants, as well as medical debtors. We also fight for the abolition of school lunch debt, and for the provision of what we call reparative public goods. In other words, the free, high-quality, universal, inclusive public goods that we need, so that we don’t have to go into debt in the first place.\n\nKH: Well, those sound like essential efforts, and I am extremely grateful that the Debt Collective is out there fighting the good fight. As a fellow writer and organizer, I respect the balancing act, and I also want to pivot, for a moment, to talk about your written work.\n\nYou and Naomi Klein recently wrote a piece called “The Rise of End Times Fascism.” What is end times fascism, and how are its leading players different from some of our previous opponents and adversaries?\n\nAT: First, I guess I just want to say that it was such a delight to get to write an article with Naomi Klein, who is an icon of mine, and someone that I learned a tremendous amount from over the years, and continue to learn from. So, we worked on this piece together, and I think this is one of those pieces where the topic is so bleak, that it was good to have a buddy. Bleak in the sense of spending hours listening to Peter Thiel’s podcast, listening to other reactionary tech figures, and diving into some of the horrors of the Trump administration. So, I know you’re also someone who does co-writing a lot, and I think it can be a great mechanism not just to sort of expand your conceptual and political horizons, but just to have the fortitude required sometimes to face this stuff. So, despite the bleakness of the topic, end times fascism, it was actually an enjoyable writing experience.\n\nSo, yeah, end times fascism is our name for the specific brand of fascism that we’re facing today, and we call them “end times fascists” because we want to gesture towards a kind of theological resonance. So, these are political figures who are steeped in a religious or quasi-religious narrative that the apocalypse is coming, it’s the end of the world. These are people who have a kind of resonance with the Christian idea of the rapture. So, look at the Trump administration. There are people who are associated with Christian nationalism and Christian Zionism all over the administration, and also there are a lot of technologists, Silicon Valley billionaires, who are also sort of finding Jesus these days, including the aforementioned Peter Thiel.\n\nSo, end times fascism hints at that, but it also has a material component, which is that these are people who are pursuing policies that are hastening the collapse of ecosystems, of economies, of ways of life, that this is a kind of genocidal politics as well. Fascism is strange, and obviously fascism isn’t new, but we, at one point, cite Umberto Eco, who has a famous book about fascism that listeners have probably read, and sort of lists some of the traits of sort of classic what he calls “Ur-Fascism,” sort of universal fascism: anti-intellectualism, hatred of others, immigrants, a lack of curiosity, the merging of corporations and the state. And then he highlights… he flags what he calls an “Armageddon complex,” this idea that there’s a constant prepping for the end of the world, this final battle, this sort of militaristic Armageddon mindset.\n\nBut what he says is, the fascism of his time, this was a writer who grew up under Mussolini, did at least say, “Hey, for our followers, things are going to get better. We’re going to have this purified paradise at the end of this conflict.” And our provocation is that the fascists today aren’t even offering that.\n\nWhat they’re offering is a kind of constant remix of the past, right? This, “We’re going to make America great again.” This kind of nostalgia, combined with this sort of even more sinister but realist acceptance that the policies they’re pursuing really are apocalyptic. The people in the Trump administration are not climate denialists. Corporate America knows that climate change is real, and they’re choosing to accelerate it anyway. So, these are people who aren’t just putting their hands up as the world burns, they’re actually adding gasoline to the fire.\n\nSo, that was a little bit of a long introduction to the idea, but this is why I think this idea that these are people who understand, they’re not in the dark, they understand that what they’re doing is devastating, and they’re doing it anyway. And their hope is basically that they can grab a lot of wealth, and insulate themselves from the horrors that they’re unleashing.\n\nKH: Let’s talk more about the religiosity of this phenomenon. On this show, we’ve dug into longtermism and other cults of Silicon Valley, and we’ve also discussed the role of Christian Nationalism in the current moment. In a second Trump administration, the accelerationist ideologies of tech and the evangelical agenda really converge. How are beliefs about death, judgment, and the fate of humanity fueling the politics of end times fascism?\n\nAT: What’s interesting is there’s been a lot of attention, and I think rightly so, because it could be strategically helpful on the divisions in the Trump Coalition, which is a very strange coalition. A lot has been made, for example, the battle between Steve Bannon, who claims to be a sort of economic populist, that he’s a hardcore nationalist, and the tech bros, especially Elon Musk, and now there’s a battle between Elon Musk and Trump, it seems. But what we’re trying to ask in this piece is sort of what unites these people? How is it that these Christian Nationalists, or Christian Zionists as sometimes they call themselves, and these often secular tech moguls come together and what unites them? \n\nOne thing that unites them is just a contempt for the world, the contempt for other living beings. And so, you have figures like Elon Musk saying, he actually just tweeted the other day, I was really struck by it, he said, “If we don’t go to Mars, we’ll be stuck on earth forever.” And I was like, “Stuck on earth?” Earth is amazing. I love Earth. Who’s stuck here? This is home. This is the most beautiful planet we know in the entire universe at this point.\n\nThere’s figures like Eric Schmidt, who was a major power player at Google, which is now Alphabet, who we quote as when he recently testified before Congress. He essentially says, well, we need to triple the energy consumption of the AI industry because we’re building a higher consciousness, something higher than humanity, something better than all of these carbon-based life forms. And there’s something kind of, again, quasi-religious about that, right? This idea that the earthly realm is mundane. The earthly realm is something that needs to be transcended. And they see themselves as the people with a special knowledge, whether that’s access to this religious truth or the scientific-technical truth. But really, what they have is just the money to advance an agenda that is not popular, that is not geared towards our collective wellbeing. And it is ultimately just incredibly hubristic, short-sighted, greedy, and fascist.\n\nAnd so, I think there’s these points where these folks can recognize that they have more in common with each other, whether they’re the engineer, the far right politician, or the religious fundamentalist leader. I think that we need to pay attention to those points of connection, and take seriously their contempt for life. And this is why in the piece, Naomi, and I actually call them traitors, which is a word we don’t usually use, but they’re traitors to this earth, they’re traitors to life and all of its diversity and beauty. And yet, again, to get to your question, it does seem to me, that on some deeper level, it is about a sort of fear of mortality, fear of death, an inability to accept our hereness, our limits. And because they don’t have the maturity to face that stuff, they’re basically going to destroy us all.\n\nAnd what we argue is that they think they can kind of shield themselves from, they can buy enough time for themselves that they can survive whatever disasters they’re unleashing. So, this is why we talk about bunkers, whether it’s billionaires building their underground safety zones, or whether it’s the bunkered nation, this idea that we’ll turn the United States into a kind of armed lifeboat. This is why we talk about the phenomenon of Freedom Cities, so-called Freedom Cities, which are these sort of fantasy zones where there’s no regulation, where cryptocurrencies can run in the day. But it’s all of these fantasies of flight, of escape from here, from the earthly material, mortal realm. It’s weird stuff. This is why I’m like, “These people are weird.”\n\nKH: They are really fucking weird. And they’re also tapping into something highly exploitable about the present moment, about our uncertain future, and the spiritual longings people have. The tech bros and the theo bros, as you call them in the piece — some of them are true believers in Evangelical Christianity or in tech cults, like longtermism or effective accelerationism, but they’re all exploiting the scarred psyches of lost, frightened people. \n\nI’m thinking about the conversations I’ve had with Émile P. Torres about how a lot of people are walking around with a “God-shaped” hole in their lives, either because we grew up with religion and walked away from it, or because we’re just grappling with the spiritual emptiness of our lives under capitalism. So many of us have been deprived of opportunities to pursue meaning, purpose, connection, and spiritual understanding. In a lot of people, that creates a kind of longing, even if they don’t know how to name it.And we are also in this moment of extreme crisis, from climate chaos to global political instability, and all of the violence that entails. In moments of collapse and extreme crisis, people become more vulnerable to cults and hyper-religiosity. We want answers. And when we can’t make sense of our conditions, we can become desperate, and attach ourselves to charlatans and monsters. \n\nIn the Trump coalition, we have these Evangelical accelerationist perspectives, which tell us that accelerationism is good, because the aftermath of the apocalypse will be paradise on earth for god’s chosen people — which is why they cheer and abet the genocide in Gaza, so that Jewish people can be settled where they’re supposed to be settled according to the Book of Revelations, and be slaughtered in accordance with scripture. And then, we also have tech accelerationists, who either argue that it’s fine to destroy the environment to produce AI, because AGI will solve every imaginable problem — or, actually arguing, as Elon Musk has, that humanity is just a “biological bootloader” for advanced artificial intelligence. So, basically, it’s okay if we ultimately make the world uninhabitable for biological humans, because artificial general intelligence is going to replace us. And so we just have to devote ourselves to the creation of a new digital god, and these new digital higher beings.\n\nThese are beliefs that treat cataclysmic events as transformative and redeeming. And this kind of eschotological thinking has been part of a lot of major historical tragedies. Hitler, for example, talked about the Thousand-Year Reich, which evokes the Christian notion of the millennial kingdom. That was another example of downtrodden, desperate people, buying into a transformative vision that justified mass destruction in the name of a paradisiacal outcome that wasn’t real. So, I think it’s really important to think about people’s spiritual vulnerabilities, and spiritual desperation, in times of crisis and collapse. Because our enemies are attuned to that desperation, and they are exploiting it. They are giving people the opportunity to cosign destructive acts and ways of being, while feeling like it’s all happening for a reason, and headed somewhere important. \n\nAT: What you just said was so well put, and I think really right on the money. I mean, one thing I really love about your work, and something I’ve been trying to do in my most recent books, is to talk about the connection between the material and the emotional, the political, and the psychic. So, in 2023, I put out a book called The Age of Insecurity, which is about precisely what you were laying out, which is the way that economic insecurity has all of these affective consequences. It makes people, as you said, more vulnerable to fascist appeals.\n\nYou can respond to insecurity in different ways. You can respond to instability in different ways. If an organizer comes up to you, then maybe you can join a movement and find solidarity in it. But if what happens is you get sucked into a YouTube wormhole, and all you’re hearing are these far right messages that are trying to help you, or claiming that they’re making sense of you’re suffering, then you’re going to spiral in that direction.\n\nSo, I think this is why the right is intensifying their rhetoric and their appeal. So, one thing we talk about in the piece is this explicit turn on empathy, because in this moment when people are feeling insecure and feeling unstable, then maybe they could be more open to hearing a message from the left, one that says, “Hey, we’re all suffering right now. Let’s band together.” So, what does the right do? They do everything in their power to stop that. I think this is evidence that the right realizes; basically the policies they’re pursuing are end times policies. They know climate change is real. They’re not doing anything to stop it. They are not doing anything to curb inequality, despite their sort of faux populist comments to the base.\n\nAnd so, you have figures in the Christian community writing books and talking about how empathy is toxic. There’s a book called Toxic Empathy. You have Elon Musk saying that empathy is the sort of fatal flaw of Western civilization. You have Mark Zuckerberg coming back and saying we need a culture of aggression and masculinity in Silicon Valley. This is sort of part of the bigger pushback on “woke,” the bigger pushback on progressive gains of the last few years.\n\nAnd famously, we had Vice President J.D. Vance a few months ago talking about his brand of Catholicism, and what he called “ordered love,” just basically that, yes, it’s okay to only love your family, and only love the people next to you, and maybe the people you share a nation with. But no, the church does not actually command you to love beyond maybe your neighbor, that it’s okay to actually have shrinking circles of care and concern. And so, I think this is part of a concerted effort to turn people against each other in this moment. And it’s just another interesting moment of alliance between the tech bros and the theo bros, that they’re all kind of saying, “Yeah, let’s make selfishness a legitimate and actually kind of glorified position to hold.”\n\nThis is a bit of a tangent, but when we’re talking about how strange these people are, I also think it’s important to talk about how a sort of component of this agenda is really vilifying people who are trying to do good. So, there is the broader just war on “woke,” and attack on progressive ideologies, but we also quote Peter Thiel, who’s, of course, a co-founder of PayPal, venture capitalist, and also it’s important to note, was a kind of key figure in elevating JD Vance politically. And he’s Christian, he was raised evangelical, he’s libertarian, he’s gay, he’s religious, but he has just repeatedly gone on and on about how Greta Thunberg is the anti-Christ. And he’s not joking when he’s talking about this. This is how bonkers these people are.\n\nAnd he is very erudite on some levels. And so, he goes on and on about philosophy and theology, but his point is essentially that the antichrist comes bearing messages of peace and safety, but ultimately, what they’re going to do is harmful. So, somebody like Greta Thunberg comes along and says, peace and safety, no more genocide in Gaza, no more environmental destruction. And for Thiel, she’s the harbinger of doom, because ultimately she would regulate his industry and the industries of his allies, but he’s not so direct about it. Instead of just saying, “I don’t like Greta Thunberg, I don’t like environmentalists because they would curb my profits,” he is speaking of her in these pretty unhinged theological terms. This is the antichrist. And so, the biblical proportions of their rhetoric are not just rhetoric, because I think it speaks to the conviction with which they’re pursuing their extremely lethal ends.\n\nKH: I really appreciate what you’re saying about empathy, and the way that these folks are seeking to vilify and pathologize empathy. Breaking solidarity has obviously always been important to our opposition, but the extremity of how empathy is being portrayed as a potentially civilization-ending disease — that feels alarming to me, and also instructive, in terms of what actually has the potential to undermine these monsters. When Elon Musk talks about “suicidal empathy,” it’s a lot like Peter Thiel calling Greta Thunberg the anti-christ. What he’s really saying is, this undermines my vision, and my vision is everything.\n\nAnd Elon Musk’s vision, and the vision of the tech bros and theo bros driving this moment, involves a lot of people getting on board with more and more categories of people being deemed inherently unworthy of empathy, inherently punishable, and disposable. We already have a vehicle for that kind of condemnation and disregard, here in the United States, in the prison industrial complex. Once people are criminalized and disappeared, we have social permission to stop caring about them, their living conditions, and the manufacturing of their premature deaths. These folks are looking to massively expand the bounds and reach of that thinking.\n\nWe see this effort to broaden forgetting and the absence of empathy to include all immigrants. We see the term “gang member” being freely applied to people who are sent to CECOT, weaponizing a stigma to dehumanize the administration’s victims. We see Palestine solidarity activists being portrayed as inherently punishable, and therefore, inherently disposable and deportable. We also see disabled people being targeted in the administration’s rhetoric around it being our duty to stay well, RFK Jr.’s lies about how infectious diseases aren’t a threat to healthy people, and his false characterizations of autism — all of this feeds into ideas that some lives aren’t worth saving or living. It’s a eugenics agenda, which is reminiscent of Nazi Germany, and of eugenics policies here in the U.S. that had horrific outcomes for a lot of people. \n\nThe idea that empathy itself is deadly, and that not everyone can or should be saved, is really at the heart of what we’re up against right now. \n\nAT: Yeah, I think what you’re saying is exactly right. I mean, think about George W. Bush and “Compassionate Conservatism.” Those days are done. They’re saying empathy is bad. And I feel like, a couple of years ago, I would’ve been like, “Empathy? No, no, we need more than empathy. We need solidarity.” But empathy is a path, it’s a kind of doorway. It’s a portal to recognizing that you’re not the only human being who matters, right? It’s a way out of a kind of solipsism, and I think the right understands that it is a first step towards the kind of solidarity that’s very dangerous to them.\n\nIt’s interesting, the MAHA stuff, it’s not in this piece, but I think of it as a kind of bunkering of the body. The bunker is a recurring motif in this article because, of course, as they unleash the flames, the rich people aren’t expecting to be incinerated themselves. That’s part of the delusion is that they’ll be safe in their fortress nation, or in their very fancy estate in New Zealand, or maybe high up in the hills of Hawaii, or wherever it may be. But the MAHA is a bunkering of the body — that your health is just up to you. It’s like, if you’ve had enough beef tallow slathered on you, and you’re free enough of vaccines, then you’re healthy, and everyone else then deserves their fate. They had pre-existing conditions, they were weak.And it is this rationing up of disposability, and that flows from this devaluation of the here, and the now, and the people in non-human creatures we share this planet with. And so, when you’re preparing for Armageddon, when you are someone who has bought into this Armageddon complex, to use the language of Umberto Eco, then you have to find ways to rationalize life being disposable. And so, that’s what we’re seeing these people do, is concoct these ever greater categories [of disposability].And a lot of us were warning people, right? We’re like, “Palestine, Gaza, this is not an isolated issue,” or, “Hey, racial justice is not just about Black and brown people. It’s about all of us.” And I think we are seeing a… It feels always later than it should be, but maybe opportunities to advance a kind of acceptance, awareness, or awakening to the fact that it’s never just the other who bears the brunt of these kinds of politics. It always expands and ends up having harmful effects for more and more people.\n\n[musical interlude]\n\nKH: In your piece, you refer to a political force that you and Naomi Klein characterize as the “startup country contingent.” Can you talk about that movement, and how it’s gained momentum under Trump?\n\nAT: Many of the ideas we’re talking about were sort of fringe ideas on the tech right or on the religious right, and pretty risible. For years now, this fellow Patrick Friedman, who is Milton Friedman’s grandson — Milton Friedman, of course, being the esteemed libertarian intellectual advisor to Ronald Reagan — has been peddling this idea of seasteading, of creating libertarian nations, maybe on abandoned oil rigs. And he’s just been a jokester in the sense that it hasn’t gotten anywhere.\n\nAnd, of course, that idea sort of riffs on things like free trade areas, these sort of zones, where typical regulations don’t apply, and corporations can go about their business less encumbered by labor law, environmental regulations, et cetera. So, there’s sort of precedents for this pivot, but some of these sort of tech utopian guys have come up with this idea of Freedom Cities, which is sort of these free trade zones, but ideally for them, places where people would live, and where they would be liberated from pesky governments, regulation, and also currencies. So, a lot of these fantasies are sort of now financed by cryptocurrency. \n\nAnd the idea is maybe rich people can go to a sort of med spa and do some self-augmentation that’s not allowed in the United States or in Europe, or maybe a nuclear power plant could be constructed without as much environmental oversight.\n\nSo, one of these, we open with an account of this Freedom City called Próspera, which is a startup in Honduras that has really gone sideways. Honduras is one of the poorest nations in the world. And so, these tech bros made a deal with a corrupt government [under Juan Orlando Hernández] to start a little Freedom City on an island, and we don’t need to get into the details, but there’s ongoing litigation, and these guys are now trying to sue this impoverished country for over $10 billion. So, they’re absolutely willing to devastate a nation and its people for this utter fantasy of freedom from taxation, freedom from regulation, and ultimately, on a deeper level for this fantasy of exit.\n\nSo, influential tech figures, Peter Thiel is one of them, have taken and kind of twisted the ideas of this political philosopher and economist, Albert Hirschman, who wrote a book called Exit, Voice, and Loyalty. And they have taken this idea of exit, this idea that the ultimate freedom that they want for themselves is to be able to abandon communities, abandon countries, and to start something new. And so, this fantasy of exit speaks to this, again, broader conviction that these people should be able to destroy the planet, and yet somehow survive, whether they’re exiting to a Freedom City like Próspera, or if they think they should be able to exit to Mars, in the case of Elon Musk, or whether they think they should be able to exit by having their consciousness uploaded to some yet unprogrammed AGI.\n\nBut it’s this desire to not be bound to anyone else, to cut those empathetic ties, cut those communal ties, cut those social ties, cut those ties of taxation, and be this hyper individual entity. And so, these Freedom Cities were really on the margin — they were able to track some sort of investment money, but they got a big boost on the campaign trail by Donald Trump, who kind of unexpectedly made a promise in the middle of one of his rambling campaign speeches, where he said, “If I’m president, I will help start up 10 Freedom Cities.” And though he hasn’t made any concrete moves in that direction, it has really galvanized and energized this movement. And it’s one that, yeah, I don’t think we should laugh at anymore.\n\nKH: So, I want to note what I’m seeing on that front, because I am particularly concerned about this kind of corporate partitioning, and how it would affect people’s lives. In March, Interior Secretary Doug Burgum proposed the sale of as much as 625 square miles of land currently controlled by the Bureau of Land Management near existing cities, supposedly to create more affordable housing to address the housing crisis. Three days later, the American Enterprise Institute — a rightwing think tank — proposed what it calls “Homesteading 2.0,” which calls for the privatization of 850 square miles of federal land in two steps. First, 3 million new homes would be built over the next ten years, then, later this century, 20 new Freedom Cities, which would be home to millions of people, would be created around the Western United States. At the time that we’re recording this, the administration is trying to wedge the sale of federal lands into the budget reconciliation bill, which is controversial, even among Republicans. Right now, they’re focused on selling federal land in Idaho, Alaska, Utah and Nevada.\n\nI also think we need to pay close attention to this administration’s plans to dismantle FEMA. The current, stated plan of the administration is to put the onus on states to manage disaster relief, which states obviously don’t have the resources to handle on their own. The administration says that far less federal money will be available, and that funds that are dispersed will either come directly from the White House or from the Department of Homeland Security. Now, this not only gives Trump a whole lot of leverage, in terms of arm-twisting Democratic governors into complying with his fascist policies, but also makes Democratic states and cities incredibly vulnerable to disaster capitalists. We know that more and more climate catastrophes are going to occur, so what does it mean when there’s no federal money to rebuild? Who will local governments submit to, in order to restore their water systems, their electricity or their transit systems? It could be Trump, or it could be a tech billionaire who wants to annex some land. \n\nWe’ve talked previously on this show about how Curtis Yarvin — an anti-democratic tech theorist, whose ideas are cherished by tech billionaires like Peter Thiel — has promoted the idea of replacing our current system with a “patchwork” of corporate tech dictatorships. These corporatized societies would exist under a kind of totalizing state surveillance. Given the current state of surveillance tech, what do you think life would be like for people living in one of these corporate fiefdoms?\n\nAT: I mean, I think it would be pretty damn hellish, right? I mean, there are so many problems with the government as it currently exists, but there’s a whole lot that it provides that I take for granted right now. I mean, I’m sitting in a house that has running water that is safe to drink. I could smell the Canadian wildfire smoke a few days ago, but right now, I can breathe the air. I also know that if something happens and I impale myself this afternoon in my kitchen, that the emergency room, that I could get to maybe by calling an ambulance, has to take me in by law. I mean, there’s just a million sort of protections that we take for granted. I’m pretty confident that unless I’ve let something get moldy in my fridge, that the food I am going to eat later today isn’t going to kill me, that there’s basic food safety.None of this would be guaranteed in a “Freedom City.” The idea of a Freedom City is to have none of that, right? I mean, things that are so basic, that movements won going back to the 1800s, to the early 1900 hundreds.\n\nI think it kind of boggles the mind to imagine this kind of retro future, where there’s this high-tech network surveillance technology coupled with an absence of all of these basic protections that we fought for, from food safety, to things like ramps and basic accessibility for disabled people, to basic worker protections. As off-the-rails capitalist as America is, we’ve never ever existed in a space that was fully controlled by the market. That is not the society that we actually inhabit.\n\nSo, I think it would be pretty dark. And one indication of how dark it would be was Curtis Yarvin’s excitement at the devastation, destruction, the genocide in Gaza, when he said, hey, now is our chance. Let’s make Gaza into the first corporate city state. “Gaza Inc.” is what he called it. For him, the destruction of a people is an opportunity to impose a vision that is not just market-driven, but monarchic, in that he literally says, “We need a kind of CEO king running society.”\n\nSo, the fact that this guy, Curtis Yarvin, is peddling… I mean, anti-democratic doesn’t do it justice, but corporate fascist, genocidal nonsense, because he is an idiot who calls himself a philosopher. He’s truly an idiotic human being. I mean, this is someone who is on the record saying, “Enslaved people were better off before emancipation.” The fact that he’s being profiled in the New Yorker, that he’s being interviewed and featured on the front page of The New York Times is an abomination and is a real sign to me that the liberal establishment does not realize what we’re up against.\n\nKH: I also want folks to think about the fact that every fascism has its subhumans. To technofascists like Elon Musk, humans are the subhumans. We’re “biological bootloaders” for a more consequential reality. Now, that’s not all people, of course. People who are building the tech infrastructure for that new world are the only players that matter in their minds. The rest of us are non-player characters [NPCs]. When Musk talks about the “Kobayashi Maru” — for the non-nerds among us, that’s a Star Trek reference, and it means hacking a simulation to make a no-win situation winnable — he’s talking about his belief that some people, like him, can retool the system to make their worldviews inevitable. He sees himself as a player, potentially driving the outcome of the game, and we’re all just NPCs. We’re subhuman. Fully expendable in the pursuit of his vision. Now, I am not arguing that he’s driven by true belief, because his stated beliefs have morphed a lot over time, but this is the worldview that he is zealously pursuing right now. It drove him to help Trump win an election, and to gut federal services. And now that he’s kind of shot himself in the foot with Trump, I think it’s critical that we maintain our understanding of him, and never allow him any semblance of redemption, because he’s too dangerous, and there’s no coming back from the things he’s done. \n\nBut something else I’ve talked to Brian Merchant about is the idea that, rather than marketing us the potential for salvation, these tech billionaires are really trying to market us a role within the apocalypse. Like, there’s a way out of being an NPC. You could win the apocalypse video game if you buy the right gadgets, sacrifice the right people, and learn to love AI. I’m thinking about something Mark Zuckerberg said recently, about how companies are already “systems that are smarter than any one individual” because they harness the intelligence of many people to accomplish a goal. He claimed “instead of having relatively few people” able to harness the power of “a 10,000 person organization” — by which he presumably means CEOs — AI technology will mean that “in the future” almost “everyone will have that.” Theo Von summarized this argument as “universal basic technology,” in a perverse play on the idea of universal basic income. The idea is that we, too, can become consequential. We can be overseers of digital intelligence. We can cease to be non-player characters by embracing the rise of AI, even as it contributes to the destruction of our world. \n\nSo, in addition to talking about societies where people might have to get RFID [Radio Frequency Identification] chips implanted in their hands to track their movements, and be subject to a level of monitoring and control that’s tough for us to currently imagine, we’re also talking about a world where the idea of liberation that’s marketed to us is to be humanized by our dehumanization. We are being sold the idea that to escape our subhuman status, we need to dehumanize others and embrace isolating, dehumanizing technologies.And the degree to which a focus on the self, and the abandonment of others, is treated as a form of survivalism, in this philosophy, cannot be overstated. \n\nAnd on the subject of survivalism, in your recent piece with Naomi Klein, the two of you wrote, “The governing ideology of the far right in our age of escalating disasters has become a monstrous, supremacist survivalism.” Can you say more about that monstrous survivalism?\n\nAT: Part of what’s so disturbing about that survivalism is not only do we see it happening, but we see it glamorized. We see it augmented, we see it turned into propaganda, and spit out through the social media feeds of the most powerful people on this planet. I mean, we were very struck, writing in this piece, by the way that Homeland Security Secretary Kristi Noem has become a kind of recurring figure in this grotesque anti-immigrant propaganda, making videos from the CECOT prison in El Salvador. And there was also the White House’s “ASMR” video, with the sounds of chains, people chained, and the sound of their shackles.\n\nSo, I mean, there’s something… Obviously, we shouldn’t be naive. I mean, deportations happened under Democratic administrations, and this is building on a long troubling history in this country. But something has happened that has made it, I think, more monstrous. And it is part and parcel of this larger, self-conscious, propagandistic effort to make empathy seem passé and to make cruelty seem cool.\n\nAnd there’s something kind of pathetic about it. Cruelty will never be cool. Being a bully, it’s not cool. It actually just shows you’re an insecure asshole. But it’s really disturbing, and honestly, it just makes me really heartsick, literally sick at heart, to see that this stuff is out there, and that there are people kind of eagerly and gleefully responding to it.\n\nAnd I think one thing we were trying to do in this piece is say these people are tapping into really ancient myths. This idea of the chosen few, this idea that some people will be the chosen few who survive, who are able to make it to the promised land, who are, again, able to survive the rapture, able to survive Armageddon. This idea that there’s a grand sort of final battle, these are old, old, old stories that are kind of, even if you’re not religious, they’re kind of woven into our cultural narratives. And that’s part of their appeal. They’re also really simplistic.\n\nAnd so, we need different, and we need better stories. And I think part of what we’re saying is that we also need mythic stories. We need stories where, in contrast to those traitors, we’re part of a movement that is brave, resilient, courageous, compassionate, and committed to being here. And defending not just other human beings, but the planet and all the other species and creatures who call it home. And that this is actually epic, heroic, important work. And that there’s something actually kind of mythic about that, about being someone who is part of a movement that is open-hearted and unruly, and refuses to take the bait of that hate.\n\nKH: I really agree that we need to position ourselves, on a spiritual level, in opposition to the dehumanization of these fascist politics. And on that note, I would love to talk more about AI. How do you see AI functioning as a tool of fascism? How is this technology being used to advance a fascist agenda, while also divorcing us from our humanity?\n\nAT: I mean, I think on the one hand, all of the arguments that I and other tech critics and you, I mean people have been making now for years, if not decades, is we have to pay attention, not just to the technology, but the underlying business interests. Who owns the machines? Who owns the code? Whose agendas are being served?\n\nSo, this question of political economy of ownership is incredibly important, because you could put these data sets to decent use, maybe trying to figure out how to make a public transit system run more efficiently. You could put some of these data sets to use to help scientists identify patterns and cure diseases. I think there’s ways that technology could be deployed at scale for democratic ends. That is not what’s happening here because we live under capitalism.\n\nAnd so, if you look at OpenAI, they’re creating a labor disruption machine, that is the goal of their business, of their enterprise, because they know that then they can sell their services to bosses who want to reduce labor costs. And it actually doesn’t matter always whether the machines can actually do the jobs, or whether the machines can just be used as a foil to scare workers and into accepting less.\n\nSo, there’s a whole lot of hype happening right now with AI, and we’ve been hearing about automation making us replaceable for ages. And so, I think part of what we’re on the progressive end of the spectrum need to say is just we’re not replaceable. And now, they’re not just saying, “We’ll be replaced,” but they’re saying, “We’ll be replaced with something better than you.” So, Eric Schmidt’s saying, “We’re building a higher consciousness.” Who are you to say you’re building something higher? That you’re creating a digital God, that you’re creating something that we should sacrifice ourselves for?\n\nI mean, the fact is these guys know that they cannot actually just create a mirror world, an AI world, because AI requires too much energy, resources, and critical minerals — it actually is a force of depletion. And in that sense, it is kind of a zero-sum thing. It’s like us, or… I’m not going to say them, because it’s that, us or this thing that is not animate.\n\nSo, I think we have to be real about the material conditions. We have to be real about the hype. What is hype? What is ideology? What’s propaganda that’s being used to kind of scare us into submission? And I think we should just be very incensed because none of us are asking for this. Nobody is asking for the kind of AI that they’re offering. It’s being foisted on us. It’s being imposed on us. \n\nAnd Steve Bannon is full of shit, and he’s a liar — and Naomi Klein is far more of an expert on him and his rantings than I am — but he is extremely against AI, because this is something that’s also not popular with people on the right. And so, there’s potential here, I think, for a kind of alliance of us against the machines, actually. And so, I think this is something just on a strategic level that we should be paying attention to.\n\nAnd I don’t think ordinary people want their kids to be taught by AI. I don’t think other people want to train AI to take their jobs. I think that people don’t want to be cared for in old age by AI, and people want to live as human beings for now, and we need to nurture that sentiment, and organize against it, and just be relentless about following the money.\n\nAnd for these guys, they’re bringing about the apocalypse with their policies, but for them, the apocalypse would just be regulation. That’s what they see, the idea of people waking up to their agenda, and restraining it as something worth waging an incredible war over. And we need to stop calling them geniuses, and just take them down a few pegs.\n\nKH: What’s coming up for me, as you talk about nobody wanting this technology is the ways that some people are embracing it, sometimes because they can’t get away from it, or because they can’t keep up with what’s being demanded of them. It’s been estimated that 86% of students are using AI in the course of their studies. Teachers and professors have spoken at length about how this has complicated their grading processes, and in some cases, eroded the communication and critical thinking skills of their students. And I really want us to understand that for the tech bros, that’s not a bug, it’s a feature. \n\nCapitalism has already deskilled us socially in a variety of ways, because capitalism is competitive, isolating, and alienating. But we’re seeing, more and more, people relying on AI in situations when they could be learning how to form arguments, think critically, and analyze the information in front of them. At the same time, we are being further deskilled socially, because people are out-sourcing opportunities to practice self-expression, and in some cases, turning to AI chatbots for companionship, or even therapy — which has already had horrifying results in some cases. All of this is by design. The ultra wealthy tech bros don’t want us to have critical thinking skills or emotional intelligence. They don’t want us to be able to analyze our reality, or come up with strategies to change our conditions, or have the social skills to band together around those strategies. We are being captured and altered by these technologies in real time, and in some cases, we are cooperating. \n\nThese systems, which are being inserted into the government agencies that DOGE has gutted, are poised to further entrench inequality and human disposability. And these tech titans want us and the US government to be unable to function without the help of AI their models. They are cultivating a reliance that they think we’ll be unable to break with — and one that will ultimately render us less thoughtful, and less able to advocate for and protect ourselves.They call it progress, but it’s conquest, and it’s happening in plain sight, as they pillage our intellectual work and artistic work, and cause ruinous damage to the natural world. \n\nWe are being deskilled and devalued, because we are being made into the ideal, feudal subjects of corporate tech states. I think it’s really noteworthy, for example, that Elon Musk, whose beliefs seem to lean toward longtermism and effective acceleration, has said positive things about Christianity in the last year or so. Not that he believes in the Christian faith, but that, maybe it’s a good thing to be a Christian. \n\nAT: Exactly.\n\nKH: Now, I am not trying to knock Christianity or Christians, but why does Elon Musk want people to be Christian? Because he sees religion as a control mechanism. He longs for the days when people were more easily ruled by religious ideas, and by the people who dictated and interpreted those ideas. He spouts hoaxes and indulges right-wing myths because he wants us to be ruled by myths. He doesn’t want us to critically evaluate our conditions or to believe first and foremost in each other. Because he wants us primed for exploitation, above all else. \n\nSo, in opposition to all of the terrible things we’ve been describing, what kind of organizing do we need right now?\n\nAT: Good organizing. It’s interesting, just to go back to what you just said, though, I did torture myself one day and listened to Mark Andreessen in his three-hour conversation with Joe Rogan. And one thing he said is that, and it is just very in sync with what you were just commenting on. He said that essentially that, as AI gets more advanced, we, ordinary humans, will actually have to get more medieval, kind of like people in previous ages who believed in angels and had this kind of confusion about what kind of entities we share the world with.\n\nAnd I thought it was just a really telling moment, because it was exactly what you’re saying, which is just to be dumbfounded. Don’t ask who’s behind the curtain, don’t look into it too much. Just enter the realm of myth. Leave the hard stuff to us engineers, and we will create a kind of quasi-religious technology that fleeces you and controls you. It was such a strange comment. It wasn’t the typical hype, which is, Oh, wow, you’re going to have this chatbot that can answer all the questions for you, and the world of knowledge at your fingertips. It was like, No, actually, you’ll just be even more in the realm of illusion, as a consequence of our new tools and our emerging business models.\n\nI think one of the challenges in a moment like this, and it’s kind of the eternal challenge, is keeping our eyes on continuity and change. I mean, so contrary to what the Silicon Valley entrepreneurs and their cheerleaders in Washington have been saying for decades, we still need unions. We still need labor unions, we still need regulations. We still need these things that they want to tell us are out of date. Because somehow, these new tools are so novel and so innovative, that they’ve made all of these old mechanisms obsolete. I mean, that’s bullshit. I mean, what people still need is to get organized in formation to find ways to militate against concentrated capital. That’s it.\n\nBut we also need to be like, Okay, but things have changed in some ways. The labor force is more dispersed. Labor law has been undone. So, maybe we need to be creative and think of different forms of unions. That’s why I’m dedicated to the Debt Collective. It’s like, okay, so can we create an economic formation that helps people come to political consciousness, engage in coordinated strategies, when they might not have the opportunity to join a traditional union, given the nature of their employment or given the state they live in, maybe they live in a right to work state, or given the stage in their career they’re at? Maybe they’re retired, and they are living on a fixed income, but they have a lot of debt. Right? So, we’re all in the economy. We have to find different ways we can organize together to change things.\n\nAnd that change in continuity thing, I think, is at the heart of this piece with Naomi. This is fascism, but what’s new about it? We’re not fighting the Nazis all over again. We’re not fighting Mussolini’s fascism all over again. We’re not actually fighting the white supremacists that imposed Jim Crow on the American south. There’s elements of all of those previous types of right-wing politics and reactionary movements, but there’s something new about this moment as well. I mean, we are fighting on a terrain of impending ecological collapse in an awareness of that. We’re fighting on a terrain of accelerating communicative and network technologies.\n\nSo, the last thing I’ll say is that what we’re calling for in this piece is a movement that is attuned to the fact that the people we’re up against are traitors to this planet, and its people, and the other species who we share the earth with. And so, we think that there’s something potentially valuable about explicitly committing to here, that’s the language that we use, to saying, “We are the people who are going to fight for one another, and fight for the livability and habitability of this planet, of this place.” And that seems so basic, but it is unfortunately something that at this moment needs to be said, and needs to be said really clearly.\n\nI think it’s also anti-nihilistic. It’s anti-despair. It’s like, No, this is actually a beautiful place, and it’s worth fighting for, and other people are worth fighting for. In this moment, I think just underscoring that commitment is actually valuable and worth doing.\n\nKH: I really appreciate what you keep underscoring about rejecting this idea of exit, and really fighting for the livability of this world. That means fighting to preserve ecosystems and fighting to save each other. As Mariame Kaba and I repeatedly emphasize in Let This Radicalize You, it means refusing to abandon each other. I also think it means rethinking our own relationship with escapism, to some degree. Because, don’t get me wrong, I love television, but we are being offered a world of distraction to get lost in, technologically, in these times, when we desperately need to get grounded in reality. One of the things tech bros idealize about a digitized future, populated by digital people, is the idea that there will be no suffering, and I feel like we really see flashes of that fantasy in the way we’re encouraged to live now — constantly seeking stimulation, and then numbing ourselves out. Living in cycles of exhilaration or numbness, whether we’re numbing ourselves out chemically or by consuming mindless content. What we need is to be able to live in the world and to be uncomfortable sometimes. We need to be able to relate to each other. We need to deepen our awareness of each other’s struggles, and our regard for one another, and understand that by defending you I am also defending myself, because we have a shared home and destiny.\n\nEverything they’re handing us is further removing us from what is glorious, sacred, and worth fighting for about this world. Everything that makes us human, they’re seeking to further detach us from. Because the more we lose touch with our humanity, the more we lose touch with each other, and the closer we get to that sort of techno-feudal world they want, where they imagine us celebrating each other’s disposal — the way you see feudal subjects in movies cheering for executions in the public square. They believe the enlightenment was a setback, and they hate movements for liberation, and for the rights of marginalized people. They want to undo all of that, and to force everyone into silos of self-concern, and that really is their path to victory.\n\nAT: Anyway, I think you just nailed it. I mean, what you said, though, made me think that part of the war on empathy, this idea that empathy is suicidal. The end result is actually turning us into the robots that we’re supposedly being replaced with, right? A robot can’t empathize, it doesn’t have a self. It can compute, it can find patterns, but it can’t empathize. So, I think we are, you’re exactly right, being encouraged to cut ourselves off from our humanity and from our interdependence.\n\nAnd for me, that is a kind of credible spiritualism. I’m not a religious person. I’m sort of proudly atheistic. But I think movements do have to speak to something higher than the self. And this is something I wrote about with Leah Hunt-Hendrix in our book on solidarity, that movements need a sense of the sacred. And that’s why, I think, as simplistic as it might be, it’s also really profound to say, “No, this planet is actually sacred.” That’s why I was so incensed by Musk’s comment, “We’ll be stuck here.” It’s like, “No, we are so lucky to be here.”\n\nActually, we are already living in a miracle, that we evolve, that we’re on a planet that we are perfectly attuned to. I mean, we’re not made to live on fucking Mars, dude. The gravity is off, the air is poisoned. There are no microbes, there’s nothing there. And this guy is so incurious about the world around him, that he can’t even see the wonder and beauty of this world. So, I think, fundamentally, that’s it. Every day, take a moment, and just experience some awe, and let that fortify you in the fight against these ridiculous, pathetic dudes.\n\nKH: What a great note to end on. Astra Taylor, thank you so much for joining us today. It’s always so great to talk to you.\n\nAT: It’s always fun to talk to you too. Thanks.\n\nKH: I also want to thank our listeners for joining us today. I will be taking a few weeks off to tend to my health, but I will be back in August with more conversations about how we can organize for change and support each other during these difficult times. For now, I hope you’re all doing what you can to fight for a better world, and to take care of yourselves, and each other. If you’re feeling discouraged and unsure of what to do, remember that our best defense against cynicism is to do good and to remember that the good we do matters. Until next time, I’ll see you in the streets.\n\n“The Rise of End Times Fascism” by Naomi Klein and Astra Taylor\n\nThe Age of Insecurity: Coming Together as Things Fall Apart by Astra Taylor\n\nSolidarity: The Past, Present, and Future of a World-Changing Idea by Leah Hunt-Hendrix and Astra Taylor\n\nLet This Radicalize You: Organizing and the Revolution of Reciprocal Care by Kelly Hayes and Mariame Kaba",
+        "link": "https://truthout.org/audio/traitors-to-the-earth-fascism-christian-nationalism-and-the-tech-elite/",
+        "imageUrl": "https://truthout.org/app/uploads/2025/06/2025_0625-astra-taylor.jpg",
+        "is_simulated": true
+      },
+      {
+        "title": "Technology Buying Power Has Shifted - Here’s What It Means",
+        "content": "A study by Forbes Research reveals a shift in enterprise technology purchasing power, with business units expected to drive more decisions than IT departments in the near future. Committee approval is now the top deciding factor for tech investment, and organizations have multiple committees based on lines of business and technology types. Cybersecurity is a major concern for tech buyers, with 83% citing increased threats as their top external factor shaping tech purchases.",
+        "link": "https://www.forbes.com/sites/forbes-research/2025/07/03/technology-buying-power-has-shifted-heres-what-it-means/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/686425ff10eaf888e1dc9119/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "How Cristina Mancini Is Rewriting The Future Of Tech And Who Gets To Code It",
+        "content": "Cristina Mancini, CEO of Black Girls Code, is driving the future of tech and inclusivity. She aims to equip the next generation with tech skills for AI, cybersecurity, and ethical frameworks to prepare for a workforce transformed by AI by 2050. BGC offers programs to close the opportunity gap and build a diverse pipeline of tech talent.",
+        "link": "https://www.forbes.com/sites/pauleannareid/2025/06/18/how-cristina-mancini-is-rewriting-the-future-of-tech-and-who-gets-to-code-it/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/6852d06da379e497abea8580/0x0.jpg?format=jpg&crop=996,561,x0,y74,safe&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "Exporting defense supremacy: Why U.S. tech is fueling a foreign power shift",
+        "content": "The U.S. is enabling India's rise as a global defense power, fueling concerns over technology transfer and intellectual property. India's 'Atmanirbharata' policy aims to gain access to U.S. military technology and defense partnerships, potentially threatening U.S. military edge and national security.",
+        "link": "https://www.wnd.com/2025/06/exporting-defense-supremacy-why-u-s-tech-is/",
+        "imageUrl": "https://www.wnd.com/wp-content/uploads/2020/07/warplanes-pilots-flying-wings-cockpit-sky-military-defense.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "Google Cloud and UK Government reveal major push to end \"ball and chain\" legacy tech",
+        "content": "Google Cloud partners with UK Government to modernize aging tech, aiming to save billions in efficiency and boost productivity. The deal includes AI training for 100,000 civil servants and the exploration of quantum computing within the public sector.",
+        "link": "https://www.techradar.com/pro/google-cloud-and-uk-government-reveal-major-push-to-end-ball-and-chain-legacy-tech",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/YjMxnWD6VaMJDt45aVQYzC.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "This breakthrough battery tech could help EVs break the 1,000-mile range barrier – and give them a 190-mile boost in under four minutes",
+        "content": "A breakthrough in ionic conductivity by 24M Technologies could lead to faster charging, longer range EV batteries capable of operating in extreme cold conditions.",
+        "link": "https://www.techradar.com/vehicle-tech/hybrid-electric-vehicles/this-breakthrough-battery-tech-could-help-evs-break-the-1-000-mile-range-barrier-and-give-them-a-190-mile-boost-in-under-four-minutes",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/vxTW2VenAZPxqnavhgZxgg.jpg",
+        "is_simulated": false
+      },
+      {
+        "title": "'We really believe that Lidar is mission critical': Ford CEO says Waymo's self-driving car tech makes more sense Tesla's",
+        "content": "Ford CEO Jim Farley believes LiDar is crucial for autonomous driving, suggesting Waymo's tech is more advanced than Tesla's. Ford is more cautious in its approach, using a suite of cameras, LiDAR, radar, and audio receivers compared to Tesla's eight cameras.",
+        "link": "https://www.techradar.com/vehicle-tech/hybrid-electric-vehicles/we-really-believe-that-lidar-is-mission-critical-ford-ceo-says-waymos-self-driving-car-tech-makes-more-sense-teslas",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/CYxtj4AhqvncETtY9uiSh4.jpg",
+        "is_simulated": false
+      },
+      {
         "title": "Latest Technology Update from North America - 495",
         "content": "North American scientists unveil a groundbreaking quantum computing advancement, with the potential to solve complex problems previously unreachable, sparking optimism for the future of technology.",
         "link": "https://example.com/north-america/technology/1",
@@ -1127,6 +1617,62 @@
       }
     ],
     "finance": [
+      {
+        "title": "Why 2026 Will Be A Big Year For AI In Business Finance",
+        "content": "AI adoption in finance departments is expected to surge by 2026, with 86% of finance departments planning to use AI in full force. The main driver is operational efficiency, but most companies are yet to see significant benefits. Increased software spending on financial AI is anticipated for next year.",
+        "link": "https://www.forbes.com/sites/cfo/2025/06/17/why-2026-will-be-a-big-year-for-ai-in-business-finance/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/68519f1457e2b16f23afb766/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "The real risk of a recession, and other key points about the US economy right now",
+        "content": "Article discusses the risks of a recession, the impact of AI on media and finance, and the importance of diversification in the US economy. It also highlights the repetitive nature of economic lessons and the current state of the labor market.",
+        "link": "https://finance.yahoo.com/news/the-real-risk-of-a-recession-and-other-key-points-about-the-us-economy-right-now-164822925.html",
+        "imageUrl": "https://s.yimg.com/ny/api/res/1.2/ZKtckCbKRnPoqENsr0ee4Q--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTY0MA--/https://s.yimg.com/os/creatr-uploaded-images/2025-07/a18e7cc0-5a87-11f0-aefb-3fba702cc09d",
+        "is_simulated": false
+      },
+      {
+        "title": "Why the Trump admin’s immigration sweeps threaten California’s population, economy",
+        "content": "California's population and economy could be at risk due to Trump's immigration policies, as key sectors rely on workers without legal authorization. The state could lose congressional seats and GDP could decrease if immigration slows.",
+        "link": "https://timesofsandiego.com/politics/2025/06/29/why-the-trump-admins-immigration-sweeps-threaten-californias-population-economy/",
+        "imageUrl": "https://timesofsandiego.com/wp-content/uploads/2025/06/SigamaniICEPresser-scaled.jpeg",
+        "is_simulated": false
+      },
+      {
+        "title": "What Bonds, Dollar Stores Say About the Economy",
+        "content": "This podcast discusses the earnings of CrowdStrike and Dollar Tree, revealing insights about the American economy and the importance of the bond market for stock investors. It highlights the growth of CrowdStrike's ARR and the resilience of Dollar Tree despite tariff problems.",
+        "link": "https://www.fool.com/investing/2025/06/17/what-bonds-dollar-stores-say-about-economy/",
+        "imageUrl": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F820786%2Fwhat-bonds-dollar-stores-say-about-economy.jpg&amp;op=resize&amp;w=1200&amp;h=630",
+        "is_simulated": false
+      },
+      {
+        "title": "Tariffs Top CFOs’ Business Concerns",
+        "content": "Tariffs remain a top concern for CFOs, leading to increased costs, price hikes, and reduced hiring and investments. Nearly 62% of companies with tariff concerns plan to pass the increases onto customers.",
+        "link": "https://www.forbes.com/sites/cfo/2025/07/01/tariffs-top-cfos-business-concerns/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/6864087202eaac8c69e93fe0/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "Why Traditional Banks Still Fail The $250 Billion Creator Economy",
+        "content": "Traditional banks struggle to serve the $250B creator economy due to outdated lending practices, while new platforms like Karat Banking offer tailored solutions for creators' unique business models, providing essential banking services and financial tools.",
+        "link": "https://www.forbes.com/sites/ianshepherd/2025/07/02/why-traditional-banks-still-fail-the-250-billion-creator-economy/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/6865b928f61c62ab2c98c1f1/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "Elon Musk’s DOGE Gimmicks Have No Place In South Korea",
+        "content": "South Korea's new President Lee Jae Myung appoints a finance minister focused on business-like management of the economy, prompting concerns about corporatizing government, following past failures in other countries.",
+        "link": "https://www.forbes.com/sites/williampesek/2025/06/30/elon-musks-doge-gimmicks-have-no-place-in-south-korea/",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/6862ab6fa2ba93bc19ab57c8/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+        "is_simulated": false
+      },
+      {
+        "title": "Checking In on the Economy and Some Stocks Worth Watching",
+        "content": "The latest Fed meeting reveals the economy is 'solid' but 'unusually elevated' in uncertainty. Motley Fool analysts discuss this, the impact of AI on consulting giant Accenture, earnings from Kroger and Darden, and two stocks worth watching: Ferrari and Cava. Motley Fool CEO Tom Gardner discusses how AI is changing his investing process.",
+        "link": "https://www.fool.com/investing/2025/06/26/checking-in-on-the-economy-and-some-stocks-worth-w/",
+        "imageUrl": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F822702%2Feconomy-is-solid-economy-is-uncertain.jpg&amp;op=resize&amp;w=1200&amp;h=630",
+        "is_simulated": false
+      },
       {
         "title": "Latest Finance Update from North America - 808",
         "content": "North America's banking sector faces a significant shakeup with a major acquisition under review by regulators, potentially reshaping the financial landscape.",
@@ -11689,5 +12235,5 @@
       }
     ]
   },
-  "last_updated_utc": "2025-07-11T20:40:40.970060+00:00"
+  "last_updated_utc": "2025-07-12T03:44:51.099674+00:00"
 }
