@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Discover Nexus Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            color: #333;
+        }
+        .content-section {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+        h2 {
+            font-size: 1.75rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1rem;
+            color: #1a202c; /* text-gray-900 */
+        }
+        h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #1a202c;
+        }
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-3xl font-bold mb-2 sm:mb-0">Discover Nexus Portal</h1>
+            <nav class="flex space-x-4 mt-2 sm:mt-0">
+                <a href="index.html" class="text-white hover:text-blue-200 font-semibold transition-colors duration-200">Home</a>
+                <a href="about.html" class="text-white hover:text-blue-200 font-semibold transition-colors duration-200">About Us</a>
+            </nav>
+            <div class="text-sm mt-2 sm:mt-0">
+                <!-- Timestamp is not relevant for the About page, but keeping the div for consistency if needed -->
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 flex-grow">
+        <div class="content-section max-w-3xl mx-auto">
+            <h2>About Discover Nexus Portal</h2>
+            <p>Welcome to Discover Nexus Portal, your go-to source for a concise and comprehensive overview of global news and events. Our mission is to provide you with timely updates across various regions and categories, powered by advanced AI summarization to bring you the essence of the news without the clutter.</p>
+            <p>We aggregate headlines and summaries from reputable news sources, ensuring you stay informed on technology, finance, travel, world affairs, weather, and general news, curated for easy consumption.</p>
+
+            <h3>Our Content Policy & Terms of Use</h3>
+            <p>The content displayed on Discover Nexus Portal, including news summaries and associated images, is provided for your personal, non-commercial use only. We strive to offer a valuable service by summarizing publicly available news, but please be aware of the following:</p>
+            <ul>
+                <li><strong>Attribution:</strong> All news articles are sourced from external news providers. We provide direct links to the original articles on the publishers' websites. We encourage you to visit the original source for the full context and detailed reporting.</li>
+                <li><strong>Non-Commercial Use:</strong> You may not reproduce, distribute, modify, display, or create derivative works from the content on this portal for commercial purposes without explicit permission from the original content providers.</li>
+                <li><strong>Accuracy:</strong> While we aim for accuracy in our summaries, we rely on third-party news APIs and AI models. We cannot guarantee the absolute accuracy or completeness of every piece of information. For critical decisions, always refer to the original source.</li>
+                <li><strong>API Usage:</strong> This portal utilizes content from <a href="https://newsapi.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">NewsAPI.org</a> and <a href="https://worldnewsapi.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">World News API</a>. Summaries and image fallbacks are generated using AI models like Mistral AI.</li>
+            </ul>
+            <p>By using this portal, you agree to these terms. We reserve the right to update or modify this policy at any time.</p>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 text-center text-sm shadow-inner">
+        <p>&copy; 2024 Discover Nexus Portal. All rights reserved. Content provided by NewsAPI.org and World News API.</p>
+        <p><a href="index.html" class="text-blue-300 hover:underline">Back to Home</a></p>
+    </footer>
+</body>
+</html>
