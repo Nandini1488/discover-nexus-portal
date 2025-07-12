@@ -195,21 +195,23 @@
             let currentRegion = 'global'; // Default region
             let currentCategory = 'news'; // Default category
 
+            // Updated REGIONS_MAP to be country-specific and limited to ~15
             const REGIONS_MAP = {
                 "global": "Global",
-                "north_america": "North America",
-                "europe": "Europe",
-                "asia": "Asia",
-                "africa": "Africa",
-                "oceania": "Oceania",
-                "south_america": "South America",
-                "middle_east": "Middle East",
-                "southeast_asia": "Southeast Asia",
-                "north_africa": "North Africa",
-                "sub_saharan_africa": "Sub-Saharan Africa",
-                "east_asia": "East Asia",
-                "south_asia": "South Asia",
-                "australia_nz": "Australia & NZ"
+                "us": "United States",
+                "gb": "United Kingdom",
+                "ca": "Canada",
+                "au": "Australia",
+                "in": "India",
+                "de": "Germany",
+                "fr": "France",
+                "jp": "Japan",
+                "cn": "China",
+                "br": "Brazil",
+                "za": "South Africa",
+                "eg": "Egypt",
+                "ae": "UAE",
+                "sg": "Singapore"
             };
 
             const CATEGORIES_MAP = {
@@ -232,8 +234,10 @@
                 try {
                     loadingIndicator.classList.remove('hidden');
                     noNewsMessage.classList.add('hidden');
-                    // Construct the URL using window.location.origin for robustness on custom domains
-                    const url = window.location.origin + '/updates.json?v=' + new Date().getTime();
+                    // Construct the URL using window.location.origin and the repository name
+                    // This is crucial for GitHub Pages project sites with custom domains.
+                    const repoName = 'discover-nexus-portal'; // Your GitHub repository name
+                    const url = window.location.origin + '/' + repoName + '/updates.json?v=' + new Date().getTime();
                     console.log("Attempting to fetch from URL:", url); // Debugging line
                     const response = await fetch(url); 
                     if (!response.ok) {
@@ -252,7 +256,19 @@
             }
 
             /**
-             * Initializes region and category tabs.
+             * Filters articles to only include non-simulated ones.
+             * @param {Array} articles - The array of articles to filter.
+             * @returns {Array} The filtered array of articles.
+             */
+            function filterRealArticles(articles) {
+                return articles.filter(article => {
+                    return !article.is_simulated && !article.link.includes('example.com');
+                });
+            }
+
+            /**
+             * Initializes region and category tabs by creating all buttons.
+             * It does NOT filter based on available data in updates.json.
              */
             function initializeTabs() {
                 // Create Region Tabs
@@ -319,12 +335,7 @@
 
                 const articles = allNewsData[currentRegion]?.[currentCategory] || [];
 
-                // Filter out simulated articles and articles with example.com links
-                const filteredArticles = articles.filter(article => {
-                    // is_simulated is true only if Mistral AI processing failed on a real article.
-                    // We also explicitly filter example.com links in case old simulated data persists.
-                    return !article.is_simulated && !article.link.includes('example.com');
-                });
+                const filteredArticles = filterRealArticles(articles);
 
                 loadingIndicator.classList.add('hidden'); // Hide loading after filtering
 
