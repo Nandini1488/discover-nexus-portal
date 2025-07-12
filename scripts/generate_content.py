@@ -40,22 +40,23 @@ else:
     print("WARNING: MISTRAL_API_KEY is NOT loaded from environment. Please check GitHub Secrets and workflow env configuration.")
 # --- End Debugging Print ---
 
-# Define the regions and categories that match your index.html
+# Define the regions (now country-specific) and categories that match your index.html
 REGIONS = {
-    "global": {"name": "the entire world", "country_codes": ["us", "gb", "ca", "au", "in"]}, 
-    "north_america": {"name": "North America", "country_codes": ["us", "ca"]},
-    "europe": {"name": "Europe", "country_codes": ["gb", "de", "fr", "es", "it"]}, 
-    "asia": {"name": "Asia", "country_codes": ["in", "cn", "jp", "kr"]}, 
-    "africa": {"name": "Africa", "country_codes": ["za", "ng", "eg"]}, 
-    "oceania": {"name": "Oceania", "country_codes": ["au", "nz"]},
-    "south_america": {"name": "South America", "country_codes": ["br", "ar", "co"]}, 
-    "middle_east": {"name": "Middle East", "country_codes": ["ae", "sa"]}, 
-    "southeast_asia": {"name": "Southeast Asia", "country_codes": ["sg", "ph", "id"]}, 
-    "north_africa": {"name": "North Africa", "country_codes": ["eg"]}, 
-    "sub_saharan_africa": {"name": "Sub-Saharan Africa", "country_codes": ["ng", "za"]}, 
-    "east_asia": {"name": "East Asia", "country_codes": ["jp", "kr", "cn"]}, 
-    "south_asia": {"name": "South Asia", "country_codes": ["in", "pk"]}, 
-    "australia_nz": {"name": "Australia & NZ", "country_codes": ["au", "nz"]} 
+    "global": {"name": "the entire world", "country_codes": ["us", "gb", "ca", "au", "in", "de", "fr", "jp", "cn", "br", "za", "eg", "ae", "sg"]}, # Combined for global search
+    "us": {"name": "United States", "country_codes": ["us"]},
+    "gb": {"name": "United Kingdom", "country_codes": ["gb"]},
+    "ca": {"name": "Canada", "country_codes": ["ca"]},
+    "au": {"name": "Australia", "country_codes": ["au"]},
+    "in": {"name": "India", "country_codes": ["in"]},
+    "de": {"name": "Germany", "country_codes": ["de"]},
+    "fr": {"name": "France", "country_codes": ["fr"]},
+    "jp": {"name": "Japan", "country_codes": ["jp"]},
+    "cn": {"name": "China", "country_codes": ["cn"]},
+    "br": {"name": "Brazil", "country_codes": ["br"]},
+    "za": {"name": "South Africa", "country_codes": ["za"]},
+    "eg": {"name": "Egypt", "country_codes": ["eg"]},
+    "ae": {"name": "UAE", "country_codes": ["ae"]},
+    "sg": {"name": "Singapore", "country_codes": ["sg"]}
 }
 
 # Mapping internal categories to NewsAPI.org and World News API categories/keywords
@@ -67,8 +68,8 @@ CATEGORIES = {
     "world": {"newsapi_cat": "general", "newsapi_query_keyword": "world affairs OR international news", "worldnewsapi_query": "world affairs OR international news"},
     "weather": {"newsapi_cat": "science", "newsapi_query_keyword": "weather OR climate", "worldnewsapi_query": "weather OR climate"}, 
     "blogs": {"newsapi_cat": "general", "newsapi_query_keyword": "blogs OR opinion pieces", "worldnewsapi_query": "blogs OR opinion pieces"},
-    "automotive": {"newsapi_cat": "general", "newsapi_query_keyword": "automotive OR cars OR vehicles OR auto industry", "worldnewsapi_query": "automotive OR cars OR vehicles OR auto industry"}, # NEW CATEGORY
-    "popular_social_contents": {"newsapi_cat": "general", "newsapi_query_keyword": "social media trends OR viral content OR internet culture", "worldnewsapi_query": "social media OR internet trends OR viral content OR memes"} # NEW CATEGORY
+    "automotive": {"newsapi_cat": "general", "newsapi_query_keyword": "automotive OR cars OR vehicles OR auto industry", "worldnewsapi_query": "automotive OR cars OR vehicles OR auto industry"}, 
+    "popular_social_contents": {"newsapi_cat": "general", "newsapi_query_keyword": "social media trends OR viral content OR internet culture", "worldnewsapi_query": "social media OR internet trends OR viral content OR memes"} 
 }
 
 # --- Constants for incremental update ---
@@ -76,6 +77,7 @@ MAX_ARTICLES_PER_CATEGORY = 30
 ARTICLES_TO_FETCH_PER_RUN = 8 # Number of articles to try and fetch/process for each category
 
 # --- Constants for rotating processing ---
+# ALL_CATEGORY_KEYS now includes the new country-specific regions
 ALL_CATEGORY_KEYS = [(r_key, c_key) for r_key in REGIONS for c_key in CATEGORIES]
 TOTAL_CATEGORIES = len(ALL_CATEGORY_KEYS) 
 NUM_BATCHES = 6 # Runs every 4 hours (24/4 = 6 runs per day)
@@ -106,12 +108,14 @@ async def fetch_from_newsapi_org(region_key, category_info, page_size):
     """Attempts to fetch news from NewsAPI.org."""
     country_codes_for_region = REGIONS[region_key]["country_codes"]
     newsapi_category = category_info["newsapi_cat"]
-    newsapi_query_keyword = category_info["newsapi_query_keyword"] # Use the new key
+    newsapi_query_keyword = category_info["newsapi_query_keyword"]
 
+    # NewsAPI.org's /top-headlines supports only one country code at a time.
+    # We iterate through the list of country codes for the region.
     for country_code in country_codes_for_region:
         categories_to_try = [newsapi_category]
         if newsapi_category != "general":
-            categories_to_try.append("general")
+            categories_to_try.append("general") # Fallback to general if specific category fails
 
         for current_cat_to_try in categories_to_try:
             params = {
@@ -166,15 +170,19 @@ async def fetch_from_newsapi_org(region_key, category_info, page_size):
                 time.sleep(1) # Small delay
                 continue
     
-    # For 'global' region, try the /everything endpoint with query
-    # Use the new newsapi_query_keyword here
+    # For 'global' region, or if country-specific top-headlines failed, try the /everything endpoint with query
     if region_key == "global" and newsapi_query_keyword:
+        # For global, we use the combined country codes from the REGIONS["global"] entry
+        # and search across them using the 'everything' endpoint.
+        # NewsAPI's 'everything' endpoint doesn't take 'country' parameter, but 'domains' or 'q'
+        # We use 'q' (query) for the category keyword.
         params = {
             'q': newsapi_query_keyword,
             'language': 'en',
             'pageSize': page_size,
             'sortBy': 'relevancy'
         }
+        # If specific domains are needed for global, you'd add them here, e.g., 'domains': 'nytimes.com,bbc.com'
         headers = {'X-Api-Key': NEWSAPI_API_KEY}
         print(f"DEBUG: NewsAPI.org Attempt for global/{category_info['newsapi_cat']} (Query: '{newsapi_query_keyword}'): {params}")
         try:
