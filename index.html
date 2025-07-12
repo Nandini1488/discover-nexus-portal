@@ -237,7 +237,7 @@
                     // Construct the URL using window.location.origin and the repository name
                     // This is crucial for GitHub Pages project sites with custom domains.
                     const repoName = 'discover-nexus-portal'; // Your GitHub repository name
-                    const url = window.location.origin + '/' + repoName + '/updates.json?v=' + new Date().getTime();
+                     const url = window.location.origin + '/updates.json?v=' + new Date().getTime();
                     console.log("Attempting to fetch from URL:", url); // Debugging line
                     const response = await fetch(url); 
                     if (!response.ok) {
