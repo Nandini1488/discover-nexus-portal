@@ -66,7 +66,9 @@ CATEGORIES = {
     "travel": {"newsapi_cat": "general", "newsapi_query_keyword": "travel OR tourism", "worldnewsapi_query": "travel OR tourism"}, 
     "world": {"newsapi_cat": "general", "newsapi_query_keyword": "world affairs OR international news", "worldnewsapi_query": "world affairs OR international news"},
     "weather": {"newsapi_cat": "science", "newsapi_query_keyword": "weather OR climate", "worldnewsapi_query": "weather OR climate"}, 
-    "blogs": {"newsapi_cat": "general", "newsapi_query_keyword": "blogs OR opinion pieces", "worldnewsapi_query": "blogs OR opinion pieces"} 
+    "blogs": {"newsapi_cat": "general", "newsapi_query_keyword": "blogs OR opinion pieces", "worldnewsapi_query": "blogs OR opinion pieces"},
+    "automotive": {"newsapi_cat": "general", "newsapi_query_keyword": "automotive OR cars OR vehicles OR auto industry", "worldnewsapi_query": "automotive OR cars OR vehicles OR auto industry"}, # NEW CATEGORY
+    "popular_social_contents": {"newsapi_cat": "general", "newsapi_query_keyword": "social media trends OR viral content OR internet culture", "worldnewsapi_query": "social media OR internet trends OR viral content OR memes"} # NEW CATEGORY
 }
 
 # --- Constants for incremental update ---
